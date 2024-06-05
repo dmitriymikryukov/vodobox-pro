@@ -1,0 +1,2 @@
+class InterfaceCommon(object):
+	pass
