@@ -1,0 +1,8 @@
+TRANSLATIONS = ./ts/applang_en.ts\
+                ./ts/applang_ru.ts\
+                ./ts/applang_ro.ts
+
+FORMS += ../ui_interface/waiting_window.ui\
+         ../ui_interface/service_menu_window.ui\
+         ../ui_interface/buy_window.ui\
+         ../ui_interface/activation_window.ui\

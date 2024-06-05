@@ -1,0 +1,5 @@
+PyQt5~=5.15.10
+python-dotenv~=1.0.0
+requests~=2.31.0
+qrcode~=7.4.2
+setuptools~=68.2.0
