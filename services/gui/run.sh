@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python3 ./gui.py
+runuser -l kiosk -c './kioskrun.sh'

@@ -3,6 +3,8 @@ sys.path.insert(0, '../..')
 
 from IPC import *
 
+from guiservice.main import run_gui
+
 import signal
 l=None
 
@@ -82,6 +84,9 @@ class SgnGUI(sgnService):
 try:
 	l=SgnGUI()
 	l.warning('SGN GUI STARTED')
+	os.chdir('./guiservice')
+	run_gui(l)
+	
 	l.DeactivateAllPayments()
 	l.StartSession('CASH')
 	try:
