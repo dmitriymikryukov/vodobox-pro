@@ -108,7 +108,7 @@ class sgnCall():
 		self.ipc.connection.eventqueue.put(dict(caller_id=x,name=self.name,args=args,kwargs=kwargs))
 		r=0
 		while not (x in self.ipc.connection.resdict):
-			time.sleep(0.001)
+			time.sleep(0.1)
 		r=self.ipc.connection.resdict[x]
 		del self.ipc.connection.resdict[x]
 		return r
