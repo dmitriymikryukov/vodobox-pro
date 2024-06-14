@@ -55,77 +55,30 @@ def dict__setitem__(self,k,v):
         return _dsi(self,k,v)
 
 
-class sgnMpDict(DictProxy):
-    def __init__(self,ser,*args,**kwargs):
-        DictProxy.__init__(self,ser,*args,**kwargs)
+class sgnMpShareClass(object):
+    def __init__(self):
+        self.var = 0
+        print("INIT")
 
-    def __repr__(self):
-        dv=''
-        res='{'
-        items=list(self.items())
-        for n,v in items:
-            res+=("%s%s:*%s"%(dv,n.__repr__(),v.__repr__()))
-            dv=', '
-        res+='}'
-        return res
+    def set(self, value):
+        print("SET")
+        self.var = value
 
-    def __setitem__(self,k,v):
-        if isinstance(v,dict):
-            _v=v
-            v=self._manager.dict()
-            for x in _v:
-                v[x]=_v[x]
-        elif isinstance(v,list):
-            _v=v
-            v=self._manager.list()
-            for x in _v:
-                v.append(x)
-        return super().__setitem__(k,v)
-
-    def __str__(self):
-        return self.__repr__()
-
-
-class sgnMpList(ListProxy):
-    def __init__(self,ser,*args,**kwargs):
-        ListProxy.__init__(self,ser,*args,**kwargs)
-
-    def __repr__(self):
-        dv=''
-        res='['
-        items=list(self)
-        for v in items:
-            res+=("%s*%s"%(dv,v.__repr__()))
-            dv=', '
-        res+=']'
-        return res
-
-    def __setitem__(self,k,v):
-        if isinstance(v,dict):
-            _v=v
-            v=self._manager.dict()
-            for x in _v:
-                v[x]=_v[x]
-        elif isinstance(v,list):
-            _v=v
-            v=self._manager.list()
-            for x in _v:
-                v.append(x)
-        return super().__setitem__(k,v)
-
-    def __str__(self):
-        return self.__repr__()
-
+    def get(self):
+        print("GET")
+        return self.var
 
 class sgnMpReg(object):
     def __init__(self,*args,**kwargs):
         self.manager=multiprocessing.Manager()
+        self.manager.register('ShareClass',sgnMpShareClass)
         #self.manager.register('dict',sgnMpDict, sgnMpDict)
         #self.manager.register('list',sgnMpList, sgnMpList)
         DictProxy.__repr__=DictProxy.__str__=dict__repr__
         ListProxy.__repr__=ListProxy.__str__=list__repr__
         DictProxy.__setitem__=dict__setitem__
         ListProxy.__setitem__=list__setitem__
+        self.manager.sh=self.manager.ShareClass()
 
 
 class sgnMpWorker(multiprocessing.Process):
