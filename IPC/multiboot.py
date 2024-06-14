@@ -4,6 +4,57 @@ import threading
 import sys,time,os
 from traceback import format_exc
 
+_lsi=ListProxy.__setitem__
+_dsi=DictProxy.__setitem__
+
+def list__repr__(self):
+        dv=''
+        res='['
+        items=list(self)
+        for v in items:
+            res+=("%s*%s"%(dv,v.__repr__()))
+            dv=', '
+        res+=']'
+        return res
+
+def dict__repr__(self):
+        dv=''
+        res='{'
+        items=list(self.items())
+        for n,v in items:
+            res+=("%s%s:*%s"%(dv,n.__repr__(),v.__repr__()))
+            dv=', '
+        res+='}'
+        return res
+
+
+def list__setitem__(self,k,v):
+        if isinstance(v,dict):
+            _v=v
+            v=self._manager.dict()
+            for x in _v:
+                v[x]=_v[x]
+        elif isinstance(v,list):
+            _v=v
+            v=self._manager.list()
+            for x in _v:
+                v.append(x)
+        return _lsi(self,k,v)
+
+def dict__setitem__(self,k,v):
+        if isinstance(v,dict):
+            _v=v
+            v=self._manager.dict()
+            for x in _v:
+                v[x]=_v[x]
+        elif isinstance(v,list):
+            _v=v
+            v=self._manager.list()
+            for x in _v:
+                v.append(x)
+        return _dsi(self,k,v)
+
+
 class sgnMpDict(DictProxy):
     def __init__(self,ser,*args,**kwargs):
         DictProxy.__init__(self,ser,*args,**kwargs)
@@ -69,8 +120,12 @@ class sgnMpList(ListProxy):
 class sgnMpReg(object):
     def __init__(self,*args,**kwargs):
         self.manager=multiprocessing.Manager()
-        self.manager.register('dict',sgnMpDict, sgnMpDict)
-        self.manager.register('list',sgnMpList, sgnMpList)
+        #self.manager.register('dict',sgnMpDict, sgnMpDict)
+        #self.manager.register('list',sgnMpList, sgnMpList)
+        DictProxy.__repr__=DictProxy.__str__=dict__repr__
+        ListProxy.__repr__=ListProxy.__str__=list__repr__
+        DictProxy.__setitem__=dict__setitem__
+        ListProxy.__setitem__=list__setitem__
 
 
 class sgnMpWorker(multiprocessing.Process):
