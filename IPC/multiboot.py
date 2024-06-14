@@ -11,20 +11,26 @@ _dsi=DictProxy.__setitem__
 def list__repr__(self):
         dv=''
         res='['
-        items=list(self)
-        for v in items:
-            res+=("%s*%s"%(dv,v.__repr__()))
-            dv=', '
+        try:
+            items=list(self)
+            for v in items:
+                res+=("%s*%s"%(dv,v.__repr__()))
+                dv=', '
+        except:
+            res+='Exception'
         res+=']'
         return res
 
 def dict__repr__(self):
         dv=''
         res='{'
-        items=list(self.items())
-        for n,v in items:
-            res+=("%s%s:*%s"%(dv,n.__repr__(),v.__repr__()))
-            dv=', '
+        try:
+            items=list(self.items())
+            for n,v in items:
+                res+=("%s%s:*%s"%(dv,n.__repr__(),v.__repr__()))
+                dv=', '
+        except:
+            res+='Exception'
         res+='}'
         return res
 
@@ -105,7 +111,7 @@ sgnSyncManager.register('sgnMpShareClass',sgnMpShareClass)
 class sgnMpReg(object):
     def __init__(self,*args,**kwargs):
         self.manager=sgnSyncManager()#multiprocessing.Manager()
-        print(type(self.manager))
+        #print(type(self.manager))
         #self.manager.register('dict',sgnMpDict, sgnMpDict)
         #self.manager.register('list',sgnMpList, sgnMpList)
         DictProxy.__repr__=DictProxy.__str__=dict__repr__
@@ -113,7 +119,7 @@ class sgnMpReg(object):
         DictProxy.__setitem__=dict__setitem__
         ListProxy.__setitem__=list__setitem__
         #self.manager.sh=self.manager.ShareClass()
-        print (self.manager._registry)
+        #print (self.manager._registry)
 
 
 class sgnMpWorker(multiprocessing.Process):
@@ -196,10 +202,10 @@ if __name__ == '__main__':
         d['xyu']=manager.dict()
         d['xyu']['pizda']=123
         d['a']=dict(a=1,b=2,c=dict(x=[1,2,3,[4,5,6],{'c':'d'}]))
-        p = sgnMpWorker('logger',d,'logger/logger.py')
-        p.start()
-        p = sgnMpWorker('settings',d,'settings/settings.py')
-        p.start()
+        p1 = sgnMpWorker('logger',d,'logger/logger.py')
+        p1.start()
+        p2 = sgnMpWorker('settings',d,'settings/settings.py')
+        p2.start()
         time.sleep(1)
         print(d)
         print(d['service_container']['logger']['ipc'].get())
@@ -210,7 +216,8 @@ if __name__ == '__main__':
         print(d['service_container']['settings']['ipc'].get())
         print(d['service_container']['settings']['ipc'].call('opa','hello'))
         time.sleep(1)
-        p.shutdown()
+        p1.shutdown()
         #d['service_container']['logger']['methods']['stop']()
-        p.join()
+        p1.join()
+        p2.join()
 
