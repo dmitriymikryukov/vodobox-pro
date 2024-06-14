@@ -5,8 +5,8 @@ import sys,time,os
 from traceback import format_exc
 
 class sgnMpDict(DictProxy):
-    #def __init__(self,*args,**kwargs):
-    #    DictProxy.__init__(self,*args,**kwargs)
+    def __init__(self,ser,*args,**kwargs):
+        DictProxy.__init__(self,ser,*args,**kwargs)
 
     def __repr__(self):
         dv=''
@@ -36,8 +36,8 @@ class sgnMpDict(DictProxy):
 
 
 class sgnMpList(ListProxy):
-    #def __init__(self,*args,**kwargs):
-    #    ListProxy.__init__(self,*args,**kwargs)
+    def __init__(self,ser,*args,**kwargs):
+        ListProxy.__init__(self,ser,*args,**kwargs)
 
     def __repr__(self):
         dv=''
