@@ -57,14 +57,14 @@ class sgnIPC(object):
             self._events=extract_subscribers(self)
             for x in self._events:
                 _registry[x]=dict(owner=self,fn=self._events[x])
-                print("REG: %s.%s"%(self.name,x))
+                #print("REG: %s.%s"%(self.name,x))
                 #with self.gdict['lock']:
                 if not (x in self.gdict['events']): 
                     self.gdict['events'][x]=1
                 else:
                     self.gdict['events'][x]+=1
                 self.container['events'][x]=True
-            print ("REGS!")
+            #print ("REGS!")
             self.container['status']='ALIVE'
         finally:
             self.container['w_start'].set()
