@@ -127,6 +127,7 @@ class sgnMpShareClass(object):
         self.gdict=gdict
         self.var = 0
         self.name=name
+        set_proc_name('sgn:%s'%name)    
         #self._reg=dict()
         #print("INIT MP SHARE %s"%os.getpid())
         t=threading.Thread(target=_xxcall,args=(path,name,self.gdict))
