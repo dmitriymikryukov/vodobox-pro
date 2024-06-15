@@ -49,6 +49,9 @@ class ifacePAYMENTslave(InterfaceCommon):
 		"""
 
 	def ps_reg(self):
+
+		return
+
 		group=self.able['group']
 		name=self.able['name']
 		if not (group in self['payment_method'].keys()):
