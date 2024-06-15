@@ -63,7 +63,7 @@ class sgnIPC(object):
                     self.gdict['events'][x]=1
                 else:
                     self.gdict['events'][x]+=1
-                self.container['events'][x]=dict()
+                self.container['events'][x]=True
             print ("REGS!")
             self.container['status']='ALIVE'
         finally:
