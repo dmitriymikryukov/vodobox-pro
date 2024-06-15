@@ -12,6 +12,7 @@ _dsi=DictProxy.__setitem__
 
 
 def set_proc_name(newname):
+    newname=newname.encode()
     from ctypes import cdll, byref, create_string_buffer
     libc = cdll.LoadLibrary('libc.so.6')
     buff = create_string_buffer(len(newname)+1)
