@@ -55,14 +55,15 @@ class sgnIPC(object):
         for x in self._events:
             _registry[x]=dict(owner=self,fn=self._events[x])
             #print("REG: %s.%s"%(self.name,x))
-            with self.gdict['lock']:
-                if not (x in self.gdict['events']): 
-                    self.gdict['events'][x]=1
-                else:
-                    self.gdict['events'][x]+=1
+            #with self.gdict['lock']:
+            if not (x in self.gdict['events']): 
+                self.gdict['events'][x]=1
+            else:
+                self.gdict['events'][x]+=1
             self.container['events'][x]=dict()
-            #print (self.gdict['events'])
+        #print ("REGS!")
         self.container['status']='ALIVE'
+        self.container['w_start'].set()
 
     def __getattr__ (self, name):
         #print("GETATTR %s"%(name))

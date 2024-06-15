@@ -81,7 +81,6 @@ def _xxcall(path,name,gdict):
         container['status']='STARTED'
         extman.ipc_name=name
         extman.ipc_gdict=gdict
-        container['w_start'].set()
         try:
             x='import %s'%(os.path.basename(path[:-3]))
             print (x)
