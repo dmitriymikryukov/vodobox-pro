@@ -29,7 +29,7 @@ class ifaceMDBslave(InterfaceCommon):
 		x=self.mdb_command(self.addr,data)
 		print('RES:%s'%(x,))
 		if isinstance(x, tuple) and len(x)>0:
-			return x[0]
+			return x[0][1]
 		else:
 			return None
 		"""
