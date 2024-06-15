@@ -46,22 +46,24 @@ class sgnIPC(object):
         self.name=ipc_name
         self.gdict=ipc_gdict
         self.container=self.gdict['service_container'][self.name]
-        self._doSubscribe()
+        t=threading.Thread(target=self._doSubscribe)
+        t.start()
 
     def _doSubscribe(self):
+        self.container['w_init'].wait()        
         global _registry
         #print(self.__class__.__name__)
         self._events=extract_subscribers(self)
         for x in self._events:
             _registry[x]=dict(owner=self,fn=self._events[x])
-            #print("REG: %s.%s"%(self.name,x))
+            print("REG: %s.%s"%(self.name,x))
             #with self.gdict['lock']:
             if not (x in self.gdict['events']): 
                 self.gdict['events'][x]=1
             else:
                 self.gdict['events'][x]+=1
             self.container['events'][x]=dict()
-        #print ("REGS!")
+        print ("REGS!")
         self.container['status']='ALIVE'
         self.container['w_start'].set()
 
@@ -70,7 +72,9 @@ class sgnIPC(object):
         if (name in self.gdict['events']):
             v=self.gdict['events'][name]
             if v==1 and (name in self._events):
-                return getattr(self,'event_%s'%name)
+                def sicall(*args,**kwargs):
+                    return (getattr(self,'event_%s'%name)(*args,**kwargs),)
+                return sicall
             else:
                 def sucall(*args,**kwargs):
                     svc=[]

@@ -99,6 +99,7 @@ def _xxcall(path,name,gdict):
         try:
             container['status']='DIED'
             container['w_start'].set()
+            container['w_init'].set()        
         except:
             pass
 
@@ -192,10 +193,12 @@ class sgnMpWorker(multiprocessing.Process):
                     'basepath':self.base_path,
                     'lock':manager.RLock(),
                     'events':manager.dict(),
-                    'w_start':manager.Event()
+                    'w_start':manager.Event(),
+                    'w_init':manager.Event()
                     })            
                 self.gdict['service_container'][self.name]=container
                 container['ipc']=manager.sgnMpShareClass(self.gdict,self.path,self.name)
+                container['w_init'].set()        
                 container['w_start'].wait()                
                 container['ipc'].set(os.getpid())
                 self.w_start.set()
