@@ -103,10 +103,10 @@ class sgnIPC(object):
             raise NotImplementedError('%s is not subscibed'%name)
 
     def __getitem__ (self, name):
-        return self.gdict['name']
+        return self.gdict[name]
 
     def __setitem__ (self, name,value):
-        self.gdict['name']=value
+        self.gdict[name]=value
 
     #def __getattribute__ (self, name):
     #    print("GETATTRIBUTE %s"%(name))
