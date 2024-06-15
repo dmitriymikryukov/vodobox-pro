@@ -5,9 +5,9 @@ from IPC import *
 
 from guiservice.main import run_gui
 
-import signal
+#import signal
 l=None
-
+"""
 def_handTERM=signal.getsignal(signal.SIGTERM)
 def signal_thandler(num, stack):
 	print("TERM STOP SIGNAL!")
@@ -25,7 +25,7 @@ def signal_ihandler(num, stack):
 	signal.signal(signal.SIGINT, def_handINT)
 	sys.exit(1)
 signal.signal(signal.SIGINT, signal_ihandler)
-
+"""
 
 class SgnGUI(sgnService):
 	def __init__(self):
