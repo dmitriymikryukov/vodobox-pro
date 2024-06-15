@@ -51,9 +51,11 @@ class ifacePAYMENTslave(InterfaceCommon):
 	def ps_reg(self):
 		group=self.able['group']
 		name=self.able['name']
-		if not (group in self['payment_method']):
+		if not (group in self['payment_method'].keys()):
 			self['payment_method'][group]=dict()
-		if not (name in self['payment_method'][group]):
+		if not (name in self['payment_method'][group].keys()):
 			self['payment_method'][group][name]=self.able
+		else:
+			raise AlreadyExists('%s-%s payment_method alreary registered, %s'%(group,name,self['payment_method']))
 		self.able=self['payment_method'][group][name]
 
