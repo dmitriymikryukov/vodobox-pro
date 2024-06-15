@@ -118,6 +118,7 @@ class sgnMpShareClass(object):
     def set(self, value):
         #print("SET %s"%os.getpid())
         self.var = value
+        self.gdict['service_container'][self.name]['w_init'].set()        
 
     def get(self):
         #print("GET %s"%os.getpid())
@@ -198,9 +199,8 @@ class sgnMpWorker(multiprocessing.Process):
                     })            
                 self.gdict['service_container'][self.name]=container
                 container['ipc']=manager.sgnMpShareClass(self.gdict,self.path,self.name)
-                container['w_init'].set()        
-                container['w_start'].wait()                
                 container['ipc'].set(os.getpid())
+                container['w_start'].wait()                
                 self.w_start.set()
             try:
                 """
