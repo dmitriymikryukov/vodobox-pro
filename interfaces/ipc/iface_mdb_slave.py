@@ -12,6 +12,7 @@ class ifaceMDBslave(InterfaceCommon):
 		self.process=threading.Thread(target=self.process,daemon=True)
 		self.process.start()
 
+	"""
 	@subscribe
 	def mdb_slave_receive(self,addr,data):
 		print("MDB slave receive: %s %s"%(addr,data))
@@ -21,10 +22,14 @@ class ifaceMDBslave(InterfaceCommon):
 		else:
 			self.rxRes=data
 		self.rxEv.set()
+	"""
 
 	def cmd(self,data):
 		self.rxEv.clear()
-		if self.mdb_command(self.addr,data,'mdb_slave_receive')<1:
+		x=self.mdb_command(self.addr,data)
+		if (x is tuple) and len(x)>0:
+			return x[0]
+		"""
 			self.critical('MDB service not answers')
 			return False
 		self.rxEv.wait(1.0)
@@ -32,6 +37,7 @@ class ifaceMDBslave(InterfaceCommon):
 			return None
 		else:
 			return self.rxRes
+		"""
 
 	def process(self):
 		raise NotImplementedError('Process is abstract')

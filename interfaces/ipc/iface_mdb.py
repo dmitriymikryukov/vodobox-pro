@@ -15,7 +15,8 @@ class ifaceMDBipc(sgnService,ifaceMDBonboard,ifaceIPC):
 		sgnService.__init__(self)
 
 	@subscribe
-	def mdb_command(self,addr,data,callback_event):
+	def mdb_command(self,addr,data):
+		return None
 		if not self:
 			print("PIZDA!")
 		#print('%s'%(type(self)))
