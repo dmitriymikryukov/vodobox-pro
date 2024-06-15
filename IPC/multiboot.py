@@ -81,6 +81,7 @@ def _xxcall(path,name,gdict):
         container['status']='STARTED'
         extman.ipc_name=name
         extman.ipc_gdict=gdict
+        container['w_start'].set()
         try:
             x='import %s'%(os.path.basename(path[:-3]))
             print (x)
@@ -98,6 +99,7 @@ def _xxcall(path,name,gdict):
     finally:
         try:
             container['status']='DIED'
+            container['w_start'].set()
         except:
             pass
 
@@ -162,12 +164,17 @@ class sgnMpWorker(multiprocessing.Process):
         self.gdict=gdict
         self.path=path
         self.stopping=False
+        self.w_start=multiprocessing.Event()
 
     def shutdown(self):
         self.gdict['control']['shutdown']=True
         
     def stop(self):
         self.stopping=True
+
+    def start(self):
+        super().start()
+        self.w_start.wait()
 
     def run(self):
         print('Hello %s'%self.name)
@@ -185,11 +192,14 @@ class sgnMpWorker(multiprocessing.Process):
                     'main':p,
                     'basepath':self.base_path,
                     'lock':manager.RLock(),
-                    'events':manager.dict()
+                    'events':manager.dict(),
+                    'w_start':manager.Event()
                     })            
                 self.gdict['service_container'][self.name]=container
                 container['ipc']=manager.sgnMpShareClass(self.gdict,self.path,self.name)
+                container['w_start'].wait()                
                 container['ipc'].set(os.getpid())
+                self.w_start.set()
             try:
                 """
                 sys.path.insert(0, self.service_base)
