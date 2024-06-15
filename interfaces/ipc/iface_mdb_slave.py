@@ -28,8 +28,10 @@ class ifaceMDBslave(InterfaceCommon):
 		self.rxEv.clear()
 		x=self.mdb_command(self.addr,data)
 		print('RES:%s'%(x,))
-		if (x is tuple) and len(x)>0:
+		if isinstance(x, tuple) and len(x)>0:
 			return x[0]
+		else:
+			return None
 		"""
 			self.critical('MDB service not answers')
 			return False
