@@ -16,6 +16,8 @@ class ifaceMDBipc(sgnService,ifaceMDBonboard,ifaceIPC):
 
 	@subscribe
 	def mdb_command(self,addr,data):
+		return mdb_command_handler(addr,data)
+	"""
 		return None
 		if not self:
 			print("PIZDA!")
@@ -33,6 +35,7 @@ class ifaceMDBipc(sgnService,ifaceMDBonboard,ifaceIPC):
 		with self.mdbRL:
 			ans=self.mdb_command_handler(addr,data)
 			m(ans[0],ans[1])
+	"""
 
 	def mdb_command_handler(self,addr,data):
 		with self.mdbRL:
@@ -51,6 +54,7 @@ class ifaceMDBipc(sgnService,ifaceMDBonboard,ifaceIPC):
 				self.timeout=True
 				return (addr,None)
 
+	"""
 	@subscribe
 	def mdb_receive(self,addr,ans):
 		print("mdb_receive: %s,%s"%(addr,ans,))
@@ -58,4 +62,4 @@ class ifaceMDBipc(sgnService,ifaceMDBonboard,ifaceIPC):
 			print("rx success")
 			self.ans=(addr,ans)
 			self.mdbEV.set()
-
+	"""
