@@ -78,7 +78,7 @@ class ifaceMDBcoin(ifaceCOINipc,ifaceMDBslave,ifacePAYMENTslave):
 				return None
 		return response
 
-	def disgnostic(self):
+	def diagnostic(self):
 		return self.cmd([0x07,0x05])
 
 	def cmdEnableNominals(self,tubes):
