@@ -34,7 +34,6 @@ class ifaceMDBcoin(ifaceCOINipc,ifaceMDBslave,ifacePAYMENTslave):
 
 	def setup(self):
 		response=self.cmd([0x01])
-		self.debug('Setup Response: %s'%(response,))
 		if response:
 			r=dict(
 				level=response[0],
