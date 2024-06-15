@@ -88,7 +88,7 @@ def sgnMpAutoProxy(*args,**kwargs):
 def _xxcall(path,name,gdict):
     container=gdict['service_container'][name]
     try:
-        set_proc_name(name)    
+        set_proc_name('sgn:%s'%name)    
         service_base=os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..'))
         services_dir=os.path.join(service_base,'services')
         p=os.path.abspath(os.path.join(services_dir,path))
@@ -199,7 +199,8 @@ class sgnMpWorker(multiprocessing.Process):
         self.w_start.wait()
 
     def run(self):
-        print('Hello %s'%self.name)
+        set_proc_name('sgn:%s'%self.name)    
+        #print('Hello %s'%self.name)
         self.service_base=os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..'))
         self.services_dir=os.path.join(self.service_base,'services')
         p=os.path.abspath(os.path.join(self.services_dir,self.path))
