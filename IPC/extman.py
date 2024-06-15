@@ -51,21 +51,23 @@ class sgnIPC(object):
 
     def _doSubscribe(self):
         self.container['w_init'].wait()        
-        global _registry
-        #print(self.__class__.__name__)
-        self._events=extract_subscribers(self)
-        for x in self._events:
-            _registry[x]=dict(owner=self,fn=self._events[x])
-            print("REG: %s.%s"%(self.name,x))
-            #with self.gdict['lock']:
-            if not (x in self.gdict['events']): 
-                self.gdict['events'][x]=1
-            else:
-                self.gdict['events'][x]+=1
-            self.container['events'][x]=dict()
-        print ("REGS!")
-        self.container['status']='ALIVE'
-        self.container['w_start'].set()
+        try:
+            global _registry
+            #print(self.__class__.__name__)
+            self._events=extract_subscribers(self)
+            for x in self._events:
+                _registry[x]=dict(owner=self,fn=self._events[x])
+                print("REG: %s.%s"%(self.name,x))
+                #with self.gdict['lock']:
+                if not (x in self.gdict['events']): 
+                    self.gdict['events'][x]=1
+                else:
+                    self.gdict['events'][x]+=1
+                self.container['events'][x]=dict()
+            print ("REGS!")
+            self.container['status']='ALIVE'
+        finally:
+            self.container['w_start'].set()
 
     def __getattr__ (self, name):
         #print("GETATTR %s"%(name))
