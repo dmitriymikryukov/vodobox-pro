@@ -38,10 +38,10 @@ class ifaceMDBcoin(ifaceCOINipc,ifaceMDBslave,ifacePAYMENTslave):
 		if response:
 			r=dict(
 				level=response[0],
-				country_code=getCCbcd((response[1]<<8)|response[2]),
+				country_code=getCCbcd((int(response[1])<<8)|response[2]),
 				scaling_factor=response[3],
 				decimal_places=response[4],
-				coin_tube_routing_msk=(response[5]<<8)|response[6],
+				coin_tube_routing_msk=(int(response[5])<<8)|response[6],
 				coin_type_credit=response[7:]
 			)
 			self.decimal_places=r['decimal_places']
