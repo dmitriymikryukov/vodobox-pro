@@ -15,6 +15,9 @@ class ifaceMDBcoin(ifaceCOINipc,ifaceMDBslave,ifacePAYMENTslave):
 		self.decimal_places=2
 		self.scaling_factor=1
 
+	def started(self):
+		self.ps_reg()
+
 	def poll(self):
 		return self.cmd([0x03])
 

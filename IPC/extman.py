@@ -52,6 +52,9 @@ class sgnIPC(object):
         t=threading.Thread(target=self._doSubscribe)
         t.start()
 
+    def started(self):
+        pass
+
     def _doSubscribe(self):
         self.container['w_init'].wait()        
         try:
@@ -69,6 +72,7 @@ class sgnIPC(object):
                 self.container['events'][x]=True
             #print ("REGS!")
             self.container['status']='ALIVE'
+            self.started()
         finally:
             self.container['w_start'].set()
 
