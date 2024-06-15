@@ -82,8 +82,9 @@ def _xxcall(path,name,gdict):
         extman.ipc_name=name
         extman.ipc_gdict=gdict
         #print(gdict._manager)
-        if gdict._manager is None:
+        if not gdict._manager:
             gdict._manager=sgnSyncManager()
+            gdict._manager.start()
         try:
             x='import %s'%(os.path.basename(path[:-3]))
             print (x)
