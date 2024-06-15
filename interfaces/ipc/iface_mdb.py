@@ -54,7 +54,7 @@ class ifaceMDBipc(sgnService,ifaceMDBonboard,ifaceIPC):
 				self.timeout=True
 				return (addr,None)
 
-	"""
+	
 	@subscribe
 	def mdb_receive(self,addr,ans):
 		print("mdb_receive: %s,%s"%(addr,ans,))
@@ -62,4 +62,4 @@ class ifaceMDBipc(sgnService,ifaceMDBonboard,ifaceIPC):
 			print("rx success")
 			self.ans=(addr,ans)
 			self.mdbEV.set()
-	"""
+	
