@@ -167,7 +167,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 			except Exception as e:
 				self.exception(e)
 		_jx=json.dumps(self.enabled_nominals)
-		_jd=json.dumps(list(self['disabled_nominals']['coin'].items()))
+		_jd=json.dumps(list(self['disabled_nominals']['coin']))
 		if not self.penabled_nominals or self.penabled_nominals!=_jx or not self.pdisabled_nominals or self.pdisabled_nominals!=_jd:
 			if self.enableNominals(self.enabled_nominals):
 				self.penabled_nominals=_jx
