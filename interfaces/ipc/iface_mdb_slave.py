@@ -27,9 +27,12 @@ class ifaceMDBslave(InterfaceCommon):
 	def cmd(self,data):
 		self.rxEv.clear()
 		x=self.mdb_command(self.addr,data)
-		print('RES:%s'%(x,))
+		#print('RES:%s'%(x,))
 		if isinstance(x, tuple) and len(x)>0:
-			return x[0][1]
+			z=x[0][1]
+			if len(z)>1:
+				z=z[:-1]
+			return z
 		else:
 			return None
 		"""

@@ -46,22 +46,22 @@ class ifaceMDBipc(sgnService,ifaceMDBonboard,ifaceIPC):
 			self.mdb_send_command_bytes(addr,data)
 			self.mdbEV.wait(1.0)
 			if self.mdbEV.is_set():
-				print("mdb_hdl0: %s,%s"%(addr,self.ans,))
+				#print("mdb_hdl0: %s,%s"%(addr,self.ans,))
 				if self.ans[0]==addr:
 					return (addr,self.ans[1])
 				else:
 					return (addr,None)
 			else:
-				print("mdb_hdl1: %s,%s"%(addr,self.ans,))
+				#print("mdb_hdl1: %s,%s"%(addr,self.ans,))
 				self.timeout=True
 				return (addr,None)
 
 	
 	@subscribe
 	def mdb_receive(self,addr,ans):
-		print("mdb_receive: %s,%s"%(addr,ans,))
+		#print("mdb_receive: %s,%s"%(addr,ans,))
 		if not self.timeout:
-			print("rx success")
+			#print("rx success")
 			self.ans=(addr,ans)
 			self.mdbEV.set()
 	
