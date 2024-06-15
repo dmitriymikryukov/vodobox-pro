@@ -4,7 +4,7 @@ import threading
 import sys,time,os
 from traceback import format_exc
 
-import extman
+from IPC import extman
 import threading
 
 _lsi=ListProxy.__setitem__
@@ -84,9 +84,9 @@ def _xxcall(path,name,gdict):
         try:
             x='import %s'%(os.path.basename(path[:-3]))
             print (x)
-            #exec(x)
-            import testipc
-            tmp=testipc.test()
+            exec(x)
+            #import testipc
+            #tmp=testipc.test()
 
 
             while not gdict['control']['shutdown'] and (container['status'] in ['STARTED','ALIVE']):

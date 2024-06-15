@@ -19,10 +19,13 @@
 #
 
 #from .shms import sgnDict,sgnQueue,Locker,cleanup_resources,remove_shm_from_resource_tracker
-from .ipcdict import IPCdict as sgnDict,IPClist as sgnQueue#,Locker,cleanup_resources,remove_shm_from_resource_tracker
-from .sgnIPC import sgnIPC,subscribe
+#from .ipcdict import IPCdict as sgnDict,IPClist as sgnQueue#,Locker,cleanup_resources,remove_shm_from_resource_tracker
+#from .sgnIPC import sgnIPC,subscribe
 
-from .sgnService import sgnService
+#from .sgnService import sgnService
+
+from IPC.extman import subscribe, sgnService
+
 from .Exceptions import *
 
 def cleanup_resources():

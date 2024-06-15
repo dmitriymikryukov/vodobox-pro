@@ -2,9 +2,9 @@ import sys,os,time
 sys.path.insert(0, '../..')
 
 from IPC import *
-
-import signal
 l=None
+"""
+import signal
 
 def_handTERM=signal.getsignal(signal.SIGTERM)
 def signal_thandler(num, stack):
@@ -23,7 +23,7 @@ def signal_ihandler(num, stack):
 	signal.signal(signal.SIGINT, def_handINT)
 	sys.exit(1)
 signal.signal(signal.SIGINT, signal_ihandler)
-
+"""
 
 class SgnLogger(sgnService):
 	def __init__(self):

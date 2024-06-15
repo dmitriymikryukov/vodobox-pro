@@ -2,9 +2,12 @@ import multiprocessing
 from multiprocessing.managers import DictProxy, ListProxy, BaseProxy, SyncManager, AutoProxy
 import threading
 import sys,time,os
+import traceback
 from traceback import format_exc
 
 _registry=dict()
+
+print ("LOADING EXTMAN %a"%os.getpid())
 
 class subscribe:
     subscribers=dict()
@@ -57,7 +60,7 @@ class sgnIPC(object):
             self._events=extract_subscribers(self)
             for x in self._events:
                 _registry[x]=dict(owner=self,fn=self._events[x])
-                #print("REG: %s.%s"%(self.name,x))
+                print("REG%s: %s.%s"%(os.getpid(),self.name,x))
                 #with self.gdict['lock']:
                 if not (x in self.gdict['events']): 
                     self.gdict['events'][x]=1
@@ -71,6 +74,7 @@ class sgnIPC(object):
 
     def __getattr__ (self, name):
         #print("GETATTR %s"%(name))
+        self.container['w_start'].wait()
         if (name in self.gdict['events']):
             v=self.gdict['events'][name]
             if v==1 and (name in self._events):
@@ -107,4 +111,103 @@ class sgnIPC(object):
     #def __getattribute__ (self, name):
     #    print("GETATTRIBUTE %s"%(name))
     #    return self.event_opa
+
+class sgnService(sgnIPC):
+
+    def join(self):
+        while (self.container['status'] in ['ALIVE','STARTED']):
+            time.sleep(0.5)
+
+    def getName(self):
+        return self.name
+
+    def has_subscribers(self,name):
+        try:
+            if not (self.container['status'] in ['ALIVE','STARTED']):
+                return False
+        except:
+            return False
+        else:
+            return True
+
+    def suca_form(self,t,txt):
+        ta=[]
+        mn='[%s]'%os.path.basename(self.getName())+'                '
+        mn=mn[:16]
+        t=t+':               '
+        t=t[:10]
+        for x in txt.split('\n'):
+            if len(x):
+                ta.append('%s %s %s'%(mn,t,x))
+        return '\n'.join(ta)
+
+    def exception(self,e):
+        try:
+            if isinstance(e, Exception):
+                txt=''.join(traceback.format_exception(e,sys.exc_info()[1],sys.exc_info()[2])) 
+            else:
+                txt=e+'\n'
+                txt+=traceback.format_exc()
+            if self.has_subscribers('exception_handler'):
+                self.exception_handler(self.getName(),txt)
+            else:
+                print(self.suca_form('EXCEPTION',"EXEPTION HANDLER has no subscribers:"))
+                print(self.suca_form('EXCEPTION',txt))
+                print("")
+        except:
+            print(self.suca_form('EXCEPTION',traceback.format_exc()))
+            print("")
+
+    def failure(self,e):
+        self.exception(e)
+
+    def debug(self,txt):
+        try:
+            if self.has_subscribers('debug_handler'):
+                self.debug_handler(self.getName(),txt)
+        except:
+            self.exception("DEBUG EXEPTION")
+
+    def info(self,txt):
+        try:
+            if self.has_subscribers('info_handler'):
+                self.info_handler(self.getName(),txt)
+            else:
+                print(self.suca_form('INFO',"INFO HANDLER has no subscribers:"))
+                print(self.suca_form('INFO',txt))
+        except:
+            self.exception("INFO EXEPTION")
+
+    def warning(self,txt):
+        try:
+            if self.has_subscribers('warning_handler'):
+                self.warning_handler(self.getName(),txt)
+            else:
+                print(self.suca_form('WARNING',"WARNING HANDLER has no subscribers:"))
+                print(self.suca_form('WARNING',txt))
+        except:
+            self.exception("WARNING EXEPTION")
+
+    def warn(self,txt):
+        self.warning(txt)
+
+    def error(self,txt):
+        try:
+            if self.has_subscribers('error_handler'):
+                self.error_handler(self.getName(),txt)
+            else:
+                print(self.suca_form('ERROR',"ERROR HANDLER has no subscribers:"))
+                print(self.suca_form('ERROR',txt))
+        except:
+            self.exception("ERROR EXEPTION")
+
+    def critical(self,txt):
+        try:
+            if self.has_subscribers('critical_handler'):
+                self.critical_handler(self.getName(),txt)
+            else:
+                print(self.suca_form('CRITICAL',"CRITICAL HANDLER has no subscribers:"))
+                print(self.suca_form('CRITICAL',txt))
+        except:
+            self.exception("CRITICAL EXEPTION")
 
