@@ -17,7 +17,7 @@ class ifaceMDBipc(sgnService,ifaceMDBonboard,ifaceIPC):
 	@subscribe
 	def mdb_command(self,addr,data):
 		a=self.mdb_command_handler(addr,data)
-		print('RX:%s'%a)
+		print('RX:%s'%(a,))
 		return a
 	"""
 		return None
