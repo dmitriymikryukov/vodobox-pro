@@ -28,7 +28,7 @@ def signal_ihandler(num, stack):
 signal.signal(signal.SIGINT, signal_ihandler)
 """
 
-class SgnMDBcoin(ifaceMDBbill):
+class SgnMDBbill(ifaceMDBbill):
 	def __init__(self):
 		super().__init__()
 		self.pts=False
