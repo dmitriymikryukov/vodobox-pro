@@ -302,6 +302,9 @@ class SgnMDBcoin(ifaceMDBcoin):
 			elif 0x0D==aEvent[0]:
 				self.able['status']='ERROR'
 				self.EventPaymentError(self.able['group'],self.able['name'],aEvent[0],"[Possible Credited Coin Removal] – There has been an attempt to remove a credited coin.")
+			elif 0x00==aEvent[0]:
+				self.able['status']='READY'
+				self.able['is_ready']=True				
 			else:
 				self.error("COIN UNKNOWN STATUS:%02X"%aEvent[0])
 				self.able['status']='ERROR'
