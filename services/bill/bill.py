@@ -81,7 +81,6 @@ class SgnMDBbill(ifaceMDBbill):
 					#	continue
 					self.able['status']='CONNECTED'
 					self['currency']=self.able['setup']['country_code']
-					self.info("Валюта купюр: %s"%self['currency'])
 					while True:
 						x=self.identification(self.able['setup']['level'])
 						if x:
@@ -95,6 +94,15 @@ class SgnMDBbill(ifaceMDBbill):
 						if x or self.able['setup']['level']<2:
 							break
 						time.sleep(0.1)
+
+					self.info("Валюта купюр: %s"%self['currency'])
+					bill_type_credit=self.able['setup']['bill_type_credit']
+					x=[]
+					for nom in bill_type_credit:
+						if nom:
+							x.append(self.internalToCents(nom))
+					self.info("Поддерживаемые номиналы: %s"%(', '.join(x)))
+
 					while True:
 						x=self.tubeStatus()
 						if x:

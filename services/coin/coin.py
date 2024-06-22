@@ -84,7 +84,6 @@ class SgnMDBcoin(ifaceMDBcoin):
 						continue
 					self.able['status']='CONNECTED'
 					self['currency']=self.able['setup']['country_code']
-					self.info("Валюта монет: %s"%self['currency'])
 					while True:
 						x=self.identification()
 						if x:
@@ -98,6 +97,15 @@ class SgnMDBcoin(ifaceMDBcoin):
 						if x:
 							break
 						time.sleep(0.1)
+
+					self.info("Валюта монет: %s"%self['currency'])
+					coin_type_credit=self.able['setup']['coin_type_credit']
+					x=[]
+					for nom in coin_type_credit:
+						if nom:
+							x.append(self.internalToCents(nom))
+					self.info("Поддерживаемые номиналы: %s"%(', '.join(x)))
+
 					while True:
 						x=self.tubeStatus()
 						if x:
