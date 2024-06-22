@@ -100,7 +100,7 @@ class SgnMDBbill(ifaceMDBbill):
 					x=[]
 					for nom in bill_type_credit:
 						if nom:
-							x.append(self.internalToCents(nom))
+							x.append('%s'%self.internalToCents(nom))
 					self.info("Поддерживаемые номиналы: %s"%(', '.join(x)))
 
 					while True:
