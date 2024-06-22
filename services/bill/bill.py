@@ -74,11 +74,11 @@ class SgnMDBbill(ifaceMDBbill):
 							break
 						time.sleep(0.1)
 					self.info("устройство приема купюр сброшено")
-					if self.able['setup']['level']<2:
-						self.able['status']='UNSUPPORTED'
-						self.critical('BILL ACCEPTOR LEVEL UNSUPPORTED LESS THAN 2 %s'%(self.able['setup']))
-						time.sleep(60.0)
-						continue
+					#if self.able['setup']['level']<2:
+					#	self.able['status']='UNSUPPORTED'
+					#	self.critical('BILL ACCEPTOR LEVEL UNSUPPORTED LESS THAN 2 %s'%(self.able['setup']))
+					#	time.sleep(60.0)
+					#	continue
 					self.able['status']='CONNECTED'
 					self['currency']=self.able['setup']['country_code']
 					while True:
@@ -88,10 +88,10 @@ class SgnMDBbill(ifaceMDBbill):
 							break
 						time.sleep(0.1)
 					self.able['status']='CONFIGURING'
-					self.info('Обнаружено устройство приема купюр: %s'%(self.able['ident']))
+					self.info('Обнаружено устройство приема купюр Level: %s: %s'%(self.able['setup']['level'],self.able['ident']))
 					while True:
 						x=self.featuresEnable(self.able['ident']['features'])
-						if x:
+						if x or self.able['setup']['level']<2:
 							break
 						time.sleep(0.1)
 					while True:
