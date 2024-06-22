@@ -81,6 +81,7 @@ class SgnMDBbill(ifaceMDBbill):
 					#	continue
 					self.able['status']='CONNECTED'
 					self['currency']=self.able['setup']['country_code']
+					self.info("Валюта купюр: %s"%self['currency'])
 					while True:
 						x=self.identification(self.able['setup']['level'])
 						if x:

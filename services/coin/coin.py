@@ -84,6 +84,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 						continue
 					self.able['status']='CONNECTED'
 					self['currency']=self.able['setup']['country_code']
+					self.info("Валюта монет: %s"%self['currency'])
 					while True:
 						x=self.identification()
 						if x:
