@@ -104,7 +104,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 					for nom in coin_type_credit:
 						if nom:
 							x.append('%s'%self.internalToCents(nom))
-					self.info("Поддерживаемые номиналы: %s"%(', '.join(x)))
+					self.info("Поддерживаемые номиналы монет: %s"%(', '.join(x)))
 
 					while True:
 						x=self.tubeStatus()

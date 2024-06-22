@@ -101,7 +101,7 @@ class SgnMDBbill(ifaceMDBbill):
 					for nom in bill_type_credit:
 						if nom:
 							x.append('%s'%self.internalToCents(nom))
-					self.info("Поддерживаемые номиналы: %s"%(', '.join(x)))
+					self.info("Поддерживаемые номиналы купюр: %s"%(', '.join(x)))
 
 					while True:
 						x=self.tubeStatus()
