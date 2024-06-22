@@ -76,7 +76,7 @@ class SgnMDBbill(ifaceMDBbill):
 					self.info("устройство приема купюр сброшено")
 					if self.able['setup']['level']<2:
 						self.able['status']='UNSUPPORTED'
-						self.critical('BILL ACCEPTOR LEVEL UNSUPPORTED LESS THAN 2')
+						self.critical('BILL ACCEPTOR LEVEL UNSUPPORTED LESS THAN 2 %s'%(self.able['setup']))
 						time.sleep(60.0)
 						continue
 					self.able['status']='CONNECTED'
