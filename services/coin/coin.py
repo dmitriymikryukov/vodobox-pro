@@ -91,7 +91,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 							break
 						time.sleep(0.1)
 					self.able['status']='CONFIGURING'
-					self.info('Обнаружено устройство приема монет: %s'%(self.able['ident']))
+					self.info('Обнаружено устройство приема монет Level %s: %s'%(self.able['setup']['level'],self.able['ident']))
 					while True:
 						x=self.featuresEnable(self.able['ident']['features'])
 						if x:
