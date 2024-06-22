@@ -82,7 +82,7 @@ class SgnMDBbill(ifaceMDBbill):
 					self.able['status']='CONNECTED'
 					self['currency']=self.able['setup']['country_code']
 					while True:
-						x=self.identification()
+						x=self.identification(self.able['setup']['level'])
 						if x:
 							self.able['ident']=x
 							break

@@ -50,18 +50,23 @@ class ifaceMDBbill(ifaceBILLipc,ifaceMDBslave,ifacePAYMENTslave):
 			return r
 		return response
 
-	def identification(self):
-		try:
-			response=self.cmd([7,2])
-			if response:
-				return dict(
-                    manufacturer=''.join([chr(x) for x in response[0:3]]),
-                    serial=''.join([chr(x) for x in response[3:15]]),
-                    model=''.join([chr(x) for x in response[15:27]]),
-                    software=(response[27] << 8) | response[28],
-					features=(response[29]<<24)|(response[30]<<16)|(response[31]<<8)|response[32],
-				)
-		except:
+	def identification(self,level=2):
+		if level>1:			
+			try:
+				response=self.cmd([7,2])
+				if response:
+					return dict(
+	                    manufacturer=''.join([chr(x) for x in response[0:3]]),
+	                    serial=''.join([chr(x) for x in response[3:15]]),
+	                    model=''.join([chr(x) for x in response[15:27]]),
+	                    software=(response[27] << 8) | response[28],
+						features=(response[29]<<24)|(response[30]<<16)|(response[31]<<8)|response[32],
+					)
+			except:
+				flt=True
+		else:
+			flt=True
+		if flt:
 			response=self.cmd([7,0])
 			if response:
 				try:
