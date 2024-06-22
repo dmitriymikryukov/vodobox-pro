@@ -292,7 +292,8 @@ class SgnMDBbill(ifaceMDBbill):
 			self.exception('ERROR IN POLL PARSER, EVENT: {e}: {err}',e=aEvent,err=format_exc())
 		return 1
 
-
+	def escrowProcessing(self):
+		pass
 
 try:
 	l=SgnMDBbill()
