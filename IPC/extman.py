@@ -105,7 +105,8 @@ class sgnIPC(object):
                             r=self.gdict['service_container'][x]['ipc'].call(name,*args,**kwargs)
                             resl.append(r)
                         except Exception as e:
-                            print(format_exc(e))
+                            print('%s.%s failed'%(x,name))
+                            raise e
                     return tuple(resl)
             return sucall
         else:
