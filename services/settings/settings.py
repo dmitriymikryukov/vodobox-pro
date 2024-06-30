@@ -31,6 +31,8 @@ class SgnSettings(sgnService):
 	def __init__(self):
 		super().__init__()
 		#self['payment_method']=self.gdict._manager.dict()
+
+	def do_init(self):
 		self['payment_method']=dict(CASH=dict(),CASHLESS=dict())
 		self['mdb']=dict(port='/dev/ttyAMA0')
 		self['currency']='RUR'
@@ -62,6 +64,7 @@ class SgnSettings(sgnService):
 try:
 	l=SgnSettings()
 	l.warning('SGN SETTINGS STARTED')
+	l.do_init()
 	l.join()
 finally:
 	print("FINALLY!")
