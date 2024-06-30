@@ -307,7 +307,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 			elif 0x0B==aEvent[0]:
 				self.able['status']='RESETED'
 				self.able['is_ready']=False				
-				self.warning("[Changer was Reset] - The changer has detected an Reset condition and has returned to its power- on idle condition.")
+				self.warning("JUST RESET")
 			elif 0x0C==aEvent[0]:
 				self.able['status']='ERROR'
 				self.EventPaymentError(self.able['group'],self.able['name'],aEvent[0],"[Coin Jam] - A coin(s) has jammed in the acceptance path.")

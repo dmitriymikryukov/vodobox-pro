@@ -108,6 +108,7 @@ try:
 				break
 			else:
 				time.sleep(0.5)
+				print('%s'%self['accept'])
 	finally:
 		l.EndSession()
 		l.join()
