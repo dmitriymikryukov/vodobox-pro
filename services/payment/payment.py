@@ -117,7 +117,8 @@ class SgnPayment(sgnService):
 					if m['is_ready']:
 						self.ActivateCoin(list(m['fixed_nominals'].keys()) if en else [])
 					else:
-						self.error('Устройство приема монет не готово')						
+						self.error('Устройство приема монет не готово')
+						self.info('%s'%(m,))						
 				else:
 					self.error('Устройство приема наличных %s не поддерживается'%(x,))
 		else:
