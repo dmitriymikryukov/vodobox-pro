@@ -21,7 +21,8 @@ class ifacePAYMENTslave(InterfaceCommon):
 				fixed_nominals=False,
 			)
 
-		
+
+		"""		
 		#print ('PS: %s'%self['payment_method'])
 
 		#with self.lock:
@@ -46,12 +47,9 @@ class ifacePAYMENTslave(InterfaceCommon):
 			raise AlreadyExists('%s-%s payment_method alreary registered, %s'%(group,name,self['payment_method']))
 
 		self.able=self['payment_method'][group][name]
-		
+		"""
 
 	def ps_reg(self):
-
-		return
-
 		group=self.able['group']
 		name=self.able['name']
 		if not (group in self['payment_method'].keys()):
