@@ -88,7 +88,7 @@ def clearPathSymbols(paths, keepers=None):
 			print('UNLOAD module: %s'%key)
 			sys.modules.pop(key)
 
-clearPathSymbols('IPC')
+#clearPathSymbols('IPC')
 
 from IPC.extman import subscribe, sgnService
 

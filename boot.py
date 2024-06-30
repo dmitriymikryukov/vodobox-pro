@@ -2,7 +2,7 @@ import multiprocessing
 
 
 if __name__ == '__main__':
-	multiprocessing.freeze_support()
+	#multiprocessing.freeze_support()
 	
 	import IPC
 	from IPC.multiboot import *
