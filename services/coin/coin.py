@@ -189,7 +189,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 		noms=[]
 		nn=[]
 		for x in nominals:
-			if not (x in self['disabled_nominals']['coin'].keys()):
+			if not (x in self['disabled_nominals']['coin']):
 				nn.append(x)
 				t=getTubeNominal(x)
 				noms.append(t['stack_number'])
