@@ -151,6 +151,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 			self.info('COIN process finished')
 
 	def polling(self):
+		is_r=self.able['is_ready']
 		if not self.pts or (self.pts+1.0)>time.time():
 			x=self.diagnostic()
 			if x:
@@ -161,7 +162,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 					self.exception(e)
 		x=self.poll()
 		if x is True:
-			pass
+			self.able['is_ready']=True
 		elif x:
 			try:
 				_dp=[]
@@ -175,6 +176,8 @@ class SgnMDBcoin(ifaceMDBcoin):
 					self.ppol=_jdp
 			except Exception as e:
 				self.exception(e)
+		if is_r!=self.able['is_ready']:
+			self.info('READY %s->%s'%(is_r,self.able['is_ready']))
 		_jx=json.dumps(self.enabled_nominals)
 		_jd=json.dumps(list(self['disabled_nominals']['coin']))
 		if not self.penabled_nominals or self.penabled_nominals!=_jx or not self.pdisabled_nominals or self.pdisabled_nominals!=_jd:
@@ -313,7 +316,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 				self.EventPaymentError(self.able['group'],self.able['name'],aEvent[0],"[Possible Credited Coin Removal] – There has been an attempt to remove a credited coin.")
 			elif 0x00==aEvent[0]:
 				self.able['status']='READY'
-				self.able['is_ready']=True				
+				self.able['is_ready']=True
 			else:
 				self.error("COIN UNKNOWN STATUS:%02X"%aEvent[0])
 				self.able['status']='ERROR'
