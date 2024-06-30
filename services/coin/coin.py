@@ -317,6 +317,8 @@ class SgnMDBcoin(ifaceMDBcoin):
 			elif 0x00==aEvent[0]:
 				self.able['status']='READY'
 				self.able['is_ready']=True
+				self['accept']['coin']=True
+				self['dispense']['coin']=True
 			else:
 				self.error("COIN UNKNOWN STATUS:%02X"%aEvent[0])
 				self.able['status']='ERROR'
