@@ -97,10 +97,13 @@ try:
 	#os.chdir('./guiservice')
 	#run_gui(l)
 	
+	print("DEAC")
 	l.info('Deactivating')
 	l.DeactivateAllPayments()
+	print("SESS")
 	l.info('session')
 	l.StartSession('CASH')
+	print("LOOP")
 	l.info('loop')
 	try:
 		#put your code here
