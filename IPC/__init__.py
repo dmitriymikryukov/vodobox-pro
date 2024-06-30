@@ -77,9 +77,13 @@ def clearPathSymbols(paths, keepers=None):
 		except AttributeError:
 			continue
 
-		packPath = os.path.normcase(os.path.normpath(packPath))
+		try:
+			packPath = os.path.normcase(os.path.normpath(packPath))
 
-		isEnvPackage = any(packPath.startswith(p) for p in paths)
+			isEnvPackage = any(packPath.startswith(p) for p in paths)
+		except:
+			isEnvPackage = False
+
 		if isEnvPackage:
 			print('UNLOAD module: %s'%key)
 			sys.modules.pop(key)
