@@ -111,6 +111,7 @@ try:
 			while True:
 				print("aaa")
 				if l.can_accept_cash():				
+					print("act")
 					l.ActivateCash()
 					time.sleep(60)
 					break
@@ -118,7 +119,7 @@ try:
 					time.sleep(0.5)
 					print('%s'%self['accept'])
 		except Exception as e:
-			self.exception(e)
+			l.exception(e)
 	finally:
 		l.EndSession()
 		l.join()
