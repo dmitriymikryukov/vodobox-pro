@@ -190,9 +190,10 @@ class SgnMDBcoin(ifaceMDBcoin):
 		nn=[]
 		for x in nominals:
 			if not (x in self['disabled_nominals']['coin']):
-				nn.append(x)
 				t=self.getTubeNominal(x)
-				noms.append(t['stack_number'])
+				if t:
+					nn.append(x)
+					noms.append(t['stack_number'])
 		self.able['setup']['enabled_nominals']=nn
 		return self.cmdEnableNominals(noms)
 
@@ -201,6 +202,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 		for nom in self.able['setup']['fixed_nominals'].keys():
 			if self.able['setup']['fixed_nominals'][nom]['stack_number']==n:
 				return self.able['setup']['fixed_nominals'][nom]
+		self.error('NOMINAL %s is not found in %s'%(n,self.able['setup']['fixed_nominals']))
 		return False
 
 	def dispenseAmount(self):
