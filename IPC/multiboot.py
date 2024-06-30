@@ -10,6 +10,7 @@ import threading
 _lsi=ListProxy.__setitem__
 _dsi=DictProxy.__setitem__
 
+_manager=None
 
 def set_proc_name(newname):
     try:
@@ -53,12 +54,12 @@ def dict__repr__(self):
 def list__setitem__(self,k,v):
         if isinstance(v,dict):
             _v=v
-            v=self._manager.dict()
+            v=_manager.dict()
             for x in _v:
                 v[x]=_v[x]
         elif isinstance(v,list):
             _v=v
-            v=self._manager.list()
+            v=_manager.list()
             for x in _v:
                 v.append(x)
         return _lsi(self,k,v)
@@ -66,12 +67,12 @@ def list__setitem__(self,k,v):
 def dict__setitem__(self,k,v):
         if isinstance(v,dict):
             _v=v
-            v=self._manager.dict()
+            v=_manager.dict()
             for x in _v:
                 v[x]=_v[x]
         elif isinstance(v,list):
             _v=v
-            v=self._manager.list()
+            v=_manager.list()
             for x in _v:
                 v.append(x)
         return _dsi(self,k,v)
@@ -98,6 +99,8 @@ def _xxcall(path,name,gdict):
         print(gdict._manager)
         if not gdict._manager:
             gdict._manager=sgnSyncManager()
+            global _manager
+            _manager=gdict._manager
             gdict._manager.start()
         try:
             x='import %s'%(os.path.basename(path[:-3]))
