@@ -24,9 +24,72 @@
 
 #from .sgnService import sgnService
 
-exec('from IPC.extman import subscribe, sgnService')
+import os,sys
+
+def clearPathSymbols(paths, keepers=None):
+	"""
+	Removes path symbols from the environment.
+
+	This means I can unload my tools from the current process and re-import them
+	rather than dealing with the always finicky reload()
+
+	I use directory paths rather than module names because it gives me more control
+	over what is unloaded
+
+	*Make sure to close any UI's you're clearing before using this function*
+
+	Parameters
+	----------
+	paths : list
+		List of directory paths that will have their modules removed
+	keepers : list, optional
+		List of module names that will not be removed
+	"""
+
+	## TODO ## Possibly emit a signal to close my custom UI's
+	keepers = keepers or []
+	paths = [os.path.normcase(os.path.normpath(p)) for p in paths]
+
+	for key, value in sys.modules.items():
+		if ('IPC' in key) or ('extman' in key):
+			print('%s=%s'%(key,value))
+		protected = False
+
+		# Used by multiprocessing library, don't remove this.
+		if key == '__parents_main__':
+			protected = True
+
+		# Protect submodules of protected packages
+		if key in keepers:
+			protected = True
+
+		ckey = key
+		while not protected and '.' in ckey:
+			ckey = ckey.rsplit('.', 1)[0]
+			if ckey in keepers:
+				protected = True
+
+		if protected:
+			continue
+
+		try:
+			packPath = value.__file__
+		except AttributeError:
+			continue
+
+		packPath = os.path.normcase(os.path.normpath(packPath))
+
+		isEnvPackage = any(packPath.startswith(p) for p in paths)
+		if isEnvPackage:
+			print('UNLOAD module: %s'%key)
+			sys.modules.pop(key)
+
+clearPathSymbols('IPC')
+
+from IPC.extman import subscribe, sgnService
 
 from .Exceptions import *
 
 def cleanup_resources():
 	pass
+
