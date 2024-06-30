@@ -94,7 +94,7 @@ def _xxcall(path,name,gdict):
         container['status']='STARTED'
         extman.ipc_name=name
         extman.ipc_gdict=gdict
-        #print(gdict._manager)
+        print(gdict._manager)
         if not gdict._manager:
             gdict._manager=sgnSyncManager()
             gdict._manager.start()
@@ -134,7 +134,7 @@ class sgnMpShareClass(object):
         t.start()
 
     def set(self, value):
-        print("%s SET %s"%(os.getpid(),self.name))
+        print("%s SET %s"%(self.name,os.getpid()))
         self.var = value
         print("%s Set w_init=True"%self.name)
         self.gdict['service_container'][self.name]['w_init'].set()        
