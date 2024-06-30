@@ -45,19 +45,19 @@ class SgnSettings(sgnService):
 		self['currency']='RUR'
 		self['currency_decimals']=2
 		self['accept']=d(
-			coin=False,
-			bill=False,
-			client_card=False,
-			bank_card=False,
-			sbp=False,
-			qr_reader=False,
+			#coin=False,
+			#bill=False,
+			#client_card=False,
+			#bank_card=False,
+			#sbp=False,
+			#qr_reader=False,
 			)
 		self['dispense']=d(
-			coin=False,
-			bill=False,
-			bank_full=False,
-			bank_partial=False,
-			sbp=False,
+			#coin=False,
+			#bill=False,
+			#bank_full=False,
+			#bank_partial=False,
+			#sbp=False,
 			)
 		self['dispense_amount']=d(
 			coin=0,
