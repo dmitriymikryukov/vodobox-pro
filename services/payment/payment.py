@@ -136,7 +136,10 @@ class SgnPayment(sgnService):
 	@subscribe
 	def DeactivateAllPayments(self):
 		self.warning('Отключение всех видов приема денежных средств')
-		self.DeactivateCash()
+		try:
+			self.DeactivateCash()
+		except Exception as e:
+			print(format_exc(e))
 
 
 try:
