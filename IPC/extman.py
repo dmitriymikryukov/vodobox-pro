@@ -90,12 +90,15 @@ class sgnIPC(object):
             else:
                 def sucall(*args,**kwargs):
                     svc=[]
-                    with self.gdict['lock']:
-                        for x in self.gdict['service_container'].keys():
-                            if name in self.gdict['service_container'][x]['events']:
-                                svc.append(x)
-                                if (len(svc)>=v):
-                                    break
+                    try:
+                        with self.gdict['lock']:
+                            for x in self.gdict['service_container'].keys():
+                                if name in self.gdict['service_container'][x]['events']:
+                                    svc.append(x)
+                                    if (len(svc)>=v):
+                                        break
+                    except Exception as e:
+                        return e
                     resl=[]
                     for x in svc:
                         try:
