@@ -116,7 +116,7 @@ class SgnPayment(sgnService):
 					m=self['payment_method']['CASH'][x]
 					if x in ['COIN']:
 						if m['is_ready']:
-							self.ActivateCoin(list(m['setup']['fixed_nominals']) if en else [])
+							self.ActivateCoin(list(m['setup']['fixed_nominals'].keys()) if en else [])
 							res=True
 						else:
 							self.error('%s Устройство приема монет не готово'%('DISABLING' if not en else'ENABLING'))
