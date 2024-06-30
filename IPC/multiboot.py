@@ -103,11 +103,11 @@ def _xxcall(path,name,gdict):
             x='import %s'%(os.path.basename(path[:-3]))
             print (x)
             #pp=os.path.join(p,os.path.basename(path))
-            print(p)
-            try:
-                x=open(p,'r').read()
-            except:
-                x=open(os.path.join(service_base,os.path.basename(name)+'.py'),'r').read()                
+            #print(p)
+            #try:
+            #    x=open(p,'r').read()
+            #except:
+            #    x=open(os.path.join(service_base,os.path.basename(name)+'.py'),'r').read()                
             exec(x)
             #import testipc
             #tmp=testipc.test()

@@ -24,7 +24,7 @@
 
 #from .sgnService import sgnService
 
-from IPC.extman import subscribe, sgnService
+exec('from IPC.extman import subscribe, sgnService')
 
 from .Exceptions import *
 
