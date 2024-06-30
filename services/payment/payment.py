@@ -109,9 +109,9 @@ class SgnPayment(sgnService):
 
 	def act_deact_cash(self,en):
 		res=False
-		if 'CASH' in self['payment_method']:
+		if 'CASH' in self['payment_method'].keys():
 			self.info('%s устрйств приема наличных'%("Активация" if en else "Деактивация"))
-			for x in self['payment_method']['CASH']:
+			for x in self['payment_method']['CASH'].keys():
 				m=self['payment_method']['CASH'][x]
 				if x in ['COIN']:
 					if m['is_ready']:
