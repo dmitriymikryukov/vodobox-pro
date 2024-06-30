@@ -87,27 +87,18 @@ try:
 	#os.chdir('./guiservice')
 	#run_gui(l)
 	
-	print("DEAC")
-	l.info('Deactivating')
 	l.DeactivateAllPayments()
-	print("SESS")
-	l.info('session')
 	l.StartSession('CASH')
-	print("LOOP")
-	l.info('loop')
 	try:
 		try:
 			#put your code here
 			while True:
-				print("aaa")
 				if l.can_accept_cash():				
-					print("act")
 					l.ActivateCash()
 					time.sleep(60)
 					break
 				else:
 					time.sleep(0.5)
-					print('%s'%l['accept'])
 		except Exception as e:
 			l.exception(e)
 	finally:
