@@ -214,23 +214,27 @@ class sgnMpWorker(multiprocessing.Process):
         self.base_path=os.path.dirname(p)
         with sgnMpReg().manager as manager:
             self._manager=manager
-            with self.gdict['lock']:
-                container=manager.dict({
-                    'name':self.name,
-                    'pid':os.getpid(),
-                    'status':'STARTING',
-                    'main':p,
-                    'basepath':self.base_path,
-                    'lock':manager.RLock(),
-                    'events':manager.dict(),
-                    'w_start':manager.Event(),
-                    'w_init':manager.Event()
-                    })            
-                self.gdict['service_container'][self.name]=container
-                container['ipc']=manager.sgnMpShareClass(self.gdict,self.path,self.name)
-                container['ipc'].set(os.getpid())
-                container['w_start'].wait()                
-                self.w_start.set()
+            try:
+                with self.gdict['lock']:
+                    container=manager.dict({
+                        'name':self.name,
+                        'pid':os.getpid(),
+                        'status':'STARTING',
+                        'main':p,
+                        'basepath':self.base_path,
+                        'lock':manager.RLock(),
+                        'events':manager.dict(),
+                        'w_start':manager.Event(),
+                        'w_init':manager.Event()
+                        })            
+                    self.gdict['service_container'][self.name]=container
+                    container['ipc']=manager.sgnMpShareClass(self.gdict,self.path,self.name)
+                    container['ipc'].set(os.getpid())
+                    container['w_start'].wait()                
+                    self.w_start.set()
+            except:
+                print("PROCESS %s DIED"%(self.name))
+                return
             try:
                 """
                 sys.path.insert(0, self.service_base)
