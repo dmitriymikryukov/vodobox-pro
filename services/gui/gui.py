@@ -123,7 +123,7 @@ try:
 					break
 				else:
 					time.sleep(0.5)
-					print('%s'%self['accept'])
+					print('%s'%l['accept'])
 		except Exception as e:
 			l.exception(e)
 	finally:
