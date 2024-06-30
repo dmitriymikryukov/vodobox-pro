@@ -139,7 +139,7 @@ class SgnPayment(sgnService):
 		try:
 			self.DeactivateCash()
 		except Exception as e:
-			print(format_exc(e))
+			self.exception(e)
 
 
 try:
