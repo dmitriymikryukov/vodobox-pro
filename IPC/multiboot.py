@@ -85,6 +85,7 @@ def _xxcall(path,name,gdict):
     container=gdict['service_container'][name]
     try:
         set_proc_name('sgn:%s'%name)    
+        #root_base=os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),'../..'))
         service_base=os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..'))
         services_dir=os.path.join(service_base,'services')
         p=os.path.abspath(os.path.join(services_dir,path))
@@ -101,6 +102,12 @@ def _xxcall(path,name,gdict):
         try:
             x='import %s'%(os.path.basename(path[:-3]))
             print (x)
+            #pp=os.path.join(p,os.path.basename(path))
+            print(p)
+            try:
+                x=open(p,'r').read()
+            except:
+                x=open(os.path.join(service_base,os.path.basename(name)+'.py'),'r').read()                
             exec(x)
             #import testipc
             #tmp=testipc.test()
