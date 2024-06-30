@@ -108,6 +108,7 @@ try:
 	try:
 		#put your code here
 		while True:
+			print("aaa")
 			if l.can_accept_cash():				
 				l.ActivateCash()
 				time.sleep(60)
