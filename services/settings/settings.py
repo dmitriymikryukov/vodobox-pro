@@ -45,8 +45,8 @@ class SgnSettings(sgnService):
 		self['currency']='RUR'
 		self['currency_decimals']=2
 		self['accept']=d(
-			coin=d(),
-			bill=d(),
+			coin=False,
+			bill=False,
 			client_card=False,
 			bank_card=False,
 			sbp=False,

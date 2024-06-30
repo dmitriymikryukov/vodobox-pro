@@ -152,7 +152,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 
 	def polling(self):
 		is_r=self.able['is_ready']
-		if not self.pts or (self.pts+1.0)>time.time():
+		if not self.pts or (self.pts+1.0)<time.time():
 			x=self.diagnostic()
 			if x:
 				self.pts=time.time()
