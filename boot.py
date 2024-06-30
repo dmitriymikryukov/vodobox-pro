@@ -1,11 +1,8 @@
 import multiprocessing
 
-
-if __name__ == '__main__':
-	#multiprocessing.freeze_support()
-	
+def mprun():	
 	import IPC
-	from IPC.multiboot import *
+	from IPC.multiboot import sgnMpReg,sgnMpWorker
 
 	with sgnMpReg().manager as manager:
 		d = manager.dict()
@@ -21,3 +18,9 @@ if __name__ == '__main__':
 		p.join()
 		p.shutdown()
 
+if __name__ == '__main__':
+	multiprocessing.freeze_support()
+
+	p=multiprocessing.Process(target=mprun)
+	p.start()
+	p.join()
