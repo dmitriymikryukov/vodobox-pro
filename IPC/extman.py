@@ -152,6 +152,9 @@ class sgnService(sgnIPC):
         return '\n'.join(ta)
 
     def exception(self,e):
+        if e is BrokerPipeError:
+            print(self.suca_form('EXCEPTION','BROKEN PIPE!'))            
+            return
         try:
             if isinstance(e, Exception):
                 txt=''.join(traceback.format_exception(e,sys.exc_info()[1],sys.exc_info()[2])) 
