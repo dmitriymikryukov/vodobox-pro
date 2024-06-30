@@ -33,11 +33,12 @@ class SgnSettings(sgnService):
 		#self['payment_method']=self.gdict._manager.dict()
 
 	def do_init(self):
-		self['payment_method']=dict(CASH=dict(),CASHLESS=dict())
-		self['mdb']=dict(port='/dev/ttyAMA0')
+		d=self.gdict._manager.dict
+		self['payment_method']=d(CASH=d(),CASHLESS=d())
+		self['mdb']=d(port='/dev/ttyAMA0')
 		self['currency']='RUR'
 		self['currency_decimals']=2
-		self['accept']=dict(
+		self['accept']=d(
 			coin=False,
 			bill=False,
 			client_card=False,
@@ -45,18 +46,18 @@ class SgnSettings(sgnService):
 			sbp=False,
 			qr_reader=False,
 			)
-		self['dispense']=dict(
+		self['dispense']=d(
 			coin=False,
 			bill=False,
 			bank_full=False,
 			bank_partial=False,
 			sbp=False,
 			)
-		self['dispense_amount']=dict(
+		self['dispense_amount']=d(
 			coin=0,
 			bill=0,
 			)
-		self['disabled_nominals']=dict(
+		self['disabled_nominals']=d(
 			coin=[],
 			bill=[]
 			)
