@@ -341,9 +341,10 @@ class SgnMDBcoin(ifaceMDBcoin):
 					self.able['status']='READY'
 					self.EventPaymentReady(self.able['group'],self.able['name'])
 			else:
-				self['dispense']['coin']=False
-				self['accept']['coin']=False
-				self.able['is_ready']=False
+				if 0x0600!=st:
+					self['dispense']['coin']=False
+					self['accept']['coin']=False
+					self.able['is_ready']=False
 				if 0x0100==st:
 					self.info("Changer powering up / initialization")
 				elif 0x0200==st:
