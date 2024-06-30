@@ -197,7 +197,7 @@ class sgnMpWorker(multiprocessing.Process):
 
     def run(self):
         set_proc_name('sgn:%s'%self.name)    
-        #print('Hello %s'%self.name)
+        print('Hello %s'%self.name)
         self.service_base=os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..'))
         self.services_dir=os.path.join(self.service_base,'services')
         p=os.path.abspath(os.path.join(self.services_dir,self.path))
