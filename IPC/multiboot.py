@@ -239,9 +239,14 @@ class sgnMpWorker(multiprocessing.Process):
                 else:
                     container['status']='STARTED'
                 """
-                while not self.gdict['control']['shutdown'] and not self.stopping and (container['status'] in ['STARTED','ALIVE']):
-                    time.sleep(0.5)
-                container['status']='STOPPING'
+                try:
+                    try:
+                        while not self.gdict['control']['shutdown'] and not self.stopping and (container['status'] in ['STARTED','ALIVE']):
+                            time.sleep(0.5)
+                    finally:
+                        container['status']='STOPPING'
+                except:
+                    pass
             finally:
                 try:
                     container['status']='DIED'
