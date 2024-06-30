@@ -134,7 +134,7 @@ class sgnMpShareClass(object):
         t.start()
 
     def set(self, value):
-        #print("SET %s"%os.getpid())
+        print("SET %s"%os.getpid())
         self.var = value
         self.gdict['service_container'][self.name]['w_init'].set()        
 
