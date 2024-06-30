@@ -39,18 +39,24 @@ class SgnGUI(sgnService):
 
 	def can_accept_coins(self):
 		r=False
-		for x in self['accept']['coin'].keys():
-			if (self['accept']['coin'][x]['is_ready']):
-				r=True
-				break
+		try:
+			for x in self['accept']['coin'].keys():
+				if (self['accept']['coin'][x]['is_ready']):
+					r=True
+					break
+		except:
+			pass
 		return r
 
 	def can_accept_bills(self):
 		r=False
-		for x in self['accept']['bill'].keys():
-			if (self['accept']['bill'][x]['is_ready']):
-				r=True
-				break
+		try:
+			for x in self['accept']['bill'].keys():
+				if (self['accept']['bill'][x]['is_ready']):
+					r=True
+					break
+		except:
+			pass
 		return r
 
 	def can_dispense_coins(self):
