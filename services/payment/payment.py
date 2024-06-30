@@ -91,7 +91,7 @@ class SgnPayment(sgnService):
 	def ActivateCoin(self,nominals):
 		res=False
 		if len(nominals)>0:
-			if 'COIN' in self['payment_method']['CASH']:
+			if 'COIN' in self['payment_method']['CASH'].keys():
 				m=self['payment_method']['CASH']['COIN']
 				if m['is_ready']:
 					self.info('Примимаются монеты номиналом %s'%(nominals,))
@@ -109,21 +109,26 @@ class SgnPayment(sgnService):
 
 	def act_deact_cash(self,en):
 		res=False
-		if 'CASH' in self['payment_method'].keys():
-			self.info('%s устрйств приема наличных'%("Активация" if en else "Деактивация"))
-			for x in self['payment_method']['CASH'].keys():
-				m=self['payment_method']['CASH'][x]
-				if x in ['COIN']:
-					if m['is_ready']:
-						self.ActivateCoin(list(m['fixed_nominals'].items()) if en else [])
+		try:
+			if 'CASH' in self['payment_method'].keys():
+				self.info('%s устрйств приема наличных'%("Активация" if en else "Деактивация"))
+				for x in self['payment_method']['CASH'].keys():
+					m=self['payment_method']['CASH'][x]
+					if x in ['COIN']:
+						if m['is_ready']:
+							self.ActivateCoin(list(m['fixed_nominals'].items()) if en else [])
+							res=True
+						else:
+							self.error('%s Устройство приема монет не готово'%('DISABLING' if not en else'ENABLING'))
+							self.info('%s'%(m,))						
 					else:
-						self.error('%s Устройство приема монет не готово'%('DISABLING' if not en else'ENABLING'))
-						self.info('%s'%(m,))						
-				else:
-					self.error('%s Устройство приема наличных %s не поддерживается'%(('DISABLING' if not en else 'ENABLING'),x,))
-		else:
-			if en:
-				self.error('Невозможно активировать устройства приема наличных - нет устройств')
+						self.error('%s Устройство приема наличных %s не поддерживается'%(('DISABLING' if not en else 'ENABLING'),x,))
+			else:
+				if en:
+					self.error('Невозможно активировать устройства приема наличных - нет устройств')
+		except Exception as e:
+			self.exception(e)
+			res=False
 		return res
 
 	@subscribe
