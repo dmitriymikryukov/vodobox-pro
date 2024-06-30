@@ -56,9 +56,9 @@ class sgnIPC(object):
         pass
 
     def _doSubscribe(self):
-        print('Waiting init...')
+        print('%s Waiting init...'%self.name)
         self.container['w_init'].wait()        
-        print('Init wait done')
+        print('%a Init wait done'%self.name)
         try:
             global _registry
             #print(self.__class__.__name__)
