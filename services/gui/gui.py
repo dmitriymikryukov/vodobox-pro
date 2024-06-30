@@ -106,16 +106,19 @@ try:
 	print("LOOP")
 	l.info('loop')
 	try:
-		#put your code here
-		while True:
-			print("aaa")
-			if l.can_accept_cash():				
-				l.ActivateCash()
-				time.sleep(60)
-				break
-			else:
-				time.sleep(0.5)
-				print('%s'%self['accept'])
+		try:
+			#put your code here
+			while True:
+				print("aaa")
+				if l.can_accept_cash():				
+					l.ActivateCash()
+					time.sleep(60)
+					break
+				else:
+					time.sleep(0.5)
+					print('%s'%self['accept'])
+		except Exception as e:
+			self.exception(e)
 	finally:
 		l.EndSession()
 		l.join()
