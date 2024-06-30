@@ -120,7 +120,7 @@ class SgnPayment(sgnService):
 						self.error('%s Устройство приема монет не готово'%('DISABLING' if not en else'ENABLING'))
 						self.info('%s'%(m,))						
 				else:
-					self.error('%s Устройство приема наличных %s не поддерживается'%(%('DISABLING' if not en else 'ENABLING'),x,))
+					self.error('%s Устройство приема наличных %s не поддерживается'%(('DISABLING' if not en else 'ENABLING'),x,))
 		else:
 			if en:
 				self.error('Невозможно активировать устройства приема наличных - нет устройств')
