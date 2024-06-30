@@ -50,7 +50,7 @@ class ifacePAYMENTslave(InterfaceCommon):
 		"""
 
 	def ps_reg(self):
-		return
+		#return
 		#self._manager=self.gdict._manager
 		group=self.able['group']
 		name=self.able['name']
