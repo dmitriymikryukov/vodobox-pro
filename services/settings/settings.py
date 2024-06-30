@@ -30,7 +30,8 @@ signal.signal(signal.SIGINT, signal_ihandler)
 class SgnSettings(sgnService):
 	def __init__(self):
 		super().__init__()
-		self['payment_method']=self.gdict._manager.dict()
+		#self['payment_method']=self.gdict._manager.dict()
+		self['payment_method']=dict(CASH=dict(),CASHLESS=dict())
 		self['mdb']=dict(port='/dev/ttyAMA0')
 		self['currency']='RUR'
 		self['currency_decimals']=2
