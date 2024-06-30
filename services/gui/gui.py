@@ -97,12 +97,15 @@ try:
 	#os.chdir('./guiservice')
 	#run_gui(l)
 	
+	l.info('Deactivating')
 	l.DeactivateAllPayments()
+	l.info('session')
 	l.StartSession('CASH')
+	l.info('loop')
 	try:
 		#put your code here
 		while True:
-			if l.can_accept_cash():
+			if l.can_accept_cash():				
 				l.ActivateCash()
 				time.sleep(60)
 				break
