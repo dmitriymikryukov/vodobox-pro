@@ -15,12 +15,25 @@ def mprun():
 		p = sgnMpWorker('boot',d,'./bootmgr.py')
 
 		p.start()
-		p.join()
-		p.shutdown()
+		try:
+			try:
+				p.join()
+			finally:
+				try:
+					p.shutdown()
+				except:
+					pass
+		except:
+			pass
 
 if __name__ == '__main__':
 	multiprocessing.freeze_support()
+	mprun()
 
-	p=multiprocessing.Process(target=mprun)
-	p.start()
-	p.join()
+	#p=multiprocessing.Process(target=mprun)
+	#p.start()
+	#try:
+	#	p.join()
+	#finally:
+	#	p.shutdown()
+	#	time.sleep(1.0)

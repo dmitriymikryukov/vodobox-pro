@@ -112,10 +112,12 @@ def _xxcall(path,name,gdict):
             #import testipc
             #tmp=testipc.test()
 
-
-            while not gdict['control']['shutdown'] and (container['status'] in ['STARTED','ALIVE']):
-                time.sleep(0.5)
-            container['status']='STOPPING'
+            try:
+                while not gdict['control']['shutdown'] and (container['status'] in ['STARTED','ALIVE']):
+                    time.sleep(0.5)
+                container['status']='STOPPING'
+            except:
+                pass
         except Exception as e:
             print(format_exc())
             print(sys.path)
