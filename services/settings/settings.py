@@ -1,7 +1,13 @@
 import sys,os
 sys.path.insert(0, '../..')
 
+from importlib import reload
+
+import IPC
+reload(IPC)
+
 from IPC import *
+
 
 l=None
 
