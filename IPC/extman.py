@@ -167,6 +167,8 @@ class sgnService(sgnIPC):
                 print(self.suca_form('EXCEPTION',"EXEPTION HANDLER has no subscribers:"))
                 print(self.suca_form('EXCEPTION',txt))
                 print("")
+        except BrokenPipeError:
+            print(self.suca_form('EXCEPTION','BROKEN PIPE!'))                        
         except:
             print(self.suca_form('EXCEPTION',traceback.format_exc()))
             print("")
