@@ -129,7 +129,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 							self.able['setup']['enabled_nominals']=[]
 							self.dispenseAmount()
 							break
-						time.sleep(0.1)
+						time.sleep(0.1 if self.able['status']!='READY' else 0.01)
 				except Exception as e:
 					self.exception(e)
 					time.sleep(15.0)
