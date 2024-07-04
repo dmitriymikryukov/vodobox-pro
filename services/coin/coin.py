@@ -3,6 +3,7 @@ sys.path.insert(0, '../..')
 from IPC import *
 
 from interfaces.ipc.iface_mdb_coin import ifaceMDBcoin
+from traceback import format_exc
 
 import time
 import json
@@ -253,7 +254,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 					self.critical('INVALID TUBE NUMBER WHILE ROUTING')
 				else:
 					self.tubeStatusUpdate()
-					t=getTubeNominal(coin_type)
+					t=self.getTubeNominal(coin_type)
 					if 0==route:
 						route_txt="CASH_BOX"
 						ru_txt=u'В ЯЩИК'
