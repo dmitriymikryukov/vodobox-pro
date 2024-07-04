@@ -72,7 +72,7 @@ class SgnSession(sgnService):
 
 	@subscribe
 	def EventMoneyStacked(self,amount,mtype):
-		log.debug('Сессия: Пополение баланса на %s через %s'%(self.nominal_to_text_with_currency(amount),mtype))
+		self.debug('Сессия: Пополение баланса на %s через %s'%(self.nominal_to_text_with_currency(amount),mtype))
 		if mtype in ['CASH']:
 			self['session']['cash_balance']+=amount
 

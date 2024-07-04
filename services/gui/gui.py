@@ -66,7 +66,7 @@ class SgnGUI(sgnService):
 
 	@subscribe
 	def EventMoneyStacked(self,amount,mtype):
-		log.info('Пополение баланса на %s через %s'%(self.nominal_to_text_with_currency(amount),mtype))
+		self.info('Пополение баланса на %s через %s'%(self.nominal_to_text_with_currency(amount),mtype))
 
 	@subscribe
 	def EventPayoutStarted(self,group,name,amount):

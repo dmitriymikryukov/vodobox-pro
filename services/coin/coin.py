@@ -331,7 +331,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 				self.EventPaymentError(self.able['group'],self.able['name'],aEvent[0],"COIN UNKNOWN STATUS:%02X"%aEvent[0])
 
 		except Exception as e:
-			self.exception('ERROR IN POLL PARSER, EVENT: {e}: {err}',e=aEvent,err=format_exc())
+			self.exception('ERROR IN POLL PARSER, EVENT: {e}: {err}',e='%s'%aEvent,err='%s'%format_exc())
 		return 1
 
 	def diagEvent(self,response):
