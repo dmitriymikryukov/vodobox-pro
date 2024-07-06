@@ -236,7 +236,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 				for nom in self.able['setup']['fixed_nominals'].keys():
 					t=self.able['setup']['fixed_nominals'][nom]
 					t['is_stack_full']=True if x['tube_full_msk']&(1<<t['stack_number']) else False
-					t['stack_nominal_count']=x['coin_count'][i]
+					t['stack_nominal_count']=x['coin_count'][t['stack_number']]
 				break
 		return self.dispenseAmount()
 
