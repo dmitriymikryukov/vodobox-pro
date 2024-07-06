@@ -47,6 +47,11 @@ class ifaceMDB(ifaceSERIAL):
 			else:
 				try:
 					res=bytes.fromhex(self.buf[1:].decode())
+					if len(res)==1:
+						if res[0]==0:
+							res=True
+						elif res[0]=255:
+							res=False
 				except Exception as e:
 					self.exception(e) 
 					res=None
