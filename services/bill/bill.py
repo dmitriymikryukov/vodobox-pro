@@ -279,6 +279,7 @@ class SgnMDBbill(ifaceMDBbill):
 			elif 0x09==aEvent[0]:
 				self.able['status']='DISABLED'
 				self.able['is_ready']=False
+				self['accept']['bill']=True
 			elif 0x0A==aEvent[0]:
 				self.able['status']='ERROR'
 				self.EventPaymentError(self.able['group'],self.able['name'],aEvent[0],"Cannot Escrow! No Bill At Escrow position")
