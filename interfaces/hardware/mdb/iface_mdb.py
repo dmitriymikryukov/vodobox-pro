@@ -50,7 +50,7 @@ class ifaceMDB(ifaceSERIAL):
 					if len(res)==1:
 						if res[0]==0:
 							res=True
-						elif res[0]=255:
+						elif res[0]==255:
 							res=False
 				except Exception as e:
 					self.exception(e) 
