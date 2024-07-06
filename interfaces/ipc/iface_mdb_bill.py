@@ -95,7 +95,11 @@ class ifaceMDBbill(ifaceBILLipc,ifaceMDBslave,ifacePAYMENTslave):
 		pass
 
 	def cmdEnableNominals(self,tubes,escrow):
-		return self.cmd([0x04,(tubes>>8&255),tubes&255,(escrow>>8&255),escrow&255])		
+		for x in tubes:
+			bill_enable_msk|=1<<x
+		for x in wscrow:
+			escrow_enable_msk|=1<<x
+		return self.cmd([0x04,(bill_enable_msk>>8&255),bill_enable_msk&255,(escrow_enable_msk>>8&255),escrow_enable_msk&255])		
 
 	def featuresEnable(self,features):
 		pass

@@ -185,7 +185,7 @@ class SgnMDBbill(ifaceMDBbill):
 					nn.append(x)
 					noms.append(self.able['setup']['fixed_nominals'][x]['stack_number'])
 		self.able['setup']['enabled_nominals']=nn
-		return self.cmdEnableNominals(noms,0)
+		return self.cmdEnableNominals(noms,[])
 
 
 	def getTubeNominal(self,n):
