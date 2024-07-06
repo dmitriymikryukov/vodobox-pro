@@ -223,7 +223,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 		for nom in self.able['setup']['fixed_nominals'].keys():
 			t=self.able['setup']['fixed_nominals'][nom]
 			amo+=int(nom)*t['stack_nominal_count']
-		self['dispense']['coin']=amo*dpc
+		self['dispense_amount']['coin']=amo*dpc
 		return amo
 
 
@@ -414,7 +414,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 
 	def payoutProcessing(self):
 		if self.payout_amount:
-			was_amo=self['dispense']['coin']
+			was_amo=self['dispense_amount']['coin']
 			amount=self.payout_amount
 			self.payout_amount=False
 			if amount and amount>0:
@@ -506,9 +506,9 @@ class SgnMDBcoin(ifaceMDBcoin):
 					xamo=int(xamo*dpc);					
 					self.EventPayoutFinished(self.able['group'],self.able['name'],self.internalToCents(res_amo),self.internalToCents(xamo))
 					self.tubeStatusUpdate()
-					if (self['dispense']['coin']+res_amo)!=was_amo:
-						self.critical('Расхождение количества монет в тубах после выдачи сдачи. Было: %s Стало: %s'%(
-							was_amo,self['dispense']['coin']+res_amo))
+					if (self['dispense_amount']['coin']+res_amo)!=was_amo:
+						self.critical('Расхождение количества монет в тубах после выдачи сдачи. Было: %s Выдано+Стало: %s'%(
+							was_amo,self['dispense_amount']['coin']+res_amo))
 
 
 
