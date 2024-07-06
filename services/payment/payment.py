@@ -89,7 +89,7 @@ class SgnPayment(sgnService):
 
 	@subscribe
 	def EventPayoutProgress(self,group,name,amount):
-		self.debug('%s %s Выдача часть сдачи %s'%(group,name,amount))
+		self.debug('%s %s Выдача часть сдачи %s'%(group,name,self.nominal_to_text(amount)))
 
 	@subscribe
 	def EventPayoutFinished(self,group,name,amount,required):

@@ -483,18 +483,21 @@ class SgnMDBcoin(ifaceMDBcoin):
 									self.critical('Не удалось получить отчет о выдече сдачи, устройство занято')
 								elif v:
 									for i in range(len(v)):
-										t=self.getTubeNominal(i)
-										summ+=self.centsToInternal(t['nominal'])*v[i]
+										if (v[i])>0:
+											t=self.getTubeNominal(i)
+											if t:
+												summ+=self.centsToInternal(t['nominal'])*v[i]
 									xuc=True
 									break
 							if summ!=amo:
 								self.critical("Расхождение в отчете выдачи сдачи %s!=%s"%(amo,summ))
-								amo=summ
+								if xuc:
+									amo=summ
 								xuc=False
 
 							res_amo+=amo
 							amount-=amo
-							
+
 							if not xuc:
 								break
 					except Exception as eee:
