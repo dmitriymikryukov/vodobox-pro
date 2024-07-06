@@ -192,7 +192,7 @@ class SgnMDBbill(ifaceMDBbill):
 		for nom in self.able['setup']['fixed_nominals'].keys():
 			if self.able['setup']['fixed_nominals'][nom]['stack_number']==n:
 				return self.able['setup']['fixed_nominals'][nom]
-		self.error('NOMINAL %s is not found in %s'%(n,self.able['setup']['fixed_nominals']))
+		self.error('NOMINAL in tube %s is not found in %s'%(n,self.able['setup']['fixed_nominals']))
 		return False
 
 
