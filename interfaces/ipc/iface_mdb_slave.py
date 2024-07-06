@@ -30,7 +30,7 @@ class ifaceMDBslave(InterfaceCommon):
 		#print('RES:%s'%(x,))
 		if isinstance(x, tuple) and len(x)>0:
 			z=x[0][1]
-			if (not z is None) and len(z)>1:
+			if (not z is None) and not isinstance(x, bool) and len(z)>1:
 				z=z[:-1]
 			return z
 		else:
