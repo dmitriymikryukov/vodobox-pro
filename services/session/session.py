@@ -43,6 +43,7 @@ class SgnSession(sgnService):
 			liter_balance=0,
 			is_dispensing=False,
 			)
+
 	def nominal_to_text(self,n):
 		#return '%.2f'%n
 		x='0000%s'%n
@@ -75,7 +76,8 @@ class SgnSession(sgnService):
 
 	@subscribe
 	def EventPayoutFinished(self,group,name,amount,required):
-		self.debug('Сессия: %s %s Выдача сдачи завершена, выдано %s из %s'%(group,name,amount,required))
+		self.debug('Сессия: %s %s Выдача сдачи завершена, выдано %s из %s'%(group,name,
+			self.nominal_to_text_with_currency(amount),self.nominal_to_text_with_currency(required)))
 		self['session']['is_dispensing']=False
 		self['session']['cash_balance']-=amount
 
