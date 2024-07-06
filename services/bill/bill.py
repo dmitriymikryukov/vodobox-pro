@@ -152,11 +152,20 @@ class SgnMDBbill(ifaceMDBbill):
 			self.pollEvent([0])
 		elif x:
 			try:
+				el=len(x)
 				_dp=[]
 				while len(x):
-					dl=self.pollEvent(x)
-					if (x[0]&0xE0)==0:
-						_dp+=x[:dl]
+					if el!=1 or x[0]!=9:
+						dl=self.pollEvent(x)
+						if (x[0]&0xE0)==0:
+							_dp+=x[:dl]
+					else:
+						if el==1 or x[0]!=9:
+							dl=self.pollEvent(x)
+							self.able['is_ready']=True
+							self['accept']['bill']=True
+						else:
+							dl=1
 					x=x[dl:]
 				_jdp=json.dumps(_dp)
 				if self.ppol!=_jdp:
@@ -286,8 +295,8 @@ class SgnMDBbill(ifaceMDBbill):
 				self.EventPaymentFault(self.able['group'],self.able['name'],aEvent[0],"Stacker is removed")
 			elif 0x09==aEvent[0]:
 				self.able['status']='DISABLED'
-				self.able['is_ready']=True
-				self['accept']['bill']=True
+				#self.able['is_ready']=True
+				#self['accept']['bill']=True
 			elif 0x0A==aEvent[0]:
 				self.able['status']='ERROR'
 				self.EventPaymentError(self.able['group'],self.able['name'],aEvent[0],"Cannot Escrow! No Bill At Escrow position")
