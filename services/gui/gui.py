@@ -94,7 +94,8 @@ try:
 		try:
 			#put your code here
 			while True:
-				if l.can_accept_cash():				
+				if l.can_accept_cash():
+					time.sleep(5)				
 					l.ActivateCash()
 					time.sleep(60)
 					break

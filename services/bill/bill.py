@@ -182,7 +182,7 @@ class SgnMDBbill(ifaceMDBbill):
 
 
 	def getTubeNominal(self,n):
-		for nom in self.able['setup']['fixed_nominals']:
+		for nom in self.able['setup']['fixed_nominals'].keys():
 			if self.able['setup']['fixed_nominals'][nom]['stack_number']==n:
 				return self.able['setup']['fixed_nominals'][nom]
 		return False
