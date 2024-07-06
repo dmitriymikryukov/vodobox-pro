@@ -233,7 +233,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 		while True:#(ts+3.0)<time.time():
 			x=self.tubeStatus()
 			if x:
-				for nom in self.able['setup']['fixed_nominals']:
+				for nom in self.able['setup']['fixed_nominals'].keys():
 					t=self.able['setup']['fixed_nominals'][nom]
 					t['is_stack_full']=True if x['tube_full_msk']&(1<<t['stack_number']) else False
 					t['stack_nominal_count']=x['coin_count'][i]
