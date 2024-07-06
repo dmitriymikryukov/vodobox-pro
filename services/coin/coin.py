@@ -415,6 +415,8 @@ class SgnMDBcoin(ifaceMDBcoin):
 			amount=self.payout_amount
 			self.payout_amount=False
 			if amount and amount>0:
+				dpc=int(10**self['currency_decimals'])
+				amount=int(amount/dpc)
 				self.debug('Payout request %s'%(amount))
 				#Округление в пользу клиента
 				xamo=self.centsToInternal(amount)
@@ -434,7 +436,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 							ts=time.time()
 							succ=False
 							ft=True
-							while (ts+5.0)<time.time():
+							while (ts+5.0)>time.time():
 								x=self.alternativePayout(amo)
 								if ft:
 									ft=False
@@ -457,7 +459,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 								break
 							ts=time.time()
 							amo=0
-							while (ts+60.0)<time.time():
+							while (ts+60.0)>time.time():
 								v=self.payoutPoll()
 								if v is True:
 									break
@@ -473,7 +475,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 								break
 							ts=time.time()
 							summ=0
-							while (ts+5.0)<time.time():
+							while (ts+5.0)>time.time():
 								v=self.payoutPoll()
 								if (v is True) or (v is False):
 									self.critical('Не удалось получить отчет о выдече сдачи, устройство занято')
@@ -490,7 +492,9 @@ class SgnMDBcoin(ifaceMDBcoin):
 							amount-=amo
 					except Exception as eee:
 						self.exception(eee)
-				finally:					
+				finally:
+					res_amo=int(res_amo*dpc);					
+					xamo=int(xamo*dpc);					
 					self.EventPayoutFinished(self.able['group'],self.able['name'],self.internalToCents(res_amo),self.internalToCents(xamo))
 					self.tubeStatusUpdate()
 					if (self['dispense']['coin']+res_amo)!=was_amo:
