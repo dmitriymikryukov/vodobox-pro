@@ -169,7 +169,8 @@ class SgnMDBcoin(ifaceMDBcoin):
 					self.exception(e)
 		x=self.poll()
 		if x is True:
-			self.able['is_ready']=True
+			#self.able['is_ready']=True
+			self.pollEvent([0])
 		elif x:
 			try:
 				_dp=[]
