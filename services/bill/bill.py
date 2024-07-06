@@ -41,7 +41,7 @@ class SgnMDBbill(ifaceMDBbill):
 
 	def nominal_to_text(self,n):
 		x='0000%s'%n
-		d0=int(x[:self['currency_decimals']])
+		d0=int(x[:-self['currency_decimals']])
 		d1=x[-self['currency_decimals']:]
 		return "%s.%s"%(d0,d1)
 
@@ -148,7 +148,7 @@ class SgnMDBbill(ifaceMDBbill):
 	def polling(self):
 		x=self.poll()
 		if x is True:
-			pass
+			self.pollEvent([0])
 		elif x:
 			try:
 				_dp=[]
@@ -175,7 +175,7 @@ class SgnMDBbill(ifaceMDBbill):
 		for x in nominals:
 			if not (x in self['disabled_nominals']['bill']):
 				nn.append(x)
-				t=getTubeNominal(x)
+				t=self.getTubeNominal(x)
 				noms.append(t['stack_number'])
 		self.able['setup']['enabled_nominals']=nn
 		return self.cmdEnableNominals(noms)
@@ -193,7 +193,7 @@ class SgnMDBbill(ifaceMDBbill):
 		while (ts+3.0)<time.time():
 			x=self.tubeStatus()
 			if x:
-				for nom in self.able['setup']['fixed_nominals']:
+				for nom in self.able['setup']['fixed_nominals'].keys():
 					t=self.able['setup']['fixed_nominals'][nom]
 					t['is_stack_full']=x['is_stack_full']#True if x['tube_full_msk']&(1<<t['stack_number']) else False
 					t['stack_nominal_count']=x['bills_in_stack']
@@ -292,6 +292,7 @@ class SgnMDBbill(ifaceMDBbill):
 			elif 0x00==aEvent[0]:
 				self.able['status']='READY'
 				self.able['is_ready']=True				
+				self['accept']['bill']=True
 			else:
 				self.error("BILL UNKNOWN STATUS:%02X"%aEvent[0])
 				self.able['status']='ERROR'

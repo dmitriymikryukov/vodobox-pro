@@ -89,6 +89,7 @@ class SgnSession(sgnService):
 
 	@subscribe
 	def EndSession(self):
+		self.DeactivateAllPayments()
 		if self['session']['cash_balance']:
 			self['session']['is_dispensing']=True
 			self.PayoutCash(self['session']['cash_balance'])

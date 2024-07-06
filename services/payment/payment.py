@@ -119,6 +119,27 @@ class SgnPayment(sgnService):
 			res=True
 		return res
 
+	@subscribe
+	def ActivateBill(self,nominals):
+		res=False
+		if len(nominals)>0:
+			if 'BILL' in self['payment_method']['CASH'].keys():
+				m=self['payment_method']['CASH']['BILL']
+				if m['is_ready']:
+					self.info('Примимаются купюры номиналом %s'%(nominals,))
+					self.BillActivateNominals(nominals)
+					res=True
+				else:
+					self.error('Устройство приема купюр не готово')
+			else:
+				self.error('Нет устройства приема купюр')
+		else:
+			self.info('Деактивация приема купюр')			
+			self.BillActivateNominals(nominals)
+			res=True
+		return res
+
+
 	def act_deact_cash(self,en):
 		res=False
 		try:
@@ -132,6 +153,13 @@ class SgnPayment(sgnService):
 							res=True
 						else:
 							self.error('%s Устройство приема монет не готово'%('DISABLING' if not en else'ENABLING'))
+							self.info('%s'%(m,))						
+					elif x in ['BILL']:
+						if m['is_ready']:
+							self.ActivateBill(list(m['setup']['fixed_nominals'].keys()) if en else [])
+							res=True
+						else:
+							self.error('%s Устройство приема купюр не готово'%('DISABLING' if not en else'ENABLING'))
 							self.info('%s'%(m,))						
 					else:
 						self.error('%s Устройство приема наличных %s не поддерживается'%(('DISABLING' if not en else 'ENABLING'),x,))
