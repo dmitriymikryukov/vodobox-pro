@@ -413,6 +413,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 			amount=self.payout_amount
 			self.payout_amount=False
 			if amount and amount>0:
+				self.debug('Payout request %s'%(amount))
 				#Округление в пользу клиента
 				xamo=self.centsToInternal(amount)
 				damo=self.internalToCents(amount)
@@ -420,68 +421,72 @@ class SgnMDBcoin(ifaceMDBcoin):
 					xamo+=1
 				amount=xamo
 				res_amo=0
+				self.debug('Payout converted %s'%(amount))
 				try:
 					self.EventPayoutStarted(self.able['group'],self.able['name'],self.internalToCents(amount))
-					while amount>0:
-						amo=amount if amount<255 else 255
-						ts=time.time()
-						succ=False
-						ft=True
-						while (ts+5.0)<time.time():
-							x=self.alternativePayout(amo)
-							if ft:
-								ft=False
-								if x is False:
-									break
-							if not (x is True):
-								x=self.payoutReport()
-								if x is True:
+					try:
+						while amount>0:
+							amo=amount if amount<255 else 255
+							ts=time.time()
+							succ=False
+							ft=True
+							while (ts+5.0)<time.time():
+								x=self.alternativePayout(amo)
+								if ft:
+									ft=False
+									if x is False:
+										break
+								if not (x is True):
+									x=self.payoutReport()
+									if x is True:
+										succ=True
+										break
+								else:
 									succ=True
 									break
-							else:
-								succ=True
+								self.polling()
+								if self.able['status'] in ['BUSY']:
+									succ=True
+									break
+								time.sleep(0.1)
+							if not succ:
 								break
-							self.polling()
-							if self.able['status'] in ['BUSY']:
-								succ=True
+							ts=time.time()
+							amo=0
+							while (ts+60.0)<time.time():
+								v=self.payoutPoll()
+								if v is True:
+									break
+								elif v:
+									po_am=0
+									for i in range(len(v)):
+										t=self.getTubeNominal(i)
+										po_am+=self.centsToInternal(t['nominal'])*v[i]
+									amo+=po_am
+									if po_am>0:
+										self.EventPayoutProgress(self.able['group'],self.able['name'],self.internalToCents(po_am))
+							if amo<=0:
 								break
-							time.sleep(0.1)
-						if not succ:
-							break
-						ts=time.time()
-						amo=0
-						while (ts+60.0)<time.time():
-							v=self.payoutPoll()
-							if v is True:
-								break
-							elif v:
-								po_am=0
-								for i in range(len(v)):
-									t=self.getTubeNominal(i)
-									po_am+=self.centsToInternal(t['nominal'])*v[i]
-								amo+=po_am
-								if po_am>0:
-									self.EventPayoutProgress(self.able['group'],self.able['name'],self.internalToCents(po_am))
-						if amo<=0:
-							break
-						ts=time.time()
-						summ=0
-						while (ts+5.0)<time.time():
-							v=self.payoutPoll()
-							if (v is True) or (v is False):
-								self.critical('Не удалось получить отчет о выдече сдачи, устройство занято')
-							elif v:
-								for i in range(len(v)):
-									t=self.getTubeNominal(i)
-									summ+=self.centsToInternal(t['nominal'])*v[i]
-								break
-						if summ!=amo:
-							self.critical("Расхождение в отчете выдачи сдачи %s!=%s"%(amo,summ))
-							amo=summ
+							ts=time.time()
+							summ=0
+							while (ts+5.0)<time.time():
+								v=self.payoutPoll()
+								if (v is True) or (v is False):
+									self.critical('Не удалось получить отчет о выдече сдачи, устройство занято')
+								elif v:
+									for i in range(len(v)):
+										t=self.getTubeNominal(i)
+										summ+=self.centsToInternal(t['nominal'])*v[i]
+									break
+							if summ!=amo:
+								self.critical("Расхождение в отчете выдачи сдачи %s!=%s"%(amo,summ))
+								amo=summ
 
-						res_amo+=amo
-						amount-=amo
-				finally:
+							res_amo+=amo
+							amount-=amo
+					except Exception as eee:
+						self.exception(eee)
+				finally:					
 					self.EventPayoutFinished(self.able['group'],self.able['name'],self.internalToCents(res_amo),self.internalToCents(xamo))
 					self.tubeStatusUpdate()
 					if (self['dispense']['coin']+res_amo)!=was_amo:
