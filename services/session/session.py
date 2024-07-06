@@ -43,6 +43,15 @@ class SgnSession(sgnService):
 			liter_balance=0,
 			is_dispensing=False,
 			)
+	def nominal_to_text(self,n):
+		#return '%.2f'%n
+		x='0000%s'%n
+		d0=int(x[:-self['currency_decimals']])
+		d1=x[-self['currency_decimals']:]
+		return "%s.%s"%(d0,d1)
+
+	def nominal_to_text_with_currency(self,n):
+		return self.nominal_to_text(n)+self['currency']
 
 	def doExit(self):
 		print("Exiting SESSION,exit")
@@ -72,7 +81,7 @@ class SgnSession(sgnService):
 
 	@subscribe
 	def EventMoneyStacked(self,amount,mtype):
-		self.debug('Сессия: Пополение баланса на %s через %s'%(amount,mtype))
+		self.debug('Сессия: Пополение баланса на %s через %s'%(self.nominal_to_text_with_currency(amount),mtype))
 		if mtype in ['CASH']:
 			self['session']['cash_balance']+=amount
 

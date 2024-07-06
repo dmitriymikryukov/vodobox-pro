@@ -56,11 +56,11 @@ class SgnGUI(sgnService):
 		return self.can_dispense_coins() or self.can_dispense_bills()
 
 	def nominal_to_text(self,n):
-		return '%.2f'%n
-		#x='0000%s'%n
-		#d0=int(x[:self['currency_decimals']])
-		#d1=x[-self['currency_decimals']:]
-		#return "%s.%s"%(d0,d1)
+		#return '%.2f'%n
+		x='0000%s'%n
+		d0=int(x[:-self['currency_decimals']])
+		d1=x[-self['currency_decimals']:]
+		return "%s.%s"%(d0,d1)
 
 	def nominal_to_text_with_currency(self,n):
 		return self.nominal_to_text(n)+self['currency']

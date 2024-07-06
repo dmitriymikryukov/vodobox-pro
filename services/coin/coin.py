@@ -42,7 +42,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 
 	def nominal_to_text(self,n):
 		x='0000%s'%n
-		d0=int(x[:self['currency_decimals']])
+		d0=int(x[:-self['currency_decimals']])
 		d1=x[-self['currency_decimals']:]
 		return "%s.%s"%(d0,d1)
 
@@ -89,6 +89,8 @@ class SgnMDBcoin(ifaceMDBcoin):
 						continue
 					self.able['status']='CONNECTED'
 					self['currency']=self.able['setup']['country_code']
+					self.decimal_places=self.able['setup']['decimal_places']
+					self.scaling_factor=self.able['setup']['scaling_factor']
 					while True:
 						x=self.identification()
 						if x:
@@ -416,7 +418,9 @@ class SgnMDBcoin(ifaceMDBcoin):
 				self.debug('Payout request %s'%(amount))
 				#Округление в пользу клиента
 				xamo=self.centsToInternal(amount)
+				self.debug('xamo request %s'%(xamo))
 				damo=self.internalToCents(amount)
+				self.debug('damo %s'%(damo))
 				if (damo<amount):
 					xamo+=1
 				amount=xamo
