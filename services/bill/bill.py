@@ -146,6 +146,7 @@ class SgnMDBbill(ifaceMDBbill):
 			self.info('BILL process finished')
 
 	def polling(self):
+		is_r=self.able['is_ready']
 		x=self.poll()
 		if x is True:
 			self.pollEvent([0])
@@ -162,7 +163,9 @@ class SgnMDBbill(ifaceMDBbill):
 					self.ppol=_jdp
 			except Exception as e:
 				self.exception(e)
-		_jx=json.dumps(self.enabled_nominals)
+		if is_r!=self.able['is_ready']:
+			self.info('READY %s->%s'%(is_r,self.able['is_ready']))
+		_jx=xjson.dumps(self.enabled_nominals)
 		_jd=json.dumps(list(self['disabled_nominals']['bill']))
 		if not self.penabled_nominals or self.penabled_nominals!=_jx or not self.pdisabled_nominals or self.pdisabled_nominals!=_jd:
 			if self.enableNominals(self.enabled_nominals):
@@ -172,11 +175,15 @@ class SgnMDBbill(ifaceMDBbill):
 	def enableNominals(self,nominals):
 		noms=[]
 		nn=[]
+		print('enableNominals: %s'%(nominals,))
+		print('disabled_nominals: %s'%(self['disabled_nominals']['bill'],))
 		for x in nominals:
-			if not (x in self['disabled_nominals']['bill']):
-				nn.append(x)
-				t=self.getTubeNominal(x)
-				noms.append(t['stack_number'])
+			if not (x in self['disabled_nominals']['coin']):
+				#t=self.getTubeNominal(x)
+				#if t:
+				if x in self.able['setup']['fixed_nominals'].keys():
+					nn.append(x)
+					noms.append(self.able['setup']['fixed_nominals'][x]['stack_number'])
 		self.able['setup']['enabled_nominals']=nn
 		return self.cmdEnableNominals(noms)
 
@@ -185,6 +192,7 @@ class SgnMDBbill(ifaceMDBbill):
 		for nom in self.able['setup']['fixed_nominals'].keys():
 			if self.able['setup']['fixed_nominals'][nom]['stack_number']==n:
 				return self.able['setup']['fixed_nominals'][nom]
+		self.error('NOMINAL %s is not found in %s'%(n,self.able['setup']['fixed_nominals']))
 		return False
 
 
