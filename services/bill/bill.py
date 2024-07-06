@@ -165,7 +165,7 @@ class SgnMDBbill(ifaceMDBbill):
 				self.exception(e)
 		if is_r!=self.able['is_ready']:
 			self.info('READY %s->%s'%(is_r,self.able['is_ready']))
-		_jx=xjson.dumps(self.enabled_nominals)
+		_jx=json.dumps(self.enabled_nominals)
 		_jd=json.dumps(list(self['disabled_nominals']['bill']))
 		if not self.penabled_nominals or self.penabled_nominals!=_jx or not self.pdisabled_nominals or self.pdisabled_nominals!=_jd:
 			if self.enableNominals(self.enabled_nominals):
