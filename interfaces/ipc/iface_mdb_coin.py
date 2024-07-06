@@ -26,11 +26,13 @@ class ifaceMDBcoin(ifaceCOINipc,ifaceMDBslave,ifacePAYMENTslave):
 
 	def centsToInternal(self,v):
 		dp=int(10**self.decimal_places)
-		return int(v/dp/self.scaling_factor)
+		dpc=int(10**self['currency_decimals'])
+		return int(v/dp/self.scaling_factor/dpc)
 
 	def internalToCents(self,v):
 		dp=int(10**self.decimal_places)
-		return int(v*dp*self.scaling_factor)
+		dpc=int(10**self['currency_decimals'])
+		return int(v*dp*self.scaling_factor*dpc)
 
 	def setup(self):
 		response=self.cmd([0x01])
