@@ -175,8 +175,8 @@ class SgnMDBbill(ifaceMDBbill):
 	def enableNominals(self,nominals):
 		noms=[]
 		nn=[]
-		print('enableNominals: %s'%(nominals,))
-		print('disabled_nominals: %s'%(self['disabled_nominals']['bill'],))
+		print('bill enableNominals: %s'%(nominals,))
+		print('bill disabled_nominals: %s'%(self['disabled_nominals']['bill'],))
 		for x in nominals:
 			if not (x in self['disabled_nominals']['coin']):
 				#t=self.getTubeNominal(x)
@@ -185,7 +185,7 @@ class SgnMDBbill(ifaceMDBbill):
 					nn.append(x)
 					noms.append(self.able['setup']['fixed_nominals'][x]['stack_number'])
 		self.able['setup']['enabled_nominals']=nn
-		return self.cmdEnableNominals(noms)
+		return self.cmdEnableNominals(noms,0)
 
 
 	def getTubeNominal(self,n):

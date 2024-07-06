@@ -197,11 +197,11 @@ class SgnMDBcoin(ifaceMDBcoin):
 	def enableNominals(self,nominals):
 		noms=[]
 		nn=[]
-		print('enableNominals: %s'%(nominals,))
-		print('disabled_nominals: %s'%(self['disabled_nominals']['coin'],))
+		print('coin enableNominals: %s'%(nominals,))
+		print('coin disabled_nominals: %s'%(self['disabled_nominals']['coin'],))
 		for x in nominals:
 			if not (x in self['disabled_nominals']['coin']):
-				#t=self.getTubeNominal(x)
+				self.getTubeNominal(x)
 				#if t:
 				if x in self.able['setup']['fixed_nominals'].keys():
 					nn.append(x)

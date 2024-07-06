@@ -94,8 +94,8 @@ class ifaceMDBbill(ifaceBILLipc,ifaceMDBslave,ifacePAYMENTslave):
 	def diagnostic(self):
 		pass
 
-	def cmdEnableNominals(self,tubes):
-		pass
+	def cmdEnableNominals(self,tubes,escrow):
+		return self.cmd([0x04,(tubes>>8&255),tubes&255,(escrow>>8&255),escrow&255])		
 
 	def featuresEnable(self,features):
 		pass
