@@ -414,10 +414,11 @@ class SgnMDBcoin(ifaceMDBcoin):
 
 	def payoutProcessing(self):
 		if self.payout_amount:
-			was_amo=self['dispense_amount']['coin']
 			amount=self.payout_amount
 			self.payout_amount=False
 			if amount and amount>0:
+				was_amo=self['dispense_amount']['coin']
+				self.info('Монет на начало выдачи сдачи: %s'%self.nominal_to_text_with_currency(self['dispense_amount']['coin']))
 				dpc=int(10**self['currency_decimals'])
 				amount=int(amount/dpc)
 				self.debug('Payout request %s'%(amount))
@@ -502,13 +503,14 @@ class SgnMDBcoin(ifaceMDBcoin):
 					except Exception as eee:
 						self.exception(eee)
 				finally:
-					res_amo=int(res_amo*dpc);					
-					xamo=int(xamo*dpc);					
-					self.EventPayoutFinished(self.able['group'],self.able['name'],self.internalToCents(res_amo),self.internalToCents(xamo))
+					res_amo=int(self.internalToCents(res_amo)*dpc);					
+					xamo=int(self.internalToCents(xamo)*dpc);					
+					self.EventPayoutFinished(self.able['group'],self.able['name'],res_amo,xamo)
 					self.tubeStatusUpdate()
+					self.info('Монет на конец выдачи сдачи: %s'%self.nominal_to_text_with_currency(self['dispense_amount']['coin']))
 					if (self['dispense_amount']['coin']+res_amo)!=was_amo:
 						self.critical('Расхождение количества монет в тубах после выдачи сдачи. Было: %s Выдано+Стало: %s'%(
-							was_amo,self['dispense_amount']['coin']+res_amo))
+							self.nominal_to_text(was_amo),self.nominal_to_text(self['dispense_amount']['coin']+res_amo)))
 
 
 
