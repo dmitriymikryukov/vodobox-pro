@@ -271,7 +271,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 						route_txt="REJECT"
 						ru_txt=u'И ВОЗВРАЩЕНА КЛИЕНТУ'
 						self.EventPaymentNominalRejected(self.able['group'],self.able['name'],t['nominal'],route_txt,t['is_bill'],t['is_stack_full'])	
-					self.info('Получена монета номиналом %s %s'%(self.nominal_to_text_with_currency(t['nominal']),ru_txt))
+					self.info('Получена монета номиналом %s %s %s'%(t['nominal'],self['currency'],ru_txt))
 				return 2
 			elif 0x20==(aEvent[0]&0xE0):
 				slugs=aEvent[0]&0x1F
