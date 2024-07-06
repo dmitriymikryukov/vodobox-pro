@@ -49,6 +49,10 @@ class SgnMDBcoin(ifaceMDBcoin):
 	def nominal_to_text_with_currency(self,n):
 		return self.nominal_to_text(n)+self['currency']
 
+	def nominal_to_cents(self,n):
+		x=int(n)*(10**self['currency_decimals'])
+		return round(x,self['currency_decimals'])
+
 	@subscribe
 	def CoinActivateNominals(self,nominals):
 		self.enabled_nominals=nominals
@@ -214,7 +218,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 		for nom in self.able['setup']['fixed_nominals'].keys():
 			t=self.able['setup']['fixed_nominals'][nom]
 			amo+=int(nom)*t['stack_nominal_count']
-		self['dispense']['coin']=amo
+		self['dispense']['coin']=self.nominal_to_cents(amo)
 		return amo
 
 
@@ -258,19 +262,23 @@ class SgnMDBcoin(ifaceMDBcoin):
 					if 0==route:
 						route_txt="CASH_BOX"
 						ru_txt=u'В ЯЩИК'
-						self.EventPaymentNominalStacked(self.able['group'],self.able['name'],t['nominal'],route_txt,t['is_bill'],t['is_stack_full'])	
+						self.EventPaymentNominalStacked(self.able['group'],self.able['name'],
+							self.nominal_to_cents(t['nominal']),route_txt,t['is_bill'],t['is_stack_full'])	
 					elif 1==route:
 						route_txt="TUBES"
 						ru_txt=u'В ТУБЫ'
-						self.EventPaymentNominalStacked(self.able['group'],self.able['name'],t['nominal'],route_txt,t['is_bill'],t['is_stack_full'])	
+						self.EventPaymentNominalStacked(self.able['group'],self.able['name'],
+							self.nominal_to_cents(t['nominal']),route_txt,t['is_bill'],t['is_stack_full'])	
 					elif 2==route:
 						route_txt="NOT_USED"
 						ru_txt=u'НИКУДА'
-						self.EventPaymentNominalStacked(self.able['group'],self.able['name'],t['nominal'],route_txt,t['is_bill'],t['is_stack_full'])	
+						self.EventPaymentNominalStacked(self.able['group'],self.able['name'],
+							self.nominal_to_cents(t['nominal']),route_txt,t['is_bill'],t['is_stack_full'])	
 					else:
 						route_txt="REJECT"
 						ru_txt=u'И ВОЗВРАЩЕНА КЛИЕНТУ'
-						self.EventPaymentNominalRejected(self.able['group'],self.able['name'],t['nominal'],route_txt,t['is_bill'],t['is_stack_full'])	
+						self.EventPaymentNominalRejected(self.able['group'],self.able['name'],
+							self.nominal_to_cents(t['nominal']),route_txt,t['is_bill'],t['is_stack_full'])	
 					self.info('Получена монета номиналом %s %s %s'%(t['nominal'],self['currency'],ru_txt))
 				return 2
 			elif 0x20==(aEvent[0]&0xE0):
@@ -401,7 +409,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 
 	def payoutProcessing(self):
 		if self.payout_amount:
-			was_amo=self['dispense_amount']['coin']
+			was_amo=self['dispense']['coin']
 			amount=self.payout_amount
 			self.payout_amount=False
 			if amount and amount>0:
@@ -476,7 +484,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 				finally:
 					self.EventPayoutFinished(self.able['group'],self.able['name'],self.internalToCents(res_amo),self.internalToCents(xamo))
 					self.tubeStatusUpdate()
-					if (self['dispense_amount']['coin']+res_amo)!=was_amo:
+					if (self['dispense']['coin']+res_amo)!=was_amo:
 						self.critical('Расхождение количества монет в тубах после выдачи сдачи')
 
 
