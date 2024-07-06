@@ -34,18 +34,30 @@ class SgnPayment(sgnService):
 		print("Exiting payment,exit")
 		super().doExit()
 
+	def nominal_to_text(self,n):
+		#return '%.2f'%n
+		x='0000%s'%n
+		d0=int(x[:-self['currency_decimals']])
+		d1=x[-self['currency_decimals']:]
+		return "%s.%s"%(d0,d1)
+
+	def nominal_to_text_with_currency(self,n):
+		return self.nominal_to_text(n)+self['currency']
+
 	@subscribe
 	def EventPaymentManualDispense(self,group,name,nominal,count):
-		self.debug('EventPaymentManualDispense: %s %s %sx%s'%(group,name,nominal,count))
+		self.debug('EventPaymentManualDispense: %s %s %sx%s'%(group,name,self.nominal_to_text(nominal),count))
 
 	@subscribe
 	def EventPaymentNominalStacked(self,group,name,nominal,route_txt,is_bill,is_stack_full):
-		self.debug('EventPaymentNominalStacked: %s %s %s to %s is_bill:%s full:%s'%(group,name,nominal,route_txt,is_bill,is_stack_full))
+		self.debug('EventPaymentNominalStacked: %s %s %s to %s is_bill:%s full:%s'%(group,name,
+			self.nominal_to_text(nominal),route_txt,is_bill,is_stack_full))
 		self.EventMoneyStacked(nominal,group)
 
 	@subscribe
 	def EventPaymentNominalRejected(self,group,name,nominal,route_txt,is_bill,is_stack_full):
-		self.debug('EventPaymentNominalRejected: %s %s %s to %s is_bill:%s full:%s'%(group,name,nominal,route_txt,is_bill,is_stack_full))
+		self.debug('EventPaymentNominalRejected: %s %s %s to %s is_bill:%s full:%s'%(group,name,
+			self.nominal_to_text(nominal),route_txt,is_bill,is_stack_full))
 
 	@subscribe
 	def EventPaymentSlugs(self,group,name,slugs):
@@ -73,7 +85,7 @@ class SgnPayment(sgnService):
 
 	@subscribe
 	def EventPayoutStarted(self,group,name,amount):
-		self.debug('%s %s Начинаем выдачу сдачи %s'%(group,name,amount))
+		self.debug('%s %s Начинаем выдачу сдачи %s'%(group,name,self.nominal_to_text(amount)))
 
 	@subscribe
 	def EventPayoutProgress(self,group,name,amount):
@@ -81,7 +93,7 @@ class SgnPayment(sgnService):
 
 	@subscribe
 	def EventPayoutFinished(self,group,name,amount,required):
-		self.debug('%s %s Выдача сдачи завершена, выдано %s из %s'%(group,name,amount,required))
+		self.debug('%s %s Выдача сдачи завершена, выдано %s из %s'%(group,name,self.nominal_to_text(amount),self.nominal_to_text(required)))
 
 	@subscribe
 	def PayoutCash(self,amount):

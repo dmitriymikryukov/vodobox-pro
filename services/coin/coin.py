@@ -430,7 +430,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 				res_amo=0
 				self.debug('Payout converted %s'%(amount))
 				try:
-					self.EventPayoutStarted(self.able['group'],self.able['name'],self.internalToCents(amount))
+					self.EventPayoutStarted(self.able['group'],self.able['name'],self.internalToCents(amount)*dpc)
 					try:
 						while amount>0:
 							amo=amount if amount<255 else 255
@@ -471,26 +471,32 @@ class SgnMDBcoin(ifaceMDBcoin):
 										po_am+=self.centsToInternal(t['nominal'])*v[i]
 									amo+=po_am
 									if po_am>0:
-										self.EventPayoutProgress(self.able['group'],self.able['name'],self.internalToCents(po_am))
+										self.EventPayoutProgress(self.able['group'],self.able['name'],self.internalToCents(po_am)*dpc)
 							if amo<=0:
 								break
 							ts=time.time()
 							summ=0
+							xuc=False
 							while (ts+5.0)>time.time():
-								v=self.payoutPoll()
+								v=self.payoutReport()
 								if (v is True) or (v is False):
 									self.critical('Не удалось получить отчет о выдече сдачи, устройство занято')
 								elif v:
 									for i in range(len(v)):
 										t=self.getTubeNominal(i)
 										summ+=self.centsToInternal(t['nominal'])*v[i]
+									xuc=True
 									break
 							if summ!=amo:
 								self.critical("Расхождение в отчете выдачи сдачи %s!=%s"%(amo,summ))
 								amo=summ
+								xuc=False
 
 							res_amo+=amo
 							amount-=amo
+							
+							if not xuc:
+								break
 					except Exception as eee:
 						self.exception(eee)
 				finally:
