@@ -267,7 +267,7 @@ class SgnMDBbill(ifaceMDBbill):
 				self.EventPaymentError(self.able['group'],self.able['name'],aEvent[0],"Bill Jammed")
 			elif 0x06==aEvent[0]:
 				self.able['status']='RESETED'
-				self.able['is_ready']=True
+				self.able['is_ready']=False				
 				self.warning("Just Reset")
 			elif 0x07==aEvent[0]:
 				self.able['status']='ERROR'
@@ -278,7 +278,7 @@ class SgnMDBbill(ifaceMDBbill):
 				self.EventPaymentFault(self.able['group'],self.able['name'],aEvent[0],"Stacker is removed")
 			elif 0x09==aEvent[0]:
 				self.able['status']='DISABLED'
-				self.able['is_ready']=False
+				self.able['is_ready']=True
 				self['accept']['bill']=True
 			elif 0x0A==aEvent[0]:
 				self.able['status']='ERROR'
