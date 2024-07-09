@@ -231,27 +231,32 @@ class SgnMDBbill(ifaceMDBbill):
 						self.able['escrow']=False
 						route_txt="CASH_BOX"
 						ru_txt=u'В СТЕКЕР'
-						self.EventPaymentNominalStacked(self.able['group'],self.able['name'],t['nominal'],route_txt,t['is_bill'],t['is_stack_full'])	
+						self.EventPaymentNominalStacked(self.able['group'],self.able['name'],
+							self.nominal_to_cents(t['nominal']),route_txt,t['is_bill'],t['is_stack_full'])	
 					elif 1==route:
 						self.able['escrow']=t
 						route_txt="ESCROW"
 						ru_txt='НА УДЕРЖАНИЕ'
-						self.EventPaymentNominalEscrow(self.able['group'],self.able['name'],t['nominal'],route_txt,t['is_bill'],t['is_stack_full'])	
+						self.EventPaymentNominalEscrow(self.able['group'],self.able['name'],
+							self.nominal_to_cents(t['nominal']),route_txt,t['is_bill'],t['is_stack_full'])	
 					elif 2==route:
 						self.able['escrow']=False
 						route_txt="REJECT"
 						ru_txt='И ВОЗВРАЩЕНА КЛИЕНТУ'
-						self.EventPaymentNominalRejected(self.able['group'],self.able['name'],t['nominal'],route_txt,t['is_bill'],t['is_stack_full'])	
+						self.EventPaymentNominalRejected(self.able['group'],self.able['name'],
+							self.nominal_to_cents(t['nominal']),route_txt,t['is_bill'],t['is_stack_full'])	
 					elif 3==route or 5==route:
 						self.able['escrow']=False
 						route_txt="RECYCLER"
 						ru_txt='В RECYCLER'
-						self.EventPaymentNominalStacked(self.able['group'],self.able['name'],t['nominal'],route_txt,t['is_bill'],t['is_stack_full'])	
+						self.EventPaymentNominalStacked(self.able['group'],self.able['name'],
+							self.nominal_to_cents(t['nominal']),route_txt,t['is_bill'],t['is_stack_full'])	
 					elif 4==route:
 						self.able['escrow']=False
 						route_txt="REJECT"
 						ru_txt='И ВОЗВРАЩЕНА КЛИЕНТУ (ПРИЕМ НОМИНАЛА ЗАПРЕЩЕН)'
-						self.EventPaymentNominalRejected(self.able['group'],self.able['name'],t['nominal'],route_txt,t['is_bill'],t['is_stack_full'])	
+						self.EventPaymentNominalRejected(self.able['group'],self.able['name'],
+							self.nominal_to_cents(t['nominal']),route_txt,t['is_bill'],t['is_stack_full'])	
 					elif 6==route:
 						self.able['escrow']=False
 						route_txt="MANUAL_DISPENSE"
