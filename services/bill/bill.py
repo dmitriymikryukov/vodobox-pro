@@ -48,6 +48,10 @@ class SgnMDBbill(ifaceMDBbill):
 	def nominal_to_text_with_currency(self,n):
 		return self.nominal_to_text(n)+self['currency']
 
+	def nominal_to_cents(self,n):
+		x=int(n)*(10**self['currency_decimals'])
+		return round(x,self['currency_decimals'])
+
 	@subscribe
 	def BillActivateNominals(self,nominals):
 		self.enabled_nominals=nominals
