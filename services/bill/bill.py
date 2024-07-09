@@ -115,7 +115,7 @@ class SgnMDBbill(ifaceMDBbill):
 										nominal=self.internalToCents(nom),
 										can_route_to_stack=x['is_stack_full'],# if coin_tube_routing_msk&(1<<i) else False,
 										is_bill=True,
-										#is_stack_full=True if x['tube_full_msk']&(1<<i) else False,
+										is_stack_full=False,#True if x['tube_full_msk']&(1<<i) else False,
 										#stack_nominal_count=x['coin_count'][i],
 										stack_number=i
 										)
