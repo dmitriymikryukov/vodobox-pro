@@ -4,7 +4,6 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__),'guiservice'))
 
 from IPC import *
 
-from guiservice.main import run_gui
 
 #import signal
 l=None
@@ -86,7 +85,10 @@ class SgnGUI(sgnService):
 try:
 	l=SgnGUI()
 	l.warning('SGN GUI STARTED')
-	os.chdir('./guiservice')
+	os.chdir(os.path.join(os.path.dirname(__file__),'guiservice'))
+
+	from guiservice.main import run_gui
+
 	run_gui(l)
 	
 	l.DeactivateAllPayments()
