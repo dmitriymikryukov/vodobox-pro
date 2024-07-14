@@ -1,5 +1,5 @@
 import multiprocessing
-import time.sys
+import time,sys
 
 def mprun():	
 	import IPC
