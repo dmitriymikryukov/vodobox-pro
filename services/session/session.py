@@ -48,7 +48,7 @@ class SgnSession(sgnService):
 
 	def nominal_to_text(self,n):
 		#return '%.2f'%n
-		if n False:
+		if n is False:
 			return n
 		x='0000%s'%n
 		d0=int(x[:-self['currency_decimals']])
