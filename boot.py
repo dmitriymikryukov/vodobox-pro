@@ -1,4 +1,5 @@
 import multiprocessing
+import time.sys
 
 def mprun():	
 	import IPC
@@ -17,7 +18,15 @@ def mprun():
 		p.start()
 		try:
 			try:
-				p.join()
+				try:
+					p.join()
+				except KeyboardInterrupt:
+					print("CTRL-C")
+					try:
+						d['shutdown']=True
+						time.sleep(1)
+					except:
+						pass
 			finally:
 				try:
 					p.shutdown()
