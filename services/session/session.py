@@ -42,6 +42,7 @@ class SgnSession(sgnService):
 			client_balance=0,
 			liter_balance=0,
 			is_dispensing=False,
+			query_amount=False,
 			)
 
 	def nominal_to_text(self,n):
@@ -80,16 +81,38 @@ class SgnSession(sgnService):
 			self.nominal_to_text_with_currency(amount),self.nominal_to_text_with_currency(required)))
 		self['session']['is_dispensing']=False
 		self['session']['cash_balance']-=amount
+		self.EventBalanceChanged()
 
 	@subscribe
 	def EventMoneyStacked(self,amount,mtype):
 		self.debug('Сессия: Пополение баланса на %s через %s'%(self.nominal_to_text_with_currency(amount),mtype))
 		if mtype in ['CASH']:
 			self['session']['cash_balance']+=amount
+			self['session']['escrow_balance']=0
+			self.EventBalanceChanged()
+
+	@subscribe
+	def EventMoneyRejected(self,amount,mtype):
+		self.debug('Сессия: Возврат номинала %s через %s'%(self.nominal_to_text_with_currency(amount),mtype))
+		if mtype in ['CASH']:
+			self['session']['escrow_balance']=0			
+			self.EventBalanceChanged()
+
+	@subscribe
+	def EventMoneyEscrow(self,amount,mtype):
+		self.debug('Сессия: На удержании %s через %s'%(self.nominal_to_text_with_currency(amount),mtype))
+		if mtype in ['CASH']:
+			if self['session']['escrow_balance']!=0:
+				self.critical('Повторное внесение наличных при удержании')
+			else:
+				self['session']['escrow_balance']+=amount
+			self.EventBalanceChanged()
 
 	@subscribe
 	def EndSession(self):
 		self.DeactivateAllPayments()
+		if self['session']['escrow_balance']!=0:
+			self.RejectEscrow()
 		if self['session']['cash_balance']:
 			self['session']['is_dispensing']=True
 			self.PayoutCash(self['session']['cash_balance'])
@@ -99,6 +122,21 @@ class SgnSession(sgnService):
 				if not self['session']['is_dispensing']:
 					break
 				time.sleep(0.5)
+
+	def _getBalance(self):
+		return self['session']['cash_balance']+self['session']['escrow_balance']
+
+	@subscribe
+	def EventPaymentComplete(self):
+		self.info('Сессия: Оплата завершена. Получено %s из %s'%(self.nominal_to_text_with_currency(self._getBalance()),self.nominal_to_text_with_currency(self['session']['query_amount'])))
+		self.DeactivateAllPayments()
+
+	@subscribe
+	def EventBalanceChanged(self):
+		if self['session']['query_amount']:
+			bal=self._getBalance()
+			if bal>=self['session']['query_amount']:
+				self.EventPaymentComplete(self)
 
 try:
 	l=SgnSession()

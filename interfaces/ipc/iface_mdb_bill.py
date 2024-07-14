@@ -105,3 +105,6 @@ class ifaceMDBbill(ifaceBILLipc,ifaceMDBslave,ifacePAYMENTslave):
 
 	def featuresEnable(self,features):
 		pass
+
+	def cmdEscrow(self,val):
+		return self.cmd([0x05,val])

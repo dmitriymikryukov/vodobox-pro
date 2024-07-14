@@ -90,6 +90,7 @@ try:
 	
 	l.DeactivateAllPayments()
 	l.StartSession('CASH')
+	l['session']['query_amount']=15000
 	try:
 		try:
 			#put your code here

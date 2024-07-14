@@ -58,6 +58,14 @@ class SgnPayment(sgnService):
 	def EventPaymentNominalRejected(self,group,name,nominal,route_txt,is_bill,is_stack_full):
 		self.debug('EventPaymentNominalRejected: %s %s %s to %s is_bill:%s full:%s'%(group,name,
 			self.nominal_to_text(nominal),route_txt,is_bill,is_stack_full))
+		if is_bill and self['session']['escrow_balance']!=0:
+			self.EventMoneyRejected(nominal,group)
+
+	@subscribe
+	def EventPaymentNominalEscrow(self,group,name,nominal,route_txt,is_bill,is_stack_full):
+		self.debug('EventPaymentNominalEscrow: %s %s %s to %s is_bill:%s full:%s'%(group,name,
+			self.nominal_to_text(nominal),route_txt,is_bill,is_stack_full))
+		self.EventMoneyEscrow(nominal,group)
 
 	@subscribe
 	def EventPaymentSlugs(self,group,name,slugs):

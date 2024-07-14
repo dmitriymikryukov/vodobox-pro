@@ -188,6 +188,7 @@ class SgnMDBbill(ifaceMDBbill):
 	def enableNominals(self,nominals):
 		noms=[]
 		nn=[]
+		escr=[]
 		print('bill enableNominals: %s'%(nominals,))
 		print('bill disabled_nominals: %s'%(self['disabled_nominals']['bill'],))
 		for x in nominals:
@@ -196,9 +197,12 @@ class SgnMDBbill(ifaceMDBbill):
 				#if t:
 				if x in self.able['setup']['fixed_nominals'].keys():
 					nn.append(x)
-					noms.append(self.able['setup']['fixed_nominals'][x]['stack_number'])
+					snn=self.able['setup']['fixed_nominals'][x]['stack_number']
+					noms.append(snn)
+					if self['session']['query_amount'] and x>=self['session']['query_amount']:
+						escr.append(snn)
 		self.able['setup']['enabled_nominals']=nn
-		return self.cmdEnableNominals(noms,[])
+		return self.cmdEnableNominals(noms,escr)
 
 
 	def getTubeNominal(self,n):
@@ -331,6 +335,19 @@ class SgnMDBbill(ifaceMDBbill):
 
 	def escrowProcessing(self):
 		pass
+
+	@subscribe
+	def EventBalanceChanged(self):
+		if self.enableNominals and len(self.enableNominals)>0:
+			self.penabled_nominals='xyu'
+
+	@subscribe
+	def RejectEscrow(self):
+		self.cmdEscrow(0)
+
+	@subscribe
+	def AcceptEscrow(self):
+		self.cmdEscrow(1)
 
 try:
 	l=SgnMDBbill()
