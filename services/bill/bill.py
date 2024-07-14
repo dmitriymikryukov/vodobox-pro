@@ -204,6 +204,7 @@ class SgnMDBbill(ifaceMDBbill):
 					if self['session']['query_amount'] and x>=self['session']['query_amount']:
 						escr.append(snn)
 		self.able['setup']['enabled_nominals']=nn
+		print('bill escrowNominals: %s'%(escr,))
 		return self.cmdEnableNominals(noms,escr)
 
 
@@ -275,7 +276,7 @@ class SgnMDBbill(ifaceMDBbill):
 						self.able['escrow']=False
 						route_txt="CASH_BOX"
 						ru_txt='RECYCLER->STACKER'
-					self.info('Получена купюра номиналом %s %s'%(self.nominal_to_text_with_currency(t['nominal']),ru_txt))
+					self.info('Получена купюра номиналом %s %s'%(self.nominal_to_cents(t['nominal']),ru_txt))
 				return 1
 			elif 0x40==(aEvent[0]&0xE0):
 				self.EventPaymentSlugs(self.able['group'],self.able['name'],aEvent[0]&0x1F)

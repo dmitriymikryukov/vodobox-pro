@@ -43,6 +43,7 @@ class SgnSession(sgnService):
 			liter_balance=0,
 			is_dispensing=False,
 			query_amount=False,
+			complete=False,
 			)
 
 	def nominal_to_text(self,n):
@@ -110,6 +111,8 @@ class SgnSession(sgnService):
 
 	@subscribe
 	def EndSession(self):
+		self['session']['query_amount']=False
+		self['session']['complete']=True
 		self.DeactivateAllPayments()
 		if self['session']['escrow_balance']!=0:
 			self.RejectEscrow()
@@ -136,7 +139,7 @@ class SgnSession(sgnService):
 		if self['session']['query_amount']:
 			bal=self._getBalance()
 			if bal>=self['session']['query_amount']:
-				self.EventPaymentComplete(self)
+				self.EventPaymentComplete()
 
 try:
 	l=SgnSession()
