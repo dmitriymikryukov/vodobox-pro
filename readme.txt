@@ -195,6 +195,7 @@ app.sgnIPC['payment_method']['CASHLESS'] - безнал
 					time.sleep(60)
 					break
 				else:
+					#задержка чтобы не грузить систему
 					time.sleep(0.5)
 		except Exception as e:
 			l.exception(e)
