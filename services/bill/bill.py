@@ -263,7 +263,7 @@ class SgnMDBbill(ifaceMDBbill):
 					elif 2==route:
 						self.able['escrow']=False
 						route_txt="REJECT"
-						ru_txt='И ВОЗВРАЩЕНА КЛИЕНТУ'
+						ru_txt='ВОЗВРАЩЕНА КЛИЕНТУ'
 						self.EventPaymentNominalRejected(self.able['group'],self.able['name'],
 							self.nominal_to_cents(t['nominal']),route_txt,t['is_bill'],t['is_stack_full'])	
 					elif 3==route or 5==route:
@@ -286,7 +286,10 @@ class SgnMDBbill(ifaceMDBbill):
 						self.able['escrow']=False
 						route_txt="CASH_BOX"
 						ru_txt='RECYCLER->STACKER'
-					self.info('Получена купюра номиналом %s %s'%(t['nominal'],ru_txt))
+					if 2==route and self['session']['escrow_balance']>0:
+						self.info('Купюра номиналом %s %s'%(t['nominal'],ru_txt))
+					else:
+						self.info('Получена купюра номиналом %s %s'%(t['nominal'],ru_txt))
 				return 1
 			elif 0x40==(aEvent[0]&0xE0):
 				self.EventPaymentSlugs(self.able['group'],self.able['name'],aEvent[0]&0x1F)

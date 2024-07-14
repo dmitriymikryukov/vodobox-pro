@@ -11,7 +11,7 @@ class ifaceMDB(ifaceSERIAL):
 	def mdb_send_command_bytes(self,addr,data):
 		self.buf=bytes()		
 		x=b'M'+bytes([addr|data[0]]).hex().upper().encode()+bytes(data[1:]).hex().upper().encode()+b'\n'
-		self.debug('raw tx: %s'%(x,))
+		#self.debug('raw tx: %s'%(x,))
 		try:
 			self.serial_tx(x)
 		except:
@@ -36,7 +36,7 @@ class ifaceMDB(ifaceSERIAL):
 							break
 			self.sp.flushInput()
 
-			self.debug('raw rx:%s'%(self.buf,))
+			#self.debug('raw rx:%s'%(self.buf,))
 
 			if not self.buf or len(self.buf)<1:
 				res=None
