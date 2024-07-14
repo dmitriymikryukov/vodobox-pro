@@ -105,6 +105,15 @@ def EventPayoutFinished(self,group,name,amount,required) - выдача сдач
 		если они не совпадают то возможно не хватает номиналов или неисправность
 @subscribe
 def EventPaymentComplete(self) - прием денежных средств завершен - только если app.sgnIPC['session']['query_amount'] не False
+@subscribe
+def EventPaymentEscrowLever(self,group,name,message) - нажата кнопка возврата монет
+@subscribe
+def EventPaymentError(self,group,name,code,message) - ошибка устройства
+@subscribe
+def EventPaymentFault(self,group,name,code,message) - неисправность/отказ устройства, не удалось активировать
+@subscribe
+def EventPaymentReady(self,group,name) - устройство готово к приему
+
 
 Состояния устройств приема:
 app.sgnIPC['accept']=dict(
@@ -179,6 +188,8 @@ app.sgnIPC['payment_method']['CASHLESS'] - безнал
 					time.sleep(5)				
 					#Активируем устройства приема
 					l.ActivateCash()
+					#Тут надо подождать EventPaymentReady, EventPaymentFault, EventPaymentError по каждому устройству
+					#А то вдруг ничего не активировалось
 					#Ждем 1 минуту для того чтобы внести наличные
 					#Тут правильнее ждать EventPaymentComplete тк мы задали l['session']['query_amount']
 					time.sleep(60)
