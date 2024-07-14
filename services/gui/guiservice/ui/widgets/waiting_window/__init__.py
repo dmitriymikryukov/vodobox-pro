@@ -8,6 +8,7 @@ from PyQt5.QtGui import QIcon, QPixmap
 from datetime import datetime
 import os
 
+from ui import app
 
 class WaitingWindow(QWidget):
     """
@@ -24,6 +25,8 @@ class WaitingWindow(QWidget):
         super().__init__()
         self.ui = Ui_Form()
         self.ui.setupUi(self)
+
+        app.sgnIPC.info('Ура! запустилось!')
 
         # object instances
         self.service_config = ServiceMenuConfig()

@@ -3,6 +3,7 @@ from ui import app
 import sys
 
 def run_gui(IPC):
+    app.sgnIPC=IPC
     window = MainWindow()
     window.showFullScreen()
 
