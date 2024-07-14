@@ -164,7 +164,7 @@ app.sgnIPC['payment_method']['CASHLESS'] - безнал
 
 Пример сессии:
 	l=app.sgnIPC
-	#отклжчить прием денег
+	#отключить прием денег
 	l.DeactivateAllPayments()
 	#Начать сессию за нал
 	l.StartSession('CASH')
