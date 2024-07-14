@@ -23,6 +23,8 @@ def mprun():
 				except KeyboardInterrupt:
 					print("CTRL-C")
 					try:
+						d.critical('CTRL-C Interrupt')
+						time.sleep(1)
 						d['shutdown']=True
 						time.sleep(1)
 					except:
