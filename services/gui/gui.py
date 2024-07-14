@@ -89,8 +89,21 @@ try:
 
 	from guiservice.main import run_gui
 
-	run_gui(l)
-	
+	try:
+		run_gui(l)
+	except KeyboardInterrupt:
+		l.critical('CTRL-C Interrupt')
+		time.sleep(1)
+		l['sutdown']=True
+	except Exception as e:
+		l.exception(e)
+		time.sleep(1)
+		l['sutdown']=True
+	time.sleep(1)	
+
+"""
+	пример работы:
+
 	l.DeactivateAllPayments()
 	l.StartSession('CASH')
 	l['session']['query_amount']=15000
@@ -110,6 +123,7 @@ try:
 	finally:
 		l.EndSession()
 		l.join()
+"""
 finally:
 	print("FINALLY!")
 	cleanup_resources()

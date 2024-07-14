@@ -1,1 +1,41 @@
-https://docs.google.com/document/d/1R5SE3rZZWGo7P1kZQZB7iU332ZuEI7eKUmBO1fKAQtg/edit?usp=sharing
+app.sgnIPC API:
+
+Объект app.sgnIPC представляет собой разделяемый массив, а также набор разделяемых методов.
+Разделяемые методы обьявляются через @subscribe - подписка на событие с аргументами
+Например:
+файл gui.py:
+class SgnGUI(sgnService):
+	@subscribe
+	def EventMoneyStacked(self,amount,mtype):
+		self.info('Пополение баланса на %s через %s'%(self.nominal_to_text_with_currency(amount),mtype))		
+файл payment.py:
+class SgnPayment(sgnService):
+	...
+	self.EventMoneyStacked(100,'CASH')
+	...
+Описание:
+self.EventMoneyStacked(100,'CASH') - Произведет вызов внутри всех файлов где есть 
+
+Система логирования:
+
+Весь вывод программы, осуществляемый вне данных методов может быть потерян и не сохранен в логах!!!
+
+.debug(text)
+вывод отладочного сообщения (отключаются в продакшен)
+.info(text)
+вывод информационного сообщения (стандартные сообщения в лог)
+.warning(text)
+вывод предупреюдения (ошибка, неисправность или событне не привидящее к невозмоюножти выполтить действие)
+.error(text)
+вывод ошибки (проблема приводящая к невозмоюности выполнения действия)
+.critical(text)
+критическая ошибка (проблема или неисправность привидящая к невозмоюности работы системы или контроль ошибки в программе)
+.exception(text_or_exception_obj)
+Исключение - обычное исключение - аргумент может быть как текстом так и объектом типа Exception
+try:
+	...
+except Exception as e:
+	app.sgnIPC.exception(e)
+
+
+
