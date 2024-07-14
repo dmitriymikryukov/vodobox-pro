@@ -95,16 +95,16 @@ try:
 		print('CTRL-C')
 		l.critical('CTRL-C Interrupt')
 		time.sleep(1)
-		l['sutdown']=True
+		l['shutdown']=True
 	except Exception as e:
 		l.exception(e)
 		time.sleep(1)
-		l['sutdown']=True
+		l['shutdown']=True
 
 finally:
 	print("FINALLY!")
 	try:
-		l['sutdown']=True
+		l['shutdown']=True
 	except:
 		pass
 	time.sleep(1)	
