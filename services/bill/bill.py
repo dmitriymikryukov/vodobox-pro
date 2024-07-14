@@ -4,6 +4,8 @@ from IPC import *
 
 from interfaces.ipc.iface_mdb_bill import ifaceMDBbill
 
+from traceback import format_exc
+
 import time
 import json
 #import signal
@@ -338,7 +340,7 @@ class SgnMDBbill(ifaceMDBbill):
 
 	@subscribe
 	def EventBalanceChanged(self):
-		if self.enableNominals and len(self.enableNominals)>0:
+		if self.enabled_nominals and len(self.enabled_nominals)>0:
 			self.penabled_nominals='xyu'
 
 	@subscribe
