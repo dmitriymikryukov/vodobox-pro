@@ -250,9 +250,10 @@ class SgnMDBbill(ifaceMDBbill):
 						ru_txt='НА УДЕРЖАНИЕ'
 						if self['session']['query_amount']!=0:
 							qelse=(self['session']['query_amount']-self['session']['cash_balance'])
-							if self.nominal_to_cents(x)>=qelse:
+							n2c=self.nominal_to_cents(t['nominal'])
+							if n2c>=qelse:
 								self.EventPaymentNominalEscrow(self.able['group'],self.able['name'],
-									self.nominal_to_cents(t['nominal']),route_txt,t['is_bill'],t['is_stack_full'])
+									n2c,route_txt,t['is_bill'],t['is_stack_full'])
 							elif qelse<=0:
 								self.cmdEscrow(0)								
 							else:

@@ -56,6 +56,8 @@ class SgnSession(sgnService):
 		return "%s.%s"%(d0,d1)
 
 	def nominal_to_text_with_currency(self,n):
+		if n is False:
+			return n
 		return self.nominal_to_text(n)+self['currency']
 
 	def doExit(self):
