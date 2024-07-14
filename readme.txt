@@ -113,6 +113,8 @@ def EventPaymentError(self,group,name,code,message) - ошибка устрой�
 def EventPaymentFault(self,group,name,code,message) - неисправность/отказ устройства, не удалось активировать
 @subscribe
 def EventPaymentReady(self,group,name) - устройство готово к приему
+@subscribe
+def EventMoneyRejected(self,amount,mtype) - возврат номинала
 
 
 Состояния устройств приема:
