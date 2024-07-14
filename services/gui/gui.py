@@ -92,6 +92,7 @@ try:
 	try:
 		run_gui(l)
 	except KeyboardInterrupt:
+		print('CTRL-C')
 		l.critical('CTRL-C Interrupt')
 		time.sleep(1)
 		l['sutdown']=True
