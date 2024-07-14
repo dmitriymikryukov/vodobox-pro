@@ -99,7 +99,15 @@ try:
 		l.exception(e)
 		time.sleep(1)
 		l['sutdown']=True
+
+finally:
+	print("FINALLY!")
+	try:
+		l['sutdown']=True
+	except:
+		pass
 	time.sleep(1)	
+	cleanup_resources()
 
 """
 	пример работы:
@@ -124,6 +132,3 @@ try:
 		l.EndSession()
 		l.join()
 """
-finally:
-	print("FINALLY!")
-	cleanup_resources()
