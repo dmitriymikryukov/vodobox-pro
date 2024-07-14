@@ -19,7 +19,9 @@ def mprun():
 		try:
 			try:
 				try:
-					p.join()
+					#p.join()
+					while True:
+						time.sleep(10)
 				except KeyboardInterrupt:
 					print("CTRL-C")
 					try:
