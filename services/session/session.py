@@ -136,7 +136,7 @@ class SgnSession(sgnService):
 
 	@subscribe
 	def EventBalanceChanged(self):
-		self.info('Сессия: Изменение баланса: %s'%(self.nominal_to_text_with_currency(self._getBalance()),))
+		self.info('Сессия: Изменение баланса: %s из %s'%(self.nominal_to_text_with_currency(self._getBalance()),self.nominal_to_text_with_currency(self['session']['query_amount']),))
 		if self['session']['query_amount']:
 			bal=self._getBalance()
 			if bal>=self['session']['query_amount']:

@@ -194,14 +194,14 @@ class SgnMDBbill(ifaceMDBbill):
 		print('bill enableNominals: %s'%(nominals,))
 		print('bill disabled_nominals: %s'%(self['disabled_nominals']['bill'],))
 		for x in nominals:
-			if not (x in self['disabled_nominals']['coin']):
+			if not (x in self['disabled_nominals']['bill']):
 				#t=self.getTubeNominal(x)
 				#if t:
 				if x in self.able['setup']['fixed_nominals'].keys():
 					nn.append(x)
 					snn=self.able['setup']['fixed_nominals'][x]['stack_number']
 					noms.append(snn)
-					if self['session']['query_amount'] and self.nominal_to_cents(x)>=self['session']['query_amount']:
+					if self['session']['query_amount'] and self.nominal_to_cents(x)>=(self['session']['query_amount']-self['session']['cash_balance']):
 						escr.append(snn)
 		self.able['setup']['enabled_nominals']=nn
 		print('bill escrowNominals: %s'%(escr,))
