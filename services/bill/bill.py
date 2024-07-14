@@ -190,7 +190,7 @@ class SgnMDBbill(ifaceMDBbill):
 	def enableNominals(self,nominals):
 		noms=[]
 		nn=[]
-		escr=[]
+		#escr=[]
 		print('bill enableNominals: %s'%(nominals,))
 		print('bill disabled_nominals: %s'%(self['disabled_nominals']['bill'],))
 		for x in nominals:
@@ -201,11 +201,11 @@ class SgnMDBbill(ifaceMDBbill):
 					nn.append(x)
 					snn=self.able['setup']['fixed_nominals'][x]['stack_number']
 					noms.append(snn)
-					if self['session']['query_amount'] and self.nominal_to_cents(x)>=(self['session']['query_amount']-self['session']['cash_balance']):
-						escr.append(snn)
+					#if self['session']['query_amount'] and self.nominal_to_cents(x)>=(self['session']['query_amount']-self['session']['cash_balance']):
+					#	escr.append(snn)
 		self.able['setup']['enabled_nominals']=nn
-		print('bill escrowNominals: %s'%(escr,))
-		return self.cmdEnableNominals(noms,escr)
+		#print('bill escrowNominals: %s'%(escr,))
+		return self.cmdEnableNominals(noms,noms)
 
 
 	def getTubeNominal(self,n):
@@ -248,8 +248,17 @@ class SgnMDBbill(ifaceMDBbill):
 						self.able['escrow']=t
 						route_txt="ESCROW"
 						ru_txt='НА УДЕРЖАНИЕ'
-						self.EventPaymentNominalEscrow(self.able['group'],self.able['name'],
-							self.nominal_to_cents(t['nominal']),route_txt,t['is_bill'],t['is_stack_full'])	
+						if self['session']['query_amount']!=0 and :
+							qelse=(self['session']['query_amount']-self['session']['cash_balance'])
+							if self.nominal_to_cents(x)>=qelse:
+								self.EventPaymentNominalEscrow(self.able['group'],self.able['name'],
+									self.nominal_to_cents(t['nominal']),route_txt,t['is_bill'],t['is_stack_full'])
+							elif qelse<=0:
+								self.cmdEscrow(0)								
+							else:
+								self.cmdEscrow(1)
+						else:
+							self.cmdEscrow(1)
 					elif 2==route:
 						self.able['escrow']=False
 						route_txt="REJECT"
@@ -339,10 +348,10 @@ class SgnMDBbill(ifaceMDBbill):
 	def escrowProcessing(self):
 		pass
 
-	@subscribe
-	def EventBalanceChanged(self):
-		if self.enabled_nominals and len(self.enabled_nominals)>0:
-			self.penabled_nominals='xyu'
+	#@subscribe
+	#def EventBalanceChanged(self):
+	#	if self.enabled_nominals and len(self.enabled_nominals)>0:
+	#		self.penabled_nominals='xyu'
 
 	@subscribe
 	def RejectEscrow(self):
