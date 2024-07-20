@@ -778,6 +778,29 @@ border-bottom-left-radius: 60px;
                   <number>0</number>
                  </property>
                  <widget class="QWidget" name="choosed_product_empty_page"/>
+                 <widget class="QWidget" name="deposit_cash_page">
+                  <layout class="QVBoxLayout" name="verticalLayout_90">
+                   <item>
+                    <widget class="QLabel" name="deposited_cash_lbl">
+                     <property name="font">
+                      <font>
+                       <family>Rubik</family>
+                       <pointsize>20</pointsize>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">color: white;</string>
+                     </property>
+                     <property name="text">
+                      <string>Внесено</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
                  <widget class="QWidget" name="choosed_water_and_plug_page">
                   <layout class="QVBoxLayout" name="verticalLayout_56">
                    <item>
@@ -2778,7 +2801,7 @@ border-bottom-left-radius: 16px;
                      <string notr="true">background-color: transparent;</string>
                     </property>
                     <property name="currentIndex">
-                     <number>0</number>
+                     <number>7</number>
                     </property>
                     <widget class="QWidget" name="product_cart_page">
                      <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -3351,7 +3374,7 @@ border-bottom-left-radius: 16px;
                             <string notr="true">background-color: transparent;</string>
                            </property>
                            <property name="currentIndex">
-                            <number>1</number>
+                            <number>2</number>
                            </property>
                            <widget class="QWidget" name="qr_payment_page">
                             <layout class="QVBoxLayout" name="verticalLayout_39">

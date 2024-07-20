@@ -295,9 +295,17 @@ class BuyWindow(QWidget):
         ''')
 
     def set_deposited_amount_cash(self):
-        lbl = self.ui.top_payment_summary_price_lbl.text().split()
-        lbl[0] = str(app.sgn_gui['session']['cash_balance'] + app.sgn_gui['session']['escrow_balance'])
-        self.ui.top_payment_summary_price_lbl.setText(' '.join(lbl))
+        if self.ui.choosed_product_stack_widget.currentWidget() != self.ui.deposit_cash_page:
+            self.ui.choosed_product_stack_widget.setCurrentWidget(self.ui.deposit_cash_page)
+
+        if self.ui.product_price_stack_widget.currentWidget() != self.ui.product_price_page:
+            self.ui.product_price_stack_widget.setCurrentWidget(self.ui.product_price_page)
+
+        lbl = self.ui.product_price_lbl.text().split()
+        lbl[0] = str(app.sgn_gui.nominal_to_text(
+            app.sgn_gui['session']['cash_balance'] + app.sgn_gui['session']['escrow_balance']
+        ))
+        self.ui.product_price_lbl.setText(' '.join(lbl))
 
     def collect_the_order(self) -> None:
         """
