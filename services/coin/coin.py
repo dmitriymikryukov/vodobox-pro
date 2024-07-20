@@ -67,6 +67,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 		try:
 			while True:
 				try:
+					self.able['extra_customer_commands']=False
 					self.able['is_enabled']=False
 					self.able['can_be_used']=False
 					self.able['is_ready']=False
@@ -105,6 +106,11 @@ class SgnMDBcoin(ifaceMDBcoin):
 						if x:
 							break
 						time.sleep(0.1)
+        			if (self.able['ident']['manufacturer'] in ['ICT']) and self.able['ident']['software'] >= 1334:
+						self.able['extra_customer_commands']=False
+						self.info('Поддерживаются команды для настройки сдачи')
+					else:
+						self.info('Команды для настройки сдачи не поддерживаются устройством')
 
 					self.info("Валюта монет: %s"%self['currency'])
 					coin_type_credit=self.able['setup']['coin_type_credit']
