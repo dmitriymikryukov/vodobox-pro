@@ -5,6 +5,7 @@ from ui.widgets.buy_window.products import Product, Water, PlugWithWater, Contai
 from ui.widgets.buy_window.graphics import WaterBottleWidget
 from configuration.testing import BuyConfig, UiConfig
 from ui.converted.gen_buy_window import Ui_Form
+from ui import app
 import time
 import os
 

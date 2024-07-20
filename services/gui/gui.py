@@ -5,8 +5,6 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__),'guiservice'))
 from IPC import *
 
 
-#import signal
-l=None
 """
 def_handTERM=signal.getsignal(signal.SIGTERM)
 def signal_thandler(num, stack):
@@ -83,28 +81,28 @@ class SgnGUI(sgnService):
 
 
 try:
-	l=SgnGUI()
-	l.warning('SGN GUI STARTED')
+	sgn_gui = SgnGUI()
+	sgn_gui.warning('SGN GUI STARTED')
 	os.chdir(os.path.join(os.path.dirname(__file__),'guiservice'))
 
 	from guiservice.main import run_gui
 
 	try:
-		run_gui(l)
+		run_gui(sgn_gui)
 	except KeyboardInterrupt:
 		print('CTRL-C')
-		l.critical('CTRL-C Interrupt')
+		sgn_gui.critical('CTRL-C Interrupt')
 		time.sleep(1)
-		l['shutdown']=True
+		sgn_gui['shutdown'] = True
 	except Exception as e:
-		l.exception(e)
+		sgn_gui.exception(e)
 		time.sleep(1)
-		l['shutdown']=True
+		sgn_gui['shutdown'] = True
 
 finally:
 	print("FINALLY!")
 	try:
-		l['shutdown']=True
+		sgn_gui['shutdown'] = True
 	except:
 		pass
 	time.sleep(1)	
@@ -113,23 +111,23 @@ finally:
 """
 	пример работы:
 
-	l.DeactivateAllPayments()
-	l.StartSession('CASH')
-	l['session']['query_amount']=15000
+	sgn_gui.DeactivateAllPayments()
+	sgn_gui.StartSession('CASH')
+	sgn_gui['session']['query_amount']=15000
 	try:
 		try:
 			#put your code here
 			while True:
-				if l.can_accept_cash():
+				if sgn_gui.can_accept_cash():
 					time.sleep(5)				
-					l.ActivateCash()
+					sgn_gui.ActivateCash()
 					time.sleep(60)
 					break
 				else:
 					time.sleep(0.5)
 		except Exception as e:
-			l.exception(e)
+			sgn_gui.exception(e)
 	finally:
-		l.EndSession()
-		l.join()
+		sgn_gui.EndSession()
+		sgn_gui.join()
 """

@@ -7,7 +7,6 @@ from ui.converted.gen_waiting_window import Ui_Form
 from PyQt5.QtGui import QIcon, QPixmap
 from datetime import datetime
 import os
-
 from ui import app
 
 class WaitingWindow(QWidget):
@@ -26,7 +25,7 @@ class WaitingWindow(QWidget):
         self.ui = Ui_Form()
         self.ui.setupUi(self)
 
-        app.sgnIPC.info('Ура! запустилось!')
+        app.sgn_gui.info('Ура! запустилось!')
 
         # object instances
         self.service_config = ServiceMenuConfig()
