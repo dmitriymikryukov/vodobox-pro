@@ -248,16 +248,25 @@ class SgnMDBbill(ifaceMDBbill):
 						self.able['escrow']=t
 						route_txt="ESCROW"
 						ru_txt='НА УДЕРЖАНИЕ'
+						po=self['dispense_amount']['coin']
+						n2c=self.nominal_to_cents(t['nominal'])
 						if self['session']['query_amount']!=0:
 							qelse=(self['session']['query_amount']-self['session']['cash_balance'])
-							n2c=self.nominal_to_cents(t['nominal'])
-							if n2c>=qelse:
+							if n2c>=qelse or qelse<(po/2):
 								self.EventPaymentNominalEscrow(self.able['group'],self.able['name'],
 									n2c,route_txt,t['is_bill'],t['is_stack_full'])
+								if qelse<(po/2):
+									self.EventNominalIsHigh(self.able['group'],self.able['name'],
+										n2c,route_txt,t['is_bill'],po-qelse)									
 							elif qelse<=0:
 								self.cmdEscrow(0)								
 							else:
 								self.cmdEscrow(1)
+						elif n2c>(po/2):
+							self.EventPaymentNominalEscrow(self.able['group'],self.able['name'],
+								n2c,route_txt,t['is_bill'],t['is_stack_full'])
+							self.EventNominalIsHigh(self.able['group'],self.able['name'],
+								n2c,route_txt,t['is_bill'],po-n2c)	
 						else:
 							self.cmdEscrow(1)
 					elif 2==route:

@@ -45,6 +45,7 @@ class SgnSession(sgnService):
 			query_amount=False,
 			complete=False,
 			)
+		self.esc_ack=False
 
 	def nominal_to_text(self,n):
 		#return '%.2f'%n
@@ -95,6 +96,9 @@ class SgnSession(sgnService):
 			self['session']['cash_balance']+=amount
 			self['session']['escrow_balance']=0
 			self.EventBalanceChanged()
+			if self.esc_ack:
+				self.esc_ack=False
+				self.DepositACK()
 
 	@subscribe
 	def EventMoneyRejected(self,amount,mtype):
@@ -102,11 +106,15 @@ class SgnSession(sgnService):
 		if mtype in ['CASH']:
 			self['session']['escrow_balance']=0			
 			self.EventBalanceChanged()
+			if self.esc_ack:
+				self.esc_ack=False
+				self.DepositNCK('REJECTED')			
 
 	@subscribe
 	def EventMoneyEscrow(self,amount,mtype):
 		self.debug('Сессия: На удержании %s через %s'%(self.nominal_to_text_with_currency(amount),mtype))
 		if mtype in ['CASH']:
+			self.esc_ack=False
 			if self['session']['escrow_balance']!=0:
 				self.critical('Повторное внесение наличных при удержании')
 			else:
@@ -115,6 +123,7 @@ class SgnSession(sgnService):
 
 	@subscribe
 	def EndSession(self):
+		self.esc_ack=False
 		self['session']['query_amount']=False
 		self['session']['complete']=True
 		self.DeactivateAllPayments()
@@ -145,6 +154,23 @@ class SgnSession(sgnService):
 			bal=self._getBalance()
 			if bal>=self['session']['query_amount']:
 				self.EventPaymentComplete()
+
+	@subscribe
+	def DepositAmount(self,amount):
+		self.esc_ack=False
+		bal=self._getBalance()
+		if bal<amount:
+			self.DepositNCK('INSUFFICIENT_BALANCE')
+		elif self['session']['escrow_balance']>0 and (bal-self['session']['escrow_balance'])<amount:
+			self.esc_ack=amount
+			self.AcceptEscrow()
+		else:
+			self.DepositACK()
+
+	@subscribe
+	def AcknowlegeAmount(self,amount):
+		self['cash_balance']-=amount
+
 
 try:
 	l=SgnSession()

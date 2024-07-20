@@ -26,7 +26,7 @@ class WaitingWindow(QWidget):
         self.ui = Ui_Form()
         self.ui.setupUi(self)
 
-        app.sgnIPC.info('Ура! запустилось!')
+        app.sgnIPC.info('Ура! запустилось! Охуеть!')
 
         # object instances
         self.service_config = ServiceMenuConfig()
