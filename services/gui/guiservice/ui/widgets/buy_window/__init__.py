@@ -657,8 +657,8 @@ class BuyWindow(QWidget):
         Переключение на меню оплаты наличными или картой лояльности
         """
         app.sgn_gui.StartSession('CASH')
-        logging.info(f'total price {self.TOTAL_PRICE}')
-        app.sgn_gui['session']['query_amount'] = self.TOTAL_PRICE
+        logging.info(f'total price {sum([product.price for product in self._chosen_products])}')
+        app.sgn_gui['session']['query_amount'] = sum([product.price for product in self._chosen_products])
         app.sgn_gui.ActivateCash()
 
         self.set_deposited_amount_cash()
