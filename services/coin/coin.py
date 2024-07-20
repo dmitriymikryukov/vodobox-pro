@@ -153,7 +153,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 					if (self.able['ident']['model'] in ['CCM6-RUR MDB']) and self.able['ident']['software'] >= 1334:
 						self.able['extra_customer_commands']=False
 						self.info('Поддерживаются команды для настройки сдачи')
-						self.readManufacturers()
+						#self.readManufacturers()
 						self.writeManufacturers()
 					else:
 						self.info('Команды для настройки сдачи не поддерживаются устройством')

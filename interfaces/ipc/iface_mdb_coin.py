@@ -115,5 +115,5 @@ class ifaceMDBcoin(ifaceCOINipc,ifaceMDBslave,ifacePAYMENTslave):
 		for z in zz:
 			cc.append(z)
 		self.debug('MANUFACTURER CMD: %s' % cc)
-		self.cmd(cc)
+		return self.cmd(cc)
 
