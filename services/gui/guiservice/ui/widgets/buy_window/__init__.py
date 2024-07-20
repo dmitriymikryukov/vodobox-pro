@@ -297,6 +297,7 @@ class BuyWindow(QWidget):
     def set_deposited_amount_cash(self):
         if self.ui.choosed_product_stack_widget.currentWidget() != self.ui.deposit_cash_page:
             self.ui.choosed_product_stack_widget.setCurrentWidget(self.ui.deposit_cash_page)
+            self.ui.consumer_info_bottom_stack_widget.setCurrentWidget(self.ui.empty_consumer_bottom_page)
 
         if self.ui.product_price_stack_widget.currentWidget() != self.ui.product_price_page:
             self.ui.product_price_stack_widget.setCurrentWidget(self.ui.product_price_page)
