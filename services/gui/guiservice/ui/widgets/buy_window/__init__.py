@@ -1,3 +1,5 @@
+import logging
+
 from PyQt5.QtGui import QPixmap, QFont
 from PyQt5.QtWidgets import QWidget, QButtonGroup, QLabel
 from PyQt5.QtCore import pyqtSignal, QTimer, QThread
@@ -655,6 +657,7 @@ class BuyWindow(QWidget):
         Переключение на меню оплаты наличными или картой лояльности
         """
         app.sgn_gui.StartSession('CASH')
+        logging.info(f'total price {self.TOTAL_PRICE}')
         app.sgn_gui['session']['query_amount'] = self.TOTAL_PRICE
         app.sgn_gui.ActivateCash()
 
