@@ -25,6 +25,16 @@ def signal_ihandler(num, stack):
 signal.signal(signal.SIGINT, signal_ihandler)
 """
 
+try:
+	from systemd import journal
+	journal.send('Hello world')
+	journal.send('Hello, again, world', FIELD2='Greetings!', FIELD3='Guten tag')
+	journal.send('Binary message', BINARY=b'\xde\xad\xbe\xef')
+except:
+	has_journald=False
+else:
+	has_journald=True
+
 class SgnLogger(sgnService):
 	def __init__(self):
 		super().__init__()
@@ -70,7 +80,7 @@ class SgnLogger(sgnService):
 
 try:
 	l=SgnLogger()
-	l.warning('SGN LOGGER STARTED')
+	l.warning('SGN LOGGER STARTED %s'%('with journald' if has_journald else 'without journald'))
 	l.join()
 finally:
 	print("FINALLY!")
