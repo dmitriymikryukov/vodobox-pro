@@ -103,17 +103,17 @@ class ifaceMDBcoin(ifaceCOINipc,ifaceMDBslave,ifacePAYMENTslave):
 	def payoutPoll(self):
 		return self.cmd([0x07,0x04])
 
-    def manufacturer(self, code, xx, yy, zz=[]):
-        cc = [
-            0x07,
-            0xFF,
-            0xF1,
-            code,
-            xx,
-            yy
-        ]
-        for z in zz:
-            cc.append(z)
-        self.debug('MANUFACTURER CMD: %s' % cc)
-        self.cmd(cc)
+	def manufacturer(self, code, xx, yy, zz=[]):
+		cc = [
+			0x07,
+			0xFF,
+			0xF1,
+			code,
+			xx,
+			yy
+		]
+		for z in zz:
+			cc.append(z)
+		self.debug('MANUFACTURER CMD: %s' % cc)
+		self.cmd(cc)
 
