@@ -62,6 +62,50 @@ class SgnMDBcoin(ifaceMDBcoin):
 		self.enabled_nominals=[]
 		self.payout_amount=amount
 
+	def readManufacturers(self):
+		rmd = [
+			dict(code=0x6E, name="mgmt", code3=False),
+			dict(code=0x6B, name="cash_float", yy=[65, 66, 67], code3=True, code3yy=[0], zz=[0, 0, 0, 0, 0, 0]),
+			dict(code=0x74, name="casette_type", code3=True),
+			dict(code=0x7C, name="reserved_coin", code3=False),
+			dict(code=0x87, name="error_report", code3=False),
+			dict(code=0x88, name="payout_method", code3=False),
+			dict(code=0x8F, name="tube_detection", code3=False),
+			dict(code=0x92, name="resend_credit", code3=False)]
+		if self.able['extra_customer_commands']:
+			rmd += [
+				dict(code=0x7F, name="residual_credit", code3=False),
+				dict(code=0xA2, name="set_quantity", code3=True),
+			]
+		for rr in rmd:
+			if ('code3' in rr) and rr['code3']:
+				x=self.manufacturer(rr['code'], 0x03, 0x00 if not ('code3yy' in rr) else rr['code3yy'][0],
+								  zz=rr['zz'] if 'zz' in rr else [])
+			else:
+				x=self.manufacturer(rr['code'], 0x01, 0x00 if not ('yy' in rr) else rr['yy'][0],
+									  zz=rr['zz'] if 'zz' in rr else [])
+			self.debug('manufacturer result: %s'%(x,))
+
+	def writeManufacturers(self):
+		wmd = [
+			# dict(code=0x6E,name="mgmt",code3=False),
+			# dict(code=0x6B,name="cash_float",yy=[65,66,67],code3=True,code3yy=[0],zz=[0,0,0,0,0,0]),
+			# dict(code=0x74,name="casette_type",code3=True),
+			dict(code=0x7C, name="reserved_coin", yy=[0x0F]),
+			dict(code=0x87, name="error_report", yy=[0x01]),
+			dict(code=0x88, name="payout_method", yy=[0x00]),
+			dict(code=0x8F, name="tube_detection", yy=[0x01]),
+			dict(code=0x92, name="resend_credit", yy=[0x01])]
+		if self.able['extra_customer_commands']:
+			wmd += [
+				dict(code=0x7F, name="residual_credit", yy=[0x02]), # настройка транзакции + отправляеться удаленно только для версий прошивки >=3,56 coin
+				# dict(code=0xA2, name="set_quantity", code3=True),
+			]
+		for rr in wmd:
+			x=self.manufacturer(rr['code'], 0x02, rr['yy'][0])
+			self.debug('manufacturer result: %s'%(x,))
+
+
 	def process(self):
 		self.info('COIN process started')
 		try:
@@ -106,9 +150,11 @@ class SgnMDBcoin(ifaceMDBcoin):
 						if x:
 							break
 						time.sleep(0.1)
-					if (self.able['ident']['manufacturer'] in ['ICT']) and self.able['ident']['software'] >= 1334:
+					if (self.able['ident']['model'] in ['CCM6-RUR MDB']) and self.able['ident']['software'] >= 1334:
 						self.able['extra_customer_commands']=False
 						self.info('Поддерживаются команды для настройки сдачи')
+						#self.readManufacturers()
+						self.writeManufacturers()
 					else:
 						self.info('Команды для настройки сдачи не поддерживаются устройством')
 
