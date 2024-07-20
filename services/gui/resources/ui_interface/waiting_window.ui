@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>875</width>
-    <height>600</height>
+    <width>835</width>
+    <height>533</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -97,7 +97,7 @@
          <item>
           <widget class="QFrame" name="frame_17">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -501,7 +501,7 @@ border: 1px solid #B3B3B3;</string>
           <widget class="QFrame" name="frame_6">
            <property name="minimumSize">
             <size>
-             <width>200</width>
+             <width>180</width>
              <height>0</height>
             </size>
            </property>
@@ -1005,7 +1005,7 @@ border-bottom-left-radius: 20px;
            </property>
            <property name="maximumSize">
             <size>
-             <width>500</width>
+             <width>480</width>
              <height>16777215</height>
             </size>
            </property>
@@ -1707,7 +1707,7 @@ QPushButton:checked {
           <widget class="QFrame" name="frame_5">
            <property name="minimumSize">
             <size>
-             <width>200</width>
+             <width>180</width>
              <height>0</height>
             </size>
            </property>
