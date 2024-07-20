@@ -507,7 +507,7 @@ border: 1px solid #B3B3B3;</string>
           <widget class="QFrame" name="frame_6">
            <property name="minimumSize">
             <size>
-             <width>200</width>
+             <width>150</width>
              <height>0</height>
             </size>
            </property>
@@ -1109,12 +1109,6 @@ border-bottom-left-radius: 20px;
                   <size>
                    <width>0</width>
                    <height>110</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>618</width>
-                   <height>150</height>
                   </size>
                  </property>
                  <property name="styleSheet">
@@ -1743,7 +1737,7 @@ QPushButton:checked {
           <widget class="QFrame" name="frame_5">
            <property name="minimumSize">
             <size>
-             <width>200</width>
+             <width>150</width>
              <height>0</height>
             </size>
            </property>

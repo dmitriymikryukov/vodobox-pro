@@ -209,7 +209,7 @@ class Ui_Form(object):
         self.horizontalLayout_3.setSpacing(0)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.frame_6 = QtWidgets.QFrame(self.frame_4)
-        self.frame_6.setMinimumSize(QtCore.QSize(200, 0))
+        self.frame_6.setMinimumSize(QtCore.QSize(150, 0))
         self.frame_6.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_6.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_6.setObjectName("frame_6")
@@ -475,7 +475,6 @@ class Ui_Form(object):
         sizePolicy.setHeightForWidth(self.frame_10.sizePolicy().hasHeightForWidth())
         self.frame_10.setSizePolicy(sizePolicy)
         self.frame_10.setMinimumSize(QtCore.QSize(0, 110))
-        self.frame_10.setMaximumSize(QtCore.QSize(618, 150))
         self.frame_10.setStyleSheet("QFrame#frame_10 {\n"
 "            color: rgb(0, 0, 0);\n"
 "            background-color: rgb(245, 245, 245);\n"
@@ -792,7 +791,7 @@ class Ui_Form(object):
         self.verticalLayout_3.addWidget(self.frame_8)
         self.horizontalLayout_3.addWidget(self.frame_7)
         self.frame_5 = QtWidgets.QFrame(self.frame_4)
-        self.frame_5.setMinimumSize(QtCore.QSize(200, 0))
+        self.frame_5.setMinimumSize(QtCore.QSize(150, 0))
         self.frame_5.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_5.setObjectName("frame_5")
