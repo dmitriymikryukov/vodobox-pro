@@ -619,19 +619,6 @@ border-bottom-left-radius: 60px;
           </widget>
          </item>
          <item>
-          <spacer name="horizontalSpacer_4">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
           <widget class="QFrame" name="frame_12">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -946,19 +933,6 @@ border-bottom-left-radius: 60px;
             </item>
            </layout>
           </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_3">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
          </item>
          <item alignment="Qt::AlignRight">
           <widget class="QFrame" name="frame_20">
@@ -2723,7 +2697,7 @@ border-bottom-left-radius: 16px;
                      <string notr="true">background-color: transparent;</string>
                     </property>
                     <property name="currentIndex">
-                     <number>5</number>
+                     <number>0</number>
                     </property>
                     <widget class="QWidget" name="product_cart_page">
                      <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -2835,6 +2809,12 @@ border-bottom-left-radius: 16px;
                                 <spacer name="verticalSpacer_7">
                                  <property name="orientation">
                                   <enum>Qt::Vertical</enum>
+                                 </property>
+                                 <property name="sizeHint" stdset="0">
+                                  <size>
+                                   <width>0</width>
+                                   <height>0</height>
+                                  </size>
                                  </property>
                                 </spacer>
                                </item>
