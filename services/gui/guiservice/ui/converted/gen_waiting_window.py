@@ -448,6 +448,7 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.frame_7.sizePolicy().hasHeightForWidth())
         self.frame_7.setSizePolicy(sizePolicy)
+        self.frame_7.setMaximumSize(QtCore.QSize(600, 16777215))
         self.frame_7.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_7.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_7.setObjectName("frame_7")
@@ -475,7 +476,7 @@ class Ui_Form(object):
         sizePolicy.setHeightForWidth(self.frame_10.sizePolicy().hasHeightForWidth())
         self.frame_10.setSizePolicy(sizePolicy)
         self.frame_10.setMinimumSize(QtCore.QSize(0, 110))
-        self.frame_10.setMaximumSize(QtCore.QSize(16777215, 150))
+        self.frame_10.setMaximumSize(QtCore.QSize(618, 150))
         self.frame_10.setStyleSheet("QFrame#frame_10 {\n"
 "            color: rgb(0, 0, 0);\n"
 "            background-color: rgb(245, 245, 245);\n"
@@ -1022,7 +1023,7 @@ class Ui_Form(object):
         self.top_left_stack_widget.setCurrentIndex(0)
         self.second_top_left_stack_widget.setCurrentIndex(1)
         self.second_bottom_left_stack_widget.setCurrentIndex(1)
-        self.stack_widget.setCurrentIndex(1)
+        self.stack_widget.setCurrentIndex(2)
         self.top_right_stack_widget.setCurrentIndex(0)
         self.second_top_right_stack_widget.setCurrentIndex(0)
         self.second_bottom_right_stack_widget.setCurrentIndex(0)
