@@ -116,7 +116,14 @@ def EventPaymentFault(self,group,name,code,message) - неисправность
 def EventPaymentReady(self,group,name) - устройство готово к приему
 @subscribe
 def EventMoneyRejected(self,amount,mtype) - возврат номинала
+@subscribe
+def EventNominalIsHigh(self,group,name,nominal,route_txt,is_bill,payout_amount_after) - Останется мало сдачи или не хватит вообще тк купюра слишком велика. Купюра помещается на ESCROW. Нужно спросить клиента что делать. По решению клиента вызвать app.sgnIPC.AcceptEscrow() или app.sgnIPC.RejectEscrow()
 
+Продажа:
+1. Вызвать app.sgnIPC.DepositAmount(amount) - где amount сумма в копейках, которую предполагается списать
+2. Дождаться события app.sgnIPC.DepositNCK(reason) - отказ или app.sgnIPC.DepositACK() - одобрено
+3. Если одобрено, то налить/выдать товар
+4. Вызвать app.sgnIPC.AcknowlegeAmount(amount) - где amount сумма в копейках фактически потраченная клиентом (не должна превышать сумму, указанную в п.1 DepositAmount(amount))
 
 Состояния устройств приема:
 app.sgnIPC['accept']=dict(

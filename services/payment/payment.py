@@ -68,6 +68,11 @@ class SgnPayment(sgnService):
 		self.EventMoneyEscrow(nominal,group)
 
 	@subscribe
+	def EventNominalIsHigh(self,group,name,nominal,route_txt,is_bill,payout_amount_after):
+		self.debug('EventNominalIsHigh: %s %s %s to %s is_bill:%s payout after operation:%s'%(group,name,
+			self.nominal_to_text(nominal),route_txt,is_bill,payout_amount_after))
+
+	@subscribe
 	def EventPaymentSlugs(self,group,name,slugs):
 		self.debug('EventPaymentSlugs: %s %s count: %s'%(group,name,slugs))
 
@@ -194,7 +199,7 @@ class SgnPayment(sgnService):
 			self.DeactivateCash()
 		except Exception as e:
 			self.exception(e)
-
+			
 
 try:
 	l=SgnPayment()
