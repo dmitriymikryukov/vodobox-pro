@@ -94,7 +94,6 @@ class SgnSession(sgnService):
 		self.debug('Сессия: Пополение баланса на %s через %s'%(self.nominal_to_text_with_currency(amount),mtype))
 		if mtype in ['CASH']:
 			self['session']['cash_balance']+=amount
-			self['session']['escrow_balance']=0
 			self.EventBalanceChanged()
 			if self.esc_ack:
 				self.esc_ack=False
@@ -104,7 +103,6 @@ class SgnSession(sgnService):
 	def EventMoneyRejected(self,amount,mtype):
 		self.debug('Сессия: Возврат номинала %s через %s'%(self.nominal_to_text_with_currency(amount),mtype))
 		if mtype in ['CASH']:
-			self['session']['escrow_balance']=0			
 			self.EventBalanceChanged()
 			if self.esc_ack:
 				self.esc_ack=False

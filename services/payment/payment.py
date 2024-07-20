@@ -52,6 +52,8 @@ class SgnPayment(sgnService):
 	def EventPaymentNominalStacked(self,group,name,nominal,route_txt,is_bill,is_stack_full):
 		self.debug('EventPaymentNominalStacked: %s %s %s to %s is_bill:%s full:%s'%(group,name,
 			self.nominal_to_text(nominal),route_txt,is_bill,is_stack_full))
+		if is_bill:
+			self['session']['escrow_balance']=0
 		self.EventMoneyStacked(nominal,group)
 
 	@subscribe
@@ -59,6 +61,7 @@ class SgnPayment(sgnService):
 		self.debug('EventPaymentNominalRejected: %s %s %s to %s is_bill:%s full:%s'%(group,name,
 			self.nominal_to_text(nominal),route_txt,is_bill,is_stack_full))
 		if is_bill and self['session']['escrow_balance']!=0:
+			self['session']['escrow_balance']=0
 			self.EventMoneyRejected(nominal,group)
 
 	@subscribe
@@ -199,7 +202,7 @@ class SgnPayment(sgnService):
 			self.DeactivateCash()
 		except Exception as e:
 			self.exception(e)
-			
+
 
 try:
 	l=SgnPayment()
