@@ -52,10 +52,9 @@ class SgnLogger(sgnService):
 		return '\n'.join(ta)
 
 	def jprint(self,txt):
+		print(txt)
 		if has_journald:
 			print(txt,file=has_journald)
-		else:
-			print(txt)
 
 	def doExit(self):
 		self.jprint("Exiting logger,exit")
