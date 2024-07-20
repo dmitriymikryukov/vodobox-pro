@@ -1265,7 +1265,7 @@ border-bottom-left-radius: 20px;
                               <property name="font">
                                <font>
                                 <family>Rubik</family>
-                                <pointsize>12</pointsize>
+                                <pointsize>15</pointsize>
                                </font>
                               </property>
                               <property name="text">
@@ -1330,7 +1330,7 @@ border-bottom-left-radius: 20px;
                                  <property name="font">
                                   <font>
                                    <family>Rubik</family>
-                                   <pointsize>12</pointsize>
+                                   <pointsize>15</pointsize>
                                   </font>
                                  </property>
                                  <property name="text">
@@ -1427,7 +1427,7 @@ border-bottom-left-radius: 20px;
                               <property name="font">
                                <font>
                                 <family>Rubik</family>
-                                <pointsize>12</pointsize>
+                                <pointsize>15</pointsize>
                                </font>
                               </property>
                               <property name="text">
@@ -1471,7 +1471,7 @@ border-bottom-left-radius: 20px;
                               <property name="font">
                                <font>
                                 <family>Rubik</family>
-                                <pointsize>12</pointsize>
+                                <pointsize>15</pointsize>
                                </font>
                               </property>
                               <property name="text">
