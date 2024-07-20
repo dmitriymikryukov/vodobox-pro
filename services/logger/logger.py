@@ -33,7 +33,8 @@ try:
 except:
 	has_journald=False
 else:
-	has_journald=True
+	has_journald=journal.stream('kiosk') 
+	print('Starting logging service\nLogging service check done', file=has_journald) 
 
 class SgnLogger(sgnService):
 	def __init__(self):
@@ -50,33 +51,38 @@ class SgnLogger(sgnService):
 				ta.append('%s %s %s'%(mn,t,x))
 		return '\n'.join(ta)
 
+	def jprint(self,txt):
+		print(txt)
+		if has_journald:
+			print(txt,file=has_journald)
+
 	def doExit(self):
-		print("Exiting logger,exit")
+		self.jprint("Exiting logger,exit")
 		super().doExit()
 
 	@subscribe
 	def exception_handler(self,m,txt):
-		print(self.buca_form(m,"EXCEPTION",txt))
+		self.jprint(self.buca_form(m,"EXCEPTION",txt))
 
 	@subscribe
 	def debug_handler(self,m,txt):
-		print(self.buca_form(m,"debug",txt))
+		self.jprint(self.buca_form(m,"debug",txt))
 
 	@subscribe
 	def info_handler(self,m,txt):
-		print(self.buca_form(m,"INFO",txt))
+		self.jprint(self.buca_form(m,"INFO",txt))
 
 	@subscribe
 	def error_handler(self,m,txt):
-		print(self.buca_form(m,"ERROR",txt))
+		self.jprint(self.buca_form(m,"ERROR",txt))
 
 	@subscribe
 	def warning_handler(self,m,txt):
-		print(self.buca_form(m,"WARNING",txt))
+		self.jprint(self.buca_form(m,"WARNING",txt))
 
 	@subscribe
 	def critical_handler(self,m,txt):
-		print(self.buca_form(m,"CRITICAL",txt))
+		self.jprint(self.buca_form(m,"CRITICAL",txt))
 
 try:
 	l=SgnLogger()
