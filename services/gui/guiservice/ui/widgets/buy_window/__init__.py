@@ -657,6 +657,8 @@ class BuyWindow(QWidget):
         app.sgn_gui['session']['query_amount'] = self.TOTAL_PRICE
         app.sgn_gui.ActivateCash()
 
+        self.set_deposited_amount_cash()
+
         self.ui.main_stack_widget.setCurrentWidget(self.ui.payment_page)
         self.ui.payment_stack_widget.setCurrentWidget(self.ui.cash_or_loyal_card_page)
         self.ui.top_payment_hint_stack_widget.setCurrentWidget(self.ui.cash_hint_page)
