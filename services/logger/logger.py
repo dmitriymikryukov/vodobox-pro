@@ -52,7 +52,7 @@ class SgnLogger(sgnService):
 		return '\n'.join(ta)
 
 	def jprint(self,txt):
-		if self.has_journald:
+		if has_journald:
 			print(txt,file==has_journald)
 		else:
 			print(txt)
