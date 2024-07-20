@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(1024, 600)
+        Form.resize(897, 586)
         Form.setMaximumSize(QtCore.QSize(1024, 600))
         self.verticalLayout = QtWidgets.QVBoxLayout(Form)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -447,7 +447,7 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.frame_7.sizePolicy().hasHeightForWidth())
         self.frame_7.setSizePolicy(sizePolicy)
-        self.frame_7.setMaximumSize(QtCore.QSize(705, 16777215))
+        self.frame_7.setMaximumSize(QtCore.QSize(600, 16777215))
         self.frame_7.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_7.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_7.setObjectName("frame_7")
