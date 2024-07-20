@@ -1,6 +1,8 @@
 import time,sys,os
 sys.path.insert(0, '..')
 
+print("%a"%(os.environ,))
+
 import pyautogui as p
 import RPi.GPIO as GPIO
 
@@ -43,7 +45,6 @@ def kb_thread():
 		time.sleep(0.1)
 
 
-print("%a"%(os.environ,))
 
 kb_init_io()
 kb_thread()
