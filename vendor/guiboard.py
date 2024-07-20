@@ -1,6 +1,7 @@
 import time,sys,os
 sys.path.insert(0, '..')
 
+os.environ['HOME']='/home/kiosk'
 print("%a"%(os.environ,))
 
 import pyautogui as p
