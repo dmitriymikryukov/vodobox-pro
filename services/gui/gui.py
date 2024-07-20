@@ -28,6 +28,7 @@ signal.signal(signal.SIGINT, signal_ihandler)
 class SgnGUI(sgnService):
 	def __init__(self):
 		super().__init__()
+		self.current_window=None
 		self.min_coin_dispense_amount=1800
 		self.min_bill_dispense_amount=0
 
@@ -79,6 +80,13 @@ class SgnGUI(sgnService):
 	def EventPayoutFinished(self,group,name,amount,required):
 		self.info('%s %s Выдача сдачи завершена, выдано %s из %s'%(group,name,self.nominal_to_text_with_currency(amount),self.nominal_to_text_with_currency(required)))
 
+	@subscribe
+	def EventPaymentComplete(self):
+		self.current_window.payment_succeed.emit()
+
+	@subscribe
+	def EventBalanceChanged(self):
+		self.current_window.deposit_balance_changed.emit()
 
 try:
 	sgn_gui = SgnGUI()

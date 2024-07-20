@@ -26,6 +26,7 @@ class BuyWindow(QWidget):
     payment_canceled = pyqtSignal()
     payment_succeed = pyqtSignal()
     payment_failed = pyqtSignal()
+    deposit_balance_changed = pyqtSignal()
     is_pouring_changed = pyqtSignal()
     product_chosen = pyqtSignal(Product)
     filling_started = pyqtSignal(Water)
@@ -40,6 +41,8 @@ class BuyWindow(QWidget):
         super().__init__()
         self.ui = Ui_Form()
         self.ui.setupUi(self)
+
+        app.sgn_gui.current_window=self
 
         # object instances
         self.config = BuyConfig()
@@ -175,6 +178,7 @@ class BuyWindow(QWidget):
         self.ui.testing_failed_payment_btn.clicked.connect(self.payment_failed.emit)
 
         # custom signals
+        self.deposit_balance_changed.connect(self.set_deposited_amount_cash)
         self.payment_succeed.connect(self.payment_cancellation_timer.stop)
         self.payment_succeed.connect(self.switch_on_success_payment_window)
         self.payment_succeed.connect(self.hide_cancel_payment_btn)
@@ -215,7 +219,7 @@ class BuyWindow(QWidget):
         self.is_pouring_changed.connect(self.start_bottle_filling)
         self.is_pouring_changed.connect(self.render_continue_and_stop_filling_btn)
 
-        self.bottle_progress_bar_widget.progress_changed.connect(self.update_remaining_price)
+        self.bottle_progress_bar_widget.progress_changed.connect(self.update_remaining_price_for_water)
         self.bottle_progress_bar_widget.filling_finished.connect(self.hide_continue_and_stop_filling_btn)
         self.bottle_progress_bar_widget.filling_finished.connect(self.show_start_pouring_btn)
 
@@ -290,6 +294,11 @@ class BuyWindow(QWidget):
         }}
         ''')
 
+    def set_deposited_amount_cash(self):
+        lbl = self.ui.top_payment_summary_price_lbl.text().split()
+        lbl[0] = str(app.sgn_gui['session']['cash_balance'] + app.sgn_gui['session']['escrow_balance'])
+        self.ui.top_payment_summary_price_lbl.setText(' '.join(lbl))
+
     def collect_the_order(self) -> None:
         """
         Сбор заказа и отрисовка в зависимости от того, что выбрано
@@ -301,6 +310,8 @@ class BuyWindow(QWidget):
             """
             self.ui.main_stack_widget.setCurrentWidget(self.ui.take_plug_page)
             self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.empty_bottom_left_page)
+
+            self.set_total_price(self.TOTAL_PRICE - self.config.plug_price)
             # TODO TESTING
             self.ui.bottom_right_btn_stack_widget.setCurrentWidget(self.ui.testing_take_plug_page)
             self.ui.testing_take_plug_btn.clicked.connect(self.plug_taken.emit)
@@ -311,6 +322,8 @@ class BuyWindow(QWidget):
             """
             self.ui.main_stack_widget.setCurrentWidget(self.ui.take_container_page)
             self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.empty_bottom_left_page)
+
+            self.set_total_price(self.TOTAL_PRICE - self.config.container_price)
             # TODO TESTING
             self.ui.bottom_right_btn_stack_widget.setCurrentWidget(self.ui.testing_take_container_page)
             self.ui.testing_take_container_btn.clicked.connect(self.container_taken.emit)
@@ -321,7 +334,8 @@ class BuyWindow(QWidget):
             """
             self.ui.main_stack_widget.setCurrentWidget(self.ui.take_loyal_card_page)
             self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.empty_bottom_left_page)
-            self.update_remaining_price()
+
+            self.set_total_price(self.TOTAL_PRICE - self.config.loyal_card_price)
             # TODO TESTING
             self.ui.bottom_right_btn_stack_widget.setCurrentWidget(self.ui.testing_take_loyal_card_page)
             self.ui.testing_take_loyal_card_btn.clicked.connect(self.loyal_card_taken.emit)
@@ -502,7 +516,7 @@ class BuyWindow(QWidget):
         self.ui.choosed_product_stack_widget.setCurrentWidget(product_page)
         self.ui.product_price_stack_widget.setCurrentWidget(price_page)
 
-    def update_remaining_price(self, progress_percentage: int) -> None:
+    def update_remaining_price_for_water(self, progress_percentage: int) -> None:
         """
         Отрисовка оставшейся общей суммы
         :param progress_percentage: колчиество в процентах от общей потраченной суммы
@@ -631,6 +645,10 @@ class BuyWindow(QWidget):
         """
         Переключение на меню оплаты наличными или картой лояльности
         """
+        app.sgn_gui.StartSession('CASH')
+        app.sgn_gui['session']['query_amount'] = self.TOTAL_PRICE
+        app.sgn_gui.ActivateCash()
+
         self.ui.main_stack_widget.setCurrentWidget(self.ui.payment_page)
         self.ui.payment_stack_widget.setCurrentWidget(self.ui.cash_or_loyal_card_page)
         self.ui.top_payment_hint_stack_widget.setCurrentWidget(self.ui.cash_hint_page)
