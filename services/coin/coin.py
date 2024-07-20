@@ -106,7 +106,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 						if x:
 							break
 						time.sleep(0.1)
-        			if (self.able['ident']['manufacturer'] in ['ICT']) and self.able['ident']['software'] >= 1334:
+					if (self.able['ident']['manufacturer'] in ['ICT']) and self.able['ident']['software'] >= 1334:
 						self.able['extra_customer_commands']=False
 						self.info('Поддерживаются команды для настройки сдачи')
 					else:
