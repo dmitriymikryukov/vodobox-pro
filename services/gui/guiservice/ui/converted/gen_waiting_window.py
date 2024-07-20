@@ -21,7 +21,6 @@ class Ui_Form(object):
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
         self.frame = QtWidgets.QFrame(Form)
-        self.frame.setMaximumSize(QtCore.QSize(1024, 600))
         self.frame.setStyleSheet("#frame {\n"
 "    background-color:  rgb(189, 195, 199);\n"
 "}")
@@ -448,6 +447,7 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.frame_7.sizePolicy().hasHeightForWidth())
         self.frame_7.setSizePolicy(sizePolicy)
+        self.frame_7.setMaximumSize(QtCore.QSize(705, 16777215))
         self.frame_7.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_7.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_7.setObjectName("frame_7")
@@ -475,6 +475,7 @@ class Ui_Form(object):
         sizePolicy.setHeightForWidth(self.frame_10.sizePolicy().hasHeightForWidth())
         self.frame_10.setSizePolicy(sizePolicy)
         self.frame_10.setMinimumSize(QtCore.QSize(0, 110))
+        self.frame_10.setMaximumSize(QtCore.QSize(16777215, 149))
         self.frame_10.setStyleSheet("QFrame#frame_10 {\n"
 "            color: rgb(0, 0, 0);\n"
 "            background-color: rgb(245, 245, 245);\n"

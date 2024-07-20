@@ -37,12 +37,6 @@
    </property>
    <item>
     <widget class="QFrame" name="frame">
-     <property name="maximumSize">
-      <size>
-       <width>1024</width>
-       <height>600</height>
-      </size>
-     </property>
      <property name="styleSheet">
       <string notr="true">#frame {
 	background-color:  rgb(189, 195, 199);
@@ -1045,6 +1039,12 @@ border-bottom-left-radius: 20px;
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="maximumSize">
+            <size>
+             <width>705</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="frameShape">
             <enum>QFrame::NoFrame</enum>
            </property>
@@ -1109,6 +1109,12 @@ border-bottom-left-radius: 20px;
                   <size>
                    <width>0</width>
                    <height>110</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>149</height>
                   </size>
                  </property>
                  <property name="styleSheet">
