@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>835</width>
-    <height>533</height>
+    <width>800</width>
+    <height>530</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -105,7 +105,7 @@
            <property name="minimumSize">
             <size>
              <width>0</width>
-             <height>110</height>
+             <height>129</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -1005,7 +1005,7 @@ border-bottom-left-radius: 20px;
            </property>
            <property name="maximumSize">
             <size>
-             <width>480</width>
+             <width>440</width>
              <height>16777215</height>
             </size>
            </property>
@@ -1072,7 +1072,7 @@ border-bottom-left-radius: 20px;
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
-                   <height>110</height>
+                   <height>129</height>
                   </size>
                  </property>
                  <property name="maximumSize">
@@ -1171,12 +1171,6 @@ border-bottom-left-radius: 20px;
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>310</height>
-                  </size>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">background-color: transparent;</string>

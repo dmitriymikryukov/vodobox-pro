@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(835, 533)
+        Form.resize(800, 530)
         Form.setMaximumSize(QtCore.QSize(1024, 600))
         self.verticalLayout = QtWidgets.QVBoxLayout(Form)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -46,7 +46,7 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.frame_17.sizePolicy().hasHeightForWidth())
         self.frame_17.setSizePolicy(sizePolicy)
-        self.frame_17.setMinimumSize(QtCore.QSize(0, 110))
+        self.frame_17.setMinimumSize(QtCore.QSize(0, 129))
         self.frame_17.setMaximumSize(QtCore.QSize(16777215, 149))
         self.frame_17.setStyleSheet("#frame_17 {\n"
 "    background-color: white;\n"
@@ -441,7 +441,7 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.frame_7.sizePolicy().hasHeightForWidth())
         self.frame_7.setSizePolicy(sizePolicy)
-        self.frame_7.setMaximumSize(QtCore.QSize(480, 16777215))
+        self.frame_7.setMaximumSize(QtCore.QSize(440, 16777215))
         self.frame_7.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_7.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_7.setObjectName("frame_7")
@@ -468,7 +468,7 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.frame_10.sizePolicy().hasHeightForWidth())
         self.frame_10.setSizePolicy(sizePolicy)
-        self.frame_10.setMinimumSize(QtCore.QSize(0, 110))
+        self.frame_10.setMinimumSize(QtCore.QSize(0, 129))
         self.frame_10.setMaximumSize(QtCore.QSize(16777215, 149))
         self.frame_10.setStyleSheet("QFrame#frame_10 {\n"
 "            color: rgb(0, 0, 0);\n"
@@ -520,7 +520,6 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.frame_9.sizePolicy().hasHeightForWidth())
         self.frame_9.setSizePolicy(sizePolicy)
-        self.frame_9.setMinimumSize(QtCore.QSize(0, 310))
         self.frame_9.setStyleSheet("background-color: transparent;")
         self.frame_9.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_9.setFrameShadow(QtWidgets.QFrame.Raised)
