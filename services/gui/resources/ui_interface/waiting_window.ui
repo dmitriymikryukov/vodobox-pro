@@ -337,7 +337,7 @@
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_9">
+                   <widget class="QLabel" name="money_change_label">
                     <property name="font">
                      <font>
                       <family>Rubik</family>

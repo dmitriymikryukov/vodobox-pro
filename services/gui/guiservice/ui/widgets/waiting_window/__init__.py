@@ -25,7 +25,8 @@ class WaitingWindow(QWidget):
         self.ui = Ui_Form()
         self.ui.setupUi(self)
 
-        app.sgn_gui.info('Ура! запустилось!')
+        # проверка на выдачу сдачи
+        self.show_money_change_warning(app.sgn_gui.can_dispense_cash())
 
         # object instances
         self.service_config = ServiceMenuConfig()
@@ -115,6 +116,12 @@ class WaitingWindow(QWidget):
         self.ui.spare_buy_btn.clicked.connect(self.user_timeout_timer.stop)
         self.datetime_timer.timeout.connect(self.update_datetime)
         self.datetime_timer.start(500)
+
+    def show_money_change_warning(self, status: bool):
+        if status:
+            self.ui.money_change_label.show()
+        else:
+            self.ui.money_change_label.hide()
 
     def switch_on_waiting_widget(self) -> None:
         """
