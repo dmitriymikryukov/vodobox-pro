@@ -43,7 +43,7 @@ def kb_thread():
 		time.sleep(0.1)
 
 
-print(os.environ)
+print("%a"%(os.environ,))
 
 kb_init_io()
 kb_thread()
