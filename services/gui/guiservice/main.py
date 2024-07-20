@@ -6,7 +6,7 @@ import sys
 def run_gui(IPC):
     app.sgn_gui = IPC
     window = MainWindow()
-    window.showMaximized()
+    window.showFullScreen()
 
     window.show()
     sys.exit(app.exec())
