@@ -2733,7 +2733,7 @@ border-bottom-left-radius: 16px;
                      <string notr="true">background-color: transparent;</string>
                     </property>
                     <property name="currentIndex">
-                     <number>0</number>
+                     <number>8</number>
                     </property>
                     <widget class="QWidget" name="product_cart_page">
                      <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -3963,6 +3963,12 @@ border-bottom-left-radius: 16px;
                            <property name="orientation">
                             <enum>Qt::Horizontal</enum>
                            </property>
+                           <property name="sizeHint" stdset="0">
+                            <size>
+                             <width>140</width>
+                             <height>0</height>
+                            </size>
+                           </property>
                           </spacer>
                          </item>
                          <item>
@@ -4009,6 +4015,12 @@ border-bottom-left-radius: 16px;
                           <spacer name="horizontalSpacer_2">
                            <property name="orientation">
                             <enum>Qt::Horizontal</enum>
+                           </property>
+                           <property name="sizeHint" stdset="0">
+                            <size>
+                             <width>140</width>
+                             <height>0</height>
+                            </size>
                            </property>
                           </spacer>
                          </item>
