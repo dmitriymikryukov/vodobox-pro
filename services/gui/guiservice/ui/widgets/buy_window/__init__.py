@@ -44,7 +44,8 @@ class BuyWindow(QWidget):
         self.ui = Ui_Form()
         self.ui.setupUi(self)
 
-        app.sgn_gui.current_window=self
+        if app.sgn_gui:
+            app.sgn_gui.current_window=self
 
         # object instances
         self.config = BuyConfig()
@@ -178,6 +179,8 @@ class BuyWindow(QWidget):
         self.ui.cancel_payment_btn.clicked.connect(self.render_consumer_info)
         self.ui.testing_success_payment_btn.clicked.connect(self.payment_succeed.emit)
         self.ui.testing_failed_payment_btn.clicked.connect(self.payment_failed.emit)
+        if app.sgn_gui:
+            self.session_terminated.connect(app.sgn_gui.EndSession)
 
         # custom signals
         self.deposit_balance_changed.connect(self.set_deposited_amount_cash)

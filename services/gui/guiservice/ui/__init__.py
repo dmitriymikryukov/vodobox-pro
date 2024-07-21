@@ -1,12 +1,12 @@
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtGui import QFontDatabase
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import logging
 import sys
 import os
 
 os.environ["XDG_SESSION_TYPE"] = "xcb"
-load_dotenv()
+# load_dotenv()
 logging.basicConfig(
     level=logging.INFO
 )

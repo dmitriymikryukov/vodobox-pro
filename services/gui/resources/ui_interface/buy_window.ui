@@ -6,13 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>801</width>
-    <height>592</height>
+    <width>1050</width>
+    <height>602</height>
    </rect>
   </property>
   <property name="maximumSize">
    <size>
-    <width>950</width>
+    <width>1050</width>
     <height>602</height>
    </size>
   </property>
@@ -640,7 +640,7 @@ border-bottom-left-radius: 60px;
            </property>
            <property name="maximumSize">
             <size>
-             <width>430</width>
+             <width>16777215</width>
              <height>149</height>
             </size>
            </property>
@@ -2256,12 +2256,6 @@ border-bottom-left-radius: 16px;
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>430</width>
-             <height>16777215</height>
-            </size>
            </property>
            <property name="frameShape">
             <enum>QFrame::NoFrame</enum>

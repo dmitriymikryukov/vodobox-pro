@@ -26,7 +26,8 @@ class WaitingWindow(QWidget):
         self.ui.setupUi(self)
 
         # проверка на выдачу сдачи
-        self.show_money_change_warning(app.sgn_gui.can_dispense_cash())
+        if app.sgn_gui:
+            self.show_money_change_warning(app.sgn_gui.can_dispense_cash())
 
         # object instances
         self.service_config = ServiceMenuConfig()
