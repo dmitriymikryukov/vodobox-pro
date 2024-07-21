@@ -236,7 +236,8 @@ class BuyWindow(QWidget):
     def start_session(self):
         app.sgn_gui.StartSession('CASH')
         logging.info(f'total price {sum([product.price for product in self._chosen_products])}')
-        app.sgn_gui['session']['query_amount'] = sum([product.price for product in self._chosen_products])
+        # передаем сумму заказа в копейках
+        app.sgn_gui['session']['query_amount'] = sum([product.price for product in self._chosen_products]) * 100
         app.sgn_gui.ActivateCash()
 
     def turn_on_dark_theme(self) -> None:
