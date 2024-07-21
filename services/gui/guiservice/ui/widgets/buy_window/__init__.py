@@ -169,7 +169,7 @@ class BuyWindow(QWidget):
         Инициализация сигналов для оплаты:
         (банковской картой, наличными, картой лояльности, qr-код)
         """
-        self.ui.cash_or_loyal_card_page.clicked.connect(self.start_session)
+        self.ui.cash_or_loyal_card_btn.clicked.connect(self.start_session)
         self.ui.cash_or_loyal_card_btn.clicked.connect(self.switch_on_cash_or_loyal_window)
         self.ui.bank_card_btn.clicked.connect(self.switch_on_bank_card_window)
         self.ui.qr_btn.clicked.connect(self.switch_on_qr_window)
