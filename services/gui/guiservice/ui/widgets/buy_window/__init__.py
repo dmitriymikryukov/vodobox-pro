@@ -169,6 +169,7 @@ class BuyWindow(QWidget):
         Инициализация сигналов для оплаты:
         (банковской картой, наличными, картой лояльности, qr-код)
         """
+        self.ui.cash_or_loyal_card_page.clicked.connect(self.start_session)
         self.ui.cash_or_loyal_card_btn.clicked.connect(self.switch_on_cash_or_loyal_window)
         self.ui.bank_card_btn.clicked.connect(self.switch_on_bank_card_window)
         self.ui.qr_btn.clicked.connect(self.switch_on_qr_window)
@@ -231,6 +232,12 @@ class BuyWindow(QWidget):
         self.container_taken.connect(self.collect_the_order)
         self.plug_taken.connect(self.collect_the_order)
         self.loyal_card_taken.connect(self.collect_the_order)
+
+    def start_session(self):
+        app.sgn_gui.StartSession('CASH')
+        logging.info(f'total price {sum([product.price for product in self._chosen_products])}')
+        app.sgn_gui['session']['query_amount'] = sum([product.price for product in self._chosen_products])
+        app.sgn_gui.ActivateCash()
 
     def turn_on_dark_theme(self) -> None:
         """
@@ -659,11 +666,6 @@ class BuyWindow(QWidget):
         """
         Переключение на меню оплаты наличными или картой лояльности
         """
-        app.sgn_gui.StartSession('CASH')
-        logging.info(f'total price {sum([product.price for product in self._chosen_products])}')
-        app.sgn_gui['session']['query_amount'] = sum([product.price for product in self._chosen_products])
-        app.sgn_gui.ActivateCash()
-
         self.set_deposited_amount_cash()
 
         self.ui.main_stack_widget.setCurrentWidget(self.ui.payment_page)
