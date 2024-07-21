@@ -56,6 +56,8 @@ class BuyWindow(QWidget):
         self.payment_cancellation_timer = QTimer()
         self.bottle_filling_thread = QThread()
         self.start_session_thread = QThread()
+        self.end_session_thread = QThread()
+        self.end_session_thread.run = app.sgn_gui.EndSession
         self.start_session_thread.run = self.start_session
         self.is_pouring_running = True
         self._chosen_products: list[Product] = []
@@ -182,7 +184,7 @@ class BuyWindow(QWidget):
         self.ui.testing_success_payment_btn.clicked.connect(self.payment_succeed.emit)
         self.ui.testing_failed_payment_btn.clicked.connect(self.payment_failed.emit)
         if app.sgn_gui:
-            self.session_terminated.connect(app.sgn_gui.EndSession)
+            self.session_terminated.connect(self.end_session_thread.start)
 
         # custom signals
         self.deposit_balance_changed.connect(self.set_deposited_amount_cash)
