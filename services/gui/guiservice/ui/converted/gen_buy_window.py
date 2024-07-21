@@ -2210,7 +2210,7 @@ class Ui_Form(object):
         self.payment_status_stack_widget.setCurrentIndex(4)
         self.bottom_hints_stack_widget.setCurrentIndex(2)
         self.top_right_btn_stack_widget.setCurrentIndex(0)
-        self.top_right_second_stack_widget.setCurrentIndex(2)
+        self.top_right_second_stack_widget.setCurrentIndex(1)
         self.bottom_right_second_stack_widget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Form)
 

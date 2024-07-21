@@ -4330,7 +4330,7 @@ border-bottom-left-radius: 60px;
                <string notr="true">background-color: transparent;</string>
               </property>
               <property name="currentIndex">
-               <number>2</number>
+               <number>1</number>
               </property>
               <widget class="QWidget" name="top_up_card_page">
                <layout class="QVBoxLayout" name="verticalLayout_20">
