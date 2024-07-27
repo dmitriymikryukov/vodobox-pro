@@ -2859,7 +2859,7 @@ border-bottom-left-radius: 16px;
                      <string notr="true">background-color: transparent;</string>
                     </property>
                     <property name="currentIndex">
-                     <number>2</number>
+                     <number>0</number>
                     </property>
                     <widget class="QWidget" name="product_cart_page">
                      <layout class="QVBoxLayout" name="verticalLayout_8">

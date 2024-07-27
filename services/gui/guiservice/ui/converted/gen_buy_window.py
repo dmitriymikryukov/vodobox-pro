@@ -2327,7 +2327,7 @@ class Ui_Form(object):
         self.second_bottom_left_stack.setCurrentIndex(1)
         self.top_payment_hint_stack_widget.setCurrentIndex(0)
         self.top_payment_price_stack_widget.setCurrentIndex(0)
-        self.main_stack_widget.setCurrentIndex(2)
+        self.main_stack_widget.setCurrentIndex(0)
         self.payment_stack_widget.setCurrentIndex(4)
         self.payment_status_stack_widget.setCurrentIndex(4)
         self.bottom_hints_stack_widget.setCurrentIndex(2)
