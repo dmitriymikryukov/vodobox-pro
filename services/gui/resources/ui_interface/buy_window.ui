@@ -1123,7 +1123,8 @@ border-bottom-left-radius: 20px;
 </string>
                   </property>
                   <property name="text">
-                   <string>Завершить</string>
+                   <string>Завершить
+покупку</string>
                   </property>
                  </widget>
                 </item>
@@ -1192,7 +1193,8 @@ border-bottom-left-radius: 20px;
 </string>
                   </property>
                   <property name="text">
-                   <string>Завершить</string>
+                   <string>Завершить
+налив</string>
                   </property>
                  </widget>
                 </item>

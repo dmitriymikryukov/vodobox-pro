@@ -2328,8 +2328,10 @@ class Ui_Form(object):
         self.choosed_loyal_card_lbl.setText(_translate("Form", "Карта лояльности"))
         self.choosed_water_lbl.setText(_translate("Form", "Вода - Л"))
         self.product_price_lbl.setText(_translate("Form", "- Р"))
-        self.terminate_session_btn.setText(_translate("Form", "Завершить"))
-        self.terminate_pouring_btn.setText(_translate("Form", "Завершить"))
+        self.terminate_session_btn.setText(_translate("Form", "Завершить\n"
+"покупку"))
+        self.terminate_pouring_btn.setText(_translate("Form", "Завершить\n"
+"налив"))
         self.cancel_payment_btn.setText(_translate("Form", "Отменить \n"
 "оплату"))
         self.get_back_money_btn.setText(_translate("Form", "Вернуть\n"

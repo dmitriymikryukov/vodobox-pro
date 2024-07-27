@@ -218,8 +218,7 @@ class BuyWindow(QWidget):
         self.ui.stop_btn.clicked.connect(lambda: self.set_is_pouring_running(False))
         self.ui.continue_btn.clicked.connect(lambda: self.set_is_pouring_running(True))
 
-        # self.ui.terminate_session_btn.clicked.connect(lambda: app.sgn_gui.EndSession())
-        self.ui.terminate_pouring_btn.clicked.connect(lambda: app.sgn_gui.EndSession())
+        self.ui.terminate_session_btn.clicked.connect(lambda: app.sgn_gui.EndSession())
         self.ui.terminate_pouring_btn.clicked.connect(self.collect_the_order)
         self.ui.terminate_pouring_btn.clicked.connect(lambda: self.set_is_pouring_running(False))
         self.ui.start_pouring_btn.clicked.connect(self.collect_the_order)
