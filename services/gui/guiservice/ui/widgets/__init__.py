@@ -108,22 +108,25 @@ class MainWindow(QMainWindow):
         # происходит перерендер при создании нового окна покупок после возвращения
         # в меню ожидания
         from ui import app
+        try:
 
-        self.windows_stack_widget.removeWidget(self.buy_window)
-        self.buy_window.deleteLater()
-        self.buy_window = BuyWindow()
-        app.sgn_gui.current_window = self.buy_window
+            self.windows_stack_widget.removeWidget(self.buy_window)
+            self.buy_window.deleteLater()
+            self.buy_window = BuyWindow()
+            app.sgn_gui.current_window = self.buy_window
 
-        if not UiConfig.is_light_theme():
-            self.buy_window.turn_on_dark_theme()
+            if not UiConfig.is_light_theme():
+                self.buy_window.turn_on_dark_theme()
 
-        self.windows_stack_widget.addWidget(self.buy_window)
-        self.windows_stack_widget.setCurrentWidget(self.waiting_window)
+            self.windows_stack_widget.addWidget(self.buy_window)
+            self.windows_stack_widget.setCurrentWidget(self.waiting_window)
 
-        self.translate_widget.pop_buy_window()
-        self.translate_widget.add_widget(self.buy_window)
-        self.init_translate_signal()
-        self.waiting_window.switch_on_waiting_widget()
+            self.translate_widget.pop_buy_window()
+            self.translate_widget.add_widget(self.buy_window)
+            self.init_translate_signal()
+            self.waiting_window.switch_on_waiting_widget()
 
-        self.buy_window.session_terminated.connect(self.cancel_buy_window_by_termination)
-        self.buy_window.session_timeout.connect(self.cancel_buy_window_by_timeout)
+            self.buy_window.session_terminated.connect(self.cancel_buy_window_by_termination)
+            self.buy_window.session_timeout.connect(self.cancel_buy_window_by_timeout)
+        except Exception as err:
+            logging.error(f'Ошибка при пересоздании меню покупки: {err}')
