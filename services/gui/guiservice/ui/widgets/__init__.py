@@ -110,7 +110,7 @@ class MainWindow(QMainWindow):
         # в меню ожидания
         from ui import app
         try:
-
+            logging.info('Buy Window пересоздано')
             self.windows_stack_widget.removeWidget(self.buy_window)
             QCoreApplication.instance().sendPostedEvents(self.buy_window, QEvent.DeferredDelete)
             self.buy_window.deleteLater()
