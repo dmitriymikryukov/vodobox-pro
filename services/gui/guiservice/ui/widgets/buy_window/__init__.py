@@ -185,7 +185,7 @@ class BuyWindow(QWidget):
         self.ui.testing_success_payment_btn.clicked.connect(self.payment_succeed.emit)
         self.ui.testing_failed_payment_btn.clicked.connect(self.payment_failed.emit)
         if app.sgn_gui:
-            self.session_terminated.connect(lambda: app.sgn_gui.AcknowlegeAmount(self.TOTAL_PRICE))
+            self.session_terminated.connect(lambda: app.sgn_gui.AcknowlegeAmount(self.TOTAL_PRICE * 100))
             self.session_terminated.connect(lambda: app.sgn_gui.EndSession())
 
         self.ui.get_back_money_btn.clicked.connect(lambda: app.sgn_gui.RejectEscrow())
