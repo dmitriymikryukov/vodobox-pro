@@ -181,7 +181,7 @@ class SgnSession(sgnService):
 
 	@subscribe
 	def DepositAmount(self,amount):
-		self.info('Замораживаем %s'%(self.nominal_to_text_with_currency(amount),)))
+		self.info('Замораживаем %s'%(self.nominal_to_text_with_currency(amount),))
 		self.esc_ack=False
 		bal=self._getBalance()
 		if bal<amount:
