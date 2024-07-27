@@ -244,7 +244,8 @@ class BuyWindow(QWidget):
         self.loyal_card_taken.connect(self.collect_the_order)
 
     def start_session(self):
-        app.sgn_gui.StartSession('CASH')
+        if not app.sgn_gui['session']['started']:
+            app.sgn_gui.StartSession('CASH')
         logging.info(f'total price {sum([product.price for product in self._chosen_products])}')
         # передаем сумму заказа в копейках
         app.sgn_gui['session']['query_amount'] = sum([product.price for product in self._chosen_products]) * 100
