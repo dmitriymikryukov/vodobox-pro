@@ -398,6 +398,7 @@ class BuyWindow(QWidget):
             if isinstance(p, Water):
                 self.set_total_price(sum([p.price for p in self._chosen_products]))
                 water = self._chosen_products.pop(i)
+                app.sgn_gui.DepositAmount(water.price)
                 self.filling_started.emit(water)
                 return
 
