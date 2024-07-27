@@ -34,6 +34,7 @@ class SgnSession(sgnService):
 		self.session_init()
 
 	def session_init(self):
+		self.info('Инициализация сессии')
 		self['session']=dict(
 			session_type=False,
 			cash_balance=0,
@@ -44,6 +45,7 @@ class SgnSession(sgnService):
 			is_dispensing=False,
 			query_amount=False,
 			complete=False,
+			started=False,
 			nominal_is_high=False,
 			payment_complete=False
 			)
@@ -71,10 +73,13 @@ class SgnSession(sgnService):
 
 	@subscribe
 	def StartSession(self,session_type):
+		self.info('Запускаем начало сессии')
 		if self['session'] and not self['session']['complete']:
+			self.info('Обнаружена незавершенная сессия')
 			self.EndSession()
 		self.session_init()
 		self['session']['session_type']=session_type
+		self['session']['started']=True
 
 	@subscribe
 	def ChangeSession(self,session_type):
@@ -123,29 +128,35 @@ class SgnSession(sgnService):
 
 	@subscribe
 	def EndSession(self):
-		self.esc_ack=False
-		self['session']['nominal_is_high']=False
-		self['session']['query_amount']=False
-		self['session']['complete']=True
-		self.DeactivateAllPayments()
-		if self['session']['escrow_balance']!=0:
-			self.RejectEscrow()
-		if self['session']['cash_balance']:
-			self['session']['is_dispensing']=True
-			self.PayoutCash(self['session']['cash_balance'])
-			#наверное нужно запустить в отдельном процессе
+		if self['session']['started']:
+			self.info('Завершение сессии')
+			self['session']['started']=False
+			self.esc_ack=False
+			self['session']['nominal_is_high']=False
+			self['session']['query_amount']=False
+			self['session']['complete']=True
+			self.DeactivateAllPayments()
+			if self['session']['escrow_balance']!=0:
+				self.RejectEscrow()
+			if self['session']['cash_balance']:
+				self['session']['is_dispensing']=True
+				self.PayoutCash(self['session']['cash_balance'])
+				#наверное нужно запустить в отдельном процессе
+				ts=time.time()
+				while (ts+65)<time.time():
+					if not self['session']['is_dispensing']:
+						break
+					time.sleep(0.5)
 			ts=time.time()
-			while (ts+65)<time.time():
-				if not self['session']['is_dispensing']:
+			while (ts+10)<time.time():
+				if self['session']['escrow_balance']!=0:
 					break
 				time.sleep(0.5)
-		ts=time.time()
-		while (ts+10)<time.time():
-			if self['session']['escrow_balance']!=0:
-				break
-			time.sleep(0.5)
-		self['session']=False
-		self.EventSessionComplete()
+			self.session_init()
+			self.EventSessionComplete()
+		else:
+			self.error('Вызов EndSession без запущенной сессии')
+			self.session_init()
 
 	def _getBalance(self):
 		return self['session']['cash_balance']+self['session']['escrow_balance']
