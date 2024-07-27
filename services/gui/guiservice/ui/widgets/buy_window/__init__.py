@@ -189,7 +189,7 @@ class BuyWindow(QWidget):
 
         self.ui.get_back_money_btn.clicked.connect(lambda: app.sgn_gui.RejectEscrow())
         self.ui.get_back_money_btn.clicked.connect(self.session_terminated.emit)
-        self.ui.continue_without_change_btn.clicked.connect(lambda: app.sgn_gui.AcceptEscrow())
+        self.ui.continue_without_change_btn.clicked.connect(lambda: app.sgn_gui.NominalIsHighContinue())
         self.ui.continue_without_change_btn.clicked.connect(lambda: self.payment_succeed.emit())
         self.no_money_left_to_change.connect(self.switch_on_not_enough_change_window)
 
@@ -242,6 +242,8 @@ class BuyWindow(QWidget):
         self.container_taken.connect(self.collect_the_order)
         self.plug_taken.connect(self.collect_the_order)
         self.loyal_card_taken.connect(self.collect_the_order)
+
+        self.ui.start_pouring_btn.clicked.connect(lambda: app.sgn_gui.AcknowlegeAmount())
 
     def start_session(self):
         app.sgn_gui.StartSession('CASH')
@@ -560,9 +562,9 @@ class BuyWindow(QWidget):
         lbl[0] = str(round(self.TOTAL_PRICE - water_summary_price * progress_percentage, 2))
         self.ui.top_payment_summary_price_lbl.setText(' '.join(lbl))
 
-    def TESTING_PAYMENT_RENDER(self):
-        self.ui.bottom_right_btn_stack_widget.setCurrentWidget(self.ui.testing_success_payment_page)
-        self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.testing_failed_payment_page)
+    # def TESTING_PAYMENT_RENDER(self):
+    #     self.ui.bottom_right_btn_stack_widget.setCurrentWidget(self.ui.testing_success_payment_page)
+    #     self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.testing_failed_payment_page)
 
     def switch_on_success_payment_window(self) -> None:
         """
@@ -649,7 +651,7 @@ class BuyWindow(QWidget):
         self.ui.bottom_right_second_stack_widget.setCurrentWidget(self.ui.bottom_right_second_empty_page)
         self.ui.bottom_right_btn_stack_widget.setCurrentWidget(self.ui.empty_bottom_right_page)
 
-        self.TESTING_PAYMENT_RENDER()
+        # self.TESTING_PAYMENT_RENDER()
 
     def switch_on_qr_window(self) -> None:
         """
@@ -672,7 +674,7 @@ class BuyWindow(QWidget):
         self.ui.bottom_right_second_stack_widget.setCurrentWidget(self.ui.bottom_right_second_empty_page)
         self.ui.bottom_right_btn_stack_widget.setCurrentWidget(self.ui.empty_bottom_right_page)
 
-        self.TESTING_PAYMENT_RENDER()
+        # self.TESTING_PAYMENT_RENDER()
 
     def switch_on_cash_or_loyal_window(self) -> None:
         """
@@ -696,7 +698,7 @@ class BuyWindow(QWidget):
         self.ui.top_right_second_stack_widget.setCurrentWidget(self.ui.top_right_second_empty_page)
         self.ui.bottom_right_second_stack_widget.setCurrentWidget(self.ui.bottom_right_second_empty_page)
 
-        self.TESTING_PAYMENT_RENDER()
+        # self.TESTING_PAYMENT_RENDER()
         self.ui.bottom_right_btn_stack_widget.setCurrentWidget(self.ui.cancel_payment_page)
 
     def switch_on_choose_payment_window(self) -> None:
