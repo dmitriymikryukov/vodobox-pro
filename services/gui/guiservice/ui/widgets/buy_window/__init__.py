@@ -56,7 +56,7 @@ class BuyWindow(QWidget):
         self._cancellation_time = self.config.cancellation_time
         self.session_timer = QTimer()
         self.payment_cancellation_timer = QTimer()
-        # self.bottle_filling_thread = QThread()
+        self.bottle_filling_thread = QThread()
         # self.start_session_thread = QThread()
         # self.start_session_thread.run = self.start_session
         self.is_pouring_running = True
