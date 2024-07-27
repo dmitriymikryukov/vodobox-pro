@@ -6,7 +6,9 @@ from ui.widgets.waiting_window import WaitingWindow
 from ui.widgets.translate_widget import TranslateWidget
 from ui.widgets.activation_window import ActivationWindow
 from ui.widgets.service_menu_window import ServiceMenuWindow
-import logging
+from ui import app
+
+logging = app.sgn_gui
 
 
 class MainWindow(QMainWindow):
