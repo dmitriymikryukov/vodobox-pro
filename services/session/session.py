@@ -243,6 +243,12 @@ class SgnSession(sgnService):
 			self.critical('Сессия уже завершена, нельзя списывать')
 		else:
 			self['session']['cash_balance']-=amount
+			if self['session']['cash_balance']<0:
+				self.critical('Баланс стал меньше 0, слишком много списали')
+				if self['session']['escrow_balance']>0:
+					self.esc_ack=amount
+					self.info('Аварийное затягивание купюры')
+					self.AcceptEscrow()					
 			self.EventBalanceChanged()
 
 	@subscribe
