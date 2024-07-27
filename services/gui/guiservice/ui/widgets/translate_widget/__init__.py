@@ -23,6 +23,7 @@ class TranslateWidget(QWidget):
         self._widgets: List[QWidget] = []
 
         # signals
+        self.language_selected.connect(lambda: logging.info('язык выбран'))
         self.language_selected.connect(self.set_current_language)
         self.language_selected.connect(self.change_app_language)
 
