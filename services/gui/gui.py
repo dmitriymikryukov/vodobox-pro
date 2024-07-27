@@ -102,7 +102,7 @@ class SgnGUI(sgnService):
 			self.exception('Беда при вызове: current_window.deposit_balance_changed.emit()')
 
 	@subscribe
-	def EventSessionComplete(Self)
+	def EventSessionComplete(Self):
 		self.info('Сессия завершена - жопу ставлю')
 		self.current_window=None
 
