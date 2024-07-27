@@ -87,12 +87,12 @@ class SgnGUI(sgnService):
 		except Exception as e:
 			self.exception('Беда при вызове: current_window.no_money_left_to_change.emit()')
 
-	# @subscribe
-	# def EventPaymentComplete(self):
-	# 	try:
-	# 		self.current_window.payment_succeed.emit()
-	# 	except Exception as e:
-	# 		self.exception('Беда при вызове: current_window.payment_succeed.emit()')
+	@subscribe
+	def EventPaymentComplete(self):
+		try:
+			self.current_window.payment_succeed.emit()
+		except Exception as e:
+			self.exception('Беда при вызове: current_window.payment_succeed.emit()')
 	#
 	# @subscribe
 	# def EventBalanceChanged(self):
