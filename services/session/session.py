@@ -149,39 +149,42 @@ class SgnSession(sgnService):
 			def xsessionend():
 				self.info('Процесс завершения сессии запущен')
 				try:
-					self['session']['started']=False
-					self.esc_ack=False
-					self['session']['nominal_is_high']=False
-					self['session']['query_amount']=False
-					self['session']['complete']=True
-					self.DeactivateAllPayments()
-					if self['session']['escrow_balance']!=0:
-						self.info('Нужно вернуть неиспользованную купюру')
-						self.RejectEscrow()
-					if self['session']['cash_balance']>0:
-						self.info('Будем выдавать сдачу')
-						self.info('Баланс до выдачи сдачи: %s'%(self.nominal_to_text_with_currency(self['session']['cash_balance']),))
-						self['session']['is_dispensing']=True
-						self.PayoutCash(self['session']['cash_balance'])
-						#наверное нужно запустить в отдельном процессе
-						ts=time.time()
-						self.info('Завершение сессии: ожидаем выдачу сдачи')
-						while (ts+65)>time.time():
-							if not self['session']['is_dispensing']:
-								break
-							time.sleep(0.5)
-						self.info('Завершение сессии: выдача сдачи сдача')
-						self.info('Баланс после выдачи сдачи: %s'%(self.nominal_to_text_with_currency(self['session']['cash_balance']),))
-					elif self['session']['cash_balance']<0:
-						self.critical('Баланс меньше 0: %s'%(self.nominal_to_text_with_currency(self['session']['cash_balance']),))
-					if self['session']['escrow_balance']!=0:
-						self.info('Завершение сессии: ожидаем Возврат купюры')
-						ts=time.time()
-						while (ts+10)>time.time():
-							if self['session']['escrow_balance']!=0:
-								break
-							time.sleep(0.5)
-						self.info('Завершение сессии: Возврат купюры завершен')
+					try:
+						self['session']['started']=False
+						self.esc_ack=False
+						self['session']['nominal_is_high']=False
+						self['session']['query_amount']=False
+						self['session']['complete']=True
+						self.DeactivateAllPayments()
+						if self['session']['escrow_balance']!=0:
+							self.info('Нужно вернуть неиспользованную купюру')
+							self.RejectEscrow()
+						if self['session']['cash_balance']>0:
+							self.info('Будем выдавать сдачу')
+							self.info('Баланс до выдачи сдачи: %s'%(self.nominal_to_text_with_currency(self['session']['cash_balance']),))
+							self['session']['is_dispensing']=True
+							self.PayoutCash(self['session']['cash_balance'])
+							#наверное нужно запустить в отдельном процессе
+							ts=time.time()
+							self.info('Завершение сессии: ожидаем выдачу сдачи')
+							while (ts+65)>time.time():
+								if not self['session']['is_dispensing']:
+									break
+								time.sleep(0.5)
+							self.info('Завершение сессии: выдача сдачи сдача')
+							self.info('Баланс после выдачи сдачи: %s'%(self.nominal_to_text_with_currency(self['session']['cash_balance']),))
+						elif self['session']['cash_balance']<0:
+							self.critical('Баланс меньше 0: %s'%(self.nominal_to_text_with_currency(self['session']['cash_balance']),))
+						if self['session']['escrow_balance']!=0:
+							self.info('Завершение сессии: ожидаем Возврат купюры')
+							ts=time.time()
+							while (ts+10)>time.time():
+								if self['session']['escrow_balance']!=0:
+									break
+								time.sleep(0.5)
+							self.info('Завершение сессии: Возврат купюры завершен')
+					except:
+						self.exception('Сбой завершения сессии')
 				finally:
 					self['session']['ending']=False
 					self.session_init()
