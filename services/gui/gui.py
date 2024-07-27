@@ -107,8 +107,8 @@ class SgnGUI(sgnService):
 		self.current_window=None
 
 	@subscribe
-	def DepositACK(self):
-		self.info('Разрешаю наливать - до этого нельзя было')
+	def DepositACK(self,reason):
+		self.info('Разрешаю наливать - до этого нельзя было %s'%(reason))
 
 	@subscribe
 	def DepositNCK(self):
