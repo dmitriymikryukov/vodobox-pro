@@ -41,7 +41,15 @@ def mprun():
 
 if __name__ == '__main__':
 	multiprocessing.freeze_support()
-	mprun()
+	try:
+		mprun()
+	finally:
+		print("BOOT EXIT!!!")
+		try:
+			from systemd import journal
+			journal.send('[kiosk] **** РАБОТА СИСТЕМЫ ЗАВЕРШЕНА ****')
+		except:
+			pass
 
 	#p=multiprocessing.Process(target=mprun)
 	#p.start()
