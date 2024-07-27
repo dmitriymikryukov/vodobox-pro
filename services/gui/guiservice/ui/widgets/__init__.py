@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QMainWindow, QStackedWidget
+from PyQt5.QtCore import QCoreApplication, QEvent
 from configuration.testing import UiConfig
 from ui.widgets.buy_window import BuyWindow
 from ui.widgets.waiting_window import WaitingWindow
@@ -111,7 +112,8 @@ class MainWindow(QMainWindow):
         try:
 
             self.windows_stack_widget.removeWidget(self.buy_window)
-            # self.buy_window.deleteLater()
+            QCoreApplication.instance().sendPostedEvents(self.buy_window, QEvent.DeferredDelete)
+            self.buy_window.deleteLater()
             self.buy_window = BuyWindow()
             app.sgn_gui.current_window = self.buy_window
 
