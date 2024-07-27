@@ -181,7 +181,7 @@ class SgnSession(sgnService):
 					self.debug('Сессия завершена и проинициализирована')
 					self.EventSessionComplete()
 					self.debug('Последнее сообщение в сессии')
-					self.info('******************* СЕССИЯ ЗАВЕРШЕНА *********************')
+					self.info('******************** СЕССИЯ ЗАВЕРШЕНА **********************')
 			threading.Thread(target=xsessionend,daemon=True).start()
 		else:
 			self.error('Вызов EndSession без запущенной сессии')
