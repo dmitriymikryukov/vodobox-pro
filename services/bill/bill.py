@@ -259,7 +259,7 @@ class SgnMDBbill(ifaceMDBbill):
 						if self['session']['query_amount']!=0:
 							qelse=(self['session']['query_amount']-self['session']['cash_balance'])
 							if n2c>=qelse or qelse<(po/2):
-								if qelse<(po/2):
+								if qelse>(po/2):
 									self['session']['nominal_is_high']=True
 								self.EventPaymentNominalEscrow(self.able['group'],self.able['name'],
 									n2c,route_txt,t['is_bill'],t['is_stack_full'])

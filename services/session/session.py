@@ -137,8 +137,11 @@ class SgnSession(sgnService):
 			self['session']['complete']=True
 			self.DeactivateAllPayments()
 			if self['session']['escrow_balance']!=0:
+				self.info('Нужно вернуть неиспользованную купюру')
 				self.RejectEscrow()
-			if self['session']['cash_balance']:
+			if self['session']['cash_balance']>0:
+				self.info('Будем выдавать сдачу')
+				self.info('Баланс до выдачи сдачи: %s'%(self.nominal_to_text_with_currency(self['session']['cash_balance']),))
 				self['session']['is_dispensing']=True
 				self.PayoutCash(self['session']['cash_balance'])
 				#наверное нужно запустить в отдельном процессе
@@ -147,6 +150,9 @@ class SgnSession(sgnService):
 					if not self['session']['is_dispensing']:
 						break
 					time.sleep(0.5)
+				self.info('Баланс после выдачи сдачи: %s'%(self.nominal_to_text_with_currency(self['session']['cash_balance']),))
+			elif self['session']['cash_balance']<0:
+				self.critical('Баланс меньше 0: %s'%(self.nominal_to_text_with_currency(self['session']['cash_balance']),))
 			ts=time.time()
 			while (ts+10)<time.time():
 				if self['session']['escrow_balance']!=0:
