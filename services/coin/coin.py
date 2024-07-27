@@ -500,6 +500,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 							ft=True
 							while (ts+5.0)>time.time():
 								x=self.alternativePayout(amo)
+								self.debug('alternativePayout(%s) = %s'%(amo,x))
 								if ft:
 									ft=False
 									if x is False:
@@ -514,6 +515,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 									break
 								self.polling()
 								if self.able['status'] in ['BUSY']:
+									self.debug('BUSY')
 									succ=True
 									break
 								time.sleep(0.1)
@@ -537,6 +539,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 							if amo<=0:
 								self.error('Ничего не выдалось')
 								break
+							self.debug('Получаем отчет')
 							ts=time.time()
 							summ=0
 							xuc=False
@@ -567,7 +570,9 @@ class SgnMDBcoin(ifaceMDBcoin):
 						self.exception('Сбой выдачи сдачи')
 				finally:
 					res_amo=int(self.internalToCents(res_amo)*dpc);					
-					xamo=int(self.internalToCents(xamo)*dpc);					
+					xamo=int(self.internalToCents(xamo)*dpc);
+					if (res_amo!=xamo):
+						self.critical('Запрошенная и выданная сдачи не совпадают')					
 					self.EventPayoutFinished(self.able['group'],self.able['name'],res_amo,xamo)
 					self.tubeStatusUpdate()
 					self.info('Монет на конец выдачи сдачи: %s'%self.nominal_to_text_with_currency(self['dispense_amount']['coin']))
