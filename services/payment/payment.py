@@ -158,6 +158,7 @@ class SgnPayment(sgnService):
 
 
 	def act_deact_cash(self,en):
+		self.debug('act_deact_cash started')
 		res=False
 		try:
 			if 'CASH' in self['payment_method'].keys():
@@ -186,15 +187,18 @@ class SgnPayment(sgnService):
 		except Exception as e:
 			self.exception(e)
 			res=False
+		self.debug('act_deact_cash finished')
 		return res
 
 	@subscribe
-	def ActivateCash(self):
-		self.act_deact_cash(True)
+	def ActivateCash(self):		
+		x=self.act_deact_cash(True)
+		self.debug('ActivateCash завершена')
+		return x
 
 	@subscribe
 	def DeactivateCash(self):
-		self.act_deact_cash(False)
+		return self.act_deact_cash(False)
 
 	@subscribe
 	def DeactivateAllPayments(self):
