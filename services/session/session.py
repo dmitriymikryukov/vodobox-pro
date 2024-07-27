@@ -74,7 +74,7 @@ class SgnSession(sgnService):
 	@subscribe
 	def StartSession(self,session_type):
 		self.info('Запускаем начало сессии')
-		if self['session'] and not self['session']['complete']:
+		if self['session'] and not self['session']['complete'] and self['session']['started']:
 			self.info('Обнаружена незавершенная сессия')
 			self.EndSession()
 		self.session_init()
@@ -181,10 +181,11 @@ class SgnSession(sgnService):
 
 	@subscribe
 	def DepositAmount(self,amount):
+		self.info('Замораживаем %s'%(self.nominal_to_text_with_currency(amount),)))
 		self.esc_ack=False
 		bal=self._getBalance()
 		if bal<amount:
-			self.error('Недостаточно денежных средств')
+			self.error('Недостаточно денежных средств (%s)'%(self.nominal_to_text_with_currency(bal),))
 			self.DepositNCK('INSUFFICIENT_BALANCE')
 		elif self['session']['escrow_balance']>0 and (bal-self['session']['escrow_balance'])<amount:
 			self.esc_ack=amount
@@ -196,8 +197,8 @@ class SgnSession(sgnService):
 
 	@subscribe
 	def AcknowlegeAmount(self,amount):
-		self.info('Списываем %s'%(self.nominal_to_text_with_currency(amount)),)
-		self['cash_balance']-=amount
+		self.info('Списываем %s'%(self.nominal_to_text_with_currency(amount),))
+		self['session']['cash_balance']-=amount
 
 	@subscribe
 	def NominalIsHighContinue(self):

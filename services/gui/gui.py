@@ -106,6 +106,15 @@ class SgnGUI(sgnService):
 		self.info('Сессия завершена - жопу ставлю')
 		self.current_window=None
 
+	@subscribe
+	def DepositACK(self):
+		self.info('Разрешаю наливать - до этого нельзя было')
+
+	@subscribe
+	def DepositNCK(self):
+		self.error('Запрещаю наливать! Что-то не так!')
+
+
 try:
 	sgn_gui = SgnGUI()
 	sgn_gui.warning('SGN GUI STARTED')
