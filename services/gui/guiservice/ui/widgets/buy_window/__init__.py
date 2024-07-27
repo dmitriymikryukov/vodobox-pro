@@ -21,6 +21,7 @@ class BuyWindow(QWidget):
     """
 
     # custom signals initialization
+    get_money_change = pyqtSignal(float)
     session_started = pyqtSignal()
     session_timeout = pyqtSignal()
     buy_window_closed = pyqtSignal()
@@ -395,7 +396,7 @@ class BuyWindow(QWidget):
                 self.set_total_price(sum([p.price for p in self._chosen_products]))
                 water = self._chosen_products.pop(i)
                 app.sgn_gui.DepositAmount(water.price * 100)
-                self.filling_started.emit(water)
+                # self.filling_started.emit(water)
                 return
         self.ui.bottom_right_btn_stack_widget.setCurrentWidget(self.ui.terminate_session_page)
         # self.buy_window_closed.emit()
