@@ -107,10 +107,12 @@ class MainWindow(QMainWindow):
     def render_buy_window(self):
         # происходит перерендер при создании нового окна покупок после возвращения
         # в меню ожидания
+        from ui import app
 
         self.windows_stack_widget.removeWidget(self.buy_window)
         self.buy_window.deleteLater()
         self.buy_window = BuyWindow()
+        app.sgn_gui.current_window = self.buy_window
 
         if not UiConfig.is_light_theme():
             self.buy_window.turn_on_dark_theme()
