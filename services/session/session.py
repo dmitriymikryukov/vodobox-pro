@@ -159,10 +159,12 @@ class SgnSession(sgnService):
 					break
 				time.sleep(0.5)
 			self.session_init()
+			self.debug('Сессия завершена и проинициализирована')
 			self.EventSessionComplete()
 		else:
 			self.error('Вызов EndSession без запущенной сессии')
 			self.session_init()
+		self.debug('Последнее сообщение в сессии')
 
 	def _getBalance(self):
 		return self['session']['cash_balance']+self['session']['escrow_balance']
