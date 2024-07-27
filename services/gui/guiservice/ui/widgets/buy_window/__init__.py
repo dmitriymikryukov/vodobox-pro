@@ -400,7 +400,7 @@ class BuyWindow(QWidget):
                 app.sgn_gui.DepositAmount(water.price * 100)
                 self.filling_started.emit(water)
                 return
-
+        self.ui.bottom_right_btn_stack_widget.setCurrentWidget(self.ui.terminate_session_page)
         # self.buy_window_closed.emit()
 
     def add_product(self, product: Product) -> None:
