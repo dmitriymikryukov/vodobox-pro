@@ -44,6 +44,8 @@ class SgnSession(sgnService):
 			is_dispensing=False,
 			query_amount=False,
 			complete=False,
+			nominal_is_high=False,
+			payment_complete=False
 			)
 		self.esc_ack=False
 
@@ -69,7 +71,7 @@ class SgnSession(sgnService):
 
 	@subscribe
 	def StartSession(self,session_type):
-		if self['session']:
+		if self['session'] and not self['session']['complete']:
 			self.EndSession()
 		self.session_init()
 		self['session']['session_type']=session_type
@@ -122,6 +124,7 @@ class SgnSession(sgnService):
 	@subscribe
 	def EndSession(self):
 		self.esc_ack=False
+		self['session']['nominal_is_high']=False
 		self['session']['query_amount']=False
 		self['session']['complete']=True
 		self.DeactivateAllPayments()
@@ -143,32 +146,52 @@ class SgnSession(sgnService):
 	@subscribe
 	def EventPaymentComplete(self):
 		self.info('Сессия: Оплата завершена. Получено %s из %s'%(self.nominal_to_text_with_currency(self._getBalance()),self.nominal_to_text_with_currency(self['session']['query_amount'])))
-		self.DeactivateAllPayments()
 
 	@subscribe
 	def EventBalanceChanged(self):
 		self.info('Сессия: Изменение баланса: %s из %s'%(self.nominal_to_text_with_currency(self._getBalance()),self.nominal_to_text_with_currency(self['session']['query_amount']),))
 		if self['session']['query_amount']:
 			bal=self._getBalance()
-			if bal>=self['session']['query_amount']:
-				self.EventPaymentComplete()
+			if bal>=self['session']['query_amount']:				
+				self['session']['payment_complete']=True
+				self.DeactivateAllPayments()
+				if not ['session']['nominal_is_high']:					
+					self.info('Оплата завершена')
+					self.EventPaymentComplete()
+				else:
+					self.info('Оплата завершена, но недостаточно сдачи, ждем решения клиента')
 
 	@subscribe
 	def DepositAmount(self,amount):
 		self.esc_ack=False
 		bal=self._getBalance()
 		if bal<amount:
+			self.error('Недостаточно денежных средств')
 			self.DepositNCK('INSUFFICIENT_BALANCE')
 		elif self['session']['escrow_balance']>0 and (bal-self['session']['escrow_balance'])<amount:
 			self.esc_ack=amount
+			self.info('Необходимо затянуть купюру')
 			self.AcceptEscrow()
 		else:
+			self.info('Разрешаем продажу')
 			self.DepositACK()
 
 	@subscribe
 	def AcknowlegeAmount(self,amount):
+		self.info('Списываем %s'%(self.nominal_to_text_with_currency(amount)),)
 		self['cash_balance']-=amount
 
+	@subscribe
+	def NominalIsHighContinue(self):
+		if self['session']['nominal_is_high']:
+			if self['session']['payment_complete']:
+				self['session']['nominal_is_high']=False
+				self.info('Оплата завершена, купюра остается в ESCROW, затянем когда она потребуется')
+				self.EventPaymentComplete()
+			else:
+				self.AcceptEscrow()
+		else:
+			self.critical('Зачем-то вызвали продолжение NominalIsHigh, хотя такого события не было :(')		
 
 try:
 	l=SgnSession()

@@ -243,7 +243,13 @@ class SgnMDBbill(ifaceMDBbill):
 						route_txt="CASH_BOX"
 						ru_txt=u'В СТЕКЕР'
 						self.EventPaymentNominalStacked(self.able['group'],self.able['name'],
-							self.nominal_to_cents(t['nominal']),route_txt,t['is_bill'],t['is_stack_full'])	
+							self.nominal_to_cents(t['nominal']),route_txt,t['is_bill'],t['is_stack_full'])							
+						if self['session']['nominal_is_high'] and self['session']['payment_complete']:
+							self['session']['nominal_is_high']=False
+							self.info('Оплата завершена')
+							self.EventPaymentComplete()
+						else:
+							self['session']['nominal_is_high']=False
 					elif 1==route:
 						self.able['escrow']=t
 						route_txt="ESCROW"
@@ -253,25 +259,32 @@ class SgnMDBbill(ifaceMDBbill):
 						if self['session']['query_amount']!=0:
 							qelse=(self['session']['query_amount']-self['session']['cash_balance'])
 							if n2c>=qelse or qelse<(po/2):
+								if qelse<(po/2):
+									self['session']['nominal_is_high']=True
 								self.EventPaymentNominalEscrow(self.able['group'],self.able['name'],
 									n2c,route_txt,t['is_bill'],t['is_stack_full'])
-								if qelse<(po/2):
+								if self['session']['nominal_is_high']:
 									self.debug('n2c=%s qelse=%s po=%s'%(n2c,qelse,po))
 									self.EventNominalIsHigh(self.able['group'],self.able['name'],
 										n2c,route_txt,t['is_bill'],po-qelse)									
 							elif qelse<=0:
+								self['session']['nominal_is_high']=False
 								self.cmdEscrow(0)								
 							else:
+								self['session']['nominal_is_high']=False
 								self.cmdEscrow(1)
 						elif n2c>(po/2):
+							self['session']['nominal_is_high']=True
 							self.EventPaymentNominalEscrow(self.able['group'],self.able['name'],
 								n2c,route_txt,t['is_bill'],t['is_stack_full'])
 							self.debug('n2c=%s po=%s'%(n2c,po))
 							self.EventNominalIsHigh(self.able['group'],self.able['name'],
 								n2c,route_txt,t['is_bill'],po-n2c)	
 						else:
+							self['session']['nominal_is_high']=False
 							self.cmdEscrow(1)
 					elif 2==route:
+						self['session']['nominal_is_high']=False
 						self.able['escrow']=False
 						route_txt="REJECT"
 						ru_txt='ВОЗВРАЩЕНА КЛИЕНТУ'
