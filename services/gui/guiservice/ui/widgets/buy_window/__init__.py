@@ -188,6 +188,7 @@ class BuyWindow(QWidget):
             self.session_terminated.connect(self.end_session_thread.start)
 
         self.ui.get_back_money_btn.clicked.connect(lambda: app.sgn_gui.RejectEscrow())
+        self.ui.get_back_money_btn.clicked.connect(self.session_terminated.emit)
         self.ui.continue_without_change_btn.clicked.connect(lambda: app.sgn_gui.AcceptEscrow())
         self.ui.continue_without_change_btn.clicked.connect(lambda: self.payment_succeed.emit())
         self.no_money_left_to_change.connect(self.switch_on_not_enough_change_window)
