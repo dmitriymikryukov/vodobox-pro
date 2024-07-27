@@ -2327,7 +2327,7 @@ class Ui_Form(object):
         self.second_bottom_left_stack.setCurrentIndex(1)
         self.top_payment_hint_stack_widget.setCurrentIndex(0)
         self.top_payment_price_stack_widget.setCurrentIndex(0)
-        self.main_stack_widget.setCurrentIndex(0)
+        self.main_stack_widget.setCurrentIndex(2)
         self.payment_stack_widget.setCurrentIndex(4)
         self.payment_status_stack_widget.setCurrentIndex(4)
         self.bottom_hints_stack_widget.setCurrentIndex(2)
@@ -2397,7 +2397,8 @@ class Ui_Form(object):
         self.top_payment_summary_price_lbl.setText(_translate("Form", "- Р"))
         self.init_cart_lbl.setText(_translate("Form", "Выберите товар"))
         self.take_plug_lbl.setText(_translate("Form", "Заберите пробку"))
-        self.take_plug_lbl_2.setText(_translate("Form", "Ожидайте выдачи сдачи"))
+        self.take_plug_lbl_2.setText(_translate("Form", "Ожидайте выдачи \n"
+"сдачи"))
         self.take_loyal_card_lbl.setText(_translate("Form", "Заберите карту \n"
 "лояльности"))
         self.take_container_lbl.setText(_translate("Form", "Заберите тару"))

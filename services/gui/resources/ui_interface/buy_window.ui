@@ -2859,7 +2859,7 @@ border-bottom-left-radius: 16px;
                      <string notr="true">background-color: transparent;</string>
                     </property>
                     <property name="currentIndex">
-                     <number>0</number>
+                     <number>2</number>
                     </property>
                     <widget class="QWidget" name="product_cart_page">
                      <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -3099,7 +3099,8 @@ border-bottom-left-radius: 16px;
                             </font>
                            </property>
                            <property name="text">
-                            <string>Ожидайте выдачи сдачи</string>
+                            <string>Ожидайте выдачи 
+сдачи</string>
                            </property>
                            <property name="alignment">
                             <set>Qt::AlignCenter</set>
