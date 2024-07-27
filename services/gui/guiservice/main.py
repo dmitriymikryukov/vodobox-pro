@@ -1,10 +1,9 @@
-from ui.widgets import MainWindow
-from ui import app
 import sys
 
-
 def run_gui(IPC):
+    from ui import app
     app.sgn_gui = IPC
+    from ui.widgets import MainWindow
     window = MainWindow()
     window.showFullScreen()
 
