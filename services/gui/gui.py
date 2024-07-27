@@ -87,24 +87,24 @@ class SgnGUI(sgnService):
 		except Exception as e:
 			self.exception('Беда при вызове: current_window.no_money_left_to_change.emit()')
 
-	@subscribe
-	def EventPaymentComplete(self):
-		try:
-			self.current_window.payment_succeed.emit()
-		except Exception as e:
-			self.exception('Беда при вызове: current_window.payment_succeed.emit()')
+	# @subscribe
+	# def EventPaymentComplete(self):
+	# 	try:
+	# 		self.current_window.payment_succeed.emit()
+	# 	except Exception as e:
+	# 		self.exception('Беда при вызове: current_window.payment_succeed.emit()')
+	#
+	# @subscribe
+	# def EventBalanceChanged(self):
+	# 	try:
+	# 		self.current_window.deposit_balance_changed.emit()
+	# 	except Exception as e:
+	# 		self.exception('Беда при вызове: current_window.deposit_balance_changed.emit()')
 
-	@subscribe
-	def EventBalanceChanged(self):
-		try:
-			self.current_window.deposit_balance_changed.emit()
-		except Exception as e:
-			self.exception('Беда при вызове: current_window.deposit_balance_changed.emit()')
-
-	@subscribe
-	def EventSessionComplete(self):
-		self.info('Сессия завершена - жопу ставлю')
-		self.current_window=None
+	# @subscribe
+	# def EventSessionComplete(self):
+	# 	self.info('Сессия завершена - жопу ставлю')
+	# 	self.current_window=None
 
 	@subscribe
 	def DepositACK(self):
