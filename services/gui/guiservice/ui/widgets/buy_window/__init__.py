@@ -56,9 +56,9 @@ class BuyWindow(QWidget):
         self._cancellation_time = self.config.cancellation_time
         self.session_timer = QTimer()
         self.payment_cancellation_timer = QTimer()
-        self.bottle_filling_thread = QThread()
-        self.start_session_thread = QThread()
-        self.start_session_thread.run = self.start_session
+        # self.bottle_filling_thread = QThread()
+        # self.start_session_thread = QThread()
+        # self.start_session_thread.run = self.start_session
         self.is_pouring_running = True
         self._chosen_products: list[Product] = []
         self.remaining_price: float = 0
@@ -172,7 +172,7 @@ class BuyWindow(QWidget):
         Инициализация сигналов для оплаты:
         (банковской картой, наличными, картой лояльности, qr-код)
         """
-        self.ui.cash_or_loyal_card_btn.clicked.connect(self.start_session_thread.start)
+        self.ui.cash_or_loyal_card_btn.clicked.connect(self.start_session)
         self.ui.cash_or_loyal_card_btn.clicked.connect(self.switch_on_cash_or_loyal_window)
         self.ui.bank_card_btn.clicked.connect(self.switch_on_bank_card_window)
         self.ui.qr_btn.clicked.connect(self.switch_on_qr_window)
