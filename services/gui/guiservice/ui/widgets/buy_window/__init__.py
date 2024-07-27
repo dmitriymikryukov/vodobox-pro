@@ -190,6 +190,7 @@ class BuyWindow(QWidget):
         self.ui.get_back_money_btn.clicked.connect(lambda: app.sgn_gui.RejectEscrow())
         self.ui.continue_without_change_btn.clicked.connect(lambda: app.sgn_gui.AcceptEscrow())
         self.ui.continue_without_change_btn.clicked.connect(self.payment_succeed.emit)
+        self.no_money_left_to_change.connect(self.switch_on_not_enough_change_window)
 
         # custom signals
         self.deposit_balance_changed.connect(self.set_deposited_amount_cash)
@@ -676,6 +677,7 @@ class BuyWindow(QWidget):
         """
         Переключение на меню оплаты наличными или картой лояльности
         """
+        logging.info('Выбрана оплата наличными или по карте лояльности')
         self.set_deposited_amount_cash()
 
         self.ui.main_stack_widget.setCurrentWidget(self.ui.payment_page)
@@ -700,6 +702,7 @@ class BuyWindow(QWidget):
         """
         Переключение на меню выбора способа оплаты
         """
+        logging.info('Переход в меню выбора оплаты')
         self.ui.top_left_stack_widget.setCurrentWidget(self.ui.empty_top_left_page)
         self.ui.second_top_left_stack_widget.setCurrentWidget(self.ui.add_more_page)
         self.ui.second_bottom_left_stack.setCurrentWidget(self.ui.empty_second_bottom_left_page)
