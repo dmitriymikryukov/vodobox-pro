@@ -183,8 +183,8 @@ class BuyWindow(QWidget):
         self.ui.cancel_payment_btn.clicked.connect(self.render_consumer_info)
         self.ui.testing_success_payment_btn.clicked.connect(self.payment_succeed.emit)
         self.ui.testing_failed_payment_btn.clicked.connect(self.payment_failed.emit)
-        if app.sgn_gui:
-            self.buy_window_closed.connect(lambda: app.sgn_gui.AcknowlegeAmount(self.TOTAL_PRICE * 100))
+        # if app.sgn_gui:
+        #     self.buy_window_closed.connect(lambda: app.sgn_gui.AcknowlegeAmount(self.TOTAL_PRICE * 100))
 
         self.ui.get_back_money_btn.clicked.connect(lambda: app.sgn_gui.RejectEscrow())
         self.ui.get_back_money_btn.clicked.connect(self.switch_on_choose_payment_window)
@@ -219,6 +219,7 @@ class BuyWindow(QWidget):
         self.ui.continue_btn.clicked.connect(lambda: self.set_is_pouring_running(True))
 
         self.ui.terminate_session_btn.clicked.connect(lambda: app.sgn_gui.EndSession())
+        self.ui.terminate_pouring_btn.clicked.connect(lambda: app.sgn_gui.AcknowlegeAmount(self.TOTAL_PRICE))
         self.ui.terminate_pouring_btn.clicked.connect(self.collect_the_order)
         self.ui.terminate_pouring_btn.clicked.connect(lambda: self.set_is_pouring_running(False))
         self.ui.start_pouring_btn.clicked.connect(self.collect_the_order)
