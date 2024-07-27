@@ -51,6 +51,7 @@ class ifaceMDBbill(ifaceBILLipc,ifaceMDBslave,ifacePAYMENTslave):
 		return response
 
 	def identification(self,level=2):
+		flt=False
 		if level>1:			
 			try:
 				response=self.cmd([7,2])
