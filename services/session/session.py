@@ -155,7 +155,7 @@ class SgnSession(sgnService):
 			if bal>=self['session']['query_amount']:				
 				self['session']['payment_complete']=True
 				self.DeactivateAllPayments()
-				if not ['session']['nominal_is_high']:					
+				if not self['session']['nominal_is_high']:					
 					self.info('Оплата завершена')
 					self.EventPaymentComplete()
 				else:

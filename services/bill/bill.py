@@ -290,6 +290,12 @@ class SgnMDBbill(ifaceMDBbill):
 						ru_txt='ВОЗВРАЩЕНА КЛИЕНТУ'
 						self.EventPaymentNominalRejected(self.able['group'],self.able['name'],
 							self.nominal_to_cents(t['nominal']),route_txt,t['is_bill'],t['is_stack_full'])	
+						if self['session']['nominal_is_high'] and self['session']['payment_complete']:
+							self['session']['nominal_is_high']=False
+							self.info('Возврат купюры')
+							self.EventPaymentComplete()
+						else:
+							self['session']['nominal_is_high']=False
 					elif 3==route or 5==route:
 						self.able['escrow']=False
 						route_txt="RECYCLER"
@@ -370,7 +376,7 @@ class SgnMDBbill(ifaceMDBbill):
 				self.EventPaymentError(self.able['group'],self.able['name'],aEvent[0],"COIN UNKNOWN STATUS:%02X"%aEvent[0])
 
 		except Exception as e:
-			self.exception('ERROR IN POLL PARSER, EVENT: {e}: {err}',e=aEvent,err=format_exc())
+			self.exception('ERROR IN POLL PARSER, EVENT: %s: %s'%(aEvent,format_exc()))
 		return 1
 
 	def escrowProcessing(self):

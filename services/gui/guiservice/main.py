@@ -9,8 +9,8 @@ def run_gui(IPC):
     window.showFullScreen()
 
     window.show()
-    sys.exit(app.exec())
+    return app.exec()
 
 
 if __name__ == "__main__":
-    run_gui(None)
+    sys.exit(run_gui(None))
