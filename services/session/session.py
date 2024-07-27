@@ -139,6 +139,13 @@ class SgnSession(sgnService):
 				if not self['session']['is_dispensing']:
 					break
 				time.sleep(0.5)
+		ts=time.time()
+		while (ts+10)<time.time():
+			if self['session']['escrow_balance']!=0:
+				break
+			time.sleep(0.5)
+		self['session']=False
+		self.EventSessionComplete()
 
 	def _getBalance(self):
 		return self['session']['cash_balance']+self['session']['escrow_balance']
