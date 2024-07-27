@@ -243,7 +243,7 @@ class BuyWindow(QWidget):
         self.plug_taken.connect(self.collect_the_order)
         self.loyal_card_taken.connect(self.collect_the_order)
 
-        self.ui.start_pouring_btn.clicked.connect(lambda: app.sgn_gui.AcknowlegeAmount())
+        self.ui.start_pouring_btn.clicked.connect(lambda: app.sgn_gui.AcknowlegeAmount(sum([p.price for p in self._chosen_products if isinstance(p, Water)])))
 
     def start_session(self):
         app.sgn_gui.StartSession('CASH')
