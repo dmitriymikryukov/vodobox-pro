@@ -249,7 +249,6 @@ class BuyWindow(QWidget):
         # передаем сумму заказа в копейках
         app.sgn_gui['session']['query_amount'] = sum([product.price for product in self._chosen_products]) * 100
         app.sgn_gui.ActivateCash()
-        app.sgn_gui.join()
 
     def turn_on_dark_theme(self) -> None:
         """
