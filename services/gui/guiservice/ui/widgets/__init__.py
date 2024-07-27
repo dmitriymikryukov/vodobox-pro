@@ -110,7 +110,6 @@ class MainWindow(QMainWindow):
     def render_buy_window(self):
         # происходит перерендер при создании нового окна покупок после возвращения
         # в меню ожидания
-        from ui import app
         try:
             logging.info('Buy Window пересоздано')
             self.windows_stack_widget.removeWidget(self.buy_window)
