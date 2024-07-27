@@ -188,8 +188,8 @@ class BuyWindow(QWidget):
             self.session_terminated.connect(self.end_session_thread.start)
 
         self.ui.get_back_money_btn.clicked.connect(lambda: app.sgn_gui.RejectEscrow())
-        self.ui.continue_without_change_page.clicked.connect(lambda: app.sgn_gui.AcceptEscrow())
-        self.ui.continue_without_change_page.clicked.connect(self.payment_succeed.emit)
+        self.ui.continue_without_change_btn.clicked.connect(lambda: app.sgn_gui.AcceptEscrow())
+        self.ui.continue_without_change_btn.clicked.connect(self.payment_succeed.emit)
 
         # custom signals
         self.deposit_balance_changed.connect(self.set_deposited_amount_cash)
