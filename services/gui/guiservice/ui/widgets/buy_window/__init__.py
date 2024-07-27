@@ -58,7 +58,7 @@ class BuyWindow(QWidget):
         self.bottle_filling_thread = QThread()
         self.start_session_thread = QThread()
         self.end_session_thread = QThread()
-        self.end_session_thread.run = app.sgn_gui.EndSession
+        self.end_session_thread.run = lambda: app.sgn_gui.EndSession()
         self.start_session_thread.run = self.start_session
         self.is_pouring_running = True
         self._chosen_products: list[Product] = []
@@ -243,7 +243,6 @@ class BuyWindow(QWidget):
         self.plug_taken.connect(self.collect_the_order)
         self.loyal_card_taken.connect(self.collect_the_order)
 
-        self.ui.start_pouring_btn.clicked.connect(lambda: app.sgn_gui.AcknowlegeAmount(sum([p.price for p in self._chosen_products if isinstance(p, Water)])))
 
     def start_session(self):
         app.sgn_gui.StartSession('CASH')
