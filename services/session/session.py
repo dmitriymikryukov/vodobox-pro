@@ -92,6 +92,7 @@ class SgnSession(sgnService):
 		self.session_init()
 		self['session']['session_type']=session_type
 		self['session']['started']=True
+		self.EventSessionStarted()
 
 	@subscribe
 	def ChangeSession(self,session_type):

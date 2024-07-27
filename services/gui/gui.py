@@ -65,6 +65,13 @@ class SgnGUI(sgnService):
 		return self.nominal_to_text(n)+self['currency']
 
 	@subscribe
+	def EventSessionStarted(self):
+		self.info('Можем принимать наличные: %s'%(self.can_accept_cash(),))
+		self.info('>Можем принимать купюры: %s'%(self.can_accept_bills(),))
+		self.info('>Можем принимать монеты: %s'%(self.can_accept_coins(),))
+		self.info('Можем выдавать сдачу: %s'%(self.can_dispense_cash(),))
+
+	@subscribe
 	def EventMoneyStacked(self,amount,mtype):
 		self.info('Пополение баланса на %s через %s'%(self.nominal_to_text_with_currency(amount),mtype))
 
