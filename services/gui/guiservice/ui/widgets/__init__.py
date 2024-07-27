@@ -78,7 +78,7 @@ class MainWindow(QMainWindow):
         self.service_menu.service_menu_exited.connect(
             lambda: self.windows_stack_widget.setCurrentWidget(self.waiting_window)
         )
-        self.buy_window.session_terminated.connect(self.cancel_buy_window_by_termination)
+        self.buy_window.buy_window_closed.connect(self.cancel_buy_window_by_termination)
         self.buy_window.session_timeout.connect(self.cancel_buy_window_by_timeout)
 
     def init_translate_signal(self):
@@ -129,7 +129,7 @@ class MainWindow(QMainWindow):
             self.init_translate_signal()
             self.waiting_window.switch_on_waiting_widget()
 
-            self.buy_window.session_terminated.connect(self.cancel_buy_window_by_termination)
+            self.buy_window.buy_window_closed.connect(self.cancel_buy_window_by_termination)
             self.buy_window.session_timeout.connect(self.cancel_buy_window_by_timeout)
         except Exception as err:
             logging.error(f'Ошибка при пересоздании меню покупки: {err}')
