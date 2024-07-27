@@ -144,9 +144,10 @@ class SgnSession(sgnService):
 		if self['session']['ending']:
 			self.error('Сессия уже завершается')			
 		elif self['session']['started']:
-			self.info('Завершение сессии')
+			self.info('!!!!!!!!! Завершение сессии !!!!!!!!!')
 			self['session']['ending']=True
 			def xsessionend():
+				self.info('Процесс завершения сессии запущен')
 				try:
 					self['session']['started']=False
 					self.esc_ack=False
@@ -164,18 +165,23 @@ class SgnSession(sgnService):
 						self.PayoutCash(self['session']['cash_balance'])
 						#наверное нужно запустить в отдельном процессе
 						ts=time.time()
+						self.info('Завершение сессии: ожидаем выдачу сдачи')
 						while (ts+65)>time.time():
 							if not self['session']['is_dispensing']:
 								break
 							time.sleep(0.5)
+						self.info('Завершение сессии: выдача сдачи сдача')
 						self.info('Баланс после выдачи сдачи: %s'%(self.nominal_to_text_with_currency(self['session']['cash_balance']),))
 					elif self['session']['cash_balance']<0:
 						self.critical('Баланс меньше 0: %s'%(self.nominal_to_text_with_currency(self['session']['cash_balance']),))
-					ts=time.time()
-					while (ts+10)>time.time():
-						if self['session']['escrow_balance']!=0:
-							break
-						time.sleep(0.5)
+					if self['session']['escrow_balance']!=0:
+						self.info('Завершение сессии: ожидаем Возврат купюры')
+						ts=time.time()
+						while (ts+10)>time.time():
+							if self['session']['escrow_balance']!=0:
+								break
+							time.sleep(0.5)
+						self.info('Завершение сессии: Возврат купюры завершен')
 				finally:
 					self['session']['ending']=False
 					self.session_init()
@@ -229,8 +235,11 @@ class SgnSession(sgnService):
 	@subscribe
 	def AcknowlegeAmount(self,amount):
 		self.info('Списываем %s'%(self.nominal_to_text_with_currency(amount),))
-		self['session']['cash_balance']-=amount
-		self.EventBalanceChanged()
+		if not self['session']['started'] or self['session']['complete'] or self['session']['ending']:
+			self.critical('Сессия уже завершена, нельзя списывать')
+		else:
+			self['session']['cash_balance']-=amount
+			self.EventBalanceChanged()
 
 	@subscribe
 	def NominalIsHighContinue(self):
