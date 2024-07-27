@@ -24,7 +24,6 @@ class BuyWindow(QWidget):
     session_started = pyqtSignal()
     session_timeout = pyqtSignal()
     buy_window_closed = pyqtSignal()
-    session_terminated = pyqtSignal()
     payment_started = pyqtSignal()
     payment_canceled = pyqtSignal()
     payment_succeed = pyqtSignal()
@@ -186,7 +185,6 @@ class BuyWindow(QWidget):
         self.ui.testing_failed_payment_btn.clicked.connect(self.payment_failed.emit)
         if app.sgn_gui:
             self.buy_window_closed.connect(lambda: app.sgn_gui.AcknowlegeAmount(self.TOTAL_PRICE * 100))
-            self.session_terminated.connect(lambda: app.sgn_gui.EndSession())
 
         self.ui.get_back_money_btn.clicked.connect(lambda: app.sgn_gui.RejectEscrow())
         self.ui.get_back_money_btn.clicked.connect(self.buy_window_closed.emit)
@@ -220,7 +218,7 @@ class BuyWindow(QWidget):
         self.ui.stop_btn.clicked.connect(lambda: self.set_is_pouring_running(False))
         self.ui.continue_btn.clicked.connect(lambda: self.set_is_pouring_running(True))
 
-        self.ui.terminate_session_btn.clicked.connect(self.session_terminated.emit)
+        self.ui.terminate_session_btn.clicked.connect(lambda: app.sgn_gui.EndSession())
         self.ui.terminate_pouring_btn.clicked.connect(self.collect_the_order)
         self.ui.terminate_pouring_btn.clicked.connect(lambda: self.set_is_pouring_running(False))
         self.ui.start_pouring_btn.clicked.connect(self.collect_the_order)
