@@ -100,7 +100,9 @@ try:
 	from guiservice.main import run_gui
 
 	try:
+		sgn_gui.info('Запускаем QT интерфейс')
 		run_gui(sgn_gui)
+		sgn_gui.info('QT интерфейс пошел по пизде')
 	except KeyboardInterrupt:
 		print('CTRL-C')
 		sgn_gui.critical('CTRL-C Interrupt')
