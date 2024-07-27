@@ -4,6 +4,7 @@ sys.path.insert(0, '../..')
 from IPC import *
 
 import time
+import threading
 
 #import signal
 l=None
@@ -46,6 +47,7 @@ class SgnSession(sgnService):
 			query_amount=False,
 			complete=False,
 			started=False,
+			ending=False,
 			nominal_is_high=False,
 			payment_complete=False
 			)
@@ -79,6 +81,10 @@ class SgnSession(sgnService):
 	@subscribe
 	def StartSession(self,session_type):
 		self.info('Запускаем начало сессии')
+		if self['session']['ending']:
+			self.warning('Идет зашершение предыдущей сессии, ждем')
+			while self['session']['ending']:
+				time.sleep(0.5)
 		if self['session'] and not self['session']['complete'] and self['session']['started']:
 			self.info('Обнаружена незавершенная сессия')
 			self.EndSession()
@@ -133,43 +139,52 @@ class SgnSession(sgnService):
 
 	@subscribe
 	def EndSession(self):
-		if self['session']['started']:
+		if self['session']['ending']:
+			self.error('Сессия уже завершается')			
+		elif self['session']['started']:
 			self.info('Завершение сессии')
-			self['session']['started']=False
-			self.esc_ack=False
-			self['session']['nominal_is_high']=False
-			self['session']['query_amount']=False
-			self['session']['complete']=True
-			self.DeactivateAllPayments()
-			if self['session']['escrow_balance']!=0:
-				self.info('Нужно вернуть неиспользованную купюру')
-				self.RejectEscrow()
-			if self['session']['cash_balance']>0:
-				self.info('Будем выдавать сдачу')
-				self.info('Баланс до выдачи сдачи: %s'%(self.nominal_to_text_with_currency(self['session']['cash_balance']),))
-				self['session']['is_dispensing']=True
-				self.PayoutCash(self['session']['cash_balance'])
-				#наверное нужно запустить в отдельном процессе
-				ts=time.time()
-				while (ts+65)>time.time():
-					if not self['session']['is_dispensing']:
-						break
-					time.sleep(0.5)
-				self.info('Баланс после выдачи сдачи: %s'%(self.nominal_to_text_with_currency(self['session']['cash_balance']),))
-			elif self['session']['cash_balance']<0:
-				self.critical('Баланс меньше 0: %s'%(self.nominal_to_text_with_currency(self['session']['cash_balance']),))
-			ts=time.time()
-			while (ts+10)>time.time():
-				if self['session']['escrow_balance']!=0:
-					break
-				time.sleep(0.5)
-			self.session_init()
-			self.debug('Сессия завершена и проинициализирована')
-			self.EventSessionComplete()
+			self['session']['ending']=True
+			def xsessionend():
+				try:
+					self['session']['started']=False
+					self.esc_ack=False
+					self['session']['nominal_is_high']=False
+					self['session']['query_amount']=False
+					self['session']['complete']=True
+					self.DeactivateAllPayments()
+					if self['session']['escrow_balance']!=0:
+						self.info('Нужно вернуть неиспользованную купюру')
+						self.RejectEscrow()
+					if self['session']['cash_balance']>0:
+						self.info('Будем выдавать сдачу')
+						self.info('Баланс до выдачи сдачи: %s'%(self.nominal_to_text_with_currency(self['session']['cash_balance']),))
+						self['session']['is_dispensing']=True
+						self.PayoutCash(self['session']['cash_balance'])
+						#наверное нужно запустить в отдельном процессе
+						ts=time.time()
+						while (ts+65)>time.time():
+							if not self['session']['is_dispensing']:
+								break
+							time.sleep(0.5)
+						self.info('Баланс после выдачи сдачи: %s'%(self.nominal_to_text_with_currency(self['session']['cash_balance']),))
+					elif self['session']['cash_balance']<0:
+						self.critical('Баланс меньше 0: %s'%(self.nominal_to_text_with_currency(self['session']['cash_balance']),))
+					ts=time.time()
+					while (ts+10)>time.time():
+						if self['session']['escrow_balance']!=0:
+							break
+						time.sleep(0.5)
+				finally:
+					self['session']['ending']=False
+					self.session_init()
+					self.debug('Сессия завершена и проинициализирована')
+					self.EventSessionComplete()
+					self.debug('Последнее сообщение в сессии')
+			threading.Thread(target=xsessionend,daemon=True).Start()
 		else:
 			self.error('Вызов EndSession без запущенной сессии')
 			self.session_init()
-		self.debug('Последнее сообщение в сессии')
+			self.debug('Последнее сообщение в сессии')
 
 	def _getBalance(self):
 		return self['session']['cash_balance']+self['session']['escrow_balance']
