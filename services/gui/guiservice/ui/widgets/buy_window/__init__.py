@@ -57,8 +57,8 @@ class BuyWindow(QWidget):
         self.payment_cancellation_timer = QTimer()
         self.bottle_filling_thread = QThread()
         self.start_session_thread = QThread()
-        self.end_session_thread = QThread()
-        self.end_session_thread.run = lambda: app.sgn_gui.EndSession()
+        # self.end_session_thread = QThread()
+        # self.end_session_thread.run = lambda: app.sgn_gui.EndSession()
         self.start_session_thread.run = self.start_session
         self.is_pouring_running = True
         self._chosen_products: list[Product] = []
@@ -186,7 +186,7 @@ class BuyWindow(QWidget):
         self.ui.testing_failed_payment_btn.clicked.connect(self.payment_failed.emit)
         if app.sgn_gui:
             self.session_terminated.connect(lambda: app.sgn_gui.AcknowlegeAmount(self.TOTAL_PRICE))
-            self.session_terminated.connect(self.end_session_thread.start)
+            self.session_terminated.connect(lambda: app.sgn_gui.EndSession())
 
         self.ui.get_back_money_btn.clicked.connect(lambda: app.sgn_gui.RejectEscrow())
         self.ui.get_back_money_btn.clicked.connect(self.session_terminated.emit)
