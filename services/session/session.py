@@ -88,6 +88,7 @@ class SgnSession(sgnService):
 		if self['session'] and not self['session']['complete'] and self['session']['started']:
 			self.info('Обнаружена незавершенная сессия')
 			self.EndSession()
+		self.info('******************* НАЧАЛО СЕССИИ %s *********************'%(session_type,))
 		self.session_init()
 		self['session']['session_type']=session_type
 		self['session']['started']=True
@@ -180,6 +181,7 @@ class SgnSession(sgnService):
 					self.debug('Сессия завершена и проинициализирована')
 					self.EventSessionComplete()
 					self.debug('Последнее сообщение в сессии')
+					self.info('******************** СЕССИЯ ЗАВЕРШЕНА **********************')
 			threading.Thread(target=xsessionend,daemon=True).start()
 		else:
 			self.error('Вызов EndSession без запущенной сессии')
