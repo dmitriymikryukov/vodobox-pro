@@ -60,6 +60,7 @@ class BuyWindow(QWidget):
         self.bottle_filling_thread = QThread()
         # self.start_session_thread = QThread()
         # self.start_session_thread.run = self.start_session
+        self.last_popped_water = None
         self.is_pouring_running = True
         self._chosen_products: list[Product] = []
         self.remaining_price: float = 0
@@ -394,9 +395,8 @@ class BuyWindow(QWidget):
                 return
             if isinstance(p, Water):
                 self.set_total_price(sum([p.price for p in self._chosen_products]))
-                water = self._chosen_products.pop(i)
-                app.sgn_gui.DepositAmount(water.price * 100)
-                # self.filling_started.emit(water)
+                self.last_popped_water = self._chosen_products.pop(i)
+                app.sgn_gui.DepositAmount(self.last_popped_water.price * 100)
                 return
         self.ui.bottom_right_btn_stack_widget.setCurrentWidget(self.ui.terminate_session_page)
         # self.buy_window_closed.emit()
