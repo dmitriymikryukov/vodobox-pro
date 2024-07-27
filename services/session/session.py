@@ -180,7 +180,7 @@ class SgnSession(sgnService):
 					self.debug('Сессия завершена и проинициализирована')
 					self.EventSessionComplete()
 					self.debug('Последнее сообщение в сессии')
-			threading.Thread(target=xsessionend,daemon=True).Start()
+			threading.Thread(target=xsessionend,daemon=True).start()
 		else:
 			self.error('Вызов EndSession без запущенной сессии')
 			self.session_init()
