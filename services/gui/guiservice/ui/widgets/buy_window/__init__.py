@@ -560,9 +560,9 @@ class BuyWindow(QWidget):
         lbl[0] = str(round(self.TOTAL_PRICE - water_summary_price * progress_percentage, 2))
         self.ui.top_payment_summary_price_lbl.setText(' '.join(lbl))
 
-    def TESTING_PAYMENT_RENDER(self):
-        self.ui.bottom_right_btn_stack_widget.setCurrentWidget(self.ui.testing_success_payment_page)
-        self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.testing_failed_payment_page)
+    # def TESTING_PAYMENT_RENDER(self):
+    #     self.ui.bottom_right_btn_stack_widget.setCurrentWidget(self.ui.testing_success_payment_page)
+    #     self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.testing_failed_payment_page)
 
     def switch_on_success_payment_window(self) -> None:
         """
@@ -649,7 +649,7 @@ class BuyWindow(QWidget):
         self.ui.bottom_right_second_stack_widget.setCurrentWidget(self.ui.bottom_right_second_empty_page)
         self.ui.bottom_right_btn_stack_widget.setCurrentWidget(self.ui.empty_bottom_right_page)
 
-        self.TESTING_PAYMENT_RENDER()
+        # self.TESTING_PAYMENT_RENDER()
 
     def switch_on_qr_window(self) -> None:
         """
@@ -672,7 +672,7 @@ class BuyWindow(QWidget):
         self.ui.bottom_right_second_stack_widget.setCurrentWidget(self.ui.bottom_right_second_empty_page)
         self.ui.bottom_right_btn_stack_widget.setCurrentWidget(self.ui.empty_bottom_right_page)
 
-        self.TESTING_PAYMENT_RENDER()
+        # self.TESTING_PAYMENT_RENDER()
 
     def switch_on_cash_or_loyal_window(self) -> None:
         """
@@ -696,7 +696,7 @@ class BuyWindow(QWidget):
         self.ui.top_right_second_stack_widget.setCurrentWidget(self.ui.top_right_second_empty_page)
         self.ui.bottom_right_second_stack_widget.setCurrentWidget(self.ui.bottom_right_second_empty_page)
 
-        self.TESTING_PAYMENT_RENDER()
+        # self.TESTING_PAYMENT_RENDER()
         self.ui.bottom_right_btn_stack_widget.setCurrentWidget(self.ui.cancel_payment_page)
 
     def switch_on_choose_payment_window(self) -> None:
