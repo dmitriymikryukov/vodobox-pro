@@ -80,37 +80,41 @@ class sgnIPC(object):
 
     def __getattr__ (self, name):
         #print("GETATTR %s"%(name))
-        self.container['w_start'].wait()
-        if (name in self.gdict['events']):
-            v=self.gdict['events'][name]
-            if v==1 and (name in self._events):
-                def sicall(*args,**kwargs):
-                    return (getattr(self,'event_%s'%name)(*args,**kwargs),)
-                return sicall
-            else:
-                def sucall(*args,**kwargs):
-                    svc=[]
-                    try:
-                        with self.gdict['lock']:
-                            for x in self.gdict['service_container'].keys():
-                                if name in self.gdict['service_container'][x]['events']:
-                                    svc.append(x)
-                                    if (len(svc)>=v):
-                                        break
-                    except Exception as e:
-                        return e
-                    resl=[]
-                    for x in svc:
+        try:
+            self.container['w_start'].wait()
+            if (name in self.gdict['events']):
+                v=self.gdict['events'][name]
+                if v==1 and (name in self._events):
+                    def sicall(*args,**kwargs):
+                        return (getattr(self,'event_%s'%name)(*args,**kwargs),)
+                    return sicall
+                else:
+                    def sucall(*args,**kwargs):
+                        svc=[]
                         try:
-                            r=self.gdict['service_container'][x]['ipc'].call(name,*args,**kwargs)
-                            resl.append(r)
+                            with self.gdict['lock']:
+                                for x in self.gdict['service_container'].keys():
+                                    if name in self.gdict['service_container'][x]['events']:
+                                        svc.append(x)
+                                        if (len(svc)>=v):
+                                            break
                         except Exception as e:
-                            print('%s.%s failed'%(x,name))
-                            raise e
-                    return tuple(resl)
-            return sucall
-        else:
-            raise NotImplementedError('%s is not subscibed'%name)
+                            return e
+                        resl=[]
+                        for x in svc:
+                            try:
+                                r=self.gdict['service_container'][x]['ipc'].call(name,*args,**kwargs)
+                                resl.append(r)
+                            except Exception as e:
+                                print('%s.%s failed'%(x,name))
+                                raise e
+                        return tuple(resl)
+                return sucall
+            else:
+                raise NotImplementedError('%s is not subscibed'%name)
+        except Exception as e:
+            self.exception('Ошибка при вызове метода: %s'%name)
+            raise e
 
     def __getitem__ (self, name):
         return self.gdict[name]
