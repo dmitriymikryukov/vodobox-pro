@@ -6,7 +6,8 @@ from ui.widgets.buy_window.graphics import WaterBottleWidget
 from configuration.testing import BuyConfig, UiConfig
 from ui.converted.gen_buy_window import Ui_Form
 from ui import app
-import logging
+#import logging
+logging=app.sgn_gui
 import time
 import os
 
