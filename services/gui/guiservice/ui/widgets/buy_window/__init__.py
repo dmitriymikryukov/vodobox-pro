@@ -35,6 +35,7 @@ class BuyWindow(QWidget):
     container_taken = pyqtSignal()
     loyal_card_taken = pyqtSignal()
     product_list_changed = pyqtSignal()
+    no_money_left_to_change = pyqtSignal()
 
     TOTAL_PRICE = 0
 
@@ -185,6 +186,10 @@ class BuyWindow(QWidget):
         self.ui.testing_failed_payment_btn.clicked.connect(self.payment_failed.emit)
         if app.sgn_gui:
             self.session_terminated.connect(self.end_session_thread.start)
+
+        self.ui.get_back_money_btn.clicked_connect(lambda: app.sgn_gui.RejectEscrow())
+        self.ui.continue_without_change_page.clicked.connect(lambda: app.sgn_gui.AcceptEscrow())
+        self.ui.continue_without_change_page.clicked.connect(self.payment_succeed.emit)
 
         # custom signals
         self.deposit_balance_changed.connect(self.set_deposited_amount_cash)
@@ -711,6 +716,19 @@ class BuyWindow(QWidget):
         lbl = self.ui.top_payment_summary_price_lbl.text().split()
         lbl[0] = str(sum([p.price for p in self._chosen_products]))
         self.ui.top_payment_summary_price_lbl.setText(' '.join(lbl))
+
+    def switch_on_not_enough_change_window(self) -> None:
+        self.ui.main_stack_widget.setCurrentWidget(self.ui.no_money_change_page)
+        self.ui.top_left_stack_widget.setCurrentWidget(self.ui.empty_top_left_page)
+        self.ui.second_top_left_stack_widget.setCurrentWidget(self.ui.empty_second_top_left_page)
+        self.ui.second_bottom_left_stack.setCurrentWidget(self.ui.empty_second_bottom_left_page)
+
+        self.ui.top_right_btn_stack_widget.setCurrentWidget(self.ui.top_right_empty_page)
+        self.ui.top_right_second_stack_widget.setCurrentWidget(self.ui.top_right_second_empty_page)
+        self.ui.bottom_right_second_stack_widget.setCurrentWidget(self.ui.bottom_right_second_empty_page)
+
+        self.ui.bottom_right_btn_stack_widget.setCurrentWidget(self.ui.get_back_money_page)
+        self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.continue_without_change_page)
 
     def switch_on_cart_window(self) -> None:
         """

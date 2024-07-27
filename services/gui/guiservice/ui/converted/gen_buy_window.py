@@ -251,6 +251,37 @@ class Ui_Form(object):
         self.continue_btn.setObjectName("continue_btn")
         self.verticalLayout_37.addWidget(self.continue_btn)
         self.bottom_left_btn_stack_widget.addWidget(self.continue_page)
+        self.continue_without_change_page = QtWidgets.QWidget()
+        self.continue_without_change_page.setObjectName("continue_without_change_page")
+        self.verticalLayout_93 = QtWidgets.QVBoxLayout(self.continue_without_change_page)
+        self.verticalLayout_93.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_93.setSpacing(0)
+        self.verticalLayout_93.setObjectName("verticalLayout_93")
+        self.continue_without_change_btn = QtWidgets.QPushButton(self.continue_without_change_page)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.continue_without_change_btn.sizePolicy().hasHeightForWidth())
+        self.continue_without_change_btn.setSizePolicy(sizePolicy)
+        self.continue_without_change_btn.setMinimumSize(QtCore.QSize(180, 0))
+        self.continue_without_change_btn.setMaximumSize(QtCore.QSize(200, 149))
+        self.continue_without_change_btn.setSizeIncrement(QtCore.QSize(0, 0))
+        font = QtGui.QFont()
+        font.setFamily("Rubik")
+        font.setPointSize(18)
+        self.continue_without_change_btn.setFont(font)
+        self.continue_without_change_btn.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.continue_without_change_btn.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: rgb(0, 128, 0);\n"
+"border: 1px solid black;\n"
+"border-top-right-radius: 60px;\n"
+"border-bottom-right-radius: 20px;\n"
+"border-top-left-radius: 20px;\n"
+"border-bottom-left-radius: 60px;\n"
+"")
+        self.continue_without_change_btn.setObjectName("continue_without_change_btn")
+        self.verticalLayout_93.addWidget(self.continue_without_change_btn)
+        self.bottom_left_btn_stack_widget.addWidget(self.continue_without_change_page)
         self.stop_page = QtWidgets.QWidget()
         self.stop_page.setObjectName("stop_page")
         self.verticalLayout_38 = QtWidgets.QVBoxLayout(self.stop_page)
@@ -553,6 +584,33 @@ class Ui_Form(object):
         self.cancel_payment_btn.setObjectName("cancel_payment_btn")
         self.verticalLayout_63.addWidget(self.cancel_payment_btn)
         self.bottom_right_btn_stack_widget.addWidget(self.cancel_payment_page)
+        self.get_back_money_page = QtWidgets.QWidget()
+        self.get_back_money_page.setObjectName("get_back_money_page")
+        self.verticalLayout_94 = QtWidgets.QVBoxLayout(self.get_back_money_page)
+        self.verticalLayout_94.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_94.setSpacing(0)
+        self.verticalLayout_94.setObjectName("verticalLayout_94")
+        self.get_back_money_btn = QtWidgets.QPushButton(self.get_back_money_page)
+        self.get_back_money_btn.setMinimumSize(QtCore.QSize(180, 0))
+        self.get_back_money_btn.setMaximumSize(QtCore.QSize(200, 149))
+        font = QtGui.QFont()
+        font.setFamily("Rubik")
+        font.setPointSize(20)
+        self.get_back_money_btn.setFont(font)
+        self.get_back_money_btn.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.get_back_money_btn.setStyleSheet("QPushButton {\n"
+"    color: rgb(255, 255, 255);\n"
+"    background-color: rgb(193, 107, 24);\n"
+"    border: 1px solid green;\n"
+"border-top-right-radius: 20px;\n"
+"border-top-left-radius: 60px;\n"
+"border-bottom-right-radius: 60px;\n"
+"border-bottom-left-radius: 20px;\n"
+"\n"
+"}")
+        self.get_back_money_btn.setObjectName("get_back_money_btn")
+        self.verticalLayout_94.addWidget(self.get_back_money_btn)
+        self.bottom_right_btn_stack_widget.addWidget(self.get_back_money_page)
         self.back_page = QtWidgets.QWidget()
         self.back_page.setObjectName("back_page")
         self.horizontalLayout_9 = QtWidgets.QHBoxLayout(self.back_page)
@@ -1515,6 +1573,38 @@ class Ui_Form(object):
         self.verticalLayout_10.addWidget(self.label_2)
         self.verticalLayout_9.addWidget(self.frame_11)
         self.main_stack_widget.addWidget(self.not_enough_cash_page)
+        self.no_money_change_page = QtWidgets.QWidget()
+        self.no_money_change_page.setObjectName("no_money_change_page")
+        self.verticalLayout_92 = QtWidgets.QVBoxLayout(self.no_money_change_page)
+        self.verticalLayout_92.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_92.setSpacing(0)
+        self.verticalLayout_92.setObjectName("verticalLayout_92")
+        self.frame_29 = QtWidgets.QFrame(self.no_money_change_page)
+        self.frame_29.setStyleSheet("#frame_29 {\n"
+"    background-color: rgb(245, 245, 245);\n"
+"    border: 1px solid blue;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.frame_29.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.frame_29.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_29.setObjectName("frame_29")
+        self.verticalLayout_91 = QtWidgets.QVBoxLayout(self.frame_29)
+        self.verticalLayout_91.setObjectName("verticalLayout_91")
+        self.label_6 = QtWidgets.QLabel(self.frame_29)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_6.sizePolicy().hasHeightForWidth())
+        self.label_6.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Rubik")
+        font.setPointSize(20)
+        self.label_6.setFont(font)
+        self.label_6.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_6.setObjectName("label_6")
+        self.verticalLayout_91.addWidget(self.label_6)
+        self.verticalLayout_92.addWidget(self.frame_29)
+        self.main_stack_widget.addWidget(self.no_money_change_page)
         self.payment_page = QtWidgets.QWidget()
         self.payment_page.setObjectName("payment_page")
         self.verticalLayout_11 = QtWidgets.QVBoxLayout(self.payment_page)
@@ -2199,13 +2289,13 @@ class Ui_Form(object):
         self.consumer_info_bottom_stack_widget.setCurrentIndex(0)
         self.choosed_product_stack_widget.setCurrentIndex(0)
         self.product_price_stack_widget.setCurrentIndex(0)
-        self.bottom_right_btn_stack_widget.setCurrentIndex(0)
+        self.bottom_right_btn_stack_widget.setCurrentIndex(5)
         self.top_left_stack_widget.setCurrentIndex(1)
         self.second_top_left_stack_widget.setCurrentIndex(0)
         self.second_bottom_left_stack.setCurrentIndex(1)
         self.top_payment_hint_stack_widget.setCurrentIndex(0)
         self.top_payment_price_stack_widget.setCurrentIndex(0)
-        self.main_stack_widget.setCurrentIndex(8)
+        self.main_stack_widget.setCurrentIndex(0)
         self.payment_stack_widget.setCurrentIndex(4)
         self.payment_status_stack_widget.setCurrentIndex(4)
         self.bottom_hints_stack_widget.setCurrentIndex(2)
@@ -2228,6 +2318,8 @@ class Ui_Form(object):
 "лояльности"))
         self.testing_failed_payment_btn.setText(_translate("Form", "Не оплачено"))
         self.continue_btn.setText(_translate("Form", "Продолжить"))
+        self.continue_without_change_btn.setText(_translate("Form", "Продолжить \n"
+"без сдачи"))
         self.stop_btn.setText(_translate("Form", "Остановить"))
         self.bottom_cart_lbl.setText(_translate("Form", "Последний выбранный товар"))
         self.deposited_cash_lbl.setText(_translate("Form", "Внесено"))
@@ -2240,6 +2332,8 @@ class Ui_Form(object):
         self.terminate_pouring_btn.setText(_translate("Form", "Завершить"))
         self.cancel_payment_btn.setText(_translate("Form", "Отменить \n"
 "оплату"))
+        self.get_back_money_btn.setText(_translate("Form", "Вернуть\n"
+"купюры"))
         self.back_btn.setText(_translate("Form", "Отменить\n"
 "выбор"))
         self.testing_success_payment_btn.setText(_translate("Form", "Оплачено"))
@@ -2278,6 +2372,7 @@ class Ui_Form(object):
         self.label_2.setText(_translate("Form", "Оплатите наличными\n"
 "или\n"
 "картой лояльности"))
+        self.label_6.setText(_translate("Form", "Недостаточно сдачи"))
         self.label_4.setText(_translate("Form", "Карта банка"))
         self.cash_or_loyal_card_lbl.setText(_translate("Form", "Оплатите наличными\n"
 "или\n"

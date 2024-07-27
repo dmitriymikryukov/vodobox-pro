@@ -81,6 +81,10 @@ class SgnGUI(sgnService):
 		self.info('%s %s Выдача сдачи завершена, выдано %s из %s'%(group,name,self.nominal_to_text_with_currency(amount),self.nominal_to_text_with_currency(required)))
 
 	@subscribe
+	def EventNominalIsHigh(self, group, name, nominal, route_txt, is_bill, payout_amount_after):
+		self.current_window.no_money_left_to_change.emit()
+
+	@subscribe
 	def EventPaymentComplete(self):
 		self.current_window.payment_succeed.emit()
 
