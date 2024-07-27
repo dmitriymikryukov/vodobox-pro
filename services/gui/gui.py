@@ -107,12 +107,12 @@ class SgnGUI(sgnService):
 		self.current_window=None
 
 	@subscribe
-	def DepositACK(self,reason):
-		self.info('Разрешаю наливать - до этого нельзя было %s'%(reason))
+	def DepositACK(self):
+		self.info('Разрешаю наливать - до этого нельзя было')
 
 	@subscribe
-	def DepositNCK(self):
-		self.error('Запрещаю наливать! Что-то не так!')
+	def DepositNCK(self,reason):
+		self.error('Запрещаю наливать! %s'%(reason))
 
 
 try:
