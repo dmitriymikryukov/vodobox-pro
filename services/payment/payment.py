@@ -113,6 +113,7 @@ class SgnPayment(sgnService):
 
 	@subscribe
 	def PayoutCash(self,amount):
+		self.info('Запрос на выдачу наличных %s'%(nominal_to_text_with_currency(amount),))
 		self.CoinPayout(amount)
 
 	@subscribe

@@ -486,7 +486,15 @@ class SgnMDBcoin(ifaceMDBcoin):
 					self.EventPayoutStarted(self.able['group'],self.able['name'],self.internalToCents(amount)*dpc)
 					try:
 						while amount>0:
+							self.tubeStatusUpdate()
 							amo=amount if amount<255 else 255
+							has_coins=self.centsToInternal(self['dispense_amount']['coin'])
+							if has_coins<=0:
+								self.error('Монет больше нет в тубах')
+								break
+							elif amo>has_coins:
+								self.error('Монет недостаточно для полной выдачи сдачи')
+								amo=has_coins
 							ts=time.time()
 							succ=False
 							ft=True
@@ -510,6 +518,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 									break
 								time.sleep(0.1)
 							if not succ:
+								self.error('Не удалось начать выдачу сдачи')
 								break
 							ts=time.time()
 							amo=0
@@ -526,6 +535,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 									if po_am>0:
 										self.EventPayoutProgress(self.able['group'],self.able['name'],self.internalToCents(po_am)*dpc)
 							if amo<=0:
+								self.error('Ничего не выдалось')
 								break
 							ts=time.time()
 							summ=0
@@ -554,7 +564,7 @@ class SgnMDBcoin(ifaceMDBcoin):
 							if not xuc:
 								break
 					except Exception as eee:
-						self.exception(eee)
+						self.exception('Сбой выдачи сдачи')
 				finally:
 					res_amo=int(self.internalToCents(res_amo)*dpc);					
 					xamo=int(self.internalToCents(xamo)*dpc);					
