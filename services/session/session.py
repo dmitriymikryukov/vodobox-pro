@@ -146,7 +146,7 @@ class SgnSession(sgnService):
 				self.PayoutCash(self['session']['cash_balance'])
 				#наверное нужно запустить в отдельном процессе
 				ts=time.time()
-				while (ts+65)<time.time():
+				while (ts+65)>time.time():
 					if not self['session']['is_dispensing']:
 						break
 					time.sleep(0.5)
@@ -154,7 +154,7 @@ class SgnSession(sgnService):
 			elif self['session']['cash_balance']<0:
 				self.critical('Баланс меньше 0: %s'%(self.nominal_to_text_with_currency(self['session']['cash_balance']),))
 			ts=time.time()
-			while (ts+10)<time.time():
+			while (ts+10)>time.time():
 				if self['session']['escrow_balance']!=0:
 					break
 				time.sleep(0.5)
