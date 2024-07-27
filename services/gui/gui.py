@@ -103,8 +103,9 @@ class SgnGUI(sgnService):
 
 	@subscribe
 	def EventSessionComplete(self):
-		self.info('Сессия завершена - жопу ставлю')
-		self.current_window=None
+		# self.info('Сессия завершена - жопу ставлю')
+		# self.current_window=None
+		pass
 
 	@subscribe
 	def DepositACK(self):
