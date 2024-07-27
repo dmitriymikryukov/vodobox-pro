@@ -99,6 +99,7 @@ class sgnIPC(object):
                                         if (len(svc)>=v):
                                             break
                         except Exception as e:
+                            self.exception('Ошибка при вызове метода: %s'%name)
                             return e
                         resl=[]
                         for x in svc:
@@ -107,6 +108,7 @@ class sgnIPC(object):
                                 resl.append(r)
                             except Exception as e:
                                 print('%s.%s failed'%(x,name))
+                                self.exception('Ошибка при вызове метода: %s'%name)
                                 raise e
                         return tuple(resl)
                 return sucall
