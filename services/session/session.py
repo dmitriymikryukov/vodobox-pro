@@ -230,6 +230,7 @@ class SgnSession(sgnService):
 	def AcknowlegeAmount(self,amount):
 		self.info('Списываем %s'%(self.nominal_to_text_with_currency(amount),))
 		self['session']['cash_balance']-=amount
+		self.EventBalanceChanged()
 
 	@subscribe
 	def NominalIsHighContinue(self):
