@@ -252,8 +252,8 @@ class Ui_Form(object):
 "color: rgb(0, 0, 0);\n"
 "background-color:rgb(227, 227, 227);\n"
 "border-top-right-radius: 20px;\n"
-"border-bottom-right-radius: 60px;\n"
-"border-top-left-radius: 60px;\n"
+"border-bottom-right-radius: 40px;\n"
+"border-top-left-radius: 40px;\n"
 "border-bottom-left-radius: 20px;\n"
 "border: 1px solid #48974B;\n"
 "}\n"
@@ -322,10 +322,10 @@ class Ui_Form(object):
         self.up_arrow_btn.setStyleSheet("color: rgb(0, 0, 0);\n"
 "border: 1px solid #48974B;\n"
 "background-color:rgb(227, 227, 227);\n"
-"border-top-right-radius: 60px;\n"
+"border-top-right-radius: 40px;\n"
 "border-bottom-right-radius: 20px;\n"
 "border-top-left-radius: 20px;\n"
-"border-bottom-left-radius: 60px;")
+"border-bottom-left-radius: 40px;")
         self.up_arrow_btn.setText("")
         self.up_arrow_btn.setIconSize(QtCore.QSize(80, 80))
         self.up_arrow_btn.setDefault(False)
@@ -391,8 +391,8 @@ class Ui_Form(object):
 "border: 1px solid #48974B;\n"
 "background-color:rgb(227, 227, 227);\n"
 "border-top-right-radius: 20px;\n"
-"border-bottom-right-radius: 60px;\n"
-"border-top-left-radius: 60px;\n"
+"border-bottom-right-radius: 40px;\n"
+"border-top-left-radius: 40px;\n"
 "border-bottom-left-radius: 20px;")
         self.down_arrow_btn.setText("")
         self.down_arrow_btn.setIconSize(QtCore.QSize(80, 80))
@@ -474,8 +474,8 @@ class Ui_Form(object):
 "            background-color: rgb(245, 245, 245);\n"
 "            border-top-right-radius: 20px;\n"
 "            border-top-left-radius: 20px;\n"
-"            border-bottom-right-radius: 60px;\n"
-"            border-bottom-left-radius: 60px;\n"
+"            border-bottom-right-radius: 40px;\n"
+"            border-bottom-left-radius: 40px;\n"
 "            border: 1px solid #B3B3B3;\n"
 "        }")
         self.frame_10.setFrameShape(QtWidgets.QFrame.NoFrame)
@@ -823,10 +823,10 @@ class Ui_Form(object):
         self.translate_btn.setStyleSheet("QPushButton {\n"
 "color: rgb(0, 0, 0);\n"
 "background-color:rgb(227, 227, 227);\n"
-"border-top-right-radius: 60px;\n"
+"border-top-right-radius: 40px;\n"
 "border-top-left-radius: 20px;\n"
 "border-bottom-right-radius: 20px;\n"
-"border-bottom-left-radius: 60px;\n"
+"border-bottom-left-radius: 40px;\n"
 "border: 1px solid #48974B;\n"
 "}\n"
 "\n"
@@ -925,10 +925,10 @@ class Ui_Form(object):
         self.spare_buy_btn.setFocusPolicy(QtCore.Qt.NoFocus)
         self.spare_buy_btn.setStyleSheet("color: rgb(0, 0, 0);\n"
 "background-color: rgb(227, 227, 227);\n"
-"border-top-right-radius: 60px;\n"
+"border-top-right-radius: 40px;\n"
 "border-bottom-right-radius: 20px;\n"
 "border-top-left-radius: 20px;\n"
-"border-bottom-left-radius: 60px;\n"
+"border-bottom-left-radius: 40px;\n"
 "border: 1px solid #B3B3B3;")
         self.spare_buy_btn.setObjectName("spare_buy_btn")
         self.verticalLayout_11.addWidget(self.spare_buy_btn)
@@ -960,10 +960,10 @@ class Ui_Form(object):
         self.buy_btn.setFocusPolicy(QtCore.Qt.NoFocus)
         self.buy_btn.setStyleSheet("color: rgb(0, 0, 0);\n"
 "background-color: rgb(227, 227, 227);\n"
-"border-top-right-radius: 60px;\n"
+"border-top-right-radius: 40px;\n"
 "border-bottom-right-radius: 20px;\n"
 "border-top-left-radius: 20px;\n"
-"border-bottom-left-radius: 60px;\n"
+"border-bottom-left-radius: 40px;\n"
 "border: 1px solid #B3B3B3;")
         self.buy_btn.setObjectName("buy_btn")
         self.verticalLayout_23.addWidget(self.buy_btn)

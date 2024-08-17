@@ -595,8 +595,8 @@ border: 1px solid #B3B3B3;</string>
 color: rgb(0, 0, 0);
 background-color:rgb(227, 227, 227);
 border-top-right-radius: 20px;
-border-bottom-right-radius: 60px;
-border-top-left-radius: 60px;
+border-bottom-right-radius: 40px;
+border-top-left-radius: 40px;
 border-bottom-left-radius: 20px;
 border: 1px solid #48974B;
 }
@@ -748,10 +748,10 @@ border-bottom-left-radius: 20px;</string>
                    <string notr="true">color: rgb(0, 0, 0);
 border: 1px solid #48974B;
 background-color:rgb(227, 227, 227);
-border-top-right-radius: 60px;
+border-top-right-radius: 40px;
 border-bottom-right-radius: 20px;
 border-top-left-radius: 20px;
-border-bottom-left-radius: 60px;</string>
+border-bottom-left-radius: 40px;</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -902,8 +902,8 @@ border-bottom-left-radius: 20px;
 border: 1px solid #48974B;
 background-color:rgb(227, 227, 227);
 border-top-right-radius: 20px;
-border-bottom-right-radius: 60px;
-border-top-left-radius: 60px;
+border-bottom-right-radius: 40px;
+border-top-left-radius: 40px;
 border-bottom-left-radius: 20px;</string>
                   </property>
                   <property name="text">
@@ -1081,8 +1081,8 @@ border-bottom-left-radius: 20px;
             background-color: rgb(245, 245, 245);
             border-top-right-radius: 20px;
             border-top-left-radius: 20px;
-            border-bottom-right-radius: 60px;
-            border-bottom-left-radius: 60px;
+            border-bottom-right-radius: 40px;
+            border-bottom-left-radius: 40px;
             border: 1px solid #B3B3B3;
         }</string>
                  </property>
@@ -1788,10 +1788,10 @@ QPushButton:checked {
                    <string notr="true">QPushButton {
 color: rgb(0, 0, 0);
 background-color:rgb(227, 227, 227);
-border-top-right-radius: 60px;
+border-top-right-radius: 40px;
 border-top-left-radius: 20px;
 border-bottom-right-radius: 20px;
-border-bottom-left-radius: 60px;
+border-bottom-left-radius: 40px;
 border: 1px solid #48974B;
 }
 
@@ -2005,10 +2005,10 @@ border-bottom-left-radius: 20px;
                   <property name="styleSheet">
                    <string notr="true">color: rgb(0, 0, 0);
 background-color: rgb(227, 227, 227);
-border-top-right-radius: 60px;
+border-top-right-radius: 40px;
 border-bottom-right-radius: 20px;
 border-top-left-radius: 20px;
-border-bottom-left-radius: 60px;
+border-bottom-left-radius: 40px;
 border: 1px solid #B3B3B3;</string>
                   </property>
                   <property name="text">
@@ -2091,10 +2091,10 @@ border: 1px solid #B3B3B3;</string>
                   <property name="styleSheet">
                    <string notr="true">color: rgb(0, 0, 0);
 background-color: rgb(227, 227, 227);
-border-top-right-radius: 60px;
+border-top-right-radius: 40px;
 border-bottom-right-radius: 20px;
 border-top-left-radius: 20px;
-border-bottom-left-radius: 60px;
+border-bottom-left-radius: 40px;
 border: 1px solid #B3B3B3;</string>
                   </property>
                   <property name="text">
