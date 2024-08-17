@@ -32,7 +32,7 @@ class Ui_Form(object):
         self.gridLayout.setSpacing(0)
         self.gridLayout.setObjectName("gridLayout")
         self.frame_3 = QtWidgets.QFrame(self.frame)
-        self.frame_3.setMinimumSize(QtCore.QSize(0, 149))
+        self.frame_3.setMinimumSize(QtCore.QSize(0, 140))
         self.frame_3.setMaximumSize(QtCore.QSize(16777215, 149))
         self.frame_3.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -923,7 +923,7 @@ class Ui_Form(object):
         self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.choose_ltr_btn = QtWidgets.QPushButton(self.choose_ltr_page)
-        self.choose_ltr_btn.setMinimumSize(QtCore.QSize(0, 149))
+        self.choose_ltr_btn.setMinimumSize(QtCore.QSize(0, 140))
         self.choose_ltr_btn.setMaximumSize(QtCore.QSize(200, 149))
         font = QtGui.QFont()
         font.setFamily("Rubik")
@@ -1986,7 +1986,7 @@ class Ui_Form(object):
         self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.frame_15 = QtWidgets.QFrame(self.container_page)
-        self.frame_15.setMinimumSize(QtCore.QSize(0, 149))
+        self.frame_15.setMinimumSize(QtCore.QSize(0, 140))
         self.frame_15.setMaximumSize(QtCore.QSize(200, 149))
         self.frame_15.setStyleSheet("#frame_15 {\n"
 "    background-color: rgb(245, 245, 245);\n"
@@ -2109,7 +2109,7 @@ class Ui_Form(object):
         self.verticalLayout_12.setSpacing(0)
         self.verticalLayout_12.setObjectName("verticalLayout_12")
         self.frame_14 = QtWidgets.QFrame(self.loyal_card_page)
-        self.frame_14.setMinimumSize(QtCore.QSize(0, 149))
+        self.frame_14.setMinimumSize(QtCore.QSize(0, 140))
         self.frame_14.setMaximumSize(QtCore.QSize(200, 149))
         self.frame_14.setStyleSheet("#frame_14 {\n"
 "    background-color: rgb(245, 245, 245);\n"
@@ -2210,7 +2210,7 @@ class Ui_Form(object):
         self.verticalLayout_19.setSpacing(0)
         self.verticalLayout_19.setObjectName("verticalLayout_19")
         self.frame_16 = QtWidgets.QFrame(self.plug_page)
-        self.frame_16.setMinimumSize(QtCore.QSize(0, 149))
+        self.frame_16.setMinimumSize(QtCore.QSize(0, 140))
         self.frame_16.setMaximumSize(QtCore.QSize(200, 149))
         self.frame_16.setStyleSheet("#frame_16 {\n"
 "    background-color: rgb(245, 245, 245);\n"
@@ -2234,7 +2234,6 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.plug_btn.sizePolicy().hasHeightForWidth())
         self.plug_btn.setSizePolicy(sizePolicy)
-        self.plug_btn.setMinimumSize(QtCore.QSize(0, 100))
         self.plug_btn.setMaximumSize(QtCore.QSize(200, 200))
         self.plug_btn.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
