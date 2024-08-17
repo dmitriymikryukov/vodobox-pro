@@ -1,13 +1,11 @@
-from PyQt5.QtGui import QPixmap, QFont
-from PyQt5.QtWidgets import QWidget, QButtonGroup, QLabel
-from PyQt5.QtCore import pyqtSignal, QTimer, QThread
 from ui.widgets.buy_window.products import Product, Water, PlugWithWater, ContainerWithWater, LoyalCard
 from ui.widgets.buy_window.graphics import WaterBottleWidget
+from PyQt5.QtWidgets import QWidget, QButtonGroup, QLabel
 from configuration.testing import BuyConfig, UiConfig
+from PyQt5.QtCore import pyqtSignal, QTimer, QThread
 from ui.converted.gen_buy_window import Ui_Form
+from PyQt5.QtGui import QPixmap, QFont
 from ui import app
-#import logging
-logging=app.sgn_gui
 import time
 import os
 
@@ -246,7 +244,7 @@ class BuyWindow(QWidget):
     def start_session(self):
         if not app.sgn_gui['session']['started']:
             app.sgn_gui.StartSession('CASH')
-        logging.info(f'total price {sum([product.price for product in self._chosen_products])}')
+        app.sgn_gui.info(f'total price {sum([product.price for product in self._chosen_products])}')
         # передаем сумму заказа в копейках
         app.sgn_gui['session']['query_amount'] = sum([product.price for product in self._chosen_products]) * 100
         app.sgn_gui.ActivateCash()
@@ -678,7 +676,7 @@ class BuyWindow(QWidget):
         """
         Переключение на меню оплаты наличными или картой лояльности
         """
-        logging.info('Выбрана оплата наличными или по карте лояльности')
+        app.sgn_gui.info('Выбрана оплата наличными или по карте лояльности')
         self.set_deposited_amount_cash()
 
         self.ui.main_stack_widget.setCurrentWidget(self.ui.payment_page)
@@ -703,7 +701,7 @@ class BuyWindow(QWidget):
         """
         Переключение на меню выбора способа оплаты
         """
-        logging.info('Переход в меню выбора оплаты')
+        app.sgn_gui.info('Переход в меню выбора оплаты')
         self.ui.top_left_stack_widget.setCurrentWidget(self.ui.empty_top_left_page)
         self.ui.second_top_left_stack_widget.setCurrentWidget(self.ui.add_more_page)
         self.ui.second_bottom_left_stack.setCurrentWidget(self.ui.empty_second_bottom_left_page)
