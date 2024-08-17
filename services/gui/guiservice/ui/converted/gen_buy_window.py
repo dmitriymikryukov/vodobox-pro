@@ -28,7 +28,7 @@ class Ui_Form(object):
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
         self.gridLayout = QtWidgets.QGridLayout(self.frame)
-        self.gridLayout.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout.setContentsMargins(4, 4, 4, 4)
         self.gridLayout.setSpacing(0)
         self.gridLayout.setObjectName("gridLayout")
         self.frame_3 = QtWidgets.QFrame(self.frame)
@@ -395,7 +395,7 @@ class Ui_Form(object):
         self.choosed_water_and_plug_lbl = QtWidgets.QLabel(self.choosed_water_and_plug_page)
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(20)
+        font.setPointSize(17)
         self.choosed_water_and_plug_lbl.setFont(font)
         self.choosed_water_and_plug_lbl.setStyleSheet("color: white;")
         self.choosed_water_and_plug_lbl.setAlignment(QtCore.Qt.AlignCenter)
@@ -409,7 +409,7 @@ class Ui_Form(object):
         self.choosed_water_and_container_lbl = QtWidgets.QLabel(self.choosed_water_and_container_page)
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(20)
+        font.setPointSize(17)
         self.choosed_water_and_container_lbl.setFont(font)
         self.choosed_water_and_container_lbl.setStyleSheet("color: white;")
         self.choosed_water_and_container_lbl.setAlignment(QtCore.Qt.AlignCenter)
@@ -425,7 +425,7 @@ class Ui_Form(object):
         self.choosed_loyal_card_lbl = QtWidgets.QLabel(self.choosed_loyal_card_page)
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(20)
+        font.setPointSize(17)
         self.choosed_loyal_card_lbl.setFont(font)
         self.choosed_loyal_card_lbl.setStyleSheet("color: white;")
         self.choosed_loyal_card_lbl.setAlignment(QtCore.Qt.AlignCenter)
@@ -811,7 +811,7 @@ class Ui_Form(object):
         self.frame_4.setObjectName("frame_4")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_4)
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_3.setSpacing(0)
+        self.horizontalLayout_3.setSpacing(3)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.frame_6 = QtWidgets.QFrame(self.frame_4)
         self.frame_6.setMinimumSize(QtCore.QSize(180, 0))
@@ -819,8 +819,8 @@ class Ui_Form(object):
         self.frame_6.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_6.setObjectName("frame_6")
         self.verticalLayout_15 = QtWidgets.QVBoxLayout(self.frame_6)
-        self.verticalLayout_15.setContentsMargins(0, 0, 0, 2)
-        self.verticalLayout_15.setSpacing(0)
+        self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_15.setSpacing(3)
         self.verticalLayout_15.setObjectName("verticalLayout_15")
         self.top_left_stack_widget = QtWidgets.QStackedWidget(self.frame_6)
         self.top_left_stack_widget.setStyleSheet("background-color: transparent;")
@@ -842,8 +842,8 @@ class Ui_Form(object):
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
 "    border-top-right-radius: 20px;\n"
-"    border-bottom-right-radius: 60px;\n"
-"    border-top-left-radius: 60px;\n"
+"    border-bottom-right-radius: 40px;\n"
+"    border-top-left-radius: 40px;\n"
 "    border-bottom-left-radius: 20px;\n"
 "\n"
 "}")
@@ -861,8 +861,8 @@ class Ui_Form(object):
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
 "    border-top-right-radius: 20px;\n"
-"    border-top-left-radius: 60px;\n"
-"    border-bottom-right-radius: 60px;\n"
+"    border-top-left-radius: 40px;\n"
+"    border-bottom-right-radius: 40px;\n"
 "    border-bottom-left-radius: 20px;\n"
 "\n"
 "}")
@@ -875,7 +875,7 @@ class Ui_Form(object):
         self.verticalLayout_65.setObjectName("verticalLayout_65")
         self.plug_ltr_btn = QtWidgets.QPushButton(self.frame_22)
         self.plug_ltr_btn.setMinimumSize(QtCore.QSize(0, 100))
-        self.plug_ltr_btn.setMaximumSize(QtCore.QSize(200, 100))
+        self.plug_ltr_btn.setMaximumSize(QtCore.QSize(200, 200))
         font = QtGui.QFont()
         font.setFamily("Rubik")
         font.setPointSize(25)
@@ -898,10 +898,10 @@ class Ui_Form(object):
 "    background-color: rgb(0, 0, 255);\n"
 "    border-radius: 17px;\n"
 "    color: white;\n"
-"border-top-right-radius: 0px;\n"
-"border-top-left-radius: 33px;\n"
-"border-bottom-right-radius: 49px;\n"
-"border-bottom-left-radius: 16px;\n"
+"border-top-right-radius: 10px;\n"
+"border-top-left-radius: 25px;\n"
+"border-bottom-right-radius: 35px;\n"
+"border-bottom-left-radius: 10px;\n"
 "\n"
 "}")
         self.plug_ltr_price_lbl.setAlignment(QtCore.Qt.AlignCenter)
@@ -913,8 +913,6 @@ class Ui_Form(object):
         self.empty_top_left_page.setObjectName("empty_top_left_page")
         self.top_left_stack_widget.addWidget(self.empty_top_left_page)
         self.verticalLayout_15.addWidget(self.top_left_stack_widget)
-        spacerItem = QtWidgets.QSpacerItem(20, 0, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_15.addItem(spacerItem)
         self.second_top_left_stack_widget = QtWidgets.QStackedWidget(self.frame_6)
         self.second_top_left_stack_widget.setStyleSheet("background-color: transparent;")
         self.second_top_left_stack_widget.setObjectName("second_top_left_stack_widget")
@@ -935,10 +933,10 @@ class Ui_Form(object):
         self.choose_ltr_btn.setStyleSheet("QPushButton {\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"    border-top-right-radius: 60px;\n"
+"    border-top-right-radius: 40px;\n"
 "    border-bottom-right-radius: 20px;\n"
 "    border-top-left-radius: 20px;\n"
-"    border-bottom-left-radius: 60px;\n"
+"    border-bottom-left-radius: 40px;\n"
 "\n"
 "}")
         self.choose_ltr_btn.setObjectName("choose_ltr_btn")
@@ -962,10 +960,10 @@ class Ui_Form(object):
 "    color: white;\n"
 "    background-color: rgb(0, 0, 255);\n"
 "    border: 1px solid black;\n"
-"    border-top-right-radius: 60px;\n"
+"    border-top-right-radius: 40px;\n"
 "    border-bottom-right-radius: 20px;\n"
 "    border-top-left-radius: 20px;\n"
-"    border-bottom-left-radius: 60px;\n"
+"    border-bottom-left-radius: 40px;\n"
 "}\n"
 "\n"
 "QPushButton:disabled {\n"
@@ -999,18 +997,16 @@ class Ui_Form(object):
         self.confirm_btn.setStyleSheet("QPushButton {\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"    border-top-right-radius: 60px;\n"
+"    border-top-right-radius: 40px;\n"
 "    border-bottom-right-radius: 20px;\n"
 "    border-top-left-radius: 20px;\n"
-"    border-bottom-left-radius: 60px;\n"
+"    border-bottom-left-radius: 40px;\n"
 "\n"
 "}")
         self.confirm_btn.setObjectName("confirm_btn")
         self.verticalLayout_47.addWidget(self.confirm_btn)
         self.second_top_left_stack_widget.addWidget(self.confirm_page)
         self.verticalLayout_15.addWidget(self.second_top_left_stack_widget)
-        spacerItem1 = QtWidgets.QSpacerItem(20, 0, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_15.addItem(spacerItem1)
         self.second_bottom_left_stack = QtWidgets.QStackedWidget(self.frame_6)
         self.second_bottom_left_stack.setStyleSheet("background-color: transparent;")
         self.second_bottom_left_stack.setObjectName("second_bottom_left_stack")
@@ -1032,8 +1028,8 @@ class Ui_Form(object):
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
 "    border-top-right-radius: 20px;\n"
-"    border-bottom-right-radius: 60px;\n"
-"    border-top-left-radius: 60px;\n"
+"    border-bottom-right-radius: 40px;\n"
+"    border-top-left-radius: 40px;\n"
 "    border-bottom-left-radius: 20px;\n"
 "\n"
 "}")
@@ -1051,8 +1047,8 @@ class Ui_Form(object):
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
 "    border-top-right-radius: 20px;\n"
-"    border-top-left-radius: 60px;\n"
-"    border-bottom-right-radius: 60px;\n"
+"    border-top-left-radius: 40px;\n"
+"    border-bottom-right-radius: 40px;\n"
 "    border-bottom-left-radius: 20px;\n"
 "\n"
 "}")
@@ -1065,7 +1061,7 @@ class Ui_Form(object):
         self.verticalLayout_68.setObjectName("verticalLayout_68")
         self.container_ltr_btn = QtWidgets.QPushButton(self.frame_23)
         self.container_ltr_btn.setMinimumSize(QtCore.QSize(0, 100))
-        self.container_ltr_btn.setMaximumSize(QtCore.QSize(200, 100))
+        self.container_ltr_btn.setMaximumSize(QtCore.QSize(200, 200))
         font = QtGui.QFont()
         font.setFamily("Rubik")
         font.setPointSize(25)
@@ -1088,10 +1084,10 @@ class Ui_Form(object):
 "    background-color: rgb(0, 0, 255);\n"
 "    border-radius: 17px;\n"
 "    color: white;\n"
-"border-top-right-radius: 0px;\n"
-"border-top-left-radius: 33px;\n"
-"border-bottom-right-radius: 49px;\n"
-"border-bottom-left-radius: 16px;\n"
+"border-top-right-radius: 10px;\n"
+"border-top-left-radius: 25px;\n"
+"border-bottom-right-radius: 35px;\n"
+"border-bottom-left-radius: 10px;\n"
 "\n"
 "}")
         self.container_ltr_price_lbl.setAlignment(QtCore.Qt.AlignCenter)
@@ -1103,8 +1099,6 @@ class Ui_Form(object):
         self.empty_second_bottom_left_page.setObjectName("empty_second_bottom_left_page")
         self.second_bottom_left_stack.addWidget(self.empty_second_bottom_left_page)
         self.verticalLayout_15.addWidget(self.second_bottom_left_stack)
-        spacerItem2 = QtWidgets.QSpacerItem(20, 0, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_15.addItem(spacerItem2)
         self.horizontalLayout_3.addWidget(self.frame_6, 0, QtCore.Qt.AlignLeft)
         self.frame_7 = QtWidgets.QFrame(self.frame_4)
         self.frame_7.setEnabled(True)
@@ -1140,8 +1134,8 @@ class Ui_Form(object):
 "            background-color: rgb(245, 245, 245);\n"
 "            border-top-right-radius: 20px;\n"
 "            border-top-left-radius: 20px;\n"
-"            border-bottom-right-radius: 60px;\n"
-"            border-bottom-left-radius: 60px;\n"
+"            border-bottom-right-radius: 40px;\n"
+"            border-bottom-left-radius: 40px;\n"
 "            border: 1px solid blue;\n"
 "}")
         self.frame_10.setFrameShape(QtWidgets.QFrame.NoFrame)
@@ -1172,8 +1166,8 @@ class Ui_Form(object):
         self.frame_17.setStyleSheet("QFrame#frame_17 {\n"
 "    border-top-right-radius: 0px;\n"
 "    border-top-left-radius: 0px;\n"
-"    border-bottom-right-radius: 50px;\n"
-"    border-bottom-left-radius:50px;\n"
+"    border-bottom-right-radius: 40px;\n"
+"    border-bottom-left-radius:40px;\n"
 "    background-color: rgb(0, 0, 255);\n"
 "}")
         self.frame_17.setFrameShape(QtWidgets.QFrame.NoFrame)
@@ -1375,8 +1369,8 @@ class Ui_Form(object):
         self.product_layout = QtWidgets.QVBoxLayout()
         self.product_layout.setObjectName("product_layout")
         self.verticalLayout_84.addLayout(self.product_layout)
-        spacerItem3 = QtWidgets.QSpacerItem(0, 0, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_84.addItem(spacerItem3)
+        spacerItem = QtWidgets.QSpacerItem(0, 0, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_84.addItem(spacerItem)
         self.verticalLayout_52.addWidget(self.frame_27)
         self.verticalLayout_55.addWidget(self.frame_2)
         self.verticalLayout_8.addWidget(self.product_cart_frame)
@@ -1947,8 +1941,8 @@ class Ui_Form(object):
         self.horizontalLayout_10.setContentsMargins(0, 5, 0, 5)
         self.horizontalLayout_10.setSpacing(0)
         self.horizontalLayout_10.setObjectName("horizontalLayout_10")
-        spacerItem4 = QtWidgets.QSpacerItem(140, 0, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_10.addItem(spacerItem4)
+        spacerItem1 = QtWidgets.QSpacerItem(140, 0, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_10.addItem(spacerItem1)
         self.frame_13 = QtWidgets.QFrame(self.frame_28)
         self.frame_13.setMinimumSize(QtCore.QSize(150, 0))
         self.frame_13.setFrameShape(QtWidgets.QFrame.NoFrame)
@@ -1963,8 +1957,8 @@ class Ui_Form(object):
         self.bottle_layout.setObjectName("bottle_layout")
         self.verticalLayout_66.addLayout(self.bottle_layout)
         self.horizontalLayout_10.addWidget(self.frame_13)
-        spacerItem5 = QtWidgets.QSpacerItem(140, 0, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_10.addItem(spacerItem5)
+        spacerItem2 = QtWidgets.QSpacerItem(140, 0, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_10.addItem(spacerItem2)
         self.horizontalLayout_8.addWidget(self.frame_28)
         self.main_stack_widget.addWidget(self.bottle_page)
         self.verticalLayout_5.addWidget(self.main_stack_widget)
@@ -1977,8 +1971,8 @@ class Ui_Form(object):
         self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_5.setObjectName("frame_5")
         self.verticalLayout_13 = QtWidgets.QVBoxLayout(self.frame_5)
-        self.verticalLayout_13.setContentsMargins(0, 0, 0, 3)
-        self.verticalLayout_13.setSpacing(0)
+        self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_13.setSpacing(3)
         self.verticalLayout_13.setObjectName("verticalLayout_13")
         self.top_right_btn_stack_widget = QtWidgets.QStackedWidget(self.frame_5)
         self.top_right_btn_stack_widget.setMinimumSize(QtCore.QSize(0, 149))
@@ -1997,10 +1991,10 @@ class Ui_Form(object):
         self.frame_15.setStyleSheet("#frame_15 {\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"border-top-right-radius: 60px;\n"
+"border-top-right-radius: 40px;\n"
 "border-top-left-radius: 20px;\n"
 "border-bottom-right-radius: 20px;\n"
-"border-bottom-left-radius: 60px;\n"
+"border-bottom-left-radius: 40px;\n"
 "}")
         self.frame_15.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_15.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -2016,7 +2010,7 @@ class Ui_Form(object):
         sizePolicy.setHeightForWidth(self.container_btn.sizePolicy().hasHeightForWidth())
         self.container_btn.setSizePolicy(sizePolicy)
         self.container_btn.setMinimumSize(QtCore.QSize(0, 100))
-        self.container_btn.setMaximumSize(QtCore.QSize(200, 100))
+        self.container_btn.setMaximumSize(QtCore.QSize(200, 200))
         self.container_btn.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setFamily("Rubik")
@@ -2031,7 +2025,6 @@ class Ui_Form(object):
         self.verticalLayout_17.addWidget(self.container_btn)
         self.container_and_water_price_lbl = QtWidgets.QLabel(self.frame_15)
         self.container_and_water_price_lbl.setMinimumSize(QtCore.QSize(0, 49))
-        self.container_and_water_price_lbl.setMaximumSize(QtCore.QSize(16777215, 49))
         font = QtGui.QFont()
         font.setFamily("Rubik")
         font.setPointSize(25)
@@ -2039,10 +2032,10 @@ class Ui_Form(object):
         self.container_and_water_price_lbl.setStyleSheet("QLabel {\n"
 "    background-color: rgb(0, 0, 255);\n"
 "    color: white;\n"
-"border-top-right-radius: 33px;\n"
-"border-top-left-radius: 0px;\n"
-"border-bottom-right-radius: 16px;\n"
-"border-bottom-left-radius: 49px;\n"
+"border-top-right-radius: 25px;\n"
+"border-top-left-radius: 10px;\n"
+"border-bottom-right-radius: 10px;\n"
+"border-bottom-left-radius: 35px;\n"
 "}")
         self.container_and_water_price_lbl.setAlignment(QtCore.Qt.AlignCenter)
         self.container_and_water_price_lbl.setObjectName("container_and_water_price_lbl")
@@ -2069,17 +2062,15 @@ class Ui_Form(object):
         self.cash_or_loyal_card_btn.setStyleSheet("QPushButton {\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"border-top-right-radius: 60px;\n"
+"border-top-right-radius: 40px;\n"
 "border-top-left-radius: 20px;\n"
 "border-bottom-right-radius: 20px;\n"
-"border-bottom-left-radius: 60px;\n"
+"border-bottom-left-radius: 40px;\n"
 "}")
         self.cash_or_loyal_card_btn.setObjectName("cash_or_loyal_card_btn")
         self.verticalLayout_24.addWidget(self.cash_or_loyal_card_btn)
         self.top_right_btn_stack_widget.addWidget(self.cash_loyal_card_page)
         self.verticalLayout_13.addWidget(self.top_right_btn_stack_widget)
-        spacerItem6 = QtWidgets.QSpacerItem(20, 0, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_13.addItem(spacerItem6)
         self.top_right_second_stack_widget = QtWidgets.QStackedWidget(self.frame_5)
         self.top_right_second_stack_widget.setMinimumSize(QtCore.QSize(0, 149))
         self.top_right_second_stack_widget.setMaximumSize(QtCore.QSize(200, 149))
@@ -2103,8 +2094,8 @@ class Ui_Form(object):
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
 "border-top-right-radius: 20px;\n"
-"border-top-left-radius: 60px;\n"
-"border-bottom-right-radius: 60px;\n"
+"border-top-left-radius: 40px;\n"
+"border-bottom-right-radius: 40px;\n"
 "border-bottom-left-radius: 20px;\n"
 "\n"
 "}")
@@ -2124,8 +2115,8 @@ class Ui_Form(object):
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
 "    border-top-right-radius: 20px;\n"
-"    border-top-left-radius: 60px;\n"
-"    border-bottom-right-radius: 60px;\n"
+"    border-top-left-radius: 40px;\n"
+"    border-bottom-right-radius: 40px;\n"
 "    border-bottom-left-radius: 20px;\n"
 "\n"
 "}")
@@ -2143,7 +2134,7 @@ class Ui_Form(object):
         sizePolicy.setHeightForWidth(self.loyal_card_btn.sizePolicy().hasHeightForWidth())
         self.loyal_card_btn.setSizePolicy(sizePolicy)
         self.loyal_card_btn.setMinimumSize(QtCore.QSize(0, 100))
-        self.loyal_card_btn.setMaximumSize(QtCore.QSize(200, 100))
+        self.loyal_card_btn.setMaximumSize(QtCore.QSize(200, 200))
         self.loyal_card_btn.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setFamily("Rubik")
@@ -2167,10 +2158,10 @@ class Ui_Form(object):
 "    background-color: rgb(0, 0, 255);\n"
 "    border-radius: 17px;\n"
 "    color: white;\n"
-"border-top-right-radius: 0px;\n"
-"border-top-left-radius: 33px;\n"
-"border-bottom-right-radius: 49px;\n"
-"border-bottom-left-radius: 16px;\n"
+"border-top-right-radius: 10px;\n"
+"border-top-left-radius: 25px;\n"
+"border-bottom-right-radius: 35px;\n"
+"border-bottom-left-radius: 10px;\n"
 "}")
         self.loyal_card_price_lbl.setAlignment(QtCore.Qt.AlignCenter)
         self.loyal_card_price_lbl.setObjectName("loyal_card_price_lbl")
@@ -2195,8 +2186,8 @@ class Ui_Form(object):
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid green;\n"
 "border-top-right-radius: 20px;\n"
-"border-top-left-radius: 60px;\n"
-"border-bottom-right-radius: 60px;\n"
+"border-top-left-radius: 40px;\n"
+"border-bottom-right-radius: 40px;\n"
 "border-bottom-left-radius: 20px;\n"
 "\n"
 "}")
@@ -2207,8 +2198,6 @@ class Ui_Form(object):
         self.top_right_second_empty_page.setObjectName("top_right_second_empty_page")
         self.top_right_second_stack_widget.addWidget(self.top_right_second_empty_page)
         self.verticalLayout_13.addWidget(self.top_right_second_stack_widget)
-        spacerItem7 = QtWidgets.QSpacerItem(20, 0, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_13.addItem(spacerItem7)
         self.bottom_right_second_stack_widget = QtWidgets.QStackedWidget(self.frame_5)
         self.bottom_right_second_stack_widget.setMinimumSize(QtCore.QSize(0, 149))
         self.bottom_right_second_stack_widget.setMaximumSize(QtCore.QSize(16777215, 149))
@@ -2226,10 +2215,10 @@ class Ui_Form(object):
         self.frame_16.setStyleSheet("#frame_16 {\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"border-top-right-radius: 60px;\n"
+"border-top-right-radius: 40px;\n"
 "border-top-left-radius: 20px;\n"
 "border-bottom-right-radius: 20px;\n"
-"border-bottom-left-radius: 60px;\n"
+"border-bottom-left-radius: 40px;\n"
 "\n"
 "}")
         self.frame_16.setFrameShape(QtWidgets.QFrame.NoFrame)
@@ -2246,7 +2235,7 @@ class Ui_Form(object):
         sizePolicy.setHeightForWidth(self.plug_btn.sizePolicy().hasHeightForWidth())
         self.plug_btn.setSizePolicy(sizePolicy)
         self.plug_btn.setMinimumSize(QtCore.QSize(0, 100))
-        self.plug_btn.setMaximumSize(QtCore.QSize(200, 100))
+        self.plug_btn.setMaximumSize(QtCore.QSize(200, 200))
         self.plug_btn.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setFamily("Rubik")
@@ -2271,10 +2260,10 @@ class Ui_Form(object):
         self.plug_and_water_price_lbl.setStyleSheet("QLabel {\n"
 "    background-color: rgb(0, 0, 255);\n"
 "    color: white;\n"
-"border-top-right-radius: 33px;\n"
-"border-top-left-radius: 0px;\n"
-"border-bottom-right-radius: 16px;\n"
-"border-bottom-left-radius: 49px;\n"
+"border-top-right-radius: 25px;\n"
+"border-top-left-radius: 10px;\n"
+"border-bottom-right-radius: 10px;\n"
+"border-bottom-left-radius: 35px;\n"
 "}")
         self.plug_and_water_price_lbl.setAlignment(QtCore.Qt.AlignCenter)
         self.plug_and_water_price_lbl.setObjectName("plug_and_water_price_lbl")
@@ -2301,17 +2290,15 @@ class Ui_Form(object):
         self.bank_card_btn.setStyleSheet("QPushButton {\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"border-top-right-radius: 60px;\n"
+"border-top-right-radius: 40px;\n"
 "border-top-left-radius: 20px;\n"
 "border-bottom-right-radius: 20px;\n"
-"border-bottom-left-radius: 60px;\n"
+"border-bottom-left-radius: 40px;\n"
 "}")
         self.bank_card_btn.setObjectName("bank_card_btn")
         self.verticalLayout_26.addWidget(self.bank_card_btn)
         self.bottom_right_second_stack_widget.addWidget(self.bank_card_page)
         self.verticalLayout_13.addWidget(self.bottom_right_second_stack_widget)
-        spacerItem8 = QtWidgets.QSpacerItem(20, 0, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_13.addItem(spacerItem8)
         self.horizontalLayout_3.addWidget(self.frame_5, 0, QtCore.Qt.AlignRight)
         self.gridLayout.addWidget(self.frame_4, 0, 0, 1, 1)
         self.verticalLayout.addWidget(self.frame)
