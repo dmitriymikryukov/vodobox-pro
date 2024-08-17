@@ -302,7 +302,7 @@ class WaitingWindow(QWidget):
                 os.getcwd(), '..', 'resources', 'logo', logo_name
         )))
         lbl.setScaledContents(True)
-        lbl.setMaximumSize(290, 290)
+        lbl.setMaximumSize(200, 200)
         self.ui.logo_layout.addWidget(lbl)
 
     def change_buy_btn_position(self) -> None:

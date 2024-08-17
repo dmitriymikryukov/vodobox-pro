@@ -50,13 +50,13 @@
      </property>
      <layout class="QGridLayout" name="gridLayout">
       <property name="leftMargin">
-       <number>0</number>
+       <number>2</number>
       </property>
       <property name="topMargin">
        <number>0</number>
       </property>
       <property name="rightMargin">
-       <number>0</number>
+       <number>2</number>
       </property>
       <property name="bottomMargin">
        <number>0</number>
@@ -507,7 +507,7 @@ border: 1px solid #B3B3B3;</string>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_4">
             <property name="spacing">
-             <number>8</number>
+             <number>1</number>
             </property>
             <property name="leftMargin">
              <number>0</number>
@@ -702,7 +702,7 @@ border-bottom-left-radius: 20px;</string>
                <string notr="true">background-color: transparent</string>
               </property>
               <property name="currentIndex">
-               <number>1</number>
+               <number>0</number>
               </property>
               <widget class="QWidget" name="up_arrow_page">
                <layout class="QVBoxLayout" name="verticalLayout_30">
@@ -855,7 +855,7 @@ border-bottom-left-radius: 20px;
                <string notr="true">background-color: transparent</string>
               </property>
               <property name="currentIndex">
-               <number>1</number>
+               <number>0</number>
               </property>
               <widget class="QWidget" name="down_arrow_page">
                <layout class="QVBoxLayout" name="verticalLayout_31">
@@ -1707,7 +1707,7 @@ QPushButton:checked {
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_2">
             <property name="spacing">
-             <number>8</number>
+             <number>1</number>
             </property>
             <property name="leftMargin">
              <number>0</number>
@@ -1892,7 +1892,7 @@ border-bottom-left-radius: 20px;</string>
             <item>
              <widget class="QStackedWidget" name="second_top_right_stack_widget">
               <property name="currentIndex">
-               <number>0</number>
+               <number>1</number>
               </property>
               <widget class="QWidget" name="empty_second_top_right_page">
                <property name="styleSheet">
