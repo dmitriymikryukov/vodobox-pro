@@ -489,7 +489,7 @@ border: 1px solid #B3B3B3;</string>
           <number>0</number>
          </property>
          <property name="bottomMargin">
-          <number>2</number>
+          <number>3</number>
          </property>
          <item alignment="Qt::AlignLeft">
           <widget class="QFrame" name="frame_6">
