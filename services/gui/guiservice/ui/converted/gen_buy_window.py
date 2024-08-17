@@ -32,7 +32,7 @@ class Ui_Form(object):
         self.gridLayout.setSpacing(0)
         self.gridLayout.setObjectName("gridLayout")
         self.frame_3 = QtWidgets.QFrame(self.frame)
-        self.frame_3.setMinimumSize(QtCore.QSize(0, 129))
+        self.frame_3.setMinimumSize(QtCore.QSize(0, 149))
         self.frame_3.setMaximumSize(QtCore.QSize(16777215, 149))
         self.frame_3.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
