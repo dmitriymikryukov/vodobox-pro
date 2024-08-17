@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1050</width>
-    <height>600</height>
+    <width>944</width>
+    <height>522</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -489,7 +489,7 @@ border: 1px solid #B3B3B3;</string>
           <number>0</number>
          </property>
          <property name="bottomMargin">
-          <number>3</number>
+          <number>6</number>
          </property>
          <item alignment="Qt::AlignLeft">
           <widget class="QFrame" name="frame_6">
@@ -1892,7 +1892,7 @@ border-bottom-left-radius: 20px;</string>
             <item>
              <widget class="QStackedWidget" name="second_top_right_stack_widget">
               <property name="currentIndex">
-               <number>1</number>
+               <number>0</number>
               </property>
               <widget class="QWidget" name="empty_second_top_right_page">
                <property name="styleSheet">
