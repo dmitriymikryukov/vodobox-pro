@@ -521,13 +521,19 @@ border: 1px solid #B3B3B3;</string>
             <property name="bottomMargin">
              <number>0</number>
             </property>
-            <item>
+            <item alignment="Qt::AlignTop">
              <widget class="QStackedWidget" name="top_left_stack_widget">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>100</height>
+               </size>
               </property>
               <property name="styleSheet">
                <string notr="true">background-color: transparent;</string>
@@ -578,7 +584,7 @@ border: 1px solid #B3B3B3;</string>
                   <property name="font">
                    <font>
                     <family>Rubik</family>
-                    <pointsize>15</pointsize>
+                    <pointsize>12</pointsize>
                    </font>
                   </property>
                   <property name="focusPolicy">
@@ -1049,7 +1055,7 @@ border-bottom-left-radius: 20px;
                <property name="bottomMargin">
                 <number>0</number>
                </property>
-               <item>
+               <item alignment="Qt::AlignTop">
                 <widget class="QFrame" name="frame_10">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
@@ -1060,7 +1066,7 @@ border-bottom-left-radius: 20px;
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
-                   <height>129</height>
+                   <height>100</height>
                   </size>
                  </property>
                  <property name="maximumSize">
@@ -1113,7 +1119,7 @@ border-bottom-left-radius: 20px;
                     <property name="font">
                      <font>
                       <family>Rubik</family>
-                      <pointsize>20</pointsize>
+                      <pointsize>15</pointsize>
                      </font>
                     </property>
                     <property name="text">
@@ -1138,7 +1144,7 @@ border-bottom-left-radius: 20px;
                     <property name="font">
                      <font>
                       <family>Rubik</family>
-                      <pointsize>20</pointsize>
+                      <pointsize>15</pointsize>
                      </font>
                     </property>
                     <property name="text">
@@ -1715,13 +1721,19 @@ QPushButton:checked {
             <property name="bottomMargin">
              <number>0</number>
             </property>
-            <item>
+            <item alignment="Qt::AlignTop">
              <widget class="QStackedWidget" name="top_right_stack_widget">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>100</height>
+               </size>
               </property>
               <property name="styleSheet">
                <string notr="true">background-color: transparent;</string>
@@ -1766,7 +1778,7 @@ QPushButton:checked {
                   <property name="font">
                    <font>
                     <family>Rubik</family>
-                    <pointsize>20</pointsize>
+                    <pointsize>17</pointsize>
                    </font>
                   </property>
                   <property name="focusPolicy">
