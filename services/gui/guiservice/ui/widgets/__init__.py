@@ -8,8 +8,6 @@ from ui.widgets.activation_window import ActivationWindow
 from ui.widgets.service_menu_window import ServiceMenuWindow
 from ui import app
 
-logging = app.sgn_gui
-
 
 class MainWindow(QMainWindow):
     """
@@ -99,11 +97,11 @@ class MainWindow(QMainWindow):
             self.windows_stack_widget.setCurrentWidget(self.buy_window)
 
     def cancel_buy_window_by_timeout(self):
-        logging.info('закрыли меню покупки по timeout сессии')
+        app.sgn_gui.info('закрыли меню покупки по timeout сессии')
         self.render_buy_window()
 
     def cancel_buy_window_by_termination(self):
-        logging.info('закрыли меню покупки принудительно по нажатию')
+        app.sgn_gui.info('закрыли меню покупки принудительно по нажатию')
         self.buy_window.session_timer.stop()
         self.render_buy_window()
 
@@ -111,7 +109,7 @@ class MainWindow(QMainWindow):
         # происходит перерендер при создании нового окна покупок после возвращения
         # в меню ожидания
         try:
-            logging.info('Buy Window пересоздано')
+            app.sgn_gui.info('Buy Window пересоздано')
             self.windows_stack_widget.removeWidget(self.buy_window)
             QCoreApplication.instance().sendPostedEvents(self.buy_window, QEvent.DeferredDelete)
             self.buy_window.deleteLater()
@@ -132,4 +130,4 @@ class MainWindow(QMainWindow):
             self.buy_window.buy_window_closed.connect(self.cancel_buy_window_by_termination)
             self.buy_window.session_timeout.connect(self.cancel_buy_window_by_timeout)
         except Exception as err:
-            logging.error(f'Ошибка при пересоздании меню покупки: {err}')
+            app.sgn_gui.error(f'Ошибка при пересоздании меню покупки: {err}')

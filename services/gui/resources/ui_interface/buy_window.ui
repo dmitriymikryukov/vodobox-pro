@@ -774,7 +774,7 @@ border-bottom-left-radius: 60px;
                   <property name="font">
                    <font>
                     <family>Rubik</family>
-                    <pointsize>20</pointsize>
+                    <pointsize>15</pointsize>
                    </font>
                   </property>
                   <property name="text">
@@ -835,7 +835,7 @@ border-bottom-left-radius: 60px;
                      <property name="font">
                       <font>
                        <family>Rubik</family>
-                       <pointsize>20</pointsize>
+                       <pointsize>15</pointsize>
                       </font>
                      </property>
                      <property name="styleSheet">
@@ -858,7 +858,7 @@ border-bottom-left-radius: 60px;
                      <property name="font">
                       <font>
                        <family>Rubik</family>
-                       <pointsize>17</pointsize>
+                       <pointsize>15</pointsize>
                       </font>
                      </property>
                      <property name="styleSheet">
@@ -881,7 +881,7 @@ border-bottom-left-radius: 60px;
                      <property name="font">
                       <font>
                        <family>Rubik</family>
-                       <pointsize>17</pointsize>
+                       <pointsize>15</pointsize>
                       </font>
                      </property>
                      <property name="styleSheet">
@@ -913,7 +913,7 @@ border-bottom-left-radius: 60px;
                      <property name="font">
                       <font>
                        <family>Rubik</family>
-                       <pointsize>17</pointsize>
+                       <pointsize>15</pointsize>
                       </font>
                      </property>
                      <property name="styleSheet">
@@ -936,7 +936,7 @@ border-bottom-left-radius: 60px;
                      <property name="font">
                       <font>
                        <family>Rubik</family>
-                       <pointsize>20</pointsize>
+                       <pointsize>15</pointsize>
                       </font>
                      </property>
                      <property name="styleSheet">
@@ -986,7 +986,7 @@ border-bottom-left-radius: 60px;
                      <property name="font">
                       <font>
                        <family>Rubik</family>
-                       <pointsize>20</pointsize>
+                       <pointsize>15</pointsize>
                       </font>
                      </property>
                      <property name="styleSheet">
@@ -1058,7 +1058,7 @@ border-bottom-left-radius: 60px;
                <string notr="true">background-color: transparent;</string>
               </property>
               <property name="currentIndex">
-               <number>5</number>
+               <number>0</number>
               </property>
               <widget class="QWidget" name="terminate_session_page">
                <layout class="QVBoxLayout" name="verticalLayout_22">
@@ -1117,14 +1117,13 @@ border-bottom-left-radius: 60px;
 background-color: rgb(255, 0, 0);
 border: 1px solid black;
 border-top-right-radius: 20px;
-border-top-left-radius: 60px;
-border-bottom-right-radius: 60px;
+border-top-left-radius: 40px;
+border-bottom-right-radius: 40px;
 border-bottom-left-radius: 20px;
 </string>
                   </property>
                   <property name="text">
-                   <string>Завершить
-покупку</string>
+                   <string>Завершить</string>
                   </property>
                  </widget>
                 </item>
@@ -1193,8 +1192,7 @@ border-bottom-left-radius: 20px;
 </string>
                   </property>
                   <property name="text">
-                   <string>Завершить
-налив</string>
+                   <string>Отменить</string>
                   </property>
                  </widget>
                 </item>
@@ -2568,7 +2566,7 @@ border-bottom-left-radius: 10px;
                            <property name="font">
                             <font>
                              <family>Rubik</family>
-                             <pointsize>18</pointsize>
+                             <pointsize>15</pointsize>
                             </font>
                            </property>
                            <property name="styleSheet">
@@ -2606,7 +2604,7 @@ border-bottom-left-radius: 10px;
                            <property name="font">
                             <font>
                              <family>Rubik</family>
-                             <pointsize>20</pointsize>
+                             <pointsize>15</pointsize>
                             </font>
                            </property>
                            <property name="styleSheet">
@@ -2629,7 +2627,7 @@ border-bottom-left-radius: 10px;
                            <property name="font">
                             <font>
                              <family>Rubik</family>
-                             <pointsize>20</pointsize>
+                             <pointsize>15</pointsize>
                             </font>
                            </property>
                            <property name="styleSheet">
@@ -2652,7 +2650,7 @@ border-bottom-left-radius: 10px;
                            <property name="font">
                             <font>
                              <family>Rubik</family>
-                             <pointsize>20</pointsize>
+                             <pointsize>15</pointsize>
                             </font>
                            </property>
                            <property name="styleSheet">
@@ -2675,7 +2673,7 @@ border-bottom-left-radius: 10px;
                            <property name="font">
                             <font>
                              <family>Rubik</family>
-                             <pointsize>20</pointsize>
+                             <pointsize>15</pointsize>
                             </font>
                            </property>
                            <property name="styleSheet">
@@ -2755,7 +2753,7 @@ border-bottom-left-radius: 10px;
                            <property name="font">
                             <font>
                              <family>Rubik</family>
-                             <pointsize>20</pointsize>
+                             <pointsize>15</pointsize>
                             </font>
                            </property>
                            <property name="styleSheet">

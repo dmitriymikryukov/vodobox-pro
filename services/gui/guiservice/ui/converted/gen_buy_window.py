@@ -349,7 +349,7 @@ class Ui_Form(object):
         self.bottom_cart_lbl = QtWidgets.QLabel(self.bottom_cart_page)
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(20)
+        font.setPointSize(15)
         self.bottom_cart_lbl.setFont(font)
         self.bottom_cart_lbl.setAlignment(QtCore.Qt.AlignCenter)
         self.bottom_cart_lbl.setObjectName("bottom_cart_lbl")
@@ -381,7 +381,7 @@ class Ui_Form(object):
         self.deposited_cash_lbl = QtWidgets.QLabel(self.deposit_cash_page)
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(20)
+        font.setPointSize(15)
         self.deposited_cash_lbl.setFont(font)
         self.deposited_cash_lbl.setStyleSheet("color: white;")
         self.deposited_cash_lbl.setAlignment(QtCore.Qt.AlignCenter)
@@ -395,7 +395,7 @@ class Ui_Form(object):
         self.choosed_water_and_plug_lbl = QtWidgets.QLabel(self.choosed_water_and_plug_page)
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(17)
+        font.setPointSize(15)
         self.choosed_water_and_plug_lbl.setFont(font)
         self.choosed_water_and_plug_lbl.setStyleSheet("color: white;")
         self.choosed_water_and_plug_lbl.setAlignment(QtCore.Qt.AlignCenter)
@@ -409,7 +409,7 @@ class Ui_Form(object):
         self.choosed_water_and_container_lbl = QtWidgets.QLabel(self.choosed_water_and_container_page)
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(17)
+        font.setPointSize(15)
         self.choosed_water_and_container_lbl.setFont(font)
         self.choosed_water_and_container_lbl.setStyleSheet("color: white;")
         self.choosed_water_and_container_lbl.setAlignment(QtCore.Qt.AlignCenter)
@@ -425,7 +425,7 @@ class Ui_Form(object):
         self.choosed_loyal_card_lbl = QtWidgets.QLabel(self.choosed_loyal_card_page)
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(17)
+        font.setPointSize(15)
         self.choosed_loyal_card_lbl.setFont(font)
         self.choosed_loyal_card_lbl.setStyleSheet("color: white;")
         self.choosed_loyal_card_lbl.setAlignment(QtCore.Qt.AlignCenter)
@@ -439,7 +439,7 @@ class Ui_Form(object):
         self.choosed_water_lbl = QtWidgets.QLabel(self.choosed_water_page)
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(20)
+        font.setPointSize(15)
         self.choosed_water_lbl.setFont(font)
         self.choosed_water_lbl.setStyleSheet("color: white;")
         self.choosed_water_lbl.setAlignment(QtCore.Qt.AlignCenter)
@@ -467,7 +467,7 @@ class Ui_Form(object):
         self.product_price_lbl = QtWidgets.QLabel(self.product_price_page)
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(20)
+        font.setPointSize(15)
         self.product_price_lbl.setFont(font)
         self.product_price_lbl.setStyleSheet("color: white;")
         self.product_price_lbl.setAlignment(QtCore.Qt.AlignCenter)
@@ -519,8 +519,8 @@ class Ui_Form(object):
 "background-color: rgb(255, 0, 0);\n"
 "border: 1px solid black;\n"
 "border-top-right-radius: 20px;\n"
-"border-top-left-radius: 60px;\n"
-"border-bottom-right-radius: 60px;\n"
+"border-top-left-radius: 40px;\n"
+"border-bottom-right-radius: 40px;\n"
 "border-bottom-left-radius: 20px;\n"
 "")
         self.terminate_session_btn.setObjectName("terminate_session_btn")
@@ -1200,7 +1200,7 @@ class Ui_Form(object):
         self.remaining_amount_money_lbl = QtWidgets.QLabel(self.remaining_amount_money_page)
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(18)
+        font.setPointSize(15)
         self.remaining_amount_money_lbl.setFont(font)
         self.remaining_amount_money_lbl.setStyleSheet("color: rgb(255, 255, 255);")
         self.remaining_amount_money_lbl.setAlignment(QtCore.Qt.AlignCenter)
@@ -1216,7 +1216,7 @@ class Ui_Form(object):
         self.summary_lbl = QtWidgets.QLabel(self.summary_page)
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(20)
+        font.setPointSize(15)
         self.summary_lbl.setFont(font)
         self.summary_lbl.setStyleSheet("color: rgb(255, 255, 255);")
         self.summary_lbl.setAlignment(QtCore.Qt.AlignCenter)
@@ -1230,7 +1230,7 @@ class Ui_Form(object):
         self.bank_card_hint_lbl = QtWidgets.QLabel(self.bank_card_hint_page)
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(20)
+        font.setPointSize(15)
         self.bank_card_hint_lbl.setFont(font)
         self.bank_card_hint_lbl.setStyleSheet("color: rgb(255, 255, 255);")
         self.bank_card_hint_lbl.setAlignment(QtCore.Qt.AlignCenter)
@@ -1244,7 +1244,7 @@ class Ui_Form(object):
         self.qr_hint_lbl = QtWidgets.QLabel(self.qr_hint_page)
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(20)
+        font.setPointSize(15)
         self.qr_hint_lbl.setFont(font)
         self.qr_hint_lbl.setStyleSheet("color: rgb(255, 255, 255);")
         self.qr_hint_lbl.setAlignment(QtCore.Qt.AlignCenter)
@@ -1258,7 +1258,7 @@ class Ui_Form(object):
         self.cash_hint_lbl = QtWidgets.QLabel(self.cash_hint_page)
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(20)
+        font.setPointSize(15)
         self.cash_hint_lbl.setFont(font)
         self.cash_hint_lbl.setStyleSheet("color: rgb(255, 255, 255);")
         self.cash_hint_lbl.setAlignment(QtCore.Qt.AlignCenter)
@@ -1291,7 +1291,7 @@ class Ui_Form(object):
         self.top_payment_summary_price_lbl.setMaximumSize(QtCore.QSize(16777215, 49))
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(20)
+        font.setPointSize(15)
         self.top_payment_summary_price_lbl.setFont(font)
         self.top_payment_summary_price_lbl.setStyleSheet("QLabel {\n"
 "    color: white;\n"
@@ -2308,7 +2308,7 @@ class Ui_Form(object):
         self.consumer_info_bottom_stack_widget.setCurrentIndex(0)
         self.choosed_product_stack_widget.setCurrentIndex(0)
         self.product_price_stack_widget.setCurrentIndex(0)
-        self.bottom_right_btn_stack_widget.setCurrentIndex(5)
+        self.bottom_right_btn_stack_widget.setCurrentIndex(0)
         self.top_left_stack_widget.setCurrentIndex(1)
         self.second_top_left_stack_widget.setCurrentIndex(0)
         self.second_bottom_left_stack.setCurrentIndex(1)
@@ -2347,10 +2347,8 @@ class Ui_Form(object):
         self.choosed_loyal_card_lbl.setText(_translate("Form", "Карта лояльности"))
         self.choosed_water_lbl.setText(_translate("Form", "Вода - Л"))
         self.product_price_lbl.setText(_translate("Form", "- Р"))
-        self.terminate_session_btn.setText(_translate("Form", "Завершить\n"
-"покупку"))
-        self.terminate_pouring_btn.setText(_translate("Form", "Завершить\n"
-"налив"))
+        self.terminate_session_btn.setText(_translate("Form", "Завершить"))
+        self.terminate_pouring_btn.setText(_translate("Form", "Отменить"))
         self.cancel_payment_btn.setText(_translate("Form", "Отменить \n"
 "оплату"))
         self.get_back_money_btn.setText(_translate("Form", "Вернуть\n"
