@@ -1125,10 +1125,10 @@ class Ui_Form(object):
         self.frame_8.setObjectName("frame_8")
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.frame_8)
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_6.setSpacing(0)
+        self.verticalLayout_6.setSpacing(3)
         self.verticalLayout_6.setObjectName("verticalLayout_6")
         self.frame_10 = QtWidgets.QFrame(self.frame_8)
-        self.frame_10.setMinimumSize(QtCore.QSize(0, 129))
+        self.frame_10.setMinimumSize(QtCore.QSize(0, 149))
         self.frame_10.setMaximumSize(QtCore.QSize(16777215, 149))
         self.frame_10.setStyleSheet("QFrame#frame_10 {\n"
 "            background-color: rgb(245, 245, 245);\n"
@@ -1166,8 +1166,8 @@ class Ui_Form(object):
         self.frame_17.setStyleSheet("QFrame#frame_17 {\n"
 "    border-top-right-radius: 0px;\n"
 "    border-top-left-radius: 0px;\n"
-"    border-bottom-right-radius: 40px;\n"
-"    border-bottom-left-radius:40px;\n"
+"    border-bottom-right-radius: 35px;\n"
+"    border-bottom-left-radius:35px;\n"
 "    background-color: rgb(0, 0, 255);\n"
 "}")
         self.frame_17.setFrameShape(QtWidgets.QFrame.NoFrame)

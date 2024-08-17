@@ -2388,7 +2388,7 @@ border-bottom-left-radius: 10px;
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_6">
                <property name="spacing">
-                <number>0</number>
+                <number>3</number>
                </property>
                <property name="leftMargin">
                 <number>0</number>
@@ -2407,7 +2407,7 @@ border-bottom-left-radius: 10px;
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
-                   <height>129</height>
+                   <height>149</height>
                   </size>
                  </property>
                  <property name="maximumSize">
@@ -2492,8 +2492,8 @@ border-bottom-left-radius: 10px;
                      <string notr="true">QFrame#frame_17 {
 	border-top-right-radius: 0px;
 	border-top-left-radius: 0px;
-	border-bottom-right-radius: 40px;
-	border-bottom-left-radius:40px;
+	border-bottom-right-radius: 35px;
+	border-bottom-left-radius:35px;
 	background-color: rgb(0, 0, 255);
 }</string>
                     </property>
