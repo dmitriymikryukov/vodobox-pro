@@ -256,6 +256,7 @@ class SgnMDBbill(ifaceMDBbill):
 						ru_txt='НА УДЕРЖАНИЕ'
 						po=self['dispense_amount']['coin']
 						n2c=self.nominal_to_cents(t['nominal'])
+						self.debug('Nominal=%s DispanseAmount=%s'%(n2c,po))
 						if self['session']['query_amount']!=0:
 							qelse=(self['session']['query_amount']-self['session']['cash_balance'])
 							if n2c>=qelse or qelse<(po/2):
