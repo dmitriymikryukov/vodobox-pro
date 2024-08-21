@@ -2920,6 +2920,9 @@ border-bottom-left-radius: 10px;
                                    <pointsize>20</pointsize>
                                   </font>
                                  </property>
+                                 <property name="styleSheet">
+                                  <string notr="true"/>
+                                 </property>
                                  <property name="text">
                                   <string>Выберите товар</string>
                                  </property>
