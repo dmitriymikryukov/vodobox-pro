@@ -2,7 +2,7 @@ from ui.widgets.buy_window.products import Product, Water, PlugWithWater, Contai
 from ui.widgets.buy_window.graphics import WaterBottleWidget
 from PyQt5.QtWidgets import QWidget, QButtonGroup, QLabel
 from configuration.testing import BuyConfig, UiConfig
-from PyQt5.QtCore import pyqtSignal, QTimer, QThread
+from PyQt5.QtCore import pyqtSignal, QTimer, QThread, Qt
 from ui.converted.gen_buy_window import Ui_Form
 from PyQt5.QtGui import QPixmap, QFont
 from ui import app
@@ -471,6 +471,7 @@ class BuyWindow(QWidget):
 
         for p in self._chosen_products:
             lbl = QLabel(p.name)
+            lbl.setAlignment(Qt.AlignCenter)
             lbl.setFont(QFont('Rubik', 18))
             lbl.setStyleSheet(f'color: {"black" if UiConfig.is_light_theme() else "white"};')
             self.ui.product_layout.addWidget(lbl)

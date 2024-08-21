@@ -1209,7 +1209,7 @@ class Ui_Form(object):
         self.remaining_amount_money_lbl = QtWidgets.QLabel(self.remaining_amount_money_page)
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(18)
+        font.setPointSize(15)
         self.remaining_amount_money_lbl.setFont(font)
         self.remaining_amount_money_lbl.setStyleSheet("color: rgb(255, 255, 255);")
         self.remaining_amount_money_lbl.setAlignment(QtCore.Qt.AlignCenter)
