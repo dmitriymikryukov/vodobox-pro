@@ -46,7 +46,6 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.frame_17.sizePolicy().hasHeightForWidth())
         self.frame_17.setSizePolicy(sizePolicy)
-        self.frame_17.setMinimumSize(QtCore.QSize(0, 129))
         self.frame_17.setStyleSheet("#frame_17 {\n"
 "    background-color: white;\n"
 "    border-radius: 20px;\n"
@@ -192,7 +191,7 @@ class Ui_Form(object):
         self.horizontalLayout_4.addWidget(self.frame_23)
         self.verticalLayout_10.addWidget(self.frame_19)
         self.horizontalLayout_2.addWidget(self.frame_17)
-        self.gridLayout.addWidget(self.frame_3, 1, 0, 1, 1, QtCore.Qt.AlignBottom)
+        self.gridLayout.addWidget(self.frame_3, 1, 0, 1, 1)
         self.frame_4 = QtWidgets.QFrame(self.frame)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -295,8 +294,9 @@ class Ui_Form(object):
         self.empty_consumer_btn.setObjectName("empty_consumer_btn")
         self.verticalLayout_28.addWidget(self.empty_consumer_btn)
         self.top_left_stack_widget.addWidget(self.empty_consumer_page)
-        self.verticalLayout_4.addWidget(self.top_left_stack_widget, 0, QtCore.Qt.AlignTop)
+        self.verticalLayout_4.addWidget(self.top_left_stack_widget)
         self.second_top_left_stack_widget = QtWidgets.QStackedWidget(self.frame_6)
+        self.second_top_left_stack_widget.setMinimumSize(QtCore.QSize(0, 149))
         self.second_top_left_stack_widget.setStyleSheet("background-color: transparent")
         self.second_top_left_stack_widget.setObjectName("second_top_left_stack_widget")
         self.up_arrow_page = QtWidgets.QWidget()
@@ -363,6 +363,7 @@ class Ui_Form(object):
         self.second_top_left_stack_widget.addWidget(self.empty_up_arrow_page)
         self.verticalLayout_4.addWidget(self.second_top_left_stack_widget)
         self.second_bottom_left_stack_widget = QtWidgets.QStackedWidget(self.frame_6)
+        self.second_bottom_left_stack_widget.setMinimumSize(QtCore.QSize(0, 149))
         self.second_bottom_left_stack_widget.setStyleSheet("background-color: transparent")
         self.second_bottom_left_stack_widget.setObjectName("second_bottom_left_stack_widget")
         self.down_arrow_page = QtWidgets.QWidget()
@@ -692,7 +693,7 @@ class Ui_Form(object):
         self.frame_24.setMinimumSize(QtCore.QSize(0, 100))
         self.frame_24.setStyleSheet("#frame_24 {\n"
 "    background-color: rgb(227, 227, 227);\n"
-"    border-radius: 20px;\n"
+"    border-radius: 35px;\n"
 "}")
         self.frame_24.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_24.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -788,12 +789,11 @@ class Ui_Form(object):
         self.verticalLayout_2.setSpacing(3)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.top_right_stack_widget = QtWidgets.QStackedWidget(self.frame_5)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.top_right_stack_widget.sizePolicy().hasHeightForWidth())
         self.top_right_stack_widget.setSizePolicy(sizePolicy)
-        self.top_right_stack_widget.setMinimumSize(QtCore.QSize(0, 149))
         self.top_right_stack_widget.setStyleSheet("background-color: transparent;")
         self.top_right_stack_widget.setObjectName("top_right_stack_widget")
         self.translate_page = QtWidgets.QWidget()
@@ -862,7 +862,7 @@ class Ui_Form(object):
         self.empty_translate_btn.setObjectName("empty_translate_btn")
         self.verticalLayout_29.addWidget(self.empty_translate_btn)
         self.top_right_stack_widget.addWidget(self.empty_translate_page)
-        self.verticalLayout_2.addWidget(self.top_right_stack_widget, 0, QtCore.Qt.AlignTop)
+        self.verticalLayout_2.addWidget(self.top_right_stack_widget)
         self.second_top_right_stack_widget = QtWidgets.QStackedWidget(self.frame_5)
         self.second_top_right_stack_widget.setObjectName("second_top_right_stack_widget")
         self.empty_second_top_right_page = QtWidgets.QWidget()
