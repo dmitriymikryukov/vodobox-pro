@@ -345,10 +345,10 @@ class WaitingWindow(QWidget):
         """
         stylesheet = f'''
         background-color: rgb({col.red()}, {col.green()}, {col.blue()});
-        border-top-right-radius: {'60' if UiConfig.buy_btn_position() == 7 else '20'}px;
-        border-bottom-right-radius: {'20' if UiConfig.buy_btn_position() == 7 else '60'}px;
-        border-top-left-radius: {'20' if UiConfig.buy_btn_position() == 7 else '60'}px;
-        border-bottom-left-radius: {'60' if UiConfig.buy_btn_position() == 7 else '20'}px;
+        border-top-right-radius: {'40' if UiConfig.buy_btn_position() == 7 else '20'}px;
+        border-bottom-right-radius: {'20' if UiConfig.buy_btn_position() == 7 else '40'}px;
+        border-top-left-radius: {'20' if UiConfig.buy_btn_position() == 7 else '40'}px;
+        border-bottom-left-radius: {'40' if UiConfig.buy_btn_position() == 7 else '20'}px;
         border: 1px solid #B3B3B3;
         '''
         self.ui.buy_btn.setStyleSheet(stylesheet)
