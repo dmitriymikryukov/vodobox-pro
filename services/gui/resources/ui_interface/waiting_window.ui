@@ -1087,7 +1087,7 @@ border-bottom-left-radius: 20px;
                     <property name="font">
                      <font>
                       <family>Rubik</family>
-                      <pointsize>18</pointsize>
+                      <pointsize>24</pointsize>
                      </font>
                     </property>
                     <property name="text">

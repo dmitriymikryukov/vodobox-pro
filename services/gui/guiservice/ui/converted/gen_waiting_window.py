@@ -489,7 +489,7 @@ class Ui_Form(object):
         self.datetime_lbl.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(18)
+        font.setPointSize(24)
         self.datetime_lbl.setFont(font)
         self.datetime_lbl.setTextFormat(QtCore.Qt.AutoText)
         self.datetime_lbl.setAlignment(QtCore.Qt.AlignCenter)

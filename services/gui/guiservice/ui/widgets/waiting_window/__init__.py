@@ -399,7 +399,7 @@ class WaitingWindow(QWidget):
         Callback-функция для обновления даты и времени на интерфейсе
         """
         self.ui.datetime_lbl.setText(
-            datetime.now().strftime('%H:%M %d/%m/%Y' if self._seconds_blink_flag else '%H %M %d/%m/%Y'))
+            datetime.now().strftime('%H:%M %d.%m.%Y' if self._seconds_blink_flag else '%H %M %d.%m.%Y'))
         self._seconds_blink_flag = not self._seconds_blink_flag
 
     def change_arrow_buttons_visibility(self, state: bool) -> None:
