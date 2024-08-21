@@ -203,10 +203,11 @@
                    <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(0, 128, 0);
 border: 1px solid black;
-border-top-right-radius: 60px;
-border-bottom-right-radius: 20px;
+border-top-right-radius: 40px;
 border-top-left-radius: 20px;
-border-bottom-left-radius: 60px;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 40px;
+
 </string>
                   </property>
                   <property name="text">
@@ -270,10 +271,11 @@ border-bottom-left-radius: 60px;
                    <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(0, 128, 0);
 border: 1px solid black;
-border-top-right-radius: 60px;
-border-bottom-right-radius: 20px;
+border-top-right-radius: 40px;
 border-top-left-radius: 20px;
-border-bottom-left-radius: 60px;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 40px;
+
 </string>
                   </property>
                   <property name="text">
@@ -337,10 +339,10 @@ border-bottom-left-radius: 60px;
                    <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(0, 128, 0);
 border: 1px solid black;
-border-top-right-radius: 60px;
-border-bottom-right-radius: 20px;
+border-top-right-radius: 40px;
 border-top-left-radius: 20px;
-border-bottom-left-radius: 60px;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 40px;
 </string>
                   </property>
                   <property name="text">
@@ -401,10 +403,11 @@ border-bottom-left-radius: 60px;
                    <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(0, 128, 0);
 border: 1px solid black;
-border-top-right-radius: 60px;
-border-bottom-right-radius: 20px;
+border-top-right-radius: 40px;
 border-top-left-radius: 20px;
-border-bottom-left-radius: 60px;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 40px;
+
 </string>
                   </property>
                   <property name="text">
@@ -474,10 +477,10 @@ border-bottom-left-radius: 60px;
                    <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(255, 0, 0);
 border: 1px solid black;
-border-top-right-radius: 60px;
+border-top-right-radius: 40px;
 border-top-left-radius: 20px;
 border-bottom-right-radius: 20px;
-border-bottom-left-radius: 60px;
+border-bottom-left-radius: 40px;
 </string>
                   </property>
                   <property name="text">
@@ -543,10 +546,11 @@ border-bottom-left-radius: 60px;
                    <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(0, 128, 0);
 border: 1px solid black;
-border-top-right-radius: 60px;
-border-bottom-right-radius: 20px;
+border-top-right-radius: 40px;
 border-top-left-radius: 20px;
-border-bottom-left-radius: 60px;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 40px;
+
 </string>
                   </property>
                   <property name="text">
@@ -612,10 +616,10 @@ border-bottom-left-radius: 60px;
                    <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(0, 128, 0);
 border: 1px solid black;
-border-top-right-radius: 60px;
-border-bottom-right-radius: 20px;
+border-top-right-radius: 40px;
 border-top-left-radius: 20px;
-border-bottom-left-radius: 60px;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 40px;
 </string>
                   </property>
                   <property name="text">
@@ -676,10 +680,11 @@ border-bottom-left-radius: 60px;
                    <string notr="true">color: rgb(255, 255, 255);
 background-color: rgb(255, 0, 0);
 border: 1px solid black;
-border-top-right-radius: 60px;
-border-bottom-right-radius: 20px;
+border-top-right-radius: 40px;
 border-top-left-radius: 20px;
-border-bottom-left-radius: 60px;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 40px;
+
 </string>
                   </property>
                   <property name="text">
@@ -1186,10 +1191,9 @@ border-bottom-left-radius: 20px;
 background-color: rgb(255, 0, 0);
 border: 1px solid black;
 border-top-right-radius: 20px;
-border-top-left-radius: 60px;
-border-bottom-right-radius: 60px;
-border-bottom-left-radius: 20px;
-</string>
+border-top-left-radius: 40px;
+border-bottom-right-radius: 40px;
+border-bottom-left-radius: 20px;</string>
                   </property>
                   <property name="text">
                    <string>Отменить</string>
@@ -1244,8 +1248,8 @@ border-bottom-left-radius: 20px;
 	background-color: rgb(193, 107, 24);
 	border: 1px solid green;
 border-top-right-radius: 20px;
-border-top-left-radius: 60px;
-border-bottom-right-radius: 60px;
+border-top-left-radius: 40px;
+border-bottom-right-radius: 40px;
 border-bottom-left-radius: 20px;
 
 }</string>
@@ -1304,8 +1308,8 @@ border-bottom-left-radius: 20px;
 	background-color: rgb(193, 107, 24);
 	border: 1px solid green;
 border-top-right-radius: 20px;
-border-top-left-radius: 60px;
-border-bottom-right-radius: 60px;
+border-top-left-radius: 40px;
+border-bottom-right-radius: 40px;
 border-bottom-left-radius: 20px;
 
 }</string>
@@ -1369,8 +1373,8 @@ border-bottom-left-radius: 20px;
 background-color: rgb(193, 107, 24);
 border: 1px solid blue;
 border-top-right-radius: 20px;
-border-top-left-radius: 60px;
-border-bottom-right-radius: 60px;
+border-top-left-radius: 40px;
+border-bottom-right-radius: 40px;
 border-bottom-left-radius: 20px;
 </string>
                   </property>
@@ -1438,8 +1442,8 @@ color: rgb(255, 255, 255);
 background-color: rgb(0, 128, 0);
 border: 1px solid black;
 border-top-right-radius: 20px;
-border-bottom-right-radius: 60px;
-border-top-left-radius: 60px;
+border-top-left-radius: 40px;
+border-bottom-right-radius: 40px;
 border-bottom-left-radius: 20px;
 }
 
@@ -1511,8 +1515,8 @@ color: rgb(255, 255, 255);
 background-color: rgb(0, 128, 0);
 border: 1px solid black;
 border-top-right-radius: 20px;
-border-bottom-right-radius: 60px;
-border-top-left-radius: 60px;
+border-top-left-radius: 40px;
+border-bottom-right-radius: 40px;
 border-bottom-left-radius: 20px;
 }
 
@@ -1591,8 +1595,8 @@ color: rgb(255, 255, 255);
 background-color: rgb(0, 128, 0);
 border: 1px solid black;
 border-top-right-radius: 20px;
-border-bottom-right-radius: 60px;
-border-top-left-radius: 60px;
+border-top-left-radius: 40px;
+border-bottom-right-radius: 40px;
 border-bottom-left-radius: 20px;
 }
 
@@ -1665,8 +1669,8 @@ color: rgb(255, 255, 255);
 background-color: rgb(0, 128, 0);
 border: 1px solid black;
 border-top-right-radius: 20px;
-border-bottom-right-radius: 60px;
-border-top-left-radius: 60px;
+border-top-left-radius: 40px;
+border-bottom-right-radius: 40px;
 border-bottom-left-radius: 20px;
 }
 
@@ -1915,7 +1919,7 @@ background-color: rgb(134, 136, 138);
                      <property name="font">
                       <font>
                        <family>Rubik</family>
-                       <pointsize>25</pointsize>
+                       <pointsize>26</pointsize>
                       </font>
                      </property>
                      <property name="styleSheet">
@@ -2568,7 +2572,7 @@ border-bottom-left-radius: 10px;
                            <property name="font">
                             <font>
                              <family>Rubik</family>
-                             <pointsize>15</pointsize>
+                             <pointsize>18</pointsize>
                             </font>
                            </property>
                            <property name="styleSheet">
@@ -2606,7 +2610,7 @@ border-bottom-left-radius: 10px;
                            <property name="font">
                             <font>
                              <family>Rubik</family>
-                             <pointsize>15</pointsize>
+                             <pointsize>18</pointsize>
                             </font>
                            </property>
                            <property name="styleSheet">
@@ -2629,7 +2633,7 @@ border-bottom-left-radius: 10px;
                            <property name="font">
                             <font>
                              <family>Rubik</family>
-                             <pointsize>15</pointsize>
+                             <pointsize>18</pointsize>
                             </font>
                            </property>
                            <property name="styleSheet">
@@ -2652,7 +2656,7 @@ border-bottom-left-radius: 10px;
                            <property name="font">
                             <font>
                              <family>Rubik</family>
-                             <pointsize>15</pointsize>
+                             <pointsize>18</pointsize>
                             </font>
                            </property>
                            <property name="styleSheet">
@@ -2675,7 +2679,7 @@ border-bottom-left-radius: 10px;
                            <property name="font">
                             <font>
                              <family>Rubik</family>
-                             <pointsize>15</pointsize>
+                             <pointsize>18</pointsize>
                             </font>
                            </property>
                            <property name="styleSheet">
@@ -2755,7 +2759,7 @@ border-bottom-left-radius: 10px;
                            <property name="font">
                             <font>
                              <family>Rubik</family>
-                             <pointsize>15</pointsize>
+                             <pointsize>20</pointsize>
                             </font>
                            </property>
                            <property name="styleSheet">
@@ -2764,7 +2768,7 @@ border-bottom-left-radius: 10px;
 }</string>
                            </property>
                            <property name="text">
-                            <string>- Р</string>
+                            <string>- ₽</string>
                            </property>
                            <property name="alignment">
                             <set>Qt::AlignCenter</set>
@@ -4480,7 +4484,7 @@ border-bottom-left-radius: 35px;
                   <property name="font">
                    <font>
                     <family>Rubik</family>
-                    <pointsize>13</pointsize>
+                    <pointsize>15</pointsize>
                    </font>
                   </property>
                   <property name="focusPolicy">
