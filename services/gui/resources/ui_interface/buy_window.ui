@@ -751,7 +751,7 @@ border-bottom-left-radius: 40px;
                <string notr="true">background-color: transparent;</string>
               </property>
               <property name="currentIndex">
-               <number>0</number>
+               <number>1</number>
               </property>
               <widget class="QWidget" name="empty_consumer_bottom_page"/>
               <widget class="QWidget" name="bottom_cart_page">
@@ -776,7 +776,7 @@ border-bottom-left-radius: 40px;
                   <property name="font">
                    <font>
                     <family>Rubik</family>
-                    <pointsize>20</pointsize>
+                    <pointsize>18</pointsize>
                    </font>
                   </property>
                   <property name="text">

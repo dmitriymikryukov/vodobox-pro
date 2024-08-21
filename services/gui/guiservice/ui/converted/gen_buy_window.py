@@ -356,7 +356,7 @@ class Ui_Form(object):
         self.bottom_cart_lbl = QtWidgets.QLabel(self.bottom_cart_page)
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(20)
+        font.setPointSize(18)
         self.bottom_cart_lbl.setFont(font)
         self.bottom_cart_lbl.setAlignment(QtCore.Qt.AlignCenter)
         self.bottom_cart_lbl.setObjectName("bottom_cart_lbl")
@@ -2313,7 +2313,7 @@ class Ui_Form(object):
 
         self.retranslateUi(Form)
         self.bottom_left_btn_stack_widget.setCurrentIndex(4)
-        self.consumer_info_bottom_stack_widget.setCurrentIndex(0)
+        self.consumer_info_bottom_stack_widget.setCurrentIndex(1)
         self.choosed_product_stack_widget.setCurrentIndex(0)
         self.product_price_stack_widget.setCurrentIndex(0)
         self.bottom_right_btn_stack_widget.setCurrentIndex(0)
