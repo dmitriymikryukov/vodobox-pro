@@ -776,7 +776,7 @@ border-bottom-left-radius: 40px;
                   <property name="font">
                    <font>
                     <family>Rubik</family>
-                    <pointsize>15</pointsize>
+                    <pointsize>20</pointsize>
                    </font>
                   </property>
                   <property name="text">
@@ -840,7 +840,7 @@ border-bottom-left-radius: 15px;
                      <property name="font">
                       <font>
                        <family>Rubik</family>
-                       <pointsize>15</pointsize>
+                       <pointsize>18</pointsize>
                       </font>
                      </property>
                      <property name="styleSheet">
@@ -991,14 +991,14 @@ border-bottom-left-radius: 15px;
                      <property name="font">
                       <font>
                        <family>Rubik</family>
-                       <pointsize>15</pointsize>
+                       <pointsize>20</pointsize>
                       </font>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">color: white;</string>
                      </property>
                      <property name="text">
-                      <string>- Р</string>
+                      <string>- ₽</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -3519,7 +3519,7 @@ border-bottom-left-radius: 10px;
                             <string notr="true">background-color: transparent;</string>
                            </property>
                            <property name="currentIndex">
-                            <number>4</number>
+                            <number>2</number>
                            </property>
                            <widget class="QWidget" name="qr_payment_page">
                             <layout class="QVBoxLayout" name="verticalLayout_39">
@@ -3700,7 +3700,7 @@ border-bottom-left-radius: 10px;
                             <string notr="true">background-color: transparent;</string>
                            </property>
                            <property name="currentIndex">
-                            <number>4</number>
+                            <number>2</number>
                            </property>
                            <widget class="QWidget" name="qr_waiting_status_page">
                             <layout class="QVBoxLayout" name="verticalLayout_29">
@@ -3724,7 +3724,7 @@ border-bottom-left-radius: 10px;
                                <property name="font">
                                 <font>
                                  <family>Rubik</family>
-                                 <pointsize>20</pointsize>
+                                 <pointsize>15</pointsize>
                                 </font>
                                </property>
                                <property name="text">
@@ -3759,7 +3759,7 @@ border-bottom-left-radius: 10px;
                                <property name="font">
                                 <font>
                                  <family>Rubik</family>
-                                 <pointsize>20</pointsize>
+                                 <pointsize>15</pointsize>
                                 </font>
                                </property>
                                <property name="text">
@@ -3794,7 +3794,7 @@ border-bottom-left-radius: 10px;
                                <property name="font">
                                 <font>
                                  <family>Rubik</family>
-                                 <pointsize>20</pointsize>
+                                 <pointsize>15</pointsize>
                                 </font>
                                </property>
                                <property name="text">
@@ -3829,7 +3829,7 @@ border-bottom-left-radius: 10px;
                                <property name="font">
                                 <font>
                                  <family>Rubik</family>
-                                 <pointsize>18</pointsize>
+                                 <pointsize>15</pointsize>
                                 </font>
                                </property>
                                <property name="text">
@@ -3864,7 +3864,7 @@ border-bottom-left-radius: 10px;
                                <property name="font">
                                 <font>
                                  <family>Rubik</family>
-                                 <pointsize>20</pointsize>
+                                 <pointsize>15</pointsize>
                                 </font>
                                </property>
                                <property name="text">
@@ -3899,7 +3899,7 @@ border-bottom-left-radius: 10px;
                                <property name="font">
                                 <font>
                                  <family>Rubik</family>
-                                 <pointsize>20</pointsize>
+                                 <pointsize>15</pointsize>
                                 </font>
                                </property>
                                <property name="text">
@@ -3934,7 +3934,7 @@ border-bottom-left-radius: 10px;
                                <property name="font">
                                 <font>
                                  <family>Rubik</family>
-                                 <pointsize>20</pointsize>
+                                 <pointsize>15</pointsize>
                                 </font>
                                </property>
                                <property name="text">
@@ -3969,7 +3969,7 @@ border-bottom-left-radius: 10px;
                                <property name="font">
                                 <font>
                                  <family>Rubik</family>
-                                 <pointsize>20</pointsize>
+                                 <pointsize>15</pointsize>
                                 </font>
                                </property>
                                <property name="text">
@@ -4004,7 +4004,7 @@ border-bottom-left-radius: 10px;
                                <property name="font">
                                 <font>
                                  <family>Rubik</family>
-                                 <pointsize>20</pointsize>
+                                 <pointsize>15</pointsize>
                                 </font>
                                </property>
                                <property name="text">
@@ -4037,7 +4037,7 @@ border-bottom-left-radius: 10px;
                             <string notr="true">background-color: transparent;</string>
                            </property>
                            <property name="currentIndex">
-                            <number>2</number>
+                            <number>0</number>
                            </property>
                            <widget class="QWidget" name="payment_cancel_page">
                             <layout class="QHBoxLayout" name="horizontalLayout">
@@ -4061,7 +4061,7 @@ border-bottom-left-radius: 10px;
                                <property name="font">
                                 <font>
                                  <family>Rubik</family>
-                                 <pointsize>18</pointsize>
+                                 <pointsize>15</pointsize>
                                 </font>
                                </property>
                                <property name="text">
@@ -4097,7 +4097,7 @@ border-bottom-left-radius: 10px;
                                <property name="font">
                                 <font>
                                  <family>Rubik</family>
-                                 <pointsize>18</pointsize>
+                                 <pointsize>15</pointsize>
                                 </font>
                                </property>
                                <property name="text">
