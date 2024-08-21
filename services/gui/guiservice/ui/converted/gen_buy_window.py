@@ -321,7 +321,6 @@ class Ui_Form(object):
         sizePolicy.setHeightForWidth(self.frame_12.sizePolicy().hasHeightForWidth())
         self.frame_12.setSizePolicy(sizePolicy)
         self.frame_12.setMinimumSize(QtCore.QSize(0, 129))
-        self.frame_12.setMaximumSize(QtCore.QSize(16777215, 149))
         self.frame_12.setStyleSheet("QFrame#frame_12 {\n"
 "            background-color: rgb(245, 245, 245);\n"
 "            border-radius: 35px;\n"
@@ -1317,7 +1316,7 @@ class Ui_Form(object):
         self.frame_9.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_9.setObjectName("frame_9")
         self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.frame_9)
-        self.verticalLayout_5.setContentsMargins(0, 0, 0, 3)
+        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_5.setSpacing(0)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
         self.main_stack_widget = QtWidgets.QStackedWidget(self.frame_9)

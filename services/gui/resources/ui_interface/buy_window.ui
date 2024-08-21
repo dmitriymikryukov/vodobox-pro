@@ -708,12 +708,6 @@ border-bottom-left-radius: 60px;
              <height>129</height>
             </size>
            </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>149</height>
-            </size>
-           </property>
            <property name="styleSheet">
             <string notr="true">QFrame#frame_12 {
             background-color: rgb(245, 245, 245);
@@ -2815,7 +2809,7 @@ border-bottom-left-radius: 10px;
                    <number>0</number>
                   </property>
                   <property name="bottomMargin">
-                   <number>3</number>
+                   <number>0</number>
                   </property>
                   <item>
                    <widget class="QStackedWidget" name="main_stack_widget">
