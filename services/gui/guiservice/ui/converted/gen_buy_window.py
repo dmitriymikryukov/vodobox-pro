@@ -1158,7 +1158,7 @@ class Ui_Form(object):
         self.datetime_lbl = QtWidgets.QLabel(self.frame_10)
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(15)
+        font.setPointSize(12)
         self.datetime_lbl.setFont(font)
         self.datetime_lbl.setAlignment(QtCore.Qt.AlignCenter)
         self.datetime_lbl.setObjectName("datetime_lbl")

@@ -592,7 +592,6 @@ border-top-right-radius: 20px;
 border-bottom-right-radius: 40px;
 border-top-left-radius: 40px;
 border-bottom-left-radius: 20px;
-border: 1px solid #48974B;
 }
 
 QPushButton:pressed {
@@ -730,7 +729,6 @@ border-bottom-left-radius: 20px;</string>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">color: rgb(0, 0, 0);
-border: 1px solid #48974B;
 background-color:rgb(227, 227, 227);
 border-top-right-radius: 40px;
 border-bottom-right-radius: 20px;
@@ -873,7 +871,6 @@ border-bottom-left-radius: 20px;
                   </property>
                   <property name="styleSheet">
                    <string notr="true">color: rgb(0, 0, 0);
-border: 1px solid #48974B;
 background-color:rgb(227, 227, 227);
 border-top-right-radius: 20px;
 border-bottom-right-radius: 40px;
@@ -1074,7 +1071,7 @@ border-bottom-left-radius: 20px;
                    <number>0</number>
                   </property>
                   <property name="bottomMargin">
-                   <number>10</number>
+                   <number>0</number>
                   </property>
                   <item>
                    <widget class="QLabel" name="datetime_lbl">
@@ -1120,6 +1117,22 @@ border-bottom-left-radius: 20px;
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QFrame" name="frame_25">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>50</height>
+                     </size>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
                     </property>
                    </widget>
                   </item>
@@ -1740,7 +1753,7 @@ QPushButton:checked {
                   <property name="font">
                    <font>
                     <family>Rubik</family>
-                    <pointsize>20</pointsize>
+                    <pointsize>15</pointsize>
                    </font>
                   </property>
                   <property name="focusPolicy">
@@ -1754,7 +1767,6 @@ border-top-right-radius: 40px;
 border-top-left-radius: 20px;
 border-bottom-right-radius: 20px;
 border-bottom-left-radius: 40px;
-border: 1px solid #48974B;
 }
 
 QPushButton:pressed {

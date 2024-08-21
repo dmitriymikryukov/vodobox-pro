@@ -254,7 +254,6 @@ class Ui_Form(object):
 "border-bottom-right-radius: 40px;\n"
 "border-top-left-radius: 40px;\n"
 "border-bottom-left-radius: 20px;\n"
-"border: 1px solid #48974B;\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
@@ -318,7 +317,6 @@ class Ui_Form(object):
         self.up_arrow_btn.setFont(font)
         self.up_arrow_btn.setFocusPolicy(QtCore.Qt.NoFocus)
         self.up_arrow_btn.setStyleSheet("color: rgb(0, 0, 0);\n"
-"border: 1px solid #48974B;\n"
 "background-color:rgb(227, 227, 227);\n"
 "border-top-right-radius: 40px;\n"
 "border-bottom-right-radius: 20px;\n"
@@ -385,7 +383,6 @@ class Ui_Form(object):
         self.down_arrow_btn.setFont(font)
         self.down_arrow_btn.setFocusPolicy(QtCore.Qt.NoFocus)
         self.down_arrow_btn.setStyleSheet("color: rgb(0, 0, 0);\n"
-"border: 1px solid #48974B;\n"
 "background-color:rgb(227, 227, 227);\n"
 "border-top-right-radius: 20px;\n"
 "border-bottom-right-radius: 40px;\n"
@@ -478,7 +475,7 @@ class Ui_Form(object):
         self.frame_10.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_10.setObjectName("frame_10")
         self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.frame_10)
-        self.verticalLayout_7.setContentsMargins(0, 10, 0, 10)
+        self.verticalLayout_7.setContentsMargins(0, 10, 0, 0)
         self.verticalLayout_7.setSpacing(0)
         self.verticalLayout_7.setObjectName("verticalLayout_7")
         self.datetime_lbl = QtWidgets.QLabel(self.frame_10)
@@ -508,6 +505,12 @@ class Ui_Form(object):
         self.address_lbl.setAlignment(QtCore.Qt.AlignCenter)
         self.address_lbl.setObjectName("address_lbl")
         self.verticalLayout_7.addWidget(self.address_lbl)
+        self.frame_25 = QtWidgets.QFrame(self.frame_10)
+        self.frame_25.setMinimumSize(QtCore.QSize(0, 50))
+        self.frame_25.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_25.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_25.setObjectName("frame_25")
+        self.verticalLayout_7.addWidget(self.frame_25)
         self.verticalLayout_6.addWidget(self.frame_10, 0, QtCore.Qt.AlignTop)
         self.frame_9 = QtWidgets.QFrame(self.frame_8)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
@@ -812,7 +815,7 @@ class Ui_Form(object):
         self.translate_btn.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(20)
+        font.setPointSize(15)
         self.translate_btn.setFont(font)
         self.translate_btn.setFocusPolicy(QtCore.Qt.NoFocus)
         self.translate_btn.setStyleSheet("QPushButton {\n"
@@ -822,7 +825,6 @@ class Ui_Form(object):
 "border-top-left-radius: 20px;\n"
 "border-bottom-right-radius: 20px;\n"
 "border-bottom-left-radius: 40px;\n"
-"border: 1px solid #48974B;\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
