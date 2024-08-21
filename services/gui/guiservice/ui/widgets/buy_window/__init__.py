@@ -472,6 +472,7 @@ class BuyWindow(QWidget):
         for p in self._chosen_products:
             lbl = QLabel(p.name)
             lbl.setAlignment(Qt.AlignCenter)
+            lbl.setStyleSheet("padding: 15px;")
             lbl.setFont(QFont('Rubik', 18))
             lbl.setStyleSheet(f'color: {"black" if UiConfig.is_light_theme() else "white"};')
             self.ui.product_layout.addWidget(lbl)
