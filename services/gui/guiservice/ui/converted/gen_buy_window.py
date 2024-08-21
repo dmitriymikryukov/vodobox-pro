@@ -2417,7 +2417,7 @@ class Ui_Form(object):
         self.label_18.setText(_translate("Form", "Оплата картой банка отказ"))
         self.label_21.setText(_translate("Form", "Отказ оплаты"))
         self.label_19.setText(_translate("Form", "Оплата картой банка успешно"))
-        self.payment_cancellation_lbl.setText(_translate("Form", "Отменить оплату можно через -"))
+        self.payment_cancellation_lbl.setText(_translate("Form", "Отмена оплаты произойдет через -"))
         self.label_9.setText(_translate("Form", "Установите тару в зону налива"))
         self.container_btn.setText(_translate("Form", "Вода + Тара"))
         self.container_and_water_price_lbl.setText(_translate("Form", "- ₽\n"
