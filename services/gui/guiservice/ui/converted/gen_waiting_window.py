@@ -466,7 +466,7 @@ class Ui_Form(object):
         self.frame_10.setMinimumSize(QtCore.QSize(0, 149))
         self.frame_10.setStyleSheet("QFrame#frame_10 {\n"
 "            color: rgb(0, 0, 0);\n"
-"            background-color: rgb(245, 245, 245);\n"
+"               background-color:rgb(227, 227, 227);\n"
 "            border-top-right-radius: 20px;\n"
 "            border-top-left-radius: 20px;\n"
 "            border-bottom-right-radius: 40px;\n"
