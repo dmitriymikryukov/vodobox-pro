@@ -2794,7 +2794,7 @@ border-bottom-left-radius: 10px;
                   </sizepolicy>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true"/>
+                  <string notr="true">border-radius: 35px;</string>
                  </property>
                  <property name="frameShape">
                   <enum>QFrame::NoFrame</enum>
@@ -2849,7 +2849,6 @@ border-bottom-left-radius: 10px;
                          <string notr="true">#product_cart_frame {
 	background-color: rgb(245, 245, 245);
 	border: 1px solid blue;
-	border-radius: 35px;
 }</string>
                         </property>
                         <property name="frameShape">
@@ -2985,7 +2984,6 @@ border-bottom-left-radius: 10px;
                          <string notr="true">#frame_24 {
 	background-color: rgb(245, 245, 245);
 	border: 1px solid blue;
-	border-radius: 20px;
 }</string>
                         </property>
                         <property name="frameShape">
@@ -3045,7 +3043,6 @@ border-bottom-left-radius: 10px;
                          <string notr="true">#frame_30 {
 	background-color: rgb(245, 245, 245);
 	border: 1px solid blue;
-	border-radius: 20px;
 }</string>
                         </property>
                         <property name="frameShape">
@@ -3106,7 +3103,6 @@ border-bottom-left-radius: 10px;
                          <string notr="true">#frame_26 {
 	background-color: rgb(245, 245, 245);
 	border: 1px solid blue;
-	border-radius: 20px;
 }</string>
                         </property>
                         <property name="frameShape">
@@ -3182,7 +3178,6 @@ border-bottom-left-radius: 10px;
                          <string notr="true">#frame_25 {
 	background-color: rgb(245, 245, 245);
 	border: 1px solid blue;
-	border-radius: 20px;
 }</string>
                         </property>
                         <property name="frameShape">
@@ -3236,7 +3231,6 @@ border-bottom-left-radius: 10px;
                          <string notr="true">#choose_payment_display_frame {
 	background-color: rgb(245, 245, 245);
 	border: 1px solid blue;
-	border-radius: 20px;
 }</string>
                         </property>
                         <property name="frameShape">
@@ -3290,7 +3284,6 @@ border-bottom-left-radius: 10px;
                          <string notr="true">#choose_ltr_display_frame {
 	background-color: rgb(245, 245, 245);
 	border: 1px solid blue;
-	border-radius: 20px;
 }</string>
                         </property>
                         <property name="frameShape">
@@ -3344,7 +3337,6 @@ border-bottom-left-radius: 10px;
                          <string notr="true">#frame_11 {
 	background-color: rgb(245, 245, 245);
 	border: 1px solid blue;
-	border-radius: 20px;
 }</string>
                         </property>
                         <property name="frameShape">
@@ -3422,7 +3414,6 @@ border-bottom-left-radius: 10px;
                          <string notr="true">#frame_29 {
 	background-color: rgb(245, 245, 245);
 	border: 1px solid blue;
-	border-radius: 20px;
 }</string>
                         </property>
                         <property name="frameShape">
@@ -3482,7 +3473,6 @@ border-bottom-left-radius: 10px;
                          <string notr="true">#frame_18 {
 	background-color: rgb(245, 245, 245);
 	border: 1px solid blue;
-	border-radius: 20px;
 }</string>
                         </property>
                         <property name="frameShape">
@@ -4145,7 +4135,6 @@ border-bottom-left-radius: 10px;
                          <string notr="true">#frame_28{
 	background-color: rgb(245, 245, 245);
 	border: 1px solid blue;
-	border-radius: 20px;
 }</string>
                         </property>
                         <property name="frameShape">

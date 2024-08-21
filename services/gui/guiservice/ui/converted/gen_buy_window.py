@@ -1318,7 +1318,7 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.frame_9.sizePolicy().hasHeightForWidth())
         self.frame_9.setSizePolicy(sizePolicy)
-        self.frame_9.setStyleSheet("")
+        self.frame_9.setStyleSheet("border-radius: 35px;")
         self.frame_9.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_9.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_9.setObjectName("frame_9")
@@ -1339,7 +1339,6 @@ class Ui_Form(object):
         self.product_cart_frame.setStyleSheet("#product_cart_frame {\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"    border-radius: 35px;\n"
 "}")
         self.product_cart_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.product_cart_frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -1399,7 +1398,6 @@ class Ui_Form(object):
         self.frame_24.setStyleSheet("#frame_24 {\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"    border-radius: 20px;\n"
 "}")
         self.frame_24.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_24.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -1431,7 +1429,6 @@ class Ui_Form(object):
         self.frame_30.setStyleSheet("#frame_30 {\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"    border-radius: 20px;\n"
 "}")
         self.frame_30.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_30.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -1463,7 +1460,6 @@ class Ui_Form(object):
         self.frame_26.setStyleSheet("#frame_26 {\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"    border-radius: 20px;\n"
 "}")
         self.frame_26.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_26.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -1497,7 +1493,6 @@ class Ui_Form(object):
         self.frame_25.setStyleSheet("#frame_25 {\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"    border-radius: 20px;\n"
 "}")
         self.frame_25.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_25.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -1524,7 +1519,6 @@ class Ui_Form(object):
         self.choose_payment_display_frame.setStyleSheet("#choose_payment_display_frame {\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"    border-radius: 20px;\n"
 "}")
         self.choose_payment_display_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.choose_payment_display_frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -1551,7 +1545,6 @@ class Ui_Form(object):
         self.choose_ltr_display_frame.setStyleSheet("#choose_ltr_display_frame {\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"    border-radius: 20px;\n"
 "}")
         self.choose_ltr_display_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.choose_ltr_display_frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -1578,7 +1571,6 @@ class Ui_Form(object):
         self.frame_11.setStyleSheet("#frame_11 {\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"    border-radius: 20px;\n"
 "}")
         self.frame_11.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_11.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -1618,7 +1610,6 @@ class Ui_Form(object):
         self.frame_29.setStyleSheet("#frame_29 {\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"    border-radius: 20px;\n"
 "}")
         self.frame_29.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_29.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -1650,7 +1641,6 @@ class Ui_Form(object):
         self.frame_18.setStyleSheet("#frame_18 {\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"    border-radius: 20px;\n"
 "}")
         self.frame_18.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_18.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -1941,7 +1931,6 @@ class Ui_Form(object):
         self.frame_28.setStyleSheet("#frame_28{\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"    border-radius: 20px;\n"
 "}")
         self.frame_28.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_28.setFrameShadow(QtWidgets.QFrame.Raised)
