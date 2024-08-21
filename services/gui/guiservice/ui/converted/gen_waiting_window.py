@@ -68,7 +68,7 @@ class Ui_Form(object):
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.label_3 = QtWidgets.QLabel(self.frame_18)
         self.label_3.setMinimumSize(QtCore.QSize(0, 30))
-        self.label_3.setMaximumSize(QtCore.QSize(700, 16777215))
+        self.label_3.setMaximumSize(QtCore.QSize(470, 16777215))
         font = QtGui.QFont()
         font.setFamily("Rubik")
         font.setPointSize(15)
