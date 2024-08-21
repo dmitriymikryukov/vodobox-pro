@@ -4091,7 +4091,7 @@ border-bottom-left-radius: 10px;
                                 </font>
                                </property>
                                <property name="text">
-                                <string>Отменить оплату можно через 1:00</string>
+                                <string>Отменить оплату можно через -</string>
                                </property>
                                <property name="alignment">
                                 <set>Qt::AlignCenter</set>
