@@ -2721,7 +2721,7 @@ border-bottom-left-radius: 10px;
                         <string notr="true">background-color: transparent;</string>
                        </property>
                        <property name="currentIndex">
-                        <number>1</number>
+                        <number>0</number>
                        </property>
                        <widget class="QWidget" name="top_payment_empty_page"/>
                        <widget class="QWidget" name="top_payment_summary_price_page">

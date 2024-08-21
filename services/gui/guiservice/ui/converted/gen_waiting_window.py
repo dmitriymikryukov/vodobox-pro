@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(944, 526)
+        Form.resize(1050, 600)
         Form.setMaximumSize(QtCore.QSize(1050, 600))
         self.verticalLayout = QtWidgets.QVBoxLayout(Form)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -221,7 +221,7 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.top_left_stack_widget.sizePolicy().hasHeightForWidth())
         self.top_left_stack_widget.setSizePolicy(sizePolicy)
-        self.top_left_stack_widget.setMinimumSize(QtCore.QSize(0, 100))
+        self.top_left_stack_widget.setMinimumSize(QtCore.QSize(0, 149))
         self.top_left_stack_widget.setStyleSheet("background-color: transparent;")
         self.top_left_stack_widget.setObjectName("top_left_stack_widget")
         self.consumer_page = QtWidgets.QWidget()
@@ -463,8 +463,7 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.frame_10.sizePolicy().hasHeightForWidth())
         self.frame_10.setSizePolicy(sizePolicy)
-        self.frame_10.setMinimumSize(QtCore.QSize(0, 100))
-        self.frame_10.setMaximumSize(QtCore.QSize(16777215, 140))
+        self.frame_10.setMinimumSize(QtCore.QSize(0, 149))
         self.frame_10.setStyleSheet("QFrame#frame_10 {\n"
 "            color: rgb(0, 0, 0);\n"
 "            background-color: rgb(245, 245, 245);\n"
@@ -794,7 +793,7 @@ class Ui_Form(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.top_right_stack_widget.sizePolicy().hasHeightForWidth())
         self.top_right_stack_widget.setSizePolicy(sizePolicy)
-        self.top_right_stack_widget.setMinimumSize(QtCore.QSize(0, 100))
+        self.top_right_stack_widget.setMinimumSize(QtCore.QSize(0, 149))
         self.top_right_stack_widget.setStyleSheet("background-color: transparent;")
         self.top_right_stack_widget.setObjectName("top_right_stack_widget")
         self.translate_page = QtWidgets.QWidget()

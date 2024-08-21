@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>944</width>
-    <height>526</height>
+    <width>1050</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -532,7 +532,7 @@ border: 1px solid #B3B3B3;</string>
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>100</height>
+                <height>149</height>
                </size>
               </property>
               <property name="styleSheet">
@@ -1034,13 +1034,7 @@ border-bottom-left-radius: 20px;
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
-                   <height>100</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>140</height>
+                   <height>149</height>
                   </size>
                  </property>
                  <property name="styleSheet">
@@ -1700,7 +1694,7 @@ QPushButton:checked {
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>100</height>
+                <height>149</height>
                </size>
               </property>
               <property name="styleSheet">
