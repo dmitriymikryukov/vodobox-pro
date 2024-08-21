@@ -2457,7 +2457,7 @@ border-bottom-left-radius: 10px;
                     <property name="font">
                      <font>
                       <family>Rubik</family>
-                      <pointsize>18</pointsize>
+                      <pointsize>15</pointsize>
                      </font>
                     </property>
                     <property name="text">
@@ -2473,7 +2473,7 @@ border-bottom-left-radius: 10px;
                     <property name="font">
                      <font>
                       <family>Rubik</family>
-                      <pointsize>18</pointsize>
+                      <pointsize>15</pointsize>
                      </font>
                     </property>
                     <property name="text">
@@ -2929,7 +2929,34 @@ border-bottom-left-radius: 10px;
                                 </widget>
                                </item>
                                <item>
-                                <layout class="QVBoxLayout" name="product_layout"/>
+                                <widget class="QFrame" name="frame_31">
+                                 <property name="frameShape">
+                                  <enum>QFrame::StyledPanel</enum>
+                                 </property>
+                                 <property name="frameShadow">
+                                  <enum>QFrame::Raised</enum>
+                                 </property>
+                                 <layout class="QVBoxLayout" name="verticalLayout_97">
+                                  <property name="spacing">
+                                   <number>0</number>
+                                  </property>
+                                  <property name="leftMargin">
+                                   <number>0</number>
+                                  </property>
+                                  <property name="topMargin">
+                                   <number>20</number>
+                                  </property>
+                                  <property name="rightMargin">
+                                   <number>0</number>
+                                  </property>
+                                  <property name="bottomMargin">
+                                   <number>0</number>
+                                  </property>
+                                  <item>
+                                   <layout class="QVBoxLayout" name="product_layout"/>
+                                  </item>
+                                 </layout>
+                                </widget>
                                </item>
                                <item>
                                 <spacer name="verticalSpacer_7">
