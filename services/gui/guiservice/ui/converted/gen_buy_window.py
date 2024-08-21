@@ -323,7 +323,10 @@ class Ui_Form(object):
         self.frame_12.setMinimumSize(QtCore.QSize(0, 129))
         self.frame_12.setStyleSheet("QFrame#frame_12 {\n"
 "            background-color: rgb(245, 245, 245);\n"
-"            border-radius: 35px;\n"
+"    border-top-right-radius: 35px;\n"
+"    border-top-left-radius: 35px;\n"
+"    border-bottom-right-radius: 20px;\n"
+"    border-bottom-left-radius: 20px;\n"
 "            border: 1px solid blue;\n"
 "        }")
         self.frame_12.setFrameShape(QtWidgets.QFrame.NoFrame)

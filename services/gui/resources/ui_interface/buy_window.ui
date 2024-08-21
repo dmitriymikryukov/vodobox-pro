@@ -711,7 +711,10 @@ border-bottom-left-radius: 60px;
            <property name="styleSheet">
             <string notr="true">QFrame#frame_12 {
             background-color: rgb(245, 245, 245);
-            border-radius: 35px;
+	border-top-right-radius: 35px;
+	border-top-left-radius: 35px;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
             border: 1px solid blue;
         }</string>
            </property>
