@@ -38,7 +38,7 @@ class Ui_Form(object):
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setObjectName("frame_3")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.frame_3)
-        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_2.setContentsMargins(0, 3, 0, 0)
         self.horizontalLayout_2.setSpacing(3)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.frame_19 = QtWidgets.QFrame(self.frame_3)
@@ -324,7 +324,7 @@ class Ui_Form(object):
         self.frame_12.setMaximumSize(QtCore.QSize(16777215, 149))
         self.frame_12.setStyleSheet("QFrame#frame_12 {\n"
 "            background-color: rgb(245, 245, 245);\n"
-"            border-radius: 20px;\n"
+"            border-radius: 35px;\n"
 "            border: 1px solid blue;\n"
 "        }")
         self.frame_12.setFrameShape(QtWidgets.QFrame.NoFrame)
@@ -358,7 +358,10 @@ class Ui_Form(object):
         self.verticalLayout_14.addWidget(self.consumer_info_bottom_stack_widget)
         self.frame_21 = QtWidgets.QFrame(self.frame_12)
         self.frame_21.setStyleSheet("#frame_21 {\n"
-"    border-radius: 20px;\n"
+"border-top-right-radius: 40px;\n"
+"border-top-left-radius: 40px;\n"
+"border-bottom-right-radius: 15px;\n"
+"border-bottom-left-radius: 15px;\n"
 "    background-color: rgb(0, 0, 255);\n"
 "}")
         self.frame_21.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -1330,7 +1333,7 @@ class Ui_Form(object):
         self.product_cart_frame.setStyleSheet("#product_cart_frame {\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"    border-radius: 20px;\n"
+"    border-radius: 35px;\n"
 "}")
         self.product_cart_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.product_cart_frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -2312,7 +2315,7 @@ class Ui_Form(object):
         self.second_top_left_stack_widget.setCurrentIndex(0)
         self.second_bottom_left_stack.setCurrentIndex(1)
         self.top_payment_hint_stack_widget.setCurrentIndex(0)
-        self.top_payment_price_stack_widget.setCurrentIndex(0)
+        self.top_payment_price_stack_widget.setCurrentIndex(1)
         self.main_stack_widget.setCurrentIndex(0)
         self.payment_stack_widget.setCurrentIndex(4)
         self.payment_status_stack_widget.setCurrentIndex(4)
@@ -2363,14 +2366,16 @@ class Ui_Form(object):
 "тару"))
         self.plus_btn.setText(_translate("Form", "+"))
         self.plug_ltr_btn.setText(_translate("Form", "- Л"))
-        self.plug_ltr_price_lbl.setText(_translate("Form", "- Р"))
+        self.plug_ltr_price_lbl.setText(_translate("Form", "- ₽\n"
+""))
         self.choose_ltr_btn.setText(_translate("Form", "+/-"))
         self.add_more_btn.setText(_translate("Form", "Добавить\n"
 "еще"))
         self.confirm_btn.setText(_translate("Form", "Выбрать"))
         self.minus_btn.setText(_translate("Form", "-"))
         self.container_ltr_btn.setText(_translate("Form", "- Л"))
-        self.container_ltr_price_lbl.setText(_translate("Form", "- Р"))
+        self.container_ltr_price_lbl.setText(_translate("Form", "- ₽\n"
+""))
         self.datetime_lbl.setText(_translate("Form", "Завершение сеанса через -"))
         self.address_lbl.setText(_translate("Form", "-"))
         self.remaining_amount_money_lbl.setText(_translate("Form", "Оставшаяся сумма"))
@@ -2409,7 +2414,8 @@ class Ui_Form(object):
         self.payment_cancellation_lbl.setText(_translate("Form", "Отменить оплату можно через 1:00"))
         self.label_9.setText(_translate("Form", "Установите тару в зону налива"))
         self.container_btn.setText(_translate("Form", "Вода + Тара"))
-        self.container_and_water_price_lbl.setText(_translate("Form", "- Р"))
+        self.container_and_water_price_lbl.setText(_translate("Form", "- ₽\n"
+""))
         self.cash_or_loyal_card_btn.setText(_translate("Form", "Наличными\n"
 "\n"
 "Карта\n"
@@ -2418,10 +2424,12 @@ class Ui_Form(object):
 "карту"))
         self.loyal_card_btn.setText(_translate("Form", "Карта\n"
 "лояльности"))
-        self.loyal_card_price_lbl.setText(_translate("Form", "- Р"))
+        self.loyal_card_price_lbl.setText(_translate("Form", "- ₽\n"
+""))
         self.qr_btn.setText(_translate("Form", "По QR"))
         self.plug_btn.setText(_translate("Form", "Вода + Пробка"))
-        self.plug_and_water_price_lbl.setText(_translate("Form", "- Р"))
+        self.plug_and_water_price_lbl.setText(_translate("Form", "- ₽\n"
+""))
         self.bank_card_btn.setText(_translate("Form", "Картой\n"
 "банка"))
 
