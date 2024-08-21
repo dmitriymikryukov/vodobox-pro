@@ -1065,7 +1065,7 @@ border-bottom-left-radius: 20px;
                    <number>0</number>
                   </property>
                   <property name="topMargin">
-                   <number>10</number>
+                   <number>0</number>
                   </property>
                   <property name="rightMargin">
                    <number>0</number>
@@ -1129,7 +1129,7 @@ border-bottom-left-radius: 20px;
                      </size>
                     </property>
                     <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
+                     <enum>QFrame::NoFrame</enum>
                     </property>
                     <property name="frameShadow">
                      <enum>QFrame::Raised</enum>
@@ -1753,7 +1753,7 @@ QPushButton:checked {
                   <property name="font">
                    <font>
                     <family>Rubik</family>
-                    <pointsize>15</pointsize>
+                    <pointsize>20</pointsize>
                    </font>
                   </property>
                   <property name="focusPolicy">
