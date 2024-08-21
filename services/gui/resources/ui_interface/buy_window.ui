@@ -793,10 +793,16 @@ border-bottom-left-radius: 40px;
             </item>
             <item>
              <widget class="QFrame" name="frame_21">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>50</height>
+               </size>
+              </property>
               <property name="styleSheet">
                <string notr="true">#frame_21 {
-border-top-right-radius: 40px;
-border-top-left-radius: 40px;
+border-top-right-radius: 35px;
+border-top-left-radius: 35px;
 border-bottom-right-radius: 15px;
 border-bottom-left-radius: 15px;
 	background-color: rgb(0, 0, 255);
@@ -1842,7 +1848,7 @@ background-color: rgb(134, 136, 138);
 	border-top-right-radius: 20px;
 	border-top-left-radius: 40px;
 	border-bottom-right-radius: 40px;
-	border-bottom-left-radius: 20px;
+	border-bottom-left-radius: 11px;
 
 }</string>
                   </property>
@@ -2231,7 +2237,7 @@ QPushButton:disabled {
 	border-top-right-radius: 20px;
 	border-top-left-radius: 40px;
 	border-bottom-right-radius: 40px;
-	border-bottom-left-radius: 20px;
+	border-bottom-left-radius: 11px;
 
 }</string>
                   </property>
@@ -4358,7 +4364,7 @@ border-bottom-left-radius: 10px;
 	border: 1px solid blue;
 border-top-right-radius: 40px;
 border-top-left-radius: 20px;
-border-bottom-right-radius: 20px;
+border-bottom-right-radius: 11px;
 border-bottom-left-radius: 40px;
 }</string>
                   </property>
@@ -4648,7 +4654,7 @@ border-bottom-left-radius: 20px;
 	border-top-right-radius: 20px;
 	border-top-left-radius: 40px;
 	border-bottom-right-radius: 40px;
-	border-bottom-left-radius: 20px;
+	border-bottom-left-radius: 11px;
 
 }</string>
                   </property>
@@ -4884,7 +4890,7 @@ border-bottom-left-radius: 20px;
 	border: 1px solid blue;
 border-top-right-radius: 40px;
 border-top-left-radius: 20px;
-border-bottom-right-radius: 20px;
+border-bottom-right-radius: 11px;
 border-bottom-left-radius: 40px;
 
 }</string>

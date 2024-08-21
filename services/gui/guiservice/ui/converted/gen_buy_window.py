@@ -364,9 +364,10 @@ class Ui_Form(object):
         self.consumer_info_bottom_stack_widget.addWidget(self.bottom_cart_page)
         self.verticalLayout_14.addWidget(self.consumer_info_bottom_stack_widget)
         self.frame_21 = QtWidgets.QFrame(self.frame_12)
+        self.frame_21.setMaximumSize(QtCore.QSize(16777215, 50))
         self.frame_21.setStyleSheet("#frame_21 {\n"
-"border-top-right-radius: 40px;\n"
-"border-top-left-radius: 40px;\n"
+"border-top-right-radius: 35px;\n"
+"border-top-left-radius: 35px;\n"
 "border-bottom-right-radius: 15px;\n"
 "border-bottom-left-radius: 15px;\n"
 "    background-color: rgb(0, 0, 255);\n"
@@ -872,7 +873,7 @@ class Ui_Form(object):
 "    border-top-right-radius: 20px;\n"
 "    border-top-left-radius: 40px;\n"
 "    border-bottom-right-radius: 40px;\n"
-"    border-bottom-left-radius: 20px;\n"
+"    border-bottom-left-radius: 11px;\n"
 "\n"
 "}")
         self.frame_22.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -1058,7 +1059,7 @@ class Ui_Form(object):
 "    border-top-right-radius: 20px;\n"
 "    border-top-left-radius: 40px;\n"
 "    border-bottom-right-radius: 40px;\n"
-"    border-bottom-left-radius: 20px;\n"
+"    border-bottom-left-radius: 11px;\n"
 "\n"
 "}")
         self.frame_23.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -1371,6 +1372,7 @@ class Ui_Form(object):
         font.setFamily("Rubik")
         font.setPointSize(20)
         self.init_cart_lbl.setFont(font)
+        self.init_cart_lbl.setStyleSheet("")
         self.init_cart_lbl.setAlignment(QtCore.Qt.AlignCenter)
         self.init_cart_lbl.setObjectName("init_cart_lbl")
         self.verticalLayout_84.addWidget(self.init_cart_lbl)
@@ -2000,7 +2002,7 @@ class Ui_Form(object):
 "    border: 1px solid blue;\n"
 "border-top-right-radius: 40px;\n"
 "border-top-left-radius: 20px;\n"
-"border-bottom-right-radius: 20px;\n"
+"border-bottom-right-radius: 11px;\n"
 "border-bottom-left-radius: 40px;\n"
 "}")
         self.frame_15.setFrameShape(QtWidgets.QFrame.NoFrame)
@@ -2124,7 +2126,7 @@ class Ui_Form(object):
 "    border-top-right-radius: 20px;\n"
 "    border-top-left-radius: 40px;\n"
 "    border-bottom-right-radius: 40px;\n"
-"    border-bottom-left-radius: 20px;\n"
+"    border-bottom-left-radius: 11px;\n"
 "\n"
 "}")
         self.frame_14.setFrameShape(QtWidgets.QFrame.NoFrame)
@@ -2224,7 +2226,7 @@ class Ui_Form(object):
 "    border: 1px solid blue;\n"
 "border-top-right-radius: 40px;\n"
 "border-top-left-radius: 20px;\n"
-"border-bottom-right-radius: 20px;\n"
+"border-bottom-right-radius: 11px;\n"
 "border-bottom-left-radius: 40px;\n"
 "\n"
 "}")
