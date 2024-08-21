@@ -124,7 +124,7 @@ class BuyConfig:
     Тестовый класс конфигураций для меню покупок
     """
     def __init__(self):
-        self._cancellation_time: int = 60
+        self._cancellation_time: int = 40
 
     @property
     def water_price_per_liter(self) -> float:

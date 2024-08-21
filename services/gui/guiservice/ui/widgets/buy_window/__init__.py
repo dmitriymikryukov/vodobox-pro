@@ -201,8 +201,7 @@ class BuyWindow(QWidget):
         self.payment_failed.connect(self.payment_cancellation_timer.stop)
         self.payment_failed.connect(self.set_cancellation_time_to_initial_value)
 
-        self.payment_canceled.connect(
-            lambda: self.ui.bottom_right_btn_stack_widget.setCurrentWidget(self.ui.cancel_payment_page))
+        self.payment_canceled.connect(self.switch_on_choose_payment_window)
         self.payment_cancellation_timer.timeout.connect(self.update_cancellation_time)
         self.session_timer.timeout.connect(self.update_session_time)
         self.payment_started.connect(lambda: self.payment_cancellation_timer.start(1000))
