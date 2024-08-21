@@ -244,7 +244,7 @@ class Ui_Form(object):
         self.consumer_info_btn.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(12)
+        font.setPointSize(15)
         self.consumer_info_btn.setFont(font)
         self.consumer_info_btn.setFocusPolicy(QtCore.Qt.NoFocus)
         self.consumer_info_btn.setStyleSheet("QPushButton{\n"
@@ -812,7 +812,7 @@ class Ui_Form(object):
         self.translate_btn.setSizeIncrement(QtCore.QSize(0, 0))
         font = QtGui.QFont()
         font.setFamily("Rubik")
-        font.setPointSize(17)
+        font.setPointSize(20)
         self.translate_btn.setFont(font)
         self.translate_btn.setFocusPolicy(QtCore.Qt.NoFocus)
         self.translate_btn.setStyleSheet("QPushButton {\n"

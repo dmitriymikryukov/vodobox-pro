@@ -578,7 +578,7 @@ border: 1px solid #B3B3B3;</string>
                   <property name="font">
                    <font>
                     <family>Rubik</family>
-                    <pointsize>12</pointsize>
+                    <pointsize>15</pointsize>
                    </font>
                   </property>
                   <property name="focusPolicy">
@@ -1740,7 +1740,7 @@ QPushButton:checked {
                   <property name="font">
                    <font>
                     <family>Rubik</family>
-                    <pointsize>17</pointsize>
+                    <pointsize>20</pointsize>
                    </font>
                   </property>
                   <property name="focusPolicy">
