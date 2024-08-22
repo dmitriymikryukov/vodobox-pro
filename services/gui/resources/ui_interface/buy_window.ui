@@ -1963,7 +1963,7 @@ border-bottom-left-radius: 10px;
                <string notr="true">background-color: transparent;</string>
               </property>
               <property name="currentIndex">
-               <number>0</number>
+               <number>3</number>
               </property>
               <widget class="QWidget" name="choose_ltr_page">
                <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -4087,7 +4087,7 @@ border-bottom-left-radius: 10px;
                                <property name="font">
                                 <font>
                                  <family>Rubik</family>
-                                 <pointsize>15</pointsize>
+                                 <pointsize>12</pointsize>
                                 </font>
                                </property>
                                <property name="text">
