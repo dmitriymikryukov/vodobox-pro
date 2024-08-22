@@ -7,7 +7,7 @@ class NotImplementedCountryCode(Exception):
 
 def get_translator_filepath(country_code: str):
     if country_code == 'RU':
-        return ''
+        return os.path.join(os.getcwd(), '..', 'resources', 'translation', 'qm', 'applang_ru')
     elif country_code == 'EN':
         return os.path.join(os.getcwd(), '..', 'resources', 'translation', 'qm', 'applang_en')
     elif country_code == 'RO':
