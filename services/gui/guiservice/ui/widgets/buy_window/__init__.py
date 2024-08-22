@@ -63,7 +63,7 @@ class BuyWindow(QWidget):
         self.is_pouring_running = True
         self._chosen_products: list[Product] = []
         self.remaining_price: float = 0
-        self._confirm_btn_color = QColor(18, 18, 252)
+        self._confirm_btn_color = QColor(245, 245, 245)
 
         # customizations
         self.animate_confirm_btn()
@@ -288,13 +288,13 @@ class BuyWindow(QWidget):
 
         self.first_animation.setDuration(2000)
         self.first_animation.setEasingCurve(QEasingCurve.InOutCubic)
-        self.first_animation.setStartValue(QColor(245, 245, 245))
-        self.first_animation.setEndValue(QColor(18, 18, 252))
+        self.first_animation.setStartValue(QColor(18, 18, 252))
+        self.first_animation.setEndValue(QColor(245, 245, 245))
 
         self.second_animation.setDuration(2000)
         self.second_animation.setEasingCurve(QEasingCurve.InOutCubic)
-        self.second_animation.setStartValue(QColor(18, 18, 252))
-        self.second_animation.setEndValue(QColor(245, 245, 245))
+        self.second_animation.setStartValue(QColor(245, 245, 245))
+        self.second_animation.setEndValue(QColor(18, 18, 252))
 
         self.animation_group.addAnimation(self.first_animation)
         self.animation_group.addAnimation(self.second_animation)
