@@ -1,5 +1,5 @@
 from PyQt5.QtCore import QTimer, pyqtSignal, QEasingCurve, QSequentialAnimationGroup
-from configuration.testing import UiConfig, ServiceMenuConfig
+from configuration.config import UiConfig, ServiceMenuConfig
 from PyQt5.QtWidgets import QWidget, QButtonGroup, QPushButton, QLabel
 from PyQt5.Qt import QPropertyAnimation, QColor, pyqtProperty
 from ui.widgets.translate_widget import TranslateWidget
@@ -292,15 +292,13 @@ class WaitingWindow(QWidget):
         }
         ''')
 
-    def add_logo(self, logo_name: str) -> None:
+    def add_logo(self, logo_filepath: str) -> None:
         """
         Добавление логотипа на главную страницу меню ожидания
-        :param logo_name: название файла добавляемого логотипа
+        :param logo_filepath: название файла добавляемого логотипа
         """
         lbl = QLabel()
-        lbl.setPixmap(QPixmap(os.path.join(
-                os.getcwd(), '..', 'resources', 'logo', logo_name
-        )))
+        lbl.setPixmap(QPixmap(logo_filepath))
         lbl.setScaledContents(True)
         lbl.setMaximumSize(220, 220)
         self.ui.logo_layout.addWidget(lbl)

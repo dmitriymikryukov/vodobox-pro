@@ -1,3 +1,7 @@
+import json
+import os
+
+
 class ServiceMenuConfig:
     """
     Тестовый класс конфигураций для сервисного меню
@@ -21,6 +25,11 @@ class UiConfig:
     """
     Тестовый класс конфигураций для глобального UI интерфейса
     """
+    _session_config = json.load(open(os.path.join(os.getcwd(), 'configuration', 'test', 'session_config.json')))
+    _consumer_info_config = json.load(open(os.path.join(os.getcwd(), 'configuration', 'test', 'consumer_info_config.json')))
+    _language_config = json.load(open(os.path.join(os.getcwd(), 'configuration', 'test', 'language_config.json')))
+    _logo_config = json.load(open(os.path.join(os.getcwd(), 'configuration', 'test', 'logo_config.json')))
+    _common_settings_config = json.load(open(os.path.join(os.getcwd(), 'configuration', 'test', 'common_settings_config.json')))
 
     @staticmethod
     def buy_btn_position() -> int:
@@ -28,7 +37,7 @@ class UiConfig:
         Возвращает положение кнопки покупки, возможные значения 6 или 7 (смотреть схему)
         :return: Положение кнопки начала покупки
         """
-        return 7
+        return UiConfig._session_config['session_begin']['button']
     
     @staticmethod
     def consumer_info_show_btn() -> bool:
@@ -36,7 +45,7 @@ class UiConfig:
         Отвечает за отображение кнопки перехода на окно информации о производителе
         :return: Статус отображения
         """
-        return True
+        return UiConfig._consumer_info_config['info']['button']
 
     @staticmethod
     def translate_show_btn() -> bool:
@@ -44,7 +53,7 @@ class UiConfig:
         Отвечает за отображение кнопки перевода языка интерфейса
         :return: Статус отображения
         """
-        return True
+        return UiConfig._language_config['lang']['button']
 
     @staticmethod
     def logotype() -> str:
@@ -52,7 +61,7 @@ class UiConfig:
         Логотип компании, который будет расположен на главном экране меню ожидания
         :return: Название файла логотипа
         """
-        return '24_chasa.png'
+        return UiConfig._logo_config['logotype']
 
     @staticmethod
     def is_light_theme() -> bool:
@@ -60,63 +69,63 @@ class UiConfig:
         Отвечает за переключение между светлой и темной темой
         :return: статус светлой темы
         """
-        return True
+        return UiConfig._common_settings_config['is_light_theme']
 
     @staticmethod
     def kiosk_address() -> str:
         """
         :return: Адрес киоска
         """
-        return 'ул. Воровского, 149'
+        return UiConfig._consumer_info_config['post_address']
 
     @staticmethod
     def seller_name() -> str:
         """
         :return: Имя продовца
         """
-        return 'ИП Иванов И.И. 1800000'
+        return UiConfig._consumer_info_config['seller_name']
 
     @staticmethod
     def water_created_date() -> str:
         """
         :return: Дата производства воды
         """
-        return '25.01.2024'
+        return UiConfig._consumer_info_config['water_created_date']
 
     @staticmethod
     def water_refill_date() -> str:
         """
         :return: Дата заправки воды
         """
-        return '25.01.2024'
+        return UiConfig._consumer_info_config['water_refill_date']
 
     @staticmethod
     def wash_dates() -> tuple[str, str, str]:
         """
         :return: Даты моек емкости
         """
-        return '25.01.2024', '25.01.2024', '25.01.2024'
+        return UiConfig._consumer_info_config['wash_dates']
 
     @staticmethod
     def default_language_code() -> str:
         """
         :return: Код языка по умолчанию возможные значения (RU | RO | EN)
         """
-        return 'RU'
+        return UiConfig._language_config['lang']['default'].upper()
 
     @staticmethod
     def second_language_code() -> str:
         """
         :return: Код второго языка для перевода возможные значения (RU | RO | EN)
         """
-        return 'EN'
+        return UiConfig._language_config['lang']['change'][1].upper()
 
     @staticmethod
     def third_language_code() -> str:
         """
         :return: Код третьего языка для перевода возможные значения (RU | RO | EN)
         """
-        return 'RO'
+        return UiConfig._language_config['lang']['change'][2].upper()
 
 
 class BuyConfig:

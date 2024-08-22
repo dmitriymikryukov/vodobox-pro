@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtCore import QTranslator, QCoreApplication, pyqtSignal
 from ui.widgets.translate_widget.utils import get_translator_filepath
-from configuration.testing import UiConfig
+from configuration.config import UiConfig
 from typing import List
 import logging
 

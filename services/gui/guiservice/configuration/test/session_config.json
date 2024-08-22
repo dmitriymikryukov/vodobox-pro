@@ -1,0 +1,9 @@
+{
+  "session_begin": {
+    "button": 7
+  },
+  "pay_dev": {
+    "insert_cash": true,
+    "card_loyalty": true
+  }
+}

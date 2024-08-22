@@ -2,7 +2,7 @@ from ui.widgets.buy_window.products import Product, Water, PlugWithWater, Contai
 from ui.widgets.buy_window.graphics import WaterBottleWidget
 from PyQt5.Qt import QPropertyAnimation, QColor, pyqtProperty
 from PyQt5.QtWidgets import QWidget, QButtonGroup, QLabel
-from configuration.testing import BuyConfig, UiConfig
+from configuration.config import BuyConfig, UiConfig
 from PyQt5.QtCore import pyqtSignal, QTimer, QThread, Qt, QEasingCurve, QSequentialAnimationGroup
 from ui.converted.gen_buy_window import Ui_Form
 from PyQt5.QtGui import QPixmap, QFont

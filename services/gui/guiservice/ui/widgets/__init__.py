@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QMainWindow, QStackedWidget
 from PyQt5.QtCore import QCoreApplication, QEvent
-from configuration.testing import UiConfig
+from configuration.config import UiConfig
 from ui.widgets.buy_window import BuyWindow
 from ui.widgets.waiting_window import WaitingWindow
 from ui.widgets.translate_widget import TranslateWidget
