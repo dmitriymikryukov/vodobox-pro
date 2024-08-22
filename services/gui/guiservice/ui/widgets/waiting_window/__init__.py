@@ -225,8 +225,8 @@ class WaitingWindow(QWidget):
         color: white;
         background-color: rgb(42, 48, 58);
         border-top-right-radius: 20px;
-        border-bottom-right-radius: 60px;
-        border-top-left-radius: 60px;
+        border-bottom-right-radius: 40px;
+        border-top-left-radius: 40px;
         border-bottom-left-radius: 20px;
         border: 1px solid #C0C0BF;
         }
@@ -236,10 +236,10 @@ class WaitingWindow(QWidget):
         QPushButton {
         color: white;
         background-color:rgb(42, 48, 58);
-        border-top-right-radius: 60px;
+        border-top-right-radius: 40px;
         border-top-left-radius: 20px;
         border-bottom-right-radius: 20px;
-        border-bottom-left-radius: 60px;
+        border-bottom-left-radius: 40px;
         border: 1px solid #C0C0BF;
         }
         ''') for btn in [self.ui.up_arrow_btn, self.ui.translate_btn]]
@@ -258,8 +258,8 @@ class WaitingWindow(QWidget):
         border: 1px solid #C0C0BF;  
         border-top-right-radius: 20px;
         border-top-left-radius: 20px;
-        border-bottom-right-radius: 60px;
-        border-bottom-left-radius: 60px;
+        border-bottom-right-radius: 40px;
+        border-bottom-left-radius: 40px;
         }
         ''')
         self.ui.label_3.setStyleSheet('color: white; background-color: transparent; border-radius: 15px; border: 1px solid #C0C0BF;')
@@ -275,7 +275,7 @@ class WaitingWindow(QWidget):
         QPushButton {
         color: white;
         background-color:transparent;
-        border-radius: 15px;
+        border-radius: 30px;
         }
 
         QPushButton:checked {
@@ -288,7 +288,7 @@ class WaitingWindow(QWidget):
         self.ui.frame_24.setStyleSheet('''
         #frame_24 {
             background-color: rgb(42, 48, 58);
-            border-radius: 20px;
+            border-radius: 35px;
         }
         ''')
 

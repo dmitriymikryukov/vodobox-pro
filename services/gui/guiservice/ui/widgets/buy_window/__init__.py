@@ -315,8 +315,8 @@ class BuyWindow(QWidget):
         #{wgt.objectName()} {{
             {dark_stylesheet}
             border-top-right-radius: 20px;
-            border-top-left-radius: 60px;
-            border-bottom-right-radius: 60px;
+            border-top-left-radius: 40px;
+            border-bottom-right-radius: 40px;
             border-bottom-left-radius: 20px;
         }}
         ''') for wgt in [
@@ -328,10 +328,10 @@ class BuyWindow(QWidget):
         [wgt.setStyleSheet(f'''
         #{wgt.objectName()} {{
             {dark_stylesheet}
-            border-top-right-radius: 60px;
+            border-top-right-radius: 40px;
             border-bottom-right-radius: 20px;
             border-top-left-radius: 20px;
-            border-bottom-left-radius: 60px;
+            border-bottom-left-radius: 40px;
         }}
         ''') for wgt in [
             self.ui.choose_ltr_btn, self.ui.confirm_btn, self.ui.frame_15, self.ui.cash_or_loyal_card_btn,
@@ -342,7 +342,6 @@ class BuyWindow(QWidget):
         [wgt.setStyleSheet(f'''
         #{wgt.objectName()} {{
             {dark_stylesheet}
-            border-radius: 20px;
         }}
         ''') for wgt in [self.ui.product_cart_frame, self.ui.frame_12, self.ui.frame_24, self.ui.frame_26,
                          self.ui.frame_25,self.ui.choose_payment_display_frame, self.ui.choose_ltr_display_frame,
@@ -364,8 +363,8 @@ class BuyWindow(QWidget):
             {dark_stylesheet}
             border-top-right-radius: 20px;
             border-top-left-radius: 20px;
-            border-bottom-right-radius: 60px;
-            border-bottom-left-radius: 60px;
+            border-bottom-right-radius: 40px;
+            border-bottom-left-radius: 40px;
         }}
         ''')
 
