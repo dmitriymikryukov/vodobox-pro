@@ -317,7 +317,7 @@ class BuyWindow(QWidget):
             border-top-right-radius: 20px;
             border-top-left-radius: 40px;
             border-bottom-right-radius: 40px;
-            border-bottom-left-radius: 20px;
+            border-bottom-left-radius: 11px;
         }}
         ''') for wgt in [
             self.ui.frame_22, self.ui.plus_btn, self.ui.frame_23, self.ui.minus_btn, self.ui.frame_14, self.ui.qr_btn,
@@ -329,7 +329,7 @@ class BuyWindow(QWidget):
         #{wgt.objectName()} {{
             {dark_stylesheet}
             border-top-right-radius: 40px;
-            border-bottom-right-radius: 20px;
+            border-bottom-right-radius: 11px;
             border-top-left-radius: 20px;
             border-bottom-left-radius: 40px;
         }}
@@ -365,6 +365,15 @@ class BuyWindow(QWidget):
             border-top-left-radius: 20px;
             border-bottom-right-radius: 40px;
             border-bottom-left-radius: 40px;
+        }}
+        ''')
+        self.ui.frame_12.setStyleSheet(f'''
+        #frame_12 {{
+            {dark_stylesheet}
+            border-top-right-radius: 35px;
+            border-top-left-radius: 35px;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px
         }}
         ''')
 
