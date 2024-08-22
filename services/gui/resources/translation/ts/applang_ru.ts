@@ -6,885 +6,955 @@
     <message>
         <location filename="../../ui_interface/activation_window.ui" line="20"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/activation_window.ui" line="293"/>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="159"/>
         <source>Подтвердить</source>
-        <translation type="unfinished"></translation>
+        <translation>Подтвердить</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="352"/>
         <source>Вода</source>
-        <translation type="unfinished"></translation>
+        <translation>Вода</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4943"/>
         <source>Тара в лотке</source>
-        <translation type="unfinished"></translation>
+        <translation>Тара в лотке</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="384"/>
         <source>Тара к киоске</source>
-        <translation type="unfinished"></translation>
+        <translation>Тара в киоске</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="5459"/>
         <source>Карты</source>
-        <translation type="unfinished"></translation>
+        <translation>Карты</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="2080"/>
         <source>Вниз</source>
-        <translation type="unfinished"></translation>
+        <translation>Вниз</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="2300"/>
         <source>Открыть дверь</source>
-        <translation type="unfinished"></translation>
+        <translation>Открыть
+дверь</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="2563"/>
         <source>Выход</source>
-        <translation type="unfinished"></translation>
+        <translation>Выход</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="2760"/>
         <source>Сервисное меню</source>
-        <translation type="unfinished"></translation>
+        <translation>Сервисное меню</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="6074"/>
         <source>Вверх</source>
-        <translation type="unfinished"></translation>
+        <translation>Вверх</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="1879"/>
         <source>Внимание</source>
-        <translation type="unfinished"></translation>
+        <translation>Внимание</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="1918"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Данные сохраняются только &lt;/p&gt;&lt;p&gt;после выхода из сервисного меню&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="2988"/>
         <source>Обслуживание</source>
-        <translation type="unfinished"></translation>
+        <translation>Обслуживание</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4734"/>
         <source>Добавление товара</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавление товара</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4774"/>
         <source>Инкассация</source>
-        <translation type="unfinished"></translation>
+        <translation>Инкассация</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="5641"/>
         <source>Пополнение монет</source>
-        <translation type="unfinished"></translation>
+        <translation>Пополнение монет</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3028"/>
         <source>Тестовый режим</source>
-        <translation type="unfinished"></translation>
+        <translation>Тестовый режим</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3068"/>
         <source>Диагностика</source>
-        <translation type="unfinished"></translation>
+        <translation>Диагностика</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3108"/>
         <source>Управление системой</source>
-        <translation type="unfinished"></translation>
+        <translation>Управление системой</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3157"/>
         <source>Настройка параметров</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка параметров</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4694"/>
         <source>Заправка</source>
-        <translation type="unfinished"></translation>
+        <translation>Заправка</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4814"/>
         <source>Пополнение монет из ящика</source>
-        <translation type="unfinished"></translation>
+        <translation>Пополнение монет из ящика</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4860"/>
         <source>Мойка</source>
-        <translation type="unfinished"></translation>
+        <translation>Мойка</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="5072"/>
         <source>Тара в киоске</source>
-        <translation type="unfinished"></translation>
+        <translation>Тара в киоске</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="5201"/>
         <source>Пробка в лотке</source>
-        <translation type="unfinished"></translation>
+        <translation>Пробка в лотке</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="5330"/>
         <source>Пробка в киоске</source>
-        <translation type="unfinished"></translation>
+        <translation>Пробка в киоске</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="5593"/>
         <source>Инкассировать выручку</source>
-        <translation type="unfinished"></translation>
+        <translation>Инкассировать выручку</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="5773"/>
         <source>Добавить</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="5924"/>
         <source>Убавить</source>
-        <translation type="unfinished"></translation>
+        <translation>Убавить</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="236"/>
         <source>4</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="584"/>
         <source>МФ плата ver. 2.0</source>
-        <translation type="unfinished"></translation>
+        <translation>МФ плата ver. 2.0</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="694"/>
         <source>Контроль климата</source>
-        <translation type="unfinished"></translation>
+        <translation>Контроль климата</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4256"/>
         <source>Температура</source>
-        <translation type="unfinished"></translation>
+        <translation>Температура</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="826"/>
         <source>Гистерезис</source>
-        <translation type="unfinished"></translation>
+        <translation>Гистерезис</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="885"/>
         <source>Вентиляция</source>
-        <translation type="unfinished"></translation>
+        <translation>Вентиляция</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="944"/>
         <source>Обогрев</source>
-        <translation type="unfinished"></translation>
+        <translation>Обогрев</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="1035"/>
         <source>Контроль резервуара</source>
-        <translation type="unfinished"></translation>
+        <translation>Контроль резервуара</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="1108"/>
         <source>Перелив</source>
-        <translation type="unfinished"></translation>
+        <translation>Перелив</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="1167"/>
         <source>Верхний</source>
-        <translation type="unfinished"></translation>
+        <translation>Верхний</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="1226"/>
         <source>Нижний</source>
-        <translation type="unfinished"></translation>
+        <translation>Нижний</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="1285"/>
         <source>Давление</source>
-        <translation type="unfinished"></translation>
+        <translation>Давление</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="1344"/>
         <source>Объем</source>
-        <translation type="unfinished"></translation>
+        <translation>Объем</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="1435"/>
         <source>Контроль доступа</source>
-        <translation type="unfinished"></translation>
+        <translation>Контроль доступа</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4423"/>
         <source>Входная дверь</source>
-        <translation type="unfinished"></translation>
+        <translation>Входная дверь</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="1567"/>
         <source>Люк заправки</source>
-        <translation type="unfinished"></translation>
+        <translation>Люк заправки</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="1671"/>
         <source>Контроль показаний</source>
-        <translation type="unfinished"></translation>
+        <translation>Контроль показаний</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="1744"/>
         <source>Электроэнергия</source>
-        <translation type="unfinished"></translation>
+        <translation>Электроэнергия</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="2155"/>
         <source>8</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4542"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="2469"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="2631"/>
         <source>Назад</source>
-        <translation type="unfinished"></translation>
+        <translation>Назад</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3243"/>
         <source>Платежные устройства</source>
-        <translation type="unfinished"></translation>
+        <translation>Платежные устройства</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3309"/>
         <source>Купюроприемник</source>
-        <translation type="unfinished"></translation>
+        <translation>Купюроприемник</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3325"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ICT XMA mini&lt;/p&gt;&lt;p&gt;RUB&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3941"/>
         <source>Готов</source>
-        <translation type="unfinished"></translation>
+        <translation>Готов</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3377"/>
         <source>Монетоприемник</source>
-        <translation type="unfinished"></translation>
+        <translation>Монетоприемник</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3393"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ICT СС6100&lt;/p&gt;&lt;p&gt;RUB&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3409"/>
         <source>E23</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3445"/>
         <source>Считыватель карт</source>
-        <translation type="unfinished"></translation>
+        <translation>Считыватель карт</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3461"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;CRT 288k&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3513"/>
         <source>Терминал</source>
-        <translation type="unfinished"></translation>
+        <translation>Терминал</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3529"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;2 CAN&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3618"/>
         <source>Исполнительные устройства</source>
-        <translation type="unfinished"></translation>
+        <translation>Исполнительные устройства</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3705"/>
         <source>Диспенсер карт</source>
-        <translation type="unfinished"></translation>
+        <translation>Диспенсер карт</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3727"/>
         <source>Мало карт</source>
-        <translation type="unfinished"></translation>
+        <translation>Мало карт</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3763"/>
         <source>Диспенсер товара</source>
-        <translation type="unfinished"></translation>
+        <translation>Диспенсер товара</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3809"/>
         <source>Тара</source>
-        <translation type="unfinished"></translation>
+        <translation>Тара</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3822"/>
         <source>Нет</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3838"/>
         <source>Пробка</source>
-        <translation type="unfinished"></translation>
+        <translation>Пробка</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3851"/>
         <source>Есть</source>
-        <translation type="unfinished"></translation>
+        <translation>Есть</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3867"/>
         <source>Закрыт</source>
-        <translation type="unfinished"></translation>
+        <translation>Закрыт</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4476"/>
         <source>Лоток</source>
-        <translation type="unfinished"></translation>
+        <translation>Лоток</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="3919"/>
         <source>Принтер</source>
-        <translation type="unfinished"></translation>
+        <translation>Принтер</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4016"/>
         <source>Панель pro</source>
-        <translation type="unfinished"></translation>
+        <translation>Панель pro</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4062"/>
         <source>Версия ПО</source>
-        <translation type="unfinished"></translation>
+        <translation>Версия ПО</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4078"/>
         <source>3.2.0.1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4127"/>
         <source>Система</source>
-        <translation type="unfinished"></translation>
+        <translation>Система</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4143"/>
         <source>CPU: 50 C</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4186"/>
         <source>Датчики</source>
-        <translation type="unfinished"></translation>
+        <translation>Датчики</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4269"/>
         <source>22.5 C</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4306"/>
         <source>Освещение</source>
-        <translation type="unfinished"></translation>
+        <translation>Освещение</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4343"/>
         <source>10:16 | 22:00</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4356"/>
         <source>вкл</source>
-        <translation type="unfinished"></translation>
+        <translation>вкл</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4595"/>
         <source>0</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4529"/>
         <source>Нижняя дверь</source>
-        <translation type="unfinished"></translation>
+        <translation>Нижняя дверь</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="4582"/>
         <source>Расходомер</source>
-        <translation type="unfinished"></translation>
+        <translation>Расходомер</translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="5838"/>
         <source>5</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="5989"/>
         <source>6</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/service_menu_window.ui" line="6140"/>
         <source>7</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/activation_window.ui" line="393"/>
         <source>Требуется активация киоска</source>
-        <translation type="unfinished"></translation>
+        <translation>Требуется активация киоска</translation>
     </message>
     <message>
         <location filename="../../ui_interface/activation_window.ui" line="435"/>
         <source>Пройдите активацию по ссылке</source>
-        <translation type="unfinished"></translation>
+        <translation>Пройдите активацию по ссылке</translation>
     </message>
     <message>
         <location filename="../../ui_interface/activation_window.ui" line="544"/>
         <source>https://licence-vodo-box.ru/activate/</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/activation_window.ui" line="577"/>
         <source>Нет связи с сервером активации</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет связи с сервером активации</translation>
     </message>
     <message>
         <location filename="../../ui_interface/activation_window.ui" line="593"/>
         <source>https://licence-vodo-box.ru/</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../ui_interface/activation_window.ui" line="758"/>
         <source>Тестовый
 режим</source>
-        <translation type="unfinished"></translation>
+        <translation>Тестовый режим</translation>
     </message>
     <message>
         <location filename="../../ui_interface/activation_window.ui" line="876"/>
         <source>Запрос
 на
 активацию</source>
-        <translation type="unfinished"></translation>
+        <translation>Запрос 
+на активаицю</translation>
     </message>
     <message>
         <location filename="../../ui_interface/activation_window.ui" line="947"/>
         <source>Начать
 работу</source>
-        <translation type="unfinished"></translation>
+        <translation>Начать 
+рабту</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="205"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="187"/>
         <source>Можно оплатить</source>
-        <translation type="unfinished"></translation>
+        <translation>Можно оплатить</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="275"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="257"/>
         <source>Картой
 лояльности</source>
-        <translation type="unfinished"></translation>
+        <translation>Картой 
+лояльности</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="332"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="314"/>
         <source>Наличными</source>
-        <translation type="unfinished"></translation>
+        <translation>Наличными</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="354"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="336"/>
         <source>Автомат не выдает сдачу</source>
-        <translation type="unfinished"></translation>
+        <translation>Автомат не выдает сдачу</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="407"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="389"/>
         <source>Картой банка</source>
-        <translation type="unfinished"></translation>
+        <translation>Картой банка</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="457"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="439"/>
         <source>СБП по QR</source>
-        <translation type="unfinished"></translation>
+        <translation>СБП по QR</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="615"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="602"/>
         <source>Информация
 для
 потребителя</source>
-        <translation type="unfinished"></translation>
+        <translation>Информация
+для
+потребителя</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="1138"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="1253"/>
         <source>Производство воды</source>
-        <translation type="unfinished"></translation>
+        <translation>Производство 
+воды</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="1203"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="1318"/>
         <source>Журнал моек емкости</source>
-        <translation type="unfinished"></translation>
+        <translation>Журнал моек  емкости</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="1300"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="1415"/>
         <source>Заправка воды</source>
-        <translation type="unfinished"></translation>
+        <translation>Заправка воды</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="1344"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="1459"/>
         <source>Продавец ИП Калешкин М.С. 1800000000</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="1463"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="1578"/>
         <source>Язык 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Язык 1</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="1500"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="1615"/>
         <source>Язык 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Язык 2</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="1537"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="1652"/>
         <source>Язык 3</source>
-        <translation type="unfinished"></translation>
+        <translation>Язык 3</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="1669"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="1777"/>
         <source>Выбор
 Языка</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбор
+языка</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="1943"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="2043"/>
         <source>Начать
 покупку</source>
-        <translation type="unfinished"></translation>
+        <translation>Начать
+покупку</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="207"/>
+        <location filename="../../ui_interface/buy_window.ui" line="214"/>
         <source>Начать
 налив</source>
-        <translation type="unfinished"></translation>
+        <translation>Начать
+налив</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="280"/>
+        <location filename="../../ui_interface/buy_window.ui" line="282"/>
         <source>Выдать
 пробку</source>
-        <translation type="unfinished"></translation>
+        <translation>Выдать 
+пробку</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="353"/>
+        <location filename="../../ui_interface/buy_window.ui" line="349"/>
         <source>Выдать
 тару</source>
-        <translation type="unfinished"></translation>
+        <translation>Выдать
+тару</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="423"/>
+        <location filename="../../ui_interface/buy_window.ui" line="414"/>
         <source>Забрать
 карту 
 лояльности</source>
-        <translation type="unfinished"></translation>
+        <translation>Забрать
+карту
+лояльности</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="495"/>
+        <location filename="../../ui_interface/buy_window.ui" line="487"/>
         <source>Не оплачено</source>
-        <translation type="unfinished"></translation>
+        <translation>Не оплачено</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="564"/>
+        <location filename="../../ui_interface/buy_window.ui" line="557"/>
         <source>Продолжить</source>
-        <translation type="unfinished"></translation>
+        <translation>Продолжить</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="630"/>
+        <location filename="../../ui_interface/buy_window.ui" line="691"/>
         <source>Остановить</source>
-        <translation type="unfinished"></translation>
+        <translation>Остановить</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="731"/>
+        <location filename="../../ui_interface/buy_window.ui" line="783"/>
         <source>Последний выбранный товар</source>
-        <translation type="unfinished"></translation>
+        <translation>Последний выбранный товар</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="795"/>
+        <location filename="../../ui_interface/buy_window.ui" line="879"/>
         <source>Вода - Л + Пробка</source>
-        <translation type="unfinished"></translation>
+        <translation>Вода - Л + Пробка</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="818"/>
+        <location filename="../../ui_interface/buy_window.ui" line="902"/>
         <source>Вода - Л + Тара</source>
-        <translation type="unfinished"></translation>
+        <translation>Вода - Л + Тара</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="850"/>
+        <location filename="../../ui_interface/buy_window.ui" line="934"/>
         <source>Карта лояльности</source>
-        <translation type="unfinished"></translation>
+        <translation>Карта лояльности</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="873"/>
+        <location filename="../../ui_interface/buy_window.ui" line="957"/>
         <source>Вода - Л</source>
-        <translation type="unfinished"></translation>
+        <translation>Вода - Л</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="4764"/>
-        <source>- Р</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1047"/>
+        <location filename="../../ui_interface/buy_window.ui" line="1137"/>
         <source>Завершить</source>
-        <translation type="unfinished"></translation>
+        <translation>Завершить</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1106"/>
+        <location filename="../../ui_interface/buy_window.ui" line="1264"/>
         <source>Отменить 
 оплату</source>
-        <translation type="unfinished"></translation>
+        <translation>Отменить 
+оплату</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1176"/>
+        <location filename="../../ui_interface/buy_window.ui" line="1388"/>
         <source>Отменить
 выбор</source>
-        <translation type="unfinished"></translation>
+        <translation>Отменить
+выбор</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1257"/>
+        <location filename="../../ui_interface/buy_window.ui" line="1463"/>
         <source>Оплачено</source>
-        <translation type="unfinished"></translation>
+        <translation>Оплачено</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1336"/>
+        <location filename="../../ui_interface/buy_window.ui" line="1536"/>
         <source>Взял
 пробку</source>
-        <translation type="unfinished"></translation>
+        <translation>Взял
+пробку</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1416"/>
+        <location filename="../../ui_interface/buy_window.ui" line="1616"/>
         <source>Взял
 карту</source>
-        <translation type="unfinished"></translation>
+        <translation>Взял
+карту</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1496"/>
+        <location filename="../../ui_interface/buy_window.ui" line="1690"/>
         <source>Взял
 тару</source>
-        <translation type="unfinished"></translation>
+        <translation>Взял
+тару</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1637"/>
+        <location filename="../../ui_interface/buy_window.ui" line="1819"/>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3126"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3341"/>
         <source>- Л</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1850"/>
+        <location filename="../../ui_interface/buy_window.ui" line="2020"/>
         <source>+/-</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1916"/>
+        <location filename="../../ui_interface/buy_window.ui" line="2080"/>
         <source>Добавить
 еще</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить
+еще</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1976"/>
+        <location filename="../../ui_interface/buy_window.ui" line="2140"/>
         <source>Выбрать</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбрать</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="2446"/>
+        <location filename="../../ui_interface/buy_window.ui" line="2588"/>
         <source>Оставшаяся сумма</source>
-        <translation type="unfinished"></translation>
+        <translation>Оставшаяся сумма</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="2484"/>
+        <location filename="../../ui_interface/buy_window.ui" line="2626"/>
         <source>Итого</source>
-        <translation type="unfinished"></translation>
+        <translation>Итого</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3321"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3593"/>
         <source>Карта банка</source>
-        <translation type="unfinished"></translation>
+        <translation>Карта банка</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="2530"/>
+        <location filename="../../ui_interface/buy_window.ui" line="2672"/>
         <source>QR</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="2553"/>
+        <location filename="../../ui_interface/buy_window.ui" line="2695"/>
         <source>Наличные</source>
-        <translation type="unfinished"></translation>
+        <translation>Наличные</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="2801"/>
+        <location filename="../../ui_interface/buy_window.ui" line="2933"/>
         <source>Выберите товар</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите товар</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="2883"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3041"/>
         <source>Заберите пробку</source>
-        <translation type="unfinished"></translation>
+        <translation>Заберите пробку</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="2958"/>
-        <source>Заберите карту лояльности</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3018"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3235"/>
         <source>Заберите тару</source>
-        <translation type="unfinished"></translation>
+        <translation>Заберите тару</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3072"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3288"/>
         <source>Выберите тип оплаты</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите
+тип оплаты</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3180"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3394"/>
         <source>Не достаточно средств</source>
-        <translation type="unfinished"></translation>
+        <translation>Не достаточно средств</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3383"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3655"/>
         <source>Оплатите наличными
 или
 картой лояльности</source>
-        <translation type="unfinished"></translation>
+        <translation>Оплатите наличными или
+картой лояльности</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3485"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3757"/>
         <source>Ожидание оплаты по QR</source>
-        <translation type="unfinished"></translation>
+        <translation>Ожидание оплаты по QR</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3520"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3792"/>
         <source>Оплата по QR отказ</source>
-        <translation type="unfinished"></translation>
+        <translation>Оплата по QR отказ</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3555"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3827"/>
         <source>Оплата по QR успешно</source>
-        <translation type="unfinished"></translation>
+        <translation>Оплата по QR успешно</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3590"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3862"/>
         <source>Ожидание оплаты картой банка</source>
-        <translation type="unfinished"></translation>
+        <translation>Ожидание оплаты картой банка</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3625"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3897"/>
         <source>Ожидание оплаты</source>
-        <translation type="unfinished"></translation>
+        <translation>Ожидание оплаты</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3660"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3932"/>
         <source>Оплата прошла успешно</source>
-        <translation type="unfinished"></translation>
+        <translation>Оплата прошла успешно</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3695"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3967"/>
         <source>Оплата картой банка отказ</source>
-        <translation type="unfinished"></translation>
+        <translation>Оплата картой банка отказ</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3730"/>
+        <location filename="../../ui_interface/buy_window.ui" line="4002"/>
         <source>Отказ оплаты</source>
-        <translation type="unfinished"></translation>
+        <translation>Отказ оплаты</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3765"/>
+        <location filename="../../ui_interface/buy_window.ui" line="4037"/>
         <source>Оплата картой банка успешно</source>
-        <translation type="unfinished"></translation>
+        <translation>Оплата картой банка успешно</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3822"/>
-        <source>Отменить оплату можно через 1:00</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3858"/>
+        <location filename="../../ui_interface/buy_window.ui" line="4130"/>
         <source>Установите тару в зону налива</source>
-        <translation type="unfinished"></translation>
+        <translation>Установите тару в зону налива</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="4170"/>
+        <location filename="../../ui_interface/buy_window.ui" line="4435"/>
         <source>Вода + Тара</source>
-        <translation type="unfinished"></translation>
+        <translation>Вода + Тара</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="4269"/>
+        <location filename="../../ui_interface/buy_window.ui" line="4529"/>
         <source>Наличными
 
 Карта
 лояльности</source>
-        <translation type="unfinished"></translation>
+        <translation>Наличными
+
+Карта лояльности</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="4365"/>
+        <location filename="../../ui_interface/buy_window.ui" line="4612"/>
         <source>Пополнить
 карту</source>
-        <translation type="unfinished"></translation>
+        <translation>Пополнить 
+карту</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="4478"/>
+        <location filename="../../ui_interface/buy_window.ui" line="4725"/>
         <source>Карта
 лояльности</source>
-        <translation type="unfinished"></translation>
+        <translation>Карта
+лояльности</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="4579"/>
+        <location filename="../../ui_interface/buy_window.ui" line="4827"/>
         <source>По QR</source>
-        <translation type="unfinished"></translation>
+        <translation>По QR</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="4729"/>
+        <location filename="../../ui_interface/buy_window.ui" line="4958"/>
         <source>Вода + Пробка</source>
-        <translation type="unfinished"></translation>
+        <translation>Вода + Пробка</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="4828"/>
+        <location filename="../../ui_interface/buy_window.ui" line="5058"/>
         <source>Картой
 банка</source>
-        <translation type="unfinished"></translation>
+        <translation>Картой
+банка</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="2331"/>
+        <location filename="../../ui_interface/buy_window.ui" line="2470"/>
         <source>Завершение сеанса через -</source>
-        <translation type="unfinished"></translation>
+        <translation>Завершение сеанса через -</translation>
+    </message>
+    <message>
+        <location filename="../../ui_interface/buy_window.ui" line="626"/>
+        <source>Продолжить 
+без сдачи</source>
+        <translation>Продолжить
+без сдачи</translation>
+    </message>
+    <message>
+        <location filename="../../ui_interface/buy_window.ui" line="856"/>
+        <source>Внесено</source>
+        <translation>Внесено</translation>
+    </message>
+    <message>
+        <location filename="../../ui_interface/buy_window.ui" line="2777"/>
+        <source>- ₽</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../ui_interface/buy_window.ui" line="1205"/>
+        <source>Отменить</source>
+        <translation>Отменить</translation>
+    </message>
+    <message>
+        <location filename="../../ui_interface/buy_window.ui" line="1324"/>
+        <source>Вернуть
+купюры</source>
+        <translation>Вернуть
+купюры</translation>
+    </message>
+    <message>
+        <location filename="../../ui_interface/buy_window.ui" line="4993"/>
+        <source>- ₽
+</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../ui_interface/buy_window.ui" line="3100"/>
+        <source>Ожидайте выдачи 
+сдачи</source>
+        <translation>Ожидайте выдачи сдачи</translation>
+    </message>
+    <message>
+        <location filename="../../ui_interface/buy_window.ui" line="3175"/>
+        <source>Заберите карту 
+лояльности</source>
+        <translation>Заберите карту
+лояльности</translation>
+    </message>
+    <message>
+        <location filename="../../ui_interface/buy_window.ui" line="3477"/>
+        <source>Недостаточно сдачи</source>
+        <translation>Недостаточно сдачи</translation>
+    </message>
+    <message>
+        <location filename="../../ui_interface/buy_window.ui" line="4094"/>
+        <source>Отмена оплаты произойдет через -</source>
+        <translation>Отмена оплаты произойдет через -</translation>
     </message>
 </context>
 </TS>

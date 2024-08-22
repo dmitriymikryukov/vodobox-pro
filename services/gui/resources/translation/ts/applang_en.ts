@@ -506,38 +506,38 @@ request</translation>
         <translation>Get started</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="205"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="187"/>
         <source>Можно оплатить</source>
         <translation>You can pay</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="275"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="257"/>
         <source>Картой
 лояльности</source>
         <translation>Loyal card</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="332"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="314"/>
         <source>Наличными</source>
         <translation>In cash</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="354"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="336"/>
         <source>Автомат не выдает сдачу</source>
         <translation>machine doesn&apos;t give change</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="407"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="389"/>
         <source>Картой банка</source>
         <translation>Bank card</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="457"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="439"/>
         <source>СБП по QR</source>
         <translation>SBR by QR</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="615"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="602"/>
         <source>Информация
 для
 потребителя</source>
@@ -545,78 +545,78 @@ request</translation>
  the consumer</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="1138"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="1253"/>
         <source>Производство воды</source>
         <translation>Water production</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="1203"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="1318"/>
         <source>Журнал моек емкости</source>
         <translation>Magazine of tank
  sinks</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="1300"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="1415"/>
         <source>Заправка воды</source>
         <translation>Refilling the water</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="1344"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="1459"/>
         <source>Продавец ИП Калешкин М.С. 1800000000</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="1463"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="1578"/>
         <source>Язык 1</source>
         <translation>Language 1</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="1500"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="1615"/>
         <source>Язык 2</source>
         <translation>Language 2</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="1537"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="1652"/>
         <source>Язык 3</source>
         <translation>Language 3</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="1669"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="1777"/>
         <source>Выбор
 Языка</source>
         <translation>Choose 
 language</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/waiting_window.ui" line="1943"/>
+        <location filename="../../ui_interface/waiting_window.ui" line="2043"/>
         <source>Начать
 покупку</source>
         <translation>Start
 a purchase</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="207"/>
+        <location filename="../../ui_interface/buy_window.ui" line="214"/>
         <source>Начать
 налив</source>
         <translation>Start 
 pouring</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="280"/>
+        <location filename="../../ui_interface/buy_window.ui" line="282"/>
         <source>Выдать
 пробку</source>
         <translation>Give
 plug</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="353"/>
+        <location filename="../../ui_interface/buy_window.ui" line="349"/>
         <source>Выдать
 тару</source>
         <translation>Give 
 container</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="423"/>
+        <location filename="../../ui_interface/buy_window.ui" line="414"/>
         <source>Забрать
 карту 
 лояльности</source>
@@ -624,179 +624,169 @@ container</translation>
 loyal card</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="495"/>
+        <location filename="../../ui_interface/buy_window.ui" line="487"/>
         <source>Не оплачено</source>
         <translation>Not paid for</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="564"/>
+        <location filename="../../ui_interface/buy_window.ui" line="557"/>
         <source>Продолжить</source>
         <translation>Continue</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="630"/>
+        <location filename="../../ui_interface/buy_window.ui" line="691"/>
         <source>Остановить</source>
         <translation>Stop</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="731"/>
+        <location filename="../../ui_interface/buy_window.ui" line="783"/>
         <source>Последний выбранный товар</source>
         <translation>Last chosen product</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="795"/>
+        <location filename="../../ui_interface/buy_window.ui" line="879"/>
         <source>Вода - Л + Пробка</source>
         <translation>Water - L + Plug</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="818"/>
+        <location filename="../../ui_interface/buy_window.ui" line="902"/>
         <source>Вода - Л + Тара</source>
         <translation>Water -L + Container</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="850"/>
+        <location filename="../../ui_interface/buy_window.ui" line="934"/>
         <source>Карта лояльности</source>
         <translation>Loyal card</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="873"/>
+        <location filename="../../ui_interface/buy_window.ui" line="957"/>
         <source>Вода - Л</source>
         <translation>Water - L</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="4764"/>
-        <source>- Р</source>
-        <translation>- $</translation>
-    </message>
-    <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1047"/>
+        <location filename="../../ui_interface/buy_window.ui" line="1137"/>
         <source>Завершить</source>
         <translation>Terminate</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1106"/>
+        <location filename="../../ui_interface/buy_window.ui" line="1264"/>
         <source>Отменить 
 оплату</source>
         <translation>Cancel 
 the payment</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1176"/>
+        <location filename="../../ui_interface/buy_window.ui" line="1388"/>
         <source>Отменить
 выбор</source>
         <translation>Cancel 
 the selection</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1257"/>
+        <location filename="../../ui_interface/buy_window.ui" line="1463"/>
         <source>Оплачено</source>
         <translation>Paid for</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1336"/>
+        <location filename="../../ui_interface/buy_window.ui" line="1536"/>
         <source>Взял
 пробку</source>
         <translation>Take 
 the plug</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1416"/>
+        <location filename="../../ui_interface/buy_window.ui" line="1616"/>
         <source>Взял
 карту</source>
         <translation>Taking 
 a card</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1496"/>
+        <location filename="../../ui_interface/buy_window.ui" line="1690"/>
         <source>Взял
 тару</source>
         <translation>Take 
 the container</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1637"/>
+        <location filename="../../ui_interface/buy_window.ui" line="1819"/>
         <source>+</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3126"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3341"/>
         <source>- Л</source>
         <translation>- L</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1850"/>
+        <location filename="../../ui_interface/buy_window.ui" line="2020"/>
         <source>+/-</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1916"/>
+        <location filename="../../ui_interface/buy_window.ui" line="2080"/>
         <source>Добавить
 еще</source>
         <translation>Add 
 more</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="1976"/>
+        <location filename="../../ui_interface/buy_window.ui" line="2140"/>
         <source>Выбрать</source>
         <translation>Select</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="2446"/>
+        <location filename="../../ui_interface/buy_window.ui" line="2588"/>
         <source>Оставшаяся сумма</source>
         <translation>Remaining amount</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="2484"/>
+        <location filename="../../ui_interface/buy_window.ui" line="2626"/>
         <source>Итого</source>
         <translation>Total</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3321"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3593"/>
         <source>Карта банка</source>
         <translation>Bank card</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="2530"/>
+        <location filename="../../ui_interface/buy_window.ui" line="2672"/>
         <source>QR</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="2553"/>
+        <location filename="../../ui_interface/buy_window.ui" line="2695"/>
         <source>Наличные</source>
         <translation>Cash</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="2801"/>
+        <location filename="../../ui_interface/buy_window.ui" line="2933"/>
         <source>Выберите товар</source>
         <translation>Choose product</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="2883"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3041"/>
         <source>Заберите пробку</source>
         <translation>Take plug</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="2958"/>
-        <source>Заберите карту лояльности</source>
-        <translation>Take loyal card</translation>
-    </message>
-    <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3018"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3235"/>
         <source>Заберите тару</source>
         <translation>Take container</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3072"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3288"/>
         <source>Выберите тип оплаты</source>
         <translation>Choose payment</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3180"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3394"/>
         <source>Не достаточно средств</source>
         <translation>Not enough funds</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3383"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3655"/>
         <source>Оплатите наличными
 или
 картой лояльности</source>
@@ -804,68 +794,63 @@ more</translation>
 or with a loyalty card</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3485"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3757"/>
         <source>Ожидание оплаты по QR</source>
         <translation>Waiting for payment by QR</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3520"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3792"/>
         <source>Оплата по QR отказ</source>
         <translation>Payment by QR code refusal</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3555"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3827"/>
         <source>Оплата по QR успешно</source>
         <translation>Payment by QR is successful</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3590"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3862"/>
         <source>Ожидание оплаты картой банка</source>
         <translation>Waiting for payment by bank card</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3625"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3897"/>
         <source>Ожидание оплаты</source>
         <translation>Waiting for payment</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3660"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3932"/>
         <source>Оплата прошла успешно</source>
         <translation>The payment was successful</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3695"/>
+        <location filename="../../ui_interface/buy_window.ui" line="3967"/>
         <source>Оплата картой банка отказ</source>
         <translation>Payment by bank card refusal</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3730"/>
+        <location filename="../../ui_interface/buy_window.ui" line="4002"/>
         <source>Отказ оплаты</source>
         <translation>Payment refusal</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3765"/>
+        <location filename="../../ui_interface/buy_window.ui" line="4037"/>
         <source>Оплата картой банка успешно</source>
         <translation>Payment by bank card is successful</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3822"/>
-        <source>Отменить оплату можно через 1:00</source>
-        <translation>You can cancel the payment via 1:00</translation>
-    </message>
-    <message>
-        <location filename="../../ui_interface/buy_window.ui" line="3858"/>
+        <location filename="../../ui_interface/buy_window.ui" line="4130"/>
         <source>Установите тару в зону налива</source>
         <translation>Set the container in the filling area</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="4170"/>
+        <location filename="../../ui_interface/buy_window.ui" line="4435"/>
         <source>Вода + Тара</source>
         <translation>Water + 
 Container</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="4269"/>
+        <location filename="../../ui_interface/buy_window.ui" line="4529"/>
         <source>Наличными
 
 Карта
@@ -875,38 +860,98 @@ Container</translation>
 Loyal card</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="4365"/>
+        <location filename="../../ui_interface/buy_window.ui" line="4612"/>
         <source>Пополнить
 карту</source>
         <translation>Top up 
 your card</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="4478"/>
+        <location filename="../../ui_interface/buy_window.ui" line="4725"/>
         <source>Карта
 лояльности</source>
         <translation>Loyal card</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="4579"/>
+        <location filename="../../ui_interface/buy_window.ui" line="4827"/>
         <source>По QR</source>
         <translation>By QR</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="4729"/>
+        <location filename="../../ui_interface/buy_window.ui" line="4958"/>
         <source>Вода + Пробка</source>
         <translation>Water + Plug</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="4828"/>
+        <location filename="../../ui_interface/buy_window.ui" line="5058"/>
         <source>Картой
 банка</source>
         <translation>Bank card</translation>
     </message>
     <message>
-        <location filename="../../ui_interface/buy_window.ui" line="2331"/>
+        <location filename="../../ui_interface/buy_window.ui" line="2470"/>
         <source>Завершение сеанса через -</source>
         <translation>Session termination via -</translation>
+    </message>
+    <message>
+        <location filename="../../ui_interface/buy_window.ui" line="626"/>
+        <source>Продолжить 
+без сдачи</source>
+        <translation>Continue 
+without 
+depositing 
+money</translation>
+    </message>
+    <message>
+        <location filename="../../ui_interface/buy_window.ui" line="856"/>
+        <source>Внесено</source>
+        <translation>Inserted</translation>
+    </message>
+    <message>
+        <location filename="../../ui_interface/buy_window.ui" line="2777"/>
+        <source>- ₽</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../ui_interface/buy_window.ui" line="1205"/>
+        <source>Отменить</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <location filename="../../ui_interface/buy_window.ui" line="1324"/>
+        <source>Вернуть
+купюры</source>
+        <translation>Return
+the bills</translation>
+    </message>
+    <message>
+        <location filename="../../ui_interface/buy_window.ui" line="4993"/>
+        <source>- ₽
+</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../../ui_interface/buy_window.ui" line="3100"/>
+        <source>Ожидайте выдачи 
+сдачи</source>
+        <translation>Waiting for the 
+delivery of change</translation>
+    </message>
+    <message>
+        <location filename="../../ui_interface/buy_window.ui" line="3175"/>
+        <source>Заберите карту 
+лояльности</source>
+        <translation>Take loyal card</translation>
+    </message>
+    <message>
+        <location filename="../../ui_interface/buy_window.ui" line="3477"/>
+        <source>Недостаточно сдачи</source>
+        <translation>Not enough change</translation>
+    </message>
+    <message>
+        <location filename="../../ui_interface/buy_window.ui" line="4094"/>
+        <source>Отмена оплаты произойдет через -</source>
+        <translation>The payment will be cancelled after -</translation>
     </message>
 </context>
 </TS>
