@@ -1,8 +1,9 @@
 from ui.widgets.buy_window.products import Product, Water, PlugWithWater, ContainerWithWater, LoyalCard
 from ui.widgets.buy_window.graphics import WaterBottleWidget
+from PyQt5.Qt import QPropertyAnimation, QColor, pyqtProperty
 from PyQt5.QtWidgets import QWidget, QButtonGroup, QLabel
 from configuration.testing import BuyConfig, UiConfig
-from PyQt5.QtCore import pyqtSignal, QTimer, QThread, Qt
+from PyQt5.QtCore import pyqtSignal, QTimer, QThread, Qt, QEasingCurve, QSequentialAnimationGroup
 from ui.converted.gen_buy_window import Ui_Form
 from PyQt5.QtGui import QPixmap, QFont
 from ui import app
@@ -62,6 +63,7 @@ class BuyWindow(QWidget):
         self.is_pouring_running = True
         self._chosen_products: list[Product] = []
         self.remaining_price: float = 0
+        self._confirm_btn_color = QColor(18, 18, 252)
 
         # customizations
         self.ui.payment_success_lbl.setPixmap(
@@ -248,6 +250,56 @@ class BuyWindow(QWidget):
         # передаем сумму заказа в копейках
         app.sgn_gui['session']['query_amount'] = sum([product.price for product in self._chosen_products]) * 100
         app.sgn_gui.ActivateCash()
+
+    @pyqtProperty(QColor)
+    def confirm_btn_color(self) -> QColor:
+        """
+        Getter для отрисовки анимации цвета кнопки начала покупок
+        :return: текущий цвет кнопки начала покупок
+        """
+        return self._confirm_btn_color
+
+    @confirm_btn_color.setter
+    def confirm_btn_color(self, col: QColor) -> None:
+        """
+        Setter для отрисовки анимации цвета кнопки начала покупок
+        :param col: новый цвет для кнопки начала покупок
+        :return:
+        """
+        stylesheet = f'''
+        background-color: rgb({col.red()}, {col.green()}, {col.blue()});
+        border: 1px solid blue;
+        border-top-right-radius: 40px;
+        border-bottom-right-radius: 20px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 40px;
+        '''
+        self.ui.confirm_btn.setStyleSheet(stylesheet)
+        self._confirm_btn_color = col
+
+    def animate_confirm_btn(self) -> None:
+        """
+        Анимация кнопки начала покупок
+        """
+        self.animation_group = QSequentialAnimationGroup()
+        self.first_animation = QPropertyAnimation(self, b'confirm_btn_color')
+        self.second_animation = QPropertyAnimation(self, b'confirm_btn_color')
+
+        self.first_animation.setDuration(2000)
+        self.first_animation.setEasingCurve(QEasingCurve.InOutCubic)
+        self.first_animation.setStartValue(QColor(245, 245, 245))
+        self.first_animation.setEndValue(QColor(18, 18, 252))
+
+        self.second_animation.setDuration(2000)
+        self.second_animation.setEasingCurve(QEasingCurve.InOutCubic)
+        self.second_animation.setStartValue(QColor(18, 18, 252))
+        self.second_animation.setEndValue(QColor(245, 245, 245))
+
+        self.animation_group.addAnimation(self.first_animation)
+        self.animation_group.addAnimation(self.second_animation)
+
+        self.animation_group.start()
+        self.animation_group.setLoopCount(-1)
 
     def turn_on_dark_theme(self) -> None:
         """
