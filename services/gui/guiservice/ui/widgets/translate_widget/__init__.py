@@ -3,7 +3,7 @@ from PyQt5.QtCore import QTranslator, QCoreApplication, pyqtSignal
 from ui.widgets.translate_widget.utils import get_translator_filepath
 from configuration.config import UiConfig
 from typing import List
-import logging
+from ui import app
 
 
 class TranslateWidget(QWidget):
@@ -23,7 +23,6 @@ class TranslateWidget(QWidget):
         self._widgets: List[QWidget] = []
 
         # signals
-        self.language_selected.connect(lambda: logging.info('язык выбран'))
         self.language_selected.connect(self.set_current_language)
         self.language_selected.connect(self.change_app_language)
 
@@ -42,6 +41,7 @@ class TranslateWidget(QWidget):
     def set_current_language(cls, lang_idx):
         lang_codes = [UiConfig.default_language_code(), UiConfig.second_language_code(), UiConfig.third_language_code()]
         cls.CURRENT_LANGUAGE_CODE = lang_codes[lang_idx]
+        app.sgn_gui.info(f"Выбран язык: {cls.CURRENT_LANGUAGE_CODE}")
 
     def change_app_language(self, lang_index: int):
         QCoreApplication.removeTranslator(self._translator)
