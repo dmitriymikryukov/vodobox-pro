@@ -25,11 +25,11 @@ class UiConfig:
     """
     Тестовый класс конфигураций для глобального UI интерфейса
     """
-    _session_config = json.load(open(os.path.join(os.getcwd(), 'configuration', 'test', 'session_config.json')))
-    _consumer_info_config = json.load(open(os.path.join(os.getcwd(), 'configuration', 'test', 'consumer_info_config.json')))
-    _language_config = json.load(open(os.path.join(os.getcwd(), 'configuration', 'test', 'language_config.json')))
-    _logo_config = json.load(open(os.path.join(os.getcwd(), 'configuration', 'test', 'logo_config.json')))
-    _common_settings_config = json.load(open(os.path.join(os.getcwd(), 'configuration', 'test', 'common_settings_config.json')))
+    _session_config = json.load(open(os.path.join(os.getcwd(), 'configuration', 'configuration', 'session_config.json')))
+    _consumer_info_config = json.load(open(os.path.join(os.getcwd(), 'configuration', 'configuration', 'consumer_info_config.json')))
+    _language_config = json.load(open(os.path.join(os.getcwd(), 'configuration', 'configuration', 'language_config.json')))
+    _logo_config = json.load(open(os.path.join(os.getcwd(), 'configuration', 'configuration', 'logo_config.json')))
+    _common_settings_config = json.load(open(os.path.join(os.getcwd(), 'configuration', 'configuration', 'common_settings_config.json')))
 
     @staticmethod
     def buy_btn_position() -> int:
