@@ -1,7 +1,7 @@
 {
   "lang": {
     "button": true,
-    "change": ["ru", "ro", "en"],
-    "default": "ru"
+    "change": ["en", "ro", "ru"],
+    "default": "en"
   }
 }
