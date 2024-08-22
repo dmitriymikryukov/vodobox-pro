@@ -66,6 +66,7 @@ class BuyWindow(QWidget):
         self._confirm_btn_color = QColor(18, 18, 252)
 
         # customizations
+        self.animate_confirm_btn()
         self.ui.payment_success_lbl.setPixmap(
             QPixmap(os.path.join(os.getcwd(), '..', 'resources', 'icons', 'large_passed.svg')))
         self.ui.payment_failed_lbl.setPixmap(
