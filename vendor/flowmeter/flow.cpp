@@ -135,7 +135,7 @@ void finalize(){
         cnt=pc+extra;
         xtr=0;
     }
-    printf("\nTOTAL:%dpls EXTRA:%dpls\n",cnt,xtr);
+    printf("\nTOTAL:%dml EXTRA:%dml\n",cnt,xtr);
     fflush(stdout);    
 }
 
@@ -228,7 +228,7 @@ int main (int argc, char **argv)
             frq=0;
         }
         rst=1;hold=0;
-        printf("\r%05dpls %03.1fHz PV:%03.3f per:%08lums     ",(int)pc,frq,current_pulse_vol,period);
+        printf("\r%05dml %03.1fHz PV:%03.3f per:%08lums     ",(int)pc,frq,current_pulse_vol,period);
         fflush(stdout);
         if (frq<=1 || pc<15){
             failc++;
@@ -245,7 +245,7 @@ int main (int argc, char **argv)
         if (pc>=_count && ncal<0){
             delay(600);
             ncal=extra;
-            printf(" Extra: %dpls\n",ncal);
+            printf(" Extra: %dml\n",ncal);
             extra=0;
             _count=count-ncal;
             pc+=ncal;
