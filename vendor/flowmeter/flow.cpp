@@ -167,7 +167,7 @@ int main (int argc, char **argv)
             failc=0;
         }
     }
-    delay(300);
+    delay(500);
 
     finalize();
 
