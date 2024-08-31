@@ -57,20 +57,25 @@ void pulseDown() {
 
 int count=0;
 int pc=0;
+int extra=0;
 
 void pulse(){
     //printf("*");
-    pc++;
     if (pc>=count){
         digitalWrite( PUMP_PIN,  LOW );
         digitalWrite( VALVE_PIN,  LOW );        
+    }
+    if (pc>count){
+        extra++;
+    }else{
+        pc++;        
     }
 }
 
 void finalize(){
     digitalWrite( PUMP_PIN,  LOW );
     digitalWrite( VALVE_PIN,  LOW );    
-    printf("\nTOTAL:%dpls\n",pc);
+    printf("\nTOTAL:%dpls EXTRA:%dpls\n",pc,extra);
     fflush(stdout);    
 }
 
@@ -164,6 +169,7 @@ int main (int argc, char **argv)
             failc=0;
         }
     }
+    delay(200);
 
     finalize();
 
