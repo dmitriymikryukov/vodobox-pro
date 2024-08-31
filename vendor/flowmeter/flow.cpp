@@ -127,7 +127,7 @@ int main (int argc, char **argv)
     }else{
         pizda("Too less arguments");
     }
-    _count=(count<150)?count:100;
+    _count=(count<80)?count:50;
 
 
     pinMode( PUMP_PIN, OUTPUT );
@@ -162,7 +162,7 @@ int main (int argc, char **argv)
         fflush(stdout);
         if (frq<=10 || pc<15){
             failc++;
-            if ((count-pc)<ncal && ncal>=0){
+            if ((_count-pc)<ncal && ncal>=0){
                 break;
             }
             if (failc>((pc<50)?40:10)){
@@ -175,9 +175,10 @@ int main (int argc, char **argv)
         if (pc>=_count && ncal<0){
             delay(500);
             ncal=extra;
-            _count=count-extra;
-            pc+=extra;
+            printf(" Extra: %dpls\n",ncal)
             extra=0;
+            _count=count-ncal;
+            pc+=ncal;
             digitalWrite( VALVE_PIN,  HIGH );
             digitalWrite( PUMP_PIN,  HIGH );
         }
