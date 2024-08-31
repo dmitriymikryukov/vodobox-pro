@@ -175,7 +175,7 @@ int main (int argc, char **argv)
         if (pc>=_count && ncal<0){
             delay(500);
             ncal=extra;
-            printf(" Extra: %dpls\n",ncal)
+            printf(" Extra: %dpls\n",ncal);
             extra=0;
             _count=count-ncal;
             pc+=ncal;
