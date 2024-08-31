@@ -153,6 +153,7 @@ int main (int argc, char **argv)
     int xpc=0;
     int frq;
     int failc=0;
+    int ncal=-1;
     while (pc<count) {
         delay(200);
         frq=pc-xpc;xpc=pc;
@@ -161,6 +162,9 @@ int main (int argc, char **argv)
         fflush(stdout);
         if (frq<=10 || pc<15){
             failc++;
+            if ((count-pc)<ncal && ncal>=0){
+                break;
+            }
             if (failc>((pc<50)?40:10)){
                 printf("\nTIMEOUT\n");
                 break;
@@ -168,9 +172,11 @@ int main (int argc, char **argv)
         }else {
             failc=0;
         }
-        if (pc>=_count && _count<count){
+        if (pc>=_count && ncal<0){
             delay(500);
+            ncal=extra;
             _count=count-extra;
+            pc+=extra;
             extra=0;
             digitalWrite( VALVE_PIN,  HIGH );
             digitalWrite( PUMP_PIN,  HIGH );
