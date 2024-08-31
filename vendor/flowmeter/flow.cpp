@@ -55,6 +55,7 @@ void pulseDown() {
     lastPulse = time;
 }*/
 
+int count=0;
 int _count=0;
 int pc=0;
 int extra=0;
@@ -126,7 +127,6 @@ int main (int argc, char **argv)
         exit(1);
     }
 
-    int count;
     if (argc>1){
         count=atoi(argv[1]);
         if (count<5){
