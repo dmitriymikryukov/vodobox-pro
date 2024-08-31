@@ -55,13 +55,13 @@ void pulseDown() {
     lastPulse = time;
 }*/
 
-int count=0;
+int _count=0;
 int pc=0;
 int extra=0;
 
 void pulse(){
     //printf("*");
-    if (pc>=count){
+    if (pc>=_count){
         extra++;
         digitalWrite( PUMP_PIN,  LOW );
         digitalWrite( VALVE_PIN,  LOW );        
@@ -118,6 +118,7 @@ int main (int argc, char **argv)
         exit(1);
     }
 
+    int count;
     if (argc>1){
         count=atoi(argv[1]);
         if (count<5){
@@ -126,6 +127,7 @@ int main (int argc, char **argv)
     }else{
         pizda("Too less arguments");
     }
+    _count=(count<150)?count:100;
 
 
     pinMode( PUMP_PIN, OUTPUT );
@@ -165,6 +167,13 @@ int main (int argc, char **argv)
             }
         }else {
             failc=0;
+        }
+        if (pc>=_count && _count<count){
+            delay(500);
+            _count=count-extra;
+            extra=0;
+            digitalWrite( VALVE_PIN,  HIGH );
+            digitalWrite( PUMP_PIN,  HIGH );
         }
     }
     delay(500);
