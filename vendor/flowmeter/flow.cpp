@@ -83,6 +83,7 @@ void segmentationHandler(int sig) {
 }  
 
 void stopHandler(int sig) {
+    printf("\nBREAK\n");
     finalize();
     exit(1);
 }  
@@ -124,7 +125,7 @@ int main ()
         delay(200);
         frq=pc-xpc;xpc=pc;
         frq*=5;
-        printf("\r%05dpls %03dHz\r",pc,frq);
+        printf("\r%05dpls %03dHz",pc,frq);
         fflush(stdout);
     }
 
