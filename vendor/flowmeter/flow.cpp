@@ -57,18 +57,71 @@ void pulseDown() {
 
 int count=0;
 int _count=0;
-int pc=0;
-int extra=0;
+double pc=0;
+double extra=0;
+unsigned long ms_ts=0;
+unsigned long Fdt=0;
+double Fcnt=0;
+int hold=0;
+int rst=0;
+double current_pulse_vol=5.0;
+double flow_table[10][2]={{1000000,10.00},{10000,12.50},{0,0}};
+unsigned long period=0;
+
+void calibrate(unsigned long delta){
+    period=delta;
+    current_pulse_vol=flow_table[9][1];
+    for (int i=0;i<10;i++){
+        if (flow_table[i][0]){
+            if (delta>=flow_table[i][0] && i==0 || delta==flow_table[i][0]){
+                current_pulse_vol=flow_table[i][1];
+                break;
+            }else if(!flow_table[i+1][0]){
+                current_pulse_vol=flow_table[i][1];
+                break;
+            }else if(delta==flow_table[i+1][0]){
+                current_pulse_vol=flow_table[i+1][1];                
+                break;
+            }else if(delta>flow_table[i+1][0]){
+                double dp=flow_table[i][0]-flow_table[i+1][0];
+                double dV=flow_table[i+1][1]-flow_table[i][1];
+                double d=delta-flow_table[i+1][0];
+                double c=d/dp;
+                current_pulse_vol=c*dV+flow_table[i][1];
+            }
+        }else{
+            current_pulse_vol=flow_table[i-1][1];
+            break;
+        }
+    }
+}
 
 void pulse(){
+    static int isodd=0;
+    if (isodd){
+        unsigned long ts=millis();
+        unsigned long delta=ts-ms_ts;
+        ms_ts=ts;
+        calibrate(delta);
+        if (!hold){
+            if (rst){
+                Fdt=0;
+                Fcnt=0;
+                rst=0;
+            }
+            Fdt+=delta;
+            Fcnt+=current_pulse_vol;
+        }
+    }
     //printf("*");
     if (pc>=_count){
-        extra++;
+        extra+=current_pulse_vol;
         digitalWrite( PUMP_PIN,  LOW );
         digitalWrite( VALVE_PIN,  LOW );        
     }else{
-        pc++;        
+        pc+=current_pulse_vol;        
     }
+    isodd=!isodd;
 }
 
 void finalize(){
@@ -96,7 +149,7 @@ void segmentationHandler(int sig) {
     digitalWrite( PUMP_PIN,  LOW );
     digitalWrite( VALVE_PIN,  LOW );
 
-    exit(1);
+    exit(2);
 }  
 
 void stopHandler(int sig) {
@@ -155,18 +208,27 @@ int main (int argc, char **argv)
 
     printf("READY\n");
     fflush(stdout);
+    pc=0;
+    current_pulse_vol=flow_table[0][1];
     digitalWrite( VALVE_PIN,  HIGH );
     digitalWrite( PUMP_PIN,  HIGH );
-    pc=0;
-    int xpc=0;
-    int frq;
+    //int xpc=0;
+    //int frq;
     int failc=0;
     int ncal=-1;
     while (pc<count) {
         delay(200);
-        frq=pc-xpc;xpc=pc;
-        frq*=5;
-        printf("\r%05dpls %03dHz",pc,frq);
+        //frq=pc-xpc;xpc=pc;
+        //frq*=5;
+        hold=1;
+        double frq;
+        if (Fdt){
+            frq=Fcnt/Fdt;frq*=1000000.0;
+        }else{
+            frq=0;
+        }
+        rst=1;hold=0;
+        printf("\r%05dpls %03.1fHz PV:%03.3f per:%06ums     ",(int)pc,frq,current_pulse_vol,period);
         fflush(stdout);
         if (frq<=1 || pc<15){
             failc++;
