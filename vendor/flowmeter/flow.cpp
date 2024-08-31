@@ -10,6 +10,11 @@
 #include <execinfo.h>
 #include <stdlib.h>
 
+#define PUMP_PIN 11
+#define VALVE_PIN 0
+#define PULSE_PIN 6
+
+
 using namespace std;
 
 const unsigned int msPerHour = 3600000;
@@ -81,9 +86,6 @@ void finalize(){
 }
 
 
-#define PUMP_PIN 11
-#define VALVE_PIN 0
-
 int main ()
 {
     signal(SIGSEGV, segmentationHandler);
@@ -99,7 +101,7 @@ int main ()
     pinMode( VALVE_PIN, OUTPUT );
     digitalWrite( VALVE_PIN,  LOW );
 
-    int pin = 6;
+    int pin = PULSE_PIN;
 
     pullUpDnControl(pin, PUD_DOWN);
     //printf("wiringPiISR RISING\n");
