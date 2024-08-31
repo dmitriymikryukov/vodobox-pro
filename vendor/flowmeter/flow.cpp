@@ -64,7 +64,7 @@ int main ()
     printf("Setup...\n");
     wiringPiSetup ();
 
-    int pin = 22;
+    int pin = 6;
 
     printf("pullUpDnControl\n");
     pullUpDnControl(pin, PUD_DOWN);
