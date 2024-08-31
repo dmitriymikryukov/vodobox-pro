@@ -168,7 +168,7 @@ int main (int argc, char **argv)
         frq*=5;
         printf("\r%05dpls %03dHz",pc,frq);
         fflush(stdout);
-        if (frq<=10 || pc<15){
+        if (frq<=1 || pc<15){
             failc++;
             if ((_count-pc)<ncal && ncal>=0){
                 break;
