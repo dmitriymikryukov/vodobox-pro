@@ -72,8 +72,16 @@ void pulse(){
 
 void finalize(){
     digitalWrite( PUMP_PIN,  LOW );
-    digitalWrite( VALVE_PIN,  LOW );    
-    printf("\nTOTAL:%dpls EXTRA:%dpls\n",pc,extra);
+    digitalWrite( VALVE_PIN,  LOW );
+    int cnt,xtr;
+    if ((pc+extra)>=count){
+        cnt=count;
+        xtr=(pc+extra)-count;
+    }else{
+        cnt=pc+extra;
+        xtr=0;
+    }
+    printf("\nTOTAL:%dpls EXTRA:%dpls\n",cnt,xtr);
     fflush(stdout);    
 }
 
