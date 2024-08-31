@@ -96,7 +96,7 @@ void stopHandler(int sig) {
 void pizda(const char* s){
     digitalWrite( PUMP_PIN,x  LOW );
     digitalWrite( VALVE_PIN,  LOW );
-    printf("\n%s\n");
+    printf("\n%s\n",s);
     printf("Usage:\n");
     printf("flow <pulses>\n");
 
@@ -121,7 +121,7 @@ int main ()
             pizda("Too less pulses required");
         }
     }else{
-        pizda("Too less arguments")
+        pizda("Too less arguments");
     }
 
 
