@@ -73,7 +73,7 @@ void calibrate(unsigned long delta){
     current_pulse_vol=flow_table[9][1];
     for (int i=0;i<10;i++){
         if (flow_table[i][0]){
-            if (delta>=flow_table[i][0] && i==0 || delta==flow_table[i][0]){
+            if ((delta>=flow_table[i][0] && i==0) || delta==flow_table[i][0]){
                 current_pulse_vol=flow_table[i][1];
                 break;
             }else if(!flow_table[i+1][0]){
