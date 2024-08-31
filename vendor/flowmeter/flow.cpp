@@ -94,7 +94,7 @@ void stopHandler(int sig) {
 }  
 
 void pizda(const char* s){
-    digitalWrite( PUMP_PIN,x  LOW );
+    digitalWrite( PUMP_PIN,  LOW );
     digitalWrite( VALVE_PIN,  LOW );
     printf("\n%s\n",s);
     printf("Usage:\n");
@@ -104,7 +104,7 @@ void pizda(const char* s){
 }
 
 
-int main ()
+int main (int argc, char **argv)
 {
     signal(SIGSEGV, segmentationHandler);
     signal(SIGKILL, stopHandler);
