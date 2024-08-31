@@ -55,11 +55,16 @@ void pulseDown() {
     lastPulse = time;
 }*/
 
+int count=0;
 int pc=0;
 
 void pulse(){
     //printf("*");
     pc++;
+    if (pc>=count){
+        digitalWrite( PUMP_PIN,  LOW );
+        digitalWrite( VALVE_PIN,  LOW );        
+    }
 }
 
 void finalize(){
@@ -88,6 +93,16 @@ void stopHandler(int sig) {
     exit(1);
 }  
 
+void pizda(const char* s){
+    digitalWrite( PUMP_PIN,x  LOW );
+    digitalWrite( VALVE_PIN,  LOW );
+    printf("\n%s\n");
+    printf("Usage:\n");
+    printf("flow <pulses>\n");
+
+    exit(1);
+}
+
 
 int main ()
 {
@@ -99,6 +114,16 @@ int main ()
         printf("PIZDEC!\n");
         exit(1);
     }
+
+    if (argc>1){
+        count=atoi(argv[1]);
+        if (count<5){
+            pizda("Too less pulses required");
+        }
+    }else{
+        pizda("Too less arguments")
+    }
+
 
     pinMode( PUMP_PIN, OUTPUT );
     digitalWrite( PUMP_PIN,  LOW );
@@ -122,12 +147,22 @@ int main ()
     pc=0;
     int xpc=0;
     int frq;
-    while (true) {
+    int failc=0;
+    while (pc<count) {
         delay(200);
         frq=pc-xpc;xpc=pc;
         frq*=5;
         printf("\r%05dpls %03dHz",pc,frq);
         fflush(stdout);
+        if (frq<=10 || pc<15){
+            failc++;
+            if (failc>((pc<50)?40:10)){
+                printf("\nTIMEOUT\n");
+                break;
+            }
+        }else {
+            failc=0;
+        }
     }
 
     finalize();
