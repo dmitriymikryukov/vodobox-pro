@@ -228,7 +228,7 @@ int main (int argc, char **argv)
             frq=0;
         }
         rst=1;hold=0;
-        printf("\r%05dpls %03.1fHz PV:%03.3f per:%06ums     ",(int)pc,frq,current_pulse_vol,period);
+        printf("\r%05dpls %03.1fHz PV:%03.3f per:%06dms     ",(int)pc,frq,current_pulse_vol,period);
         fflush(stdout);
         if (frq<=1 || pc<15){
             failc++;
