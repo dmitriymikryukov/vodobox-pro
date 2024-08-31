@@ -62,6 +62,13 @@ void pulse(){
     pc++;
 }
 
+void finalize(){
+    digitalWrite( PUMP_PIN,  LOW );
+    digitalWrite( VALVE_PIN,  LOW );    
+    printf("\nTOTAL:%dpls\n",pc);
+}
+
+
 void segmentationHandler(int sig) {
     void *array[10];
     size_t size = backtrace(array, 10);
@@ -69,7 +76,7 @@ void segmentationHandler(int sig) {
     backtrace_symbols_fd(array, size, STDERR_FILENO);
 
     digitalWrite( PUMP_PIN,  LOW );
-    digitalWrite( VALUE_PIN,  LOW );
+    digitalWrite( VALVE_PIN,  LOW );
 
     exit(1);
 }  
@@ -78,12 +85,6 @@ void stopHandler(int sig) {
     finalize();
     exit(1);
 }  
-
-void finalize(){
-    digitalWrite( PUMP_PIN,  LOW );
-    digitalWrite( VALVE_PIN,  LOW );    
-    printf("\nTOTAL:%dpls\n",pc);
-}
 
 
 int main ()
