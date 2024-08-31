@@ -21,7 +21,7 @@ const string logPath = "/var/pulseCount/";
 unsigned int lastPulse = 0;
 unsigned int lastPulseUp = 0;
 
-void pulseUp() {
+/*void pulseUp() {
     lastPulseUp = millis();    
 }
 
@@ -48,6 +48,10 @@ void pulseDown() {
     printf("%d-%d-%d %d:%d:%d %dW\n", now->tm_year + 1900, now->tm_mon + 1, now->tm_mday, now->tm_hour, now->tm_min, now->tm_sec, watts);
 
     lastPulse = time;
+}*/
+
+void pulse(){
+    printf("*");
 }
 
 void segmentationHandler(int sig) {
@@ -68,11 +72,14 @@ int main ()
 
     printf("pullUpDnControl\n");
     pullUpDnControl(pin, PUD_DOWN);
-    printf("wiringPiISR RISING\n");
-    wiringPiISR (pin, INT_EDGE_RISING, &pulseUp);
-    printf("wiringPiISR FALLING\n");
-    wiringPiISR (pin, INT_EDGE_FALLING, &pulseDown); 
-    
+    //printf("wiringPiISR RISING\n");
+    //wiringPiISR (pin, INT_EDGE_RISING, &pulseUp);
+    //printf("wiringPiISR FALLING\n");
+    //wiringPiISR (pin, INT_EDGE_FALLING, &pulseDown); 
+  
+    wiringPiISR (pin, INT_EDGE_BOTH, &pulse); 
+
+
     while (true) {
         delay(1000); 
     }
