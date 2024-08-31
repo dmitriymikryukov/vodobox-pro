@@ -61,12 +61,16 @@ void segmentationHandler(int sig) {
 int main ()
 {
     signal(SIGSEGV, segmentationHandler);
+    printf("Setup...\n");
     wiringPiSetup ();
 
     int pin = 25;
 
+    printf("pullUpDnControl\n");
     pullUpDnControl(pin, PUD_DOWN);
+    printf("wiringPiISR RISING\n");
     wiringPiISR (pin, INT_EDGE_RISING, &pulseUp);
+    printf("wiringPiISR FALLING\n");
     wiringPiISR (pin, INT_EDGE_FALLING, &pulseDown); 
     
     while (true) {
