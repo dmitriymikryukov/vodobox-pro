@@ -50,8 +50,11 @@ void pulseDown() {
     lastPulse = time;
 }*/
 
+int pc=0;
+
 void pulse(){
-    printf("*");
+    //printf("*");
+    pc++;
 }
 
 void segmentationHandler(int sig) {
@@ -59,18 +62,45 @@ void segmentationHandler(int sig) {
     size_t size = backtrace(array, 10);
 
     backtrace_symbols_fd(array, size, STDERR_FILENO);
+
+    digitalWrite( PUMP_PIN,  LOW );
+    digitalWrite( VALUE_PIN,  LOW );
+
     exit(1);
 }  
+
+void stopHandler(int sig) {
+    finalize();
+    exit(1);
+}  
+
+void finalize(){
+    digitalWrite( PUMP_PIN,  LOW );
+    digitalWrite( VALUE_PIN,  LOW );    
+    printf("\nTOTAL:%dpls\n",pc);
+}
+
+
+#define PUMP_PIN 11
+#define VALVE_PIN 0
 
 int main ()
 {
     signal(SIGSEGV, segmentationHandler);
-    printf("Setup...\n");
-    wiringPiSetup ();
+    signal(SIGKILL, stopHandler);
+    signal(SIGTERM, stopHandler);
+    if (wiringPiSetup ()==-1){
+        printf("PIZDEC!\n");
+        exit(1);
+    }
+
+    pinMode( PUMP_PIN, OUTPUT );
+    digitalWrite( PUMP_PIN,  LOW );
+    pinMode( VALVE_PIN, OUTPUT );
+    digitalWrite( VALUE_PIN,  LOW );
 
     int pin = 6;
 
-    printf("pullUpDnControl\n");
     pullUpDnControl(pin, PUD_DOWN);
     //printf("wiringPiISR RISING\n");
     //wiringPiISR (pin, INT_EDGE_RISING, &pulseUp);
@@ -79,10 +109,20 @@ int main ()
   
     wiringPiISR (pin, INT_EDGE_BOTH, &pulse); 
 
-
+    printf("READY\n");
+    digitalWrite( VALUE_PIN,  HIGH );
+    digitalWrite( PUMP_PIN,  HIGH );
+    pc=0;
+    int xpc=0;
+    int frq;
     while (true) {
-        delay(1000); 
+        delay(200);
+        frq=pc-xpc;xpc=pc;
+        frq*=5;
+        printf("\r%05dpls %03dHz\r",pc,frq);
     }
+
+    finalize();
 
     return 0 ;
 }
