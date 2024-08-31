@@ -66,6 +66,7 @@ void finalize(){
     digitalWrite( PUMP_PIN,  LOW );
     digitalWrite( VALVE_PIN,  LOW );    
     printf("\nTOTAL:%dpls\n",pc);
+    fflush(stdout);    
 }
 
 
@@ -113,6 +114,7 @@ int main ()
     wiringPiISR (pin, INT_EDGE_BOTH, &pulse); 
 
     printf("READY\n");
+    fflush(stdout);
     digitalWrite( VALVE_PIN,  HIGH );
     digitalWrite( PUMP_PIN,  HIGH );
     pc=0;
@@ -123,6 +125,7 @@ int main ()
         frq=pc-xpc;xpc=pc;
         frq*=5;
         printf("\r%05dpls %03dHz\r",pc,frq);
+        fflush(stdout);
     }
 
     finalize();
