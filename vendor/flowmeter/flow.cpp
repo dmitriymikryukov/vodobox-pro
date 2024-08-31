@@ -94,6 +94,7 @@ int main ()
     signal(SIGSEGV, segmentationHandler);
     signal(SIGKILL, stopHandler);
     signal(SIGTERM, stopHandler);
+    signal(SIGINT, stopHandler);
     if (wiringPiSetup ()==-1){
         printf("PIZDEC!\n");
         exit(1);
