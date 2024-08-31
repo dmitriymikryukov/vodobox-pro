@@ -76,7 +76,7 @@ void stopHandler(int sig) {
 
 void finalize(){
     digitalWrite( PUMP_PIN,  LOW );
-    digitalWrite( VALUE_PIN,  LOW );    
+    digitalWrite( VALVE_PIN,  LOW );    
     printf("\nTOTAL:%dpls\n",pc);
 }
 
@@ -97,7 +97,7 @@ int main ()
     pinMode( PUMP_PIN, OUTPUT );
     digitalWrite( PUMP_PIN,  LOW );
     pinMode( VALVE_PIN, OUTPUT );
-    digitalWrite( VALUE_PIN,  LOW );
+    digitalWrite( VALVE_PIN,  LOW );
 
     int pin = 6;
 
@@ -110,7 +110,7 @@ int main ()
     wiringPiISR (pin, INT_EDGE_BOTH, &pulse); 
 
     printf("READY\n");
-    digitalWrite( VALUE_PIN,  HIGH );
+    digitalWrite( VALVE_PIN,  HIGH );
     digitalWrite( PUMP_PIN,  HIGH );
     pc=0;
     int xpc=0;
