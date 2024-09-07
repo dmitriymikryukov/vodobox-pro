@@ -1,4 +1,4 @@
-import subprocess,signal,os
+import subprocess,signal,os,time,threading
 
 def detach_processGroup():
     os.setpgrp()
@@ -50,33 +50,34 @@ def merge_pipes(**named_pipes):
             yield data[1:]
         if pipe_count == 0:
             return
-
+procc=None
 def flow(vol,pls):
     cmd = './flow %d %.5f' % (vol,pls)
-    p = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE,
-                         universal_newlines=True, preexec_fn=detach_processGroup)
-    print("CHILD PID: %s"%p.pid)
-    try:
-        trans = dict()
-        ow = False
-        nl=0
-        for name, line in merge_pipes(out=p.stdout, err=p.stderr):
-            print("FLOW SAYS: %s:%s"%(name,line))
-            nl+=1
-            if nl>10:
-                print("DEMO KILLING")
-                #p.send_signal(signal.SIGINT)
-                #os.kill(p.pid,signal.SIGINT)
-                os.system("kill %s -SIGINT &"%p.pid)
-                break
-
-        status = p.wait()
-    finally:
+    def xyu(cmd):
+        p = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE,
+                             universal_newlines=True, preexec_fn=detach_processGroup)
+        global procc
+        procc=p
+        print("CHILD PID: %s"%p.pid)
         try:
-            #p.send_signal(signal.SIGINT)
-            os.kill(p.pid,signal.SIGINT)
-        except:
-            os.kill(p.pid,signal.SIGKILL)
-            #p.send_signal(signal.SIGKILL)            
+            trans = dict()
+            ow = False
+            for name, line in merge_pipes(out=p.stdout, err=p.stderr):
+                print("FLOW SAYS: %s:%s"%(name,line))
+
+            status = p.wait()
+        finally:
+            try:
+                #p.send_signal(signal.SIGINT)
+                os.kill(p.pid,signal.SIGINT)
+            except:
+                os.kill(p.pid,signal.SIGKILL)
+                #p.send_signal(signal.SIGKILL)            
+    ppp=threading.Thread(target=xyu,args=[cmd],daemon=True)
+    ppp.start()
+    time.sleep(5)
+    procc.send_signal(signal.SIGINT)
+    #os.kill(p.pid,signal.SIGINT)
+    #os.system("kill -SIGINT %s &"%p.pid)
 
 flow(5000,12.075)
