@@ -223,7 +223,7 @@ class WaitingWindow(QWidget):
         [btn.setStyleSheet('''
         QPushButton{
         color: white;
-        background-color: rgb(42, 48, 58);
+        background-color: rgb(46, 62, 77);
         border-top-right-radius: 20px;
         border-bottom-right-radius: 40px;
         border-top-left-radius: 40px;
@@ -235,7 +235,7 @@ class WaitingWindow(QWidget):
         [btn.setStyleSheet('''
         QPushButton {
         color: white;
-        background-color:rgb(42, 48, 58);
+        background-color:rgb(46, 62, 77);
         border-top-right-radius: 40px;
         border-top-left-radius: 20px;
         border-bottom-right-radius: 20px;
@@ -247,14 +247,14 @@ class WaitingWindow(QWidget):
         self.ui.frame_2.setStyleSheet('''
         #frame_2 {
             color: rgb(0, 0, 0);
-            background-color: rgb(42, 48, 58);
+            background-color: rgb(46, 62, 77);
             border-radius: 40px;
             border: 1px solid #C0C0BF;
         }
         ''')
         self.ui.frame_10.setStyleSheet('''
         #frame_10{
-        background-color: rgb(42, 48, 58); 
+        background-color: rgb(46, 62, 77); 
         border: 1px solid #C0C0BF;  
         border-top-right-radius: 20px;
         border-top-left-radius: 20px;
@@ -269,7 +269,7 @@ class WaitingWindow(QWidget):
                      self.ui.water_created_lbl, self.ui.label_6, self.ui.wash1_lbl, self.ui.wash2_lbl,
                      self.ui.wash3_lbl, self.ui.label_2, self.ui.water_refill_lbl, self.ui.seller_info_lbl]]
 
-        self.ui.frame_17.setStyleSheet('#frame_17{background-color: rgb(42, 48, 58); border-radius: 20px; border: 1px solid #C0C0BF;}')
+        self.ui.frame_17.setStyleSheet('#frame_17{background-color: rgb(46, 62, 77); border-radius: 20px; border: 1px solid #C0C0BF;}')
 
         [btn.setStyleSheet('''
         QPushButton {
@@ -287,7 +287,7 @@ class WaitingWindow(QWidget):
 
         self.ui.frame_24.setStyleSheet('''
         #frame_24 {
-            background-color: rgb(42, 48, 58);
+            background-color: rgb(46, 62, 77);
             border-radius: 35px;
         }
         ''')
