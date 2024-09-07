@@ -55,6 +55,7 @@ def flow(vol,pls):
     cmd = './flow %d %.5f' % (vol,pls)
     p = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE,
                          universal_newlines=True, preexec_fn=detach_processGroup)
+    print("CHILD PID: %s"%p.pid)
     try:
         trans = dict()
         ow = False
@@ -65,7 +66,8 @@ def flow(vol,pls):
             if nl>10:
                 print("DEMO KILLING")
                 #p.send_signal(signal.SIGINT)
-                os.kill(p.pid,signal.SIGINT)
+                #os.kill(p.pid,signal.SIGINT)
+                os.system("kill %s -SIGINT &"%p.pid)
                 break
 
         status = p.wait()
