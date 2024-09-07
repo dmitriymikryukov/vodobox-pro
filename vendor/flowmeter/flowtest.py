@@ -79,7 +79,7 @@ def flow(vol,pls):
     time.sleep(5)
     print("DEMO KILL")
     procc.send_signal(signal.SIGINT)
-    os.system("kill -SIGINT %s &"%procc.pid)
+    os.system("kill SIGINT %s &"%procc.pid)
     ppp.join()
     #os.kill(p.pid,signal.SIGINT)
     #os.system("kill -SIGINT %s &"%p.pid)
