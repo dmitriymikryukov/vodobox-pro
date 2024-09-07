@@ -9,6 +9,7 @@ from ui.converted.gen_buy_window import Ui_Form
 from PyQt5.QtGui import QPixmap, QFont
 from ui import app
 import os
+import time
 
 
 class BuyWindow(QWidget):
@@ -494,10 +495,10 @@ class BuyWindow(QWidget):
         Начать отрисовку налива воды
         """
 
-        # def increment_progress_value():
-        #     while self.bottle_progress_bar_widget.progress <= 100 and self.is_pouring_running:
-        #         self.bottle_progress_bar_widget.progress += 1
-        #         time.sleep(0.3)
+        def increment_progress_value():
+            while self.bottle_progress_bar_widget.progress <= 100 and self.is_pouring_running:
+                self.bottle_progress_bar_widget.progress += 1
+                time.sleep(0.3)
 
 
         self.bottle_filling_thread.run = increment_progress_value
