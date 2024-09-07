@@ -72,7 +72,7 @@ void calibrate(unsigned long delta){
     period=delta;
     current_pulse_vol=flow_table[9][1];
     for (int i=0;i<10;i++){
-        printf("\ni=%d d=%.f fv0=%.f fv1=%f\n",i,delta,flow_table[i][0],flow_table[i][1]);
+        printf("\ni=%d d=%d fv0=%.f fv1=%f\n",i,delta,flow_table[i][0],flow_table[i][1]);
         if (flow_table[i][0]){
             if (delta>=flow_table[i][0]){
                 if (i>0){
