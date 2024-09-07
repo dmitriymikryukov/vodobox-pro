@@ -201,8 +201,8 @@ int main (int argc, char **argv)
 
     //6-500-200
     //12-1000-400
-    double k=nom_flow/12.0;
-    double k2=nom_ml_per_pls/125.0;
+    double k=nom_flow/125.0;
+    double k2=nom_ml_per_pls/12.0;
     for (int i=0;i<10;i++){
         flow_table[i][0]*=k;
         flow_table[i][1]*=k2;
