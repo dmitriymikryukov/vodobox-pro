@@ -873,7 +873,7 @@ class Ui_Form(object):
 "    border-top-right-radius: 20px;\n"
 "    border-top-left-radius: 40px;\n"
 "    border-bottom-right-radius: 35px;\n"
-"    border-bottom-left-radius: 10px;\n"
+"    border-bottom-left-radius: 20px;\n"
 "\n"
 "}")
         self.frame_22.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -911,7 +911,7 @@ class Ui_Form(object):
 "border-top-right-radius: 10px;\n"
 "border-top-left-radius: 25px;\n"
 "border-bottom-right-radius: 35px;\n"
-"border-bottom-left-radius: 10px;\n"
+"border-bottom-left-radius: 20px;\n"
 "\n"
 "}")
         self.plug_ltr_price_lbl.setAlignment(QtCore.Qt.AlignCenter)
@@ -1059,7 +1059,7 @@ class Ui_Form(object):
 "    border-top-right-radius: 20px;\n"
 "    border-top-left-radius: 40px;\n"
 "    border-bottom-right-radius: 35px;\n"
-"    border-bottom-left-radius: 10px;\n"
+"    border-bottom-left-radius: 20px;\n"
 "\n"
 "}")
         self.frame_23.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -1097,7 +1097,7 @@ class Ui_Form(object):
 "border-top-right-radius: 10px;\n"
 "border-top-left-radius: 25px;\n"
 "border-bottom-right-radius: 35px;\n"
-"border-bottom-left-radius: 10px;\n"
+"border-bottom-left-radius: 20px;\n"
 "\n"
 "}")
         self.container_ltr_price_lbl.setAlignment(QtCore.Qt.AlignCenter)
@@ -2002,7 +2002,7 @@ class Ui_Form(object):
 "    border: 1px solid blue;\n"
 "border-top-right-radius: 40px;\n"
 "border-top-left-radius: 20px;\n"
-"border-bottom-right-radius: 10px;\n"
+"border-bottom-right-radius: 20px;\n"
 "border-bottom-left-radius: 35px;\n"
 "}")
         self.frame_15.setFrameShape(QtWidgets.QFrame.NoFrame)
@@ -2043,7 +2043,7 @@ class Ui_Form(object):
 "    color: white;\n"
 "border-top-right-radius: 25px;\n"
 "border-top-left-radius: 10px;\n"
-"border-bottom-right-radius: 10px;\n"
+"border-bottom-right-radius: 20px;\n"
 "border-bottom-left-radius: 35px;\n"
 "}")
         self.container_and_water_price_lbl.setAlignment(QtCore.Qt.AlignCenter)
@@ -2126,7 +2126,7 @@ class Ui_Form(object):
 "    border-top-right-radius: 20px;\n"
 "    border-top-left-radius: 40px;\n"
 "    border-bottom-right-radius: 35px;\n"
-"    border-bottom-left-radius: 10px;\n"
+"    border-bottom-left-radius: 20px;\n"
 "\n"
 "}")
         self.frame_14.setFrameShape(QtWidgets.QFrame.NoFrame)
@@ -2170,7 +2170,7 @@ class Ui_Form(object):
 "border-top-right-radius: 10px;\n"
 "border-top-left-radius: 25px;\n"
 "border-bottom-right-radius: 35px;\n"
-"border-bottom-left-radius: 10px;\n"
+"border-bottom-left-radius: 20px;\n"
 "}")
         self.loyal_card_price_lbl.setAlignment(QtCore.Qt.AlignCenter)
         self.loyal_card_price_lbl.setObjectName("loyal_card_price_lbl")
@@ -2226,7 +2226,7 @@ class Ui_Form(object):
 "    border: 1px solid blue;\n"
 "border-top-right-radius: 40px;\n"
 "border-top-left-radius: 20px;\n"
-"border-bottom-right-radius: 10px;\n"
+"border-bottom-right-radius: 20px;\n"
 "border-bottom-left-radius: 35px;\n"
 "\n"
 "}")
@@ -2270,7 +2270,7 @@ class Ui_Form(object):
 "    color: white;\n"
 "border-top-right-radius: 25px;\n"
 "border-top-left-radius: 10px;\n"
-"border-bottom-right-radius: 10px;\n"
+"border-bottom-right-radius: 20px;\n"
 "border-bottom-left-radius: 35px;\n"
 "}")
         self.plug_and_water_price_lbl.setAlignment(QtCore.Qt.AlignCenter)
