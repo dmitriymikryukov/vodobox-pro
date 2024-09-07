@@ -55,8 +55,8 @@ void pulseDown() {
     lastPulse = time;
 }*/
 
-int count=0;
-int _count=0;
+double count=0;
+double _count=0;
 double pc=0;
 double extra=0;
 unsigned long ms_ts=0;
@@ -65,7 +65,7 @@ double Fcnt=0;
 int hold=0;
 int rst=0;
 double current_pulse_vol=5.0;
-double flow_table[10][2]={{1000000,6.00},{10000,9.00},{0,0}};
+double flow_table[10][2]={{1000,6.00},{150,9.00},{0,0}};
 unsigned long period=0;
 
 void calibrate(unsigned long delta){
@@ -181,9 +181,9 @@ int main (int argc, char **argv)
     }
 
     if (argc>1){
-        count=atoi(argv[1]);
+        count=(double)atoi(argv[1]);
         if (count<5){
-            pizda("Too less pulses required");
+            pizda("Too less ml required");
         }
     }else{
         pizda("Too less arguments");
@@ -223,19 +223,19 @@ int main (int argc, char **argv)
         hold=1;
         double frq;
         if (Fdt){
-            frq=Fcnt/Fdt;frq*=1000000.0;
+            frq=Fcnt/Fdt;frq*=1000.0;
         }else{
             frq=0;
         }
         rst=1;hold=0;
         printf("\r%05dml %03.1fHz PV:%03.3f per:%08lums     ",(int)pc,frq,current_pulse_vol,period);
         fflush(stdout);
-        if (frq<=1 || pc<(15*current_pulse_vol)){
+        if (frq<=1.0 || pc<50.0){
             failc++;
             if ((_count-pc)<ncal && ncal>=0){
                 break;
             }
-            if (failc>((pc<(50*current_pulse_vol))?(40*current_pulse_vol):(10*current_pulse_vol))){
+            if (failc>((pc<50.0)?40:10)){
                 printf("\nTIMEOUT\n");
                 break;
             }
