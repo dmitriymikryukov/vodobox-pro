@@ -181,8 +181,8 @@ int main (int argc, char **argv)
         exit(1);
     }
 
-    float nom_ml_per_pls=6.0;
-    float nom_flow=6.0;
+    float nom_ml_per_pls=12.0;
+    float nom_flow=125.0;
     if (argc>1){
         count=(double)atoi(argv[1]);
         if (count<5){
@@ -207,7 +207,7 @@ int main (int argc, char **argv)
         flow_table[i][0]*=k;
         flow_table[i][1]*=k2;
     }
-    printf("NFLOW: %.3f ml/s %.1f ml/pulse k1:%.f k2:%.f\n",nom_flow,nom_ml_per_pls,k,k2);
+    printf("NFLOW: %.3fml/s %.3fml/pulse k1:%.3f k2:%.3f\n",nom_flow,nom_ml_per_pls,k,k2);
 
     pinMode( PUMP_PIN, OUTPUT );
     digitalWrite( PUMP_PIN,  LOW );
