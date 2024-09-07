@@ -1,7 +1,8 @@
 import subprocess
 
 def merge_pipes(**named_pipes):
-    import threading, queue
+    import threading
+    from queue import Queue as queue
     # Constants. Could also be placed outside of the method. I just put them here
     # so the method is fully self-contained
     PIPE_OPENED = 1
@@ -9,7 +10,7 @@ def merge_pipes(**named_pipes):
     PIPE_CLOSED = 3
 
     # Create a queue where the pipes will be read into
-    output = queue.Queue()
+    output = queue()
 
     # This method is the run body for the threads that are instatiated below
     # This could be easily rewritten to be outside of the merge_pipes method,
@@ -19,7 +20,7 @@ def merge_pipes(**named_pipes):
             output.put((PIPE_OPENED, name,))
             try:
                 for line in iter(pipe.readline, ''):
-                    output.put((PIPE_OUTPUT, name, line.decode('utf8').rstrip(),))
+                    output.put((PIPE_OUTPUT, name, line.rstrip(),))
             finally:
                 output.put((PIPE_CLOSED, name,))
         except:
@@ -46,7 +47,6 @@ def merge_pipes(**named_pipes):
             yield data[1:]
         if pipe_count == 0:
             return
-
 
 def flow(vol,pls):
     cmd = './flow %d %.5f' % (vol,pls)
