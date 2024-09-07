@@ -363,8 +363,8 @@ class BuyWindow(QWidget):
             {dark_stylesheet}
             border-top-right-radius: 20px;
             border-top-left-radius: 20px;
-            border-bottom-right-radius: 40px;
-            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 35px;
+            border-bottom-left-radius: 35px;
         }}
         ''')
         self.ui.frame_12.setStyleSheet(f'''
@@ -372,8 +372,8 @@ class BuyWindow(QWidget):
             {dark_stylesheet}
             border-top-right-radius: 35px;
             border-top-left-radius: 35px;
-            border-bottom-right-radius: 20px;
-            border-bottom-left-radius: 20px
+            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 15px
         }}
         ''')
 
