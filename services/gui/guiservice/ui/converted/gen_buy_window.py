@@ -872,8 +872,8 @@ class Ui_Form(object):
 "    border: 1px solid blue;\n"
 "    border-top-right-radius: 20px;\n"
 "    border-top-left-radius: 40px;\n"
-"    border-bottom-right-radius: 40px;\n"
-"    border-bottom-left-radius: 11px;\n"
+"    border-bottom-right-radius: 35px;\n"
+"    border-bottom-left-radius: 10px;\n"
 "\n"
 "}")
         self.frame_22.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -1058,8 +1058,8 @@ class Ui_Form(object):
 "    border: 1px solid blue;\n"
 "    border-top-right-radius: 20px;\n"
 "    border-top-left-radius: 40px;\n"
-"    border-bottom-right-radius: 40px;\n"
-"    border-bottom-left-radius: 11px;\n"
+"    border-bottom-right-radius: 35px;\n"
+"    border-bottom-left-radius: 10px;\n"
 "\n"
 "}")
         self.frame_23.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -1144,8 +1144,8 @@ class Ui_Form(object):
 "            background-color: rgb(245, 245, 245);\n"
 "            border-top-right-radius: 20px;\n"
 "            border-top-left-radius: 20px;\n"
-"            border-bottom-right-radius: 40px;\n"
-"            border-bottom-left-radius: 40px;\n"
+"            border-bottom-right-radius: 35px;\n"
+"            border-bottom-left-radius: 35px;\n"
 "            border: 1px solid blue;\n"
 "}")
         self.frame_10.setFrameShape(QtWidgets.QFrame.NoFrame)
@@ -2002,8 +2002,8 @@ class Ui_Form(object):
 "    border: 1px solid blue;\n"
 "border-top-right-radius: 40px;\n"
 "border-top-left-radius: 20px;\n"
-"border-bottom-right-radius: 11px;\n"
-"border-bottom-left-radius: 40px;\n"
+"border-bottom-right-radius: 10px;\n"
+"border-bottom-left-radius: 35px;\n"
 "}")
         self.frame_15.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_15.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -2125,8 +2125,8 @@ class Ui_Form(object):
 "    border: 1px solid blue;\n"
 "    border-top-right-radius: 20px;\n"
 "    border-top-left-radius: 40px;\n"
-"    border-bottom-right-radius: 40px;\n"
-"    border-bottom-left-radius: 11px;\n"
+"    border-bottom-right-radius: 35px;\n"
+"    border-bottom-left-radius: 10px;\n"
 "\n"
 "}")
         self.frame_14.setFrameShape(QtWidgets.QFrame.NoFrame)
@@ -2226,8 +2226,8 @@ class Ui_Form(object):
 "    border: 1px solid blue;\n"
 "border-top-right-radius: 40px;\n"
 "border-top-left-radius: 20px;\n"
-"border-bottom-right-radius: 11px;\n"
-"border-bottom-left-radius: 40px;\n"
+"border-bottom-right-radius: 10px;\n"
+"border-bottom-left-radius: 35px;\n"
 "\n"
 "}")
         self.frame_16.setFrameShape(QtWidgets.QFrame.NoFrame)

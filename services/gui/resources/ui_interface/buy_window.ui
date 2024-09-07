@@ -1847,8 +1847,8 @@ background-color: rgb(134, 136, 138);
 	border: 1px solid blue;
 	border-top-right-radius: 20px;
 	border-top-left-radius: 40px;
-	border-bottom-right-radius: 40px;
-	border-bottom-left-radius: 11px;
+	border-bottom-right-radius: 35px;
+	border-bottom-left-radius: 10px;
 
 }</string>
                   </property>
@@ -2236,8 +2236,8 @@ QPushButton:disabled {
 	border: 1px solid blue;
 	border-top-right-radius: 20px;
 	border-top-left-radius: 40px;
-	border-bottom-right-radius: 40px;
-	border-bottom-left-radius: 11px;
+	border-bottom-right-radius: 35px;
+	border-bottom-left-radius: 10px;
 
 }</string>
                   </property>
@@ -2431,8 +2431,8 @@ border-bottom-left-radius: 10px;
             background-color: rgb(245, 245, 245);
 			border-top-right-radius: 20px;
 			border-top-left-radius: 20px;
-			border-bottom-right-radius: 40px;
-			border-bottom-left-radius: 40px;
+			border-bottom-right-radius: 35px;
+			border-bottom-left-radius: 35px;
             border: 1px solid blue;
 }</string>
                  </property>
@@ -4364,8 +4364,8 @@ border-bottom-left-radius: 10px;
 	border: 1px solid blue;
 border-top-right-radius: 40px;
 border-top-left-radius: 20px;
-border-bottom-right-radius: 11px;
-border-bottom-left-radius: 40px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 35px;
 }</string>
                   </property>
                   <property name="frameShape">
@@ -4653,8 +4653,8 @@ border-bottom-left-radius: 20px;
 	border: 1px solid blue;
 	border-top-right-radius: 20px;
 	border-top-left-radius: 40px;
-	border-bottom-right-radius: 40px;
-	border-bottom-left-radius: 11px;
+	border-bottom-right-radius: 35px;
+	border-bottom-left-radius: 10px;
 
 }</string>
                   </property>
@@ -4890,8 +4890,8 @@ border-bottom-left-radius: 20px;
 	border: 1px solid blue;
 border-top-right-radius: 40px;
 border-top-left-radius: 20px;
-border-bottom-right-radius: 11px;
-border-bottom-left-radius: 40px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 35px;
 
 }</string>
                   </property>
