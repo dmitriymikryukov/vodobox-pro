@@ -1848,7 +1848,7 @@ background-color: rgb(134, 136, 138);
 	border-top-right-radius: 20px;
 	border-top-left-radius: 40px;
 	border-bottom-right-radius: 35px;
-	border-bottom-left-radius: 10px;
+	border-bottom-left-radius: 20px;
 
 }</string>
                   </property>
@@ -1936,7 +1936,7 @@ background-color: rgb(134, 136, 138);
 border-top-right-radius: 10px;
 border-top-left-radius: 25px;
 border-bottom-right-radius: 35px;
-border-bottom-left-radius: 10px;
+border-bottom-left-radius: 20px;
 
 }</string>
                      </property>
@@ -2237,7 +2237,7 @@ QPushButton:disabled {
 	border-top-right-radius: 20px;
 	border-top-left-radius: 40px;
 	border-bottom-right-radius: 35px;
-	border-bottom-left-radius: 10px;
+	border-bottom-left-radius: 20px;
 
 }</string>
                   </property>
@@ -2325,7 +2325,7 @@ QPushButton:disabled {
 border-top-right-radius: 10px;
 border-top-left-radius: 25px;
 border-bottom-right-radius: 35px;
-border-bottom-left-radius: 10px;
+border-bottom-left-radius: 20px;
 
 }</string>
                      </property>
@@ -4364,7 +4364,7 @@ border-bottom-left-radius: 10px;
 	border: 1px solid blue;
 border-top-right-radius: 40px;
 border-top-left-radius: 20px;
-border-bottom-right-radius: 10px;
+border-bottom-right-radius: 20px;
 border-bottom-left-radius: 35px;
 }</string>
                   </property>
@@ -4456,7 +4456,7 @@ border-bottom-left-radius: 35px;
 	color: white;
 border-top-right-radius: 25px;
 border-top-left-radius: 10px;
-border-bottom-right-radius: 10px;
+border-bottom-right-radius: 20px;
 border-bottom-left-radius: 35px;
 }</string>
                      </property>
@@ -4654,7 +4654,7 @@ border-bottom-left-radius: 20px;
 	border-top-right-radius: 20px;
 	border-top-left-radius: 40px;
 	border-bottom-right-radius: 35px;
-	border-bottom-left-radius: 10px;
+	border-bottom-left-radius: 20px;
 
 }</string>
                   </property>
@@ -4755,7 +4755,7 @@ border-bottom-left-radius: 20px;
 border-top-right-radius: 10px;
 border-top-left-radius: 25px;
 border-bottom-right-radius: 35px;
-border-bottom-left-radius: 10px;
+border-bottom-left-radius: 20px;
 }</string>
                      </property>
                      <property name="text">
@@ -4890,7 +4890,7 @@ border-bottom-left-radius: 20px;
 	border: 1px solid blue;
 border-top-right-radius: 40px;
 border-top-left-radius: 20px;
-border-bottom-right-radius: 10px;
+border-bottom-right-radius: 20px;
 border-bottom-left-radius: 35px;
 
 }</string>
@@ -4985,7 +4985,7 @@ border-bottom-left-radius: 35px;
 	color: white;
 border-top-right-radius: 25px;
 border-top-left-radius: 10px;
-border-bottom-right-radius: 10px;
+border-bottom-right-radius: 20px;
 border-bottom-left-radius: 35px;
 }</string>
                      </property>
