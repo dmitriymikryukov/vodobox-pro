@@ -7,7 +7,6 @@ import os
 
 class WaterBottleWidget(QWidget):
     progress_changed = pyqtSignal(int)
-    filling_finished = pyqtSignal()
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -47,8 +46,6 @@ class WaterBottleWidget(QWidget):
             if 0 <= value <= 100:
                 self._progress = value
                 self.progress_changed.emit(self.progress)
-                if self.progress == 100:
-                    self.filling_finished.emit()
                 self.update()
         # TODO объект пытается обновить себя, хотя уже удален (возникает при принудительном завершении налива)
         except RuntimeError:
