@@ -65,7 +65,7 @@ double Fcnt=0;
 int hold=0;
 int rst=0;
 double current_pulse_vol=5.0;
-double flow_table[10][2]={{1000000,10.00},{10000,18.00},{0,0}};
+double flow_table[10][2]={{1000000,6.00},{10000,9.00},{0,0}};
 unsigned long period=0;
 
 void calibrate(unsigned long delta){
