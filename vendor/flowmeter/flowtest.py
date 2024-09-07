@@ -1,6 +1,6 @@
 import subprocess,signal,os
 
-def detach_procesGroup():
+def detach_processGroup():
     os.setpgrp()
 
 def merge_pipes(**named_pipes):
