@@ -63,8 +63,13 @@ def flow(vol,pls):
     #	logging.warning('2CAN SAYS: %s'%line)
     trans = dict()
     ow = False
+    ln=9
     for name, line in merge_pipes(out=p.stdout, err=p.stderr):
         print("FLOW SAYS: %s:%s"%(name,line))
+        nl+=1
+        if nl>10:
+            print("DEMO KILLING")
+            p.send_signal(signal.SIGINT)
 
     status = p.wait()
 
