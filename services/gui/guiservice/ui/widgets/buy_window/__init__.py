@@ -307,7 +307,7 @@ class BuyWindow(QWidget):
         Переключение на темную тему
         """
         # set dark stylesheets
-        dark_stylesheet = 'color: white; background-color: rgb(42, 48, 58); border: 1px solid #C0C0BF;'
+        dark_stylesheet = 'color: white; background-color: rgb(46, 62, 77); border: 1px solid #C0C0BF;'
         self.ui.frame.setStyleSheet('#frame{background-color: black;}')
 
         # set frame and btn to dark mode with curves turn to left
