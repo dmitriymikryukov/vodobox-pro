@@ -226,8 +226,10 @@ int main (int argc, char **argv)
             frq=Fcnt/Fdt;frq*=1000.0;
         }else{
             frq=0;
+            Fdt=0;
         }
-        rst=1;hold=0;
+        rst=1;
+        hold=0;
         printf("\r%05dml %03.1fHz PV:%03.3f per:%08lums     ",(int)pc,frq,current_pulse_vol,period);
         fflush(stdout);
         if (frq<=1.0 || pc<50.0){
