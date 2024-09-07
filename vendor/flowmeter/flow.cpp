@@ -73,24 +73,21 @@ void calibrate(unsigned long delta){
     current_pulse_vol=flow_table[9][1];
     for (int i=0;i<10;i++){
         if (flow_table[i][0]){
-            if ((delta>=flow_table[i][0] && i==0) || delta==flow_table[i][0]){
-                current_pulse_vol=flow_table[i][1];
-                break;
-            }else if(!flow_table[i+1][0]){
-                current_pulse_vol=flow_table[i][1];
-                break;
-            }else if(delta==flow_table[i+1][0]){
-                current_pulse_vol=flow_table[i+1][1];                
-                break;
-            }else if(delta>flow_table[i+1][0]){
-                double dp=flow_table[i][0]-flow_table[i+1][0];
-                double dV=flow_table[i+1][1]-flow_table[i][1];
-                double d=delta-flow_table[i+1][0];
-                double c=d/dp;
-                current_pulse_vol=c*dV+flow_table[i][1];
+            if (delta>=flow_table[i]){
+                if (i>0){
+                    double dp=flow_table[i-1][0]-flow_table[i][0];
+                    double dV=flow_table[i][1]-flow_table[i-1][1];
+                    double d=delta-flow_table[i][0];
+                    double k=d/dp;
+                    current_pulse_vol=k*dV+flow_table[i][1];
+                }else{
+                    current_pulse_vol=flow_table[i][1];                    
+                }
             }
         }else{
-            current_pulse_vol=flow_table[i-1][1];
+            if (i>0){
+                current_pulse_vol=flow_table[i-1][1];
+            }
             break;
         }
     }
@@ -235,6 +232,7 @@ int main (int argc, char **argv)
         if (frq<=1.0 || pc<50.0){
             failc++;
             if ((_count-pc)<ncal && ncal>=0){
+                printf("\nEND\n")
                 break;
             }
             if (failc>((pc<50.0)?40:10)){
