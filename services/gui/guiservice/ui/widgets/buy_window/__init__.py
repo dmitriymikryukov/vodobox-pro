@@ -270,10 +270,10 @@ class BuyWindow(QWidget):
         stylesheet = f'''
         background-color: rgb({col.red()}, {col.green()}, {col.blue()});
         border: 1px solid blue;
-        border-top-right-radius: 40px;
+        border-top-right-radius: 35px;
         border-bottom-right-radius: 20px;
         border-top-left-radius: 20px;
-        border-bottom-left-radius: 40px;
+        border-bottom-left-radius: 35px;
         '''
         self.ui.confirm_btn.setStyleSheet(stylesheet)
         self._confirm_btn_color = col
@@ -315,7 +315,7 @@ class BuyWindow(QWidget):
         #{wgt.objectName()} {{
             {dark_stylesheet}
             border-top-right-radius: 20px;
-            border-top-left-radius: 40px;
+            border-top-left-radius: 35px;
             border-bottom-right-radius: 35px;
             border-bottom-left-radius: 20px;
         }}
@@ -328,7 +328,7 @@ class BuyWindow(QWidget):
         [wgt.setStyleSheet(f'''
         #{wgt.objectName()} {{
             {dark_stylesheet}
-            border-top-right-radius: 40px;
+            border-top-right-radius: 35px;
             border-bottom-right-radius: 20px;
             border-top-left-radius: 20px;
             border-bottom-left-radius: 35px;

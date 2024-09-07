@@ -82,10 +82,10 @@ class Ui_Form(object):
         self.start_pouring_btn.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 128, 0);\n"
 "border: 1px solid black;\n"
-"border-top-right-radius: 40px;\n"
+"border-top-right-radius: 35px;\n"
 "border-top-left-radius: 20px;\n"
 "border-bottom-right-radius: 20px;\n"
-"border-bottom-left-radius: 40px;\n"
+"border-bottom-left-radius: 35px;\n"
 "\n"
 "")
         self.start_pouring_btn.setObjectName("start_pouring_btn")
@@ -114,10 +114,10 @@ class Ui_Form(object):
         self.give_plug_btn.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 128, 0);\n"
 "border: 1px solid black;\n"
-"border-top-right-radius: 40px;\n"
+"border-top-right-radius: 35px;\n"
 "border-top-left-radius: 20px;\n"
 "border-bottom-right-radius: 20px;\n"
-"border-bottom-left-radius: 40px;\n"
+"border-bottom-left-radius: 35px;\n"
 "\n"
 "")
         self.give_plug_btn.setObjectName("give_plug_btn")
@@ -146,10 +146,10 @@ class Ui_Form(object):
         self.give_container_btn.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 128, 0);\n"
 "border: 1px solid black;\n"
-"border-top-right-radius: 40px;\n"
+"border-top-right-radius: 35px;\n"
 "border-top-left-radius: 20px;\n"
 "border-bottom-right-radius: 20px;\n"
-"border-bottom-left-radius: 40px;\n"
+"border-bottom-left-radius: 35px;\n"
 "")
         self.give_container_btn.setObjectName("give_container_btn")
         self.verticalLayout_88.addWidget(self.give_container_btn)
@@ -176,10 +176,10 @@ class Ui_Form(object):
         self.give_loyal_card_btn.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 128, 0);\n"
 "border: 1px solid black;\n"
-"border-top-right-radius: 40px;\n"
+"border-top-right-radius: 35px;\n"
 "border-top-left-radius: 20px;\n"
 "border-bottom-right-radius: 20px;\n"
-"border-bottom-left-radius: 40px;\n"
+"border-bottom-left-radius: 35px;\n"
 "\n"
 "")
         self.give_loyal_card_btn.setObjectName("give_loyal_card_btn")
@@ -215,10 +215,10 @@ class Ui_Form(object):
         self.testing_failed_payment_btn.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(255, 0, 0);\n"
 "border: 1px solid black;\n"
-"border-top-right-radius: 40px;\n"
+"border-top-right-radius: 35px;\n"
 "border-top-left-radius: 20px;\n"
 "border-bottom-right-radius: 20px;\n"
-"border-bottom-left-radius: 40px;\n"
+"border-bottom-left-radius: 35px;\n"
 "")
         self.testing_failed_payment_btn.setObjectName("testing_failed_payment_btn")
         self.verticalLayout_85.addWidget(self.testing_failed_payment_btn)
@@ -246,10 +246,10 @@ class Ui_Form(object):
         self.continue_btn.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 128, 0);\n"
 "border: 1px solid black;\n"
-"border-top-right-radius: 40px;\n"
+"border-top-right-radius: 35px;\n"
 "border-top-left-radius: 20px;\n"
 "border-bottom-right-radius: 20px;\n"
-"border-bottom-left-radius: 40px;\n"
+"border-bottom-left-radius: 35px;\n"
 "\n"
 "")
         self.continue_btn.setObjectName("continue_btn")
@@ -278,10 +278,10 @@ class Ui_Form(object):
         self.continue_without_change_btn.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 128, 0);\n"
 "border: 1px solid black;\n"
-"border-top-right-radius: 40px;\n"
+"border-top-right-radius: 35px;\n"
 "border-top-left-radius: 20px;\n"
 "border-bottom-right-radius: 20px;\n"
-"border-bottom-left-radius: 40px;\n"
+"border-bottom-left-radius: 35px;\n"
 "")
         self.continue_without_change_btn.setObjectName("continue_without_change_btn")
         self.verticalLayout_93.addWidget(self.continue_without_change_btn)
@@ -308,10 +308,10 @@ class Ui_Form(object):
         self.stop_btn.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(255, 0, 0);\n"
 "border: 1px solid black;\n"
-"border-top-right-radius: 40px;\n"
+"border-top-right-radius: 35px;\n"
 "border-top-left-radius: 20px;\n"
 "border-bottom-right-radius: 20px;\n"
-"border-bottom-left-radius: 40px;\n"
+"border-bottom-left-radius: 35px;\n"
 "\n"
 "")
         self.stop_btn.setObjectName("stop_btn")
@@ -530,8 +530,8 @@ class Ui_Form(object):
 "background-color: rgb(255, 0, 0);\n"
 "border: 1px solid black;\n"
 "border-top-right-radius: 20px;\n"
-"border-top-left-radius: 40px;\n"
-"border-bottom-right-radius: 40px;\n"
+"border-top-left-radius: 35px;\n"
+"border-bottom-right-radius: 35px;\n"
 "border-bottom-left-radius: 20px;\n"
 "")
         self.terminate_session_btn.setObjectName("terminate_session_btn")
@@ -561,8 +561,8 @@ class Ui_Form(object):
 "background-color: rgb(255, 0, 0);\n"
 "border: 1px solid black;\n"
 "border-top-right-radius: 20px;\n"
-"border-top-left-radius: 40px;\n"
-"border-bottom-right-radius: 40px;\n"
+"border-top-left-radius: 35px;\n"
+"border-bottom-right-radius: 35px;\n"
 "border-bottom-left-radius: 20px;")
         self.terminate_pouring_btn.setObjectName("terminate_pouring_btn")
         self.verticalLayout_89.addWidget(self.terminate_pouring_btn)
@@ -586,8 +586,8 @@ class Ui_Form(object):
 "    background-color: rgb(193, 107, 24);\n"
 "    border: 1px solid green;\n"
 "border-top-right-radius: 20px;\n"
-"border-top-left-radius: 40px;\n"
-"border-bottom-right-radius: 40px;\n"
+"border-top-left-radius: 35px;\n"
+"border-bottom-right-radius: 35px;\n"
 "border-bottom-left-radius: 20px;\n"
 "\n"
 "}")
@@ -613,8 +613,8 @@ class Ui_Form(object):
 "    background-color: rgb(193, 107, 24);\n"
 "    border: 1px solid green;\n"
 "border-top-right-radius: 20px;\n"
-"border-top-left-radius: 40px;\n"
-"border-bottom-right-radius: 40px;\n"
+"border-top-left-radius: 35px;\n"
+"border-bottom-right-radius: 35px;\n"
 "border-bottom-left-radius: 20px;\n"
 "\n"
 "}")
@@ -644,8 +644,8 @@ class Ui_Form(object):
 "background-color: rgb(193, 107, 24);\n"
 "border: 1px solid blue;\n"
 "border-top-right-radius: 20px;\n"
-"border-top-left-radius: 40px;\n"
-"border-bottom-right-radius: 40px;\n"
+"border-top-left-radius: 35px;\n"
+"border-bottom-right-radius: 35px;\n"
 "border-bottom-left-radius: 20px;\n"
 "")
         self.back_btn.setObjectName("back_btn")
@@ -679,8 +679,8 @@ class Ui_Form(object):
 "background-color: rgb(0, 128, 0);\n"
 "border: 1px solid black;\n"
 "border-top-right-radius: 20px;\n"
-"border-top-left-radius: 40px;\n"
-"border-bottom-right-radius: 40px;\n"
+"border-top-left-radius: 35px;\n"
+"border-bottom-right-radius: 35px;\n"
 "border-bottom-left-radius: 20px;\n"
 "}\n"
 "\n"
@@ -852,8 +852,8 @@ class Ui_Form(object):
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
 "    border-top-right-radius: 20px;\n"
-"    border-bottom-right-radius: 40px;\n"
-"    border-top-left-radius: 40px;\n"
+"    border-bottom-right-radius: 35px;\n"
+"    border-top-left-radius: 35px;\n"
 "    border-bottom-left-radius: 20px;\n"
 "\n"
 "}")
@@ -871,7 +871,7 @@ class Ui_Form(object):
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
 "    border-top-right-radius: 20px;\n"
-"    border-top-left-radius: 40px;\n"
+"    border-top-left-radius: 35px;\n"
 "    border-bottom-right-radius: 35px;\n"
 "    border-bottom-left-radius: 20px;\n"
 "\n"
@@ -2071,10 +2071,10 @@ class Ui_Form(object):
         self.cash_or_loyal_card_btn.setStyleSheet("QPushButton {\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"border-top-right-radius: 40px;\n"
+"border-top-right-radius: 35px;\n"
 "border-top-left-radius: 20px;\n"
 "border-bottom-right-radius: 20px;\n"
-"border-bottom-left-radius: 40px;\n"
+"border-bottom-left-radius: 35px;\n"
 "}")
         self.cash_or_loyal_card_btn.setObjectName("cash_or_loyal_card_btn")
         self.verticalLayout_24.addWidget(self.cash_or_loyal_card_btn)
@@ -2103,8 +2103,8 @@ class Ui_Form(object):
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
 "border-top-right-radius: 20px;\n"
-"border-top-left-radius: 40px;\n"
-"border-bottom-right-radius: 40px;\n"
+"border-top-left-radius: 35px;\n"
+"border-bottom-right-radius: 35px;\n"
 "border-bottom-left-radius: 20px;\n"
 "\n"
 "}")
@@ -2124,7 +2124,7 @@ class Ui_Form(object):
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
 "    border-top-right-radius: 20px;\n"
-"    border-top-left-radius: 40px;\n"
+"    border-top-left-radius: 35px;\n"
 "    border-bottom-right-radius: 35px;\n"
 "    border-bottom-left-radius: 20px;\n"
 "\n"
@@ -2195,8 +2195,8 @@ class Ui_Form(object):
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid green;\n"
 "border-top-right-radius: 20px;\n"
-"border-top-left-radius: 40px;\n"
-"border-bottom-right-radius: 40px;\n"
+"border-top-left-radius: 35px;\n"
+"border-bottom-right-radius: 35px;\n"
 "border-bottom-left-radius: 20px;\n"
 "\n"
 "}")
@@ -2224,7 +2224,7 @@ class Ui_Form(object):
         self.frame_16.setStyleSheet("#frame_16 {\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"border-top-right-radius: 40px;\n"
+"border-top-right-radius: 35px;\n"
 "border-top-left-radius: 20px;\n"
 "border-bottom-right-radius: 20px;\n"
 "border-bottom-left-radius: 35px;\n"
@@ -2298,10 +2298,10 @@ class Ui_Form(object):
         self.bank_card_btn.setStyleSheet("QPushButton {\n"
 "    background-color: rgb(245, 245, 245);\n"
 "    border: 1px solid blue;\n"
-"border-top-right-radius: 40px;\n"
+"border-top-right-radius: 35px;\n"
 "border-top-left-radius: 20px;\n"
 "border-bottom-right-radius: 20px;\n"
-"border-bottom-left-radius: 40px;\n"
+"border-bottom-left-radius: 35px;\n"
 "}")
         self.bank_card_btn.setObjectName("bank_card_btn")
         self.verticalLayout_26.addWidget(self.bank_card_btn)
