@@ -112,6 +112,7 @@ class MainWindow(QMainWindow):
             app.sgn_gui.info('Buy Window пересоздано')
             self.windows_stack_widget.removeWidget(self.buy_window)
             QCoreApplication.instance().sendPostedEvents(self.buy_window, QEvent.DeferredDelete)
+            self.buy_window.animation_group.stop()
             self.buy_window.deleteLater()
             self.buy_window = BuyWindow()
             app.sgn_gui.current_window = self.buy_window
