@@ -1,3 +1,5 @@
+import subprocess
+
 def merge_pipes(**named_pipes):
     import threading, Queue as queue
     # Constants. Could also be placed outside of the method. I just put them here
