@@ -235,7 +235,7 @@ class BuyWindow(QWidget):
 
         self.bottle_progress_bar_widget.progress_changed.connect(self.update_remaining_price_for_water)
         self.filling_finished.connect(self.hide_continue_and_stop_filling_btn)
-        self.filling_finished.connect(self.show_start_pouring_btn)
+        self.filling_finished.connect(self.render_after_filling_finished)
 
         self.container_taken.connect(self.collect_the_order)
         self.plug_taken.connect(self.collect_the_order)
@@ -527,10 +527,11 @@ class BuyWindow(QWidget):
             self.ui.stop_page if self.is_pouring_running else self.ui.continue_page
         )
 
-    def show_start_pouring_btn(self) -> None:
+    def render_after_filling_finished(self) -> None:
         if self._chosen_products:
             self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.start_pouring_page)
         else:
+
             self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.empty_bottom_left_page)
 
     def hide_continue_and_stop_filling_btn(self) -> None:
@@ -604,7 +605,8 @@ class BuyWindow(QWidget):
         lbl[0] = str(round(self.TOTAL_PRICE - water_summary_price * progress_percentage, 2))
         self.ui.top_payment_summary_price_lbl.setText(' '.join(lbl))
 
-        if self.bottle_progress_bar_widget.progress == 1:
+        app.sgn_gui.info(f'progress: {self.bottle_progress_bar_widget.progress}')
+        if self.bottle_progress_bar_widget.progress == 100:
             self.filling_finished.emit()
 
     def switch_on_success_payment_window(self) -> None:
