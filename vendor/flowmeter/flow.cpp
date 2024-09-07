@@ -110,7 +110,7 @@ void pulse(){
                 rst=0;
             }
             Fdt+=delta;
-            Fcnt+=current_pulse_vol;
+            Fcnt+=1;
         }
     }
     //printf("*");
@@ -215,7 +215,7 @@ int main (int argc, char **argv)
     //int xpc=0;
     //int frq;
     int failc=0;
-    int ncal=-1;
+    double ncal=-1;
     while (pc<count) {
         delay(200);
         //frq=pc-xpc;xpc=pc;
@@ -230,12 +230,12 @@ int main (int argc, char **argv)
         rst=1;hold=0;
         printf("\r%05dml %03.1fHz PV:%03.3f per:%08lums     ",(int)pc,frq,current_pulse_vol,period);
         fflush(stdout);
-        if (frq<=1 || pc<15){
+        if (frq<=1 || pc<(15*current_pulse_vol)){
             failc++;
             if ((_count-pc)<ncal && ncal>=0){
                 break;
             }
-            if (failc>((pc<50)?40:10)){
+            if (failc>((pc<(50*current_pulse_vol))?(40*current_pulse_vol):(10*current_pulse_vol))){
                 printf("\nTIMEOUT\n");
                 break;
             }
@@ -245,7 +245,7 @@ int main (int argc, char **argv)
         if (pc>=_count && ncal<0){
             delay(600);
             ncal=extra;
-            printf(" Extra: %dml\n",ncal);
+            printf(" Extra: %.1fml\n",ncal);
             extra=0;
             _count=count-ncal;
             pc+=ncal;
