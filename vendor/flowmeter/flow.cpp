@@ -232,7 +232,7 @@ int main (int argc, char **argv)
         if (frq<=1.0 || pc<50.0){
             failc++;
             if ((_count-pc)<ncal && ncal>=0){
-                printf("\nEND\n")
+                printf("\nEND\n");
                 break;
             }
             if (failc>((pc<50.0)?40:10)){
