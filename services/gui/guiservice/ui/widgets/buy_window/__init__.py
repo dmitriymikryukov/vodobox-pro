@@ -288,13 +288,13 @@ class BuyWindow(QWidget):
 
         self.first_animation.setDuration(2000)
         self.first_animation.setEasingCurve(QEasingCurve.InOutCubic)
-        self.first_animation.setStartValue(QColor(18, 18, 252))
-        self.first_animation.setEndValue(QColor(245, 245, 245))
+        self.first_animation.setStartValue(QColor(245, 245, 245))
+        self.first_animation.setEndValue(QColor(18, 18, 252))
 
         self.second_animation.setDuration(2000)
         self.second_animation.setEasingCurve(QEasingCurve.InOutCubic)
-        self.second_animation.setStartValue(QColor(245, 245, 245))
-        self.second_animation.setEndValue(QColor(18, 18, 252))
+        self.second_animation.setStartValue(QColor(18, 18, 252))
+        self.second_animation.setEndValue(QColor(245, 245, 245))
 
         self.animation_group.addAnimation(self.first_animation)
         self.animation_group.addAnimation(self.second_animation)
