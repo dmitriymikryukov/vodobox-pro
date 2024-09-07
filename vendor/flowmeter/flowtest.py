@@ -52,25 +52,22 @@ def flow(vol,pls):
     cmd = './flow %d %.5f' % (vol,pls)
     p = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE,
                          universal_newlines=True)
-    # while True:
-    #	out = p.stderr.readline()
-    #	if out == '' and p.poll() != None:
-    #		break
-    #	if out != '':
-    #		out=out.decode('utf8')
-    #		logging.warning(u'GOT LINE: %s'%out)
-    # for line in p.stderr:
-    #	logging.warning('2CAN SAYS: %s'%line)
-    trans = dict()
-    ow = False
-    ln=9
-    for name, line in merge_pipes(out=p.stdout, err=p.stderr):
-        print("FLOW SAYS: %s:%s"%(name,line))
-        nl+=1
-        if nl>10:
-            print("DEMO KILLING")
-            p.send_signal(signal.SIGINT)
+    try:
+        trans = dict()
+        ow = False
+        nl=0
+        for name, line in merge_pipes(out=p.stdout, err=p.stderr):
+            print("FLOW SAYS: %s:%s"%(name,line))
+            nl+=1
+            if nl>10:
+                print("DEMO KILLING")
+                p.send_signal(signal.SIGINT)
 
-    status = p.wait()
+        status = p.wait()
+    finally:
+        try:
+            p.send_signal(signal.SIGINT)
+        except:
+            p.send_signal(signal.SIGKILL)            
 
 flow(5000,12.075)
