@@ -65,7 +65,7 @@ double Fcnt=0;
 int hold=0;
 int rst=0;
 double current_pulse_vol=5.0;
-double flow_table[10][2]={{500,6.00},{200,6.00},{0,0}};
+double flow_table[10][2]={{500,5.80},{200,6.00},{0,0}};
 unsigned long period=0;
 
 void calibrate(unsigned long delta){
@@ -181,16 +181,33 @@ int main (int argc, char **argv)
         exit(1);
     }
 
+    float nom_ml_per_pls=12.0;
+    float nom_flow=125.0;
     if (argc>1){
         count=(double)atoi(argv[1]);
         if (count<5){
             pizda("Too less ml required");
+        }
+        if (argc>2){
+            nom_ml_per_pls=atof(argv[2]);
+            if (argc>3){
+                nom_flow=atof(argv[3]);
+            }
         }
     }else{
         pizda("Too less arguments");
     }
     _count=(count<80)?count:50;
 
+    //6-500-200
+    //12-1000-400
+    double k=nom_flow/125.0;
+    double k2=nom_ml_per_pls/12.0;
+    for (int i=0;i<10;i++){
+        flow_table[i][0]*=k;
+        flow_table[i][1]*=k2;
+    }
+    printf("NFLOW: %.3fml/s %.3fml/pulse k1:%.3f k2:%.3f\n",nom_flow,nom_ml_per_pls,k,k2);
 
     pinMode( PUMP_PIN, OUTPUT );
     digitalWrite( PUMP_PIN,  LOW );
