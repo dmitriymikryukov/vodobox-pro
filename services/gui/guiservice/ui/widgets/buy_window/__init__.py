@@ -8,8 +8,8 @@ from ui.widgets.buy_window.handlers import FlowHandler
 from ui.converted.gen_buy_window import Ui_Form
 from PyQt5.QtGui import QPixmap, QFont
 from ui import app
-import os
 import time
+import os
 
 
 class BuyWindow(QWidget):
@@ -600,10 +600,11 @@ class BuyWindow(QWidget):
         lbl = self.ui.top_payment_summary_price_lbl.text().split()
         water_summary_price = self._chosen_products[0].price if self._chosen_products else self.TOTAL_PRICE
         progress_percentage /= 100
+
         lbl[0] = str(round(self.TOTAL_PRICE - water_summary_price * progress_percentage, 2))
         self.ui.top_payment_summary_price_lbl.setText(' '.join(lbl))
 
-        if self.bottle_progress_bar_widget.progress == 100:
+        if self.bottle_progress_bar_widget.progress == 1:
             self.filling_finished.emit()
 
     def switch_on_success_payment_window(self) -> None:
