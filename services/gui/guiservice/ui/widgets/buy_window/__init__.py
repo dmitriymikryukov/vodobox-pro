@@ -219,14 +219,14 @@ class BuyWindow(QWidget):
         Инициализация сигналов по наливу:
         (начать налив, остановить или продолжить налив, завершить налив)
         """
-        self.ui.stop_btn.clicked.connect()
-        self.ui.continue_btn.clicked.connect()
+        # self.ui.stop_btn.clicked.connect()
+        # self.ui.continue_btn.clicked.connect()
 
         self.ui.terminate_session_btn.clicked.connect(lambda: app.sgn_gui.EndSession() if app.sgn_gui['session']['started'] else None)
         self.ui.terminate_session_btn.clicked.connect(self.buy_window_closed.emit)
         self.ui.terminate_pouring_btn.clicked.connect(lambda: app.sgn_gui.AcknowlegeAmount(self.TOTAL_PRICE * 100))
         self.ui.terminate_pouring_btn.clicked.connect(self.collect_the_order)
-        self.ui.terminate_pouring_btn.clicked.connect()
+        # self.ui.terminate_pouring_btn.clicked.connect()
         self.ui.start_pouring_btn.clicked.connect(self.collect_the_order)
 
         # custom signals
