@@ -65,7 +65,7 @@ double Fcnt=0;
 int hold=0;
 int rst=0;
 double current_pulse_vol=5.0;
-double flow_table[10][2]={{500,5.00},{200,6.00},{0,0}};
+double flow_table[10][2]={{500,5.80},{200,6.00},{0,0}};
 unsigned long period=0;
 
 void calibrate(unsigned long delta){
@@ -115,6 +115,7 @@ void pulse(){
     }
     //printf("*");
     if (pc>=_count){
+        Fdt=0;Fcnt=0;
         extra+=current_pulse_vol;
         digitalWrite( PUMP_PIN,  LOW );
         digitalWrite( VALVE_PIN,  LOW );        
@@ -234,6 +235,7 @@ int main (int argc, char **argv)
         fflush(stdout);
         if (frq<=1.0 || pc<50.0){
             failc++;
+            printf("\nfailc %d\n",failc);
             if (((_count-pc)<ncal || !digitalRead(VALVE_PIN)) && ncal>=0){
                 printf("\nEND\n");
                 break;
