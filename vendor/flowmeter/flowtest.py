@@ -1,4 +1,7 @@
-import subprocess,signal
+import subprocess,signal,os
+
+def detach_procesGroup():
+    os.setpgrp()
 
 def merge_pipes(**named_pipes):
     import threading
@@ -51,7 +54,7 @@ def merge_pipes(**named_pipes):
 def flow(vol,pls):
     cmd = './flow %d %.5f' % (vol,pls)
     p = subprocess.Popen(cmd, shell=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE,
-                         universal_newlines=True)
+                         universal_newlines=True, preexec_fn=detach_processGroup)
     try:
         trans = dict()
         ow = False
@@ -61,13 +64,17 @@ def flow(vol,pls):
             nl+=1
             if nl>10:
                 print("DEMO KILLING")
-                p.send_signal(signal.SIGINT)
+                #p.send_signal(signal.SIGINT)
+                os.kill(p.pid,signal.SIGINT)
+                break
 
         status = p.wait()
     finally:
         try:
-            p.send_signal(signal.SIGINT)
+            #p.send_signal(signal.SIGINT)
+            os.kill(p.pid,signal.SIGINT)
         except:
-            p.send_signal(signal.SIGKILL)            
+            os.kill(p.pid,signal.SIGKILL)
+            #p.send_signal(signal.SIGKILL)            
 
 flow(5000,12.075)
