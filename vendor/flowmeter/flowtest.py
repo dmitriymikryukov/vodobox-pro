@@ -1,4 +1,4 @@
-import subprocess
+import subprocess,signal
 
 def merge_pipes(**named_pipes):
     import threading
