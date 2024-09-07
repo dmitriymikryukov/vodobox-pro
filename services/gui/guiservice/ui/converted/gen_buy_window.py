@@ -370,7 +370,7 @@ class Ui_Form(object):
 "border-top-left-radius: 35px;\n"
 "border-bottom-right-radius: 15px;\n"
 "border-bottom-left-radius: 15px;\n"
-"    background-color: rgb(0, 0, 255);\n"
+"    background-color: rgb(0, 105, 180);\n"
 "}")
         self.frame_21.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_21.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -905,7 +905,7 @@ class Ui_Form(object):
         font.setPointSize(26)
         self.plug_ltr_price_lbl.setFont(font)
         self.plug_ltr_price_lbl.setStyleSheet("QLabel {\n"
-"    background-color: rgb(0, 0, 255);\n"
+"    background-color: rgb(0, 105, 180);\n"
 "    border-radius: 17px;\n"
 "    color: white;\n"
 "border-top-right-radius: 10px;\n"
@@ -968,7 +968,7 @@ class Ui_Form(object):
         self.add_more_btn.setFocusPolicy(QtCore.Qt.NoFocus)
         self.add_more_btn.setStyleSheet("QPushButton {\n"
 "    color: white;\n"
-"    background-color: rgb(0, 0, 255);\n"
+"    background-color: rgb(0, 105, 180);\n"
 "    border: 1px solid black;\n"
 "    border-top-right-radius: 40px;\n"
 "    border-bottom-right-radius: 20px;\n"
@@ -1091,7 +1091,7 @@ class Ui_Form(object):
         font.setPointSize(25)
         self.container_ltr_price_lbl.setFont(font)
         self.container_ltr_price_lbl.setStyleSheet("QLabel {\n"
-"    background-color: rgb(0, 0, 255);\n"
+"    background-color: rgb(0, 105, 180);\n"
 "    border-radius: 17px;\n"
 "    color: white;\n"
 "border-top-right-radius: 10px;\n"
@@ -1178,7 +1178,7 @@ class Ui_Form(object):
 "    border-top-left-radius: 0px;\n"
 "    border-bottom-right-radius: 35px;\n"
 "    border-bottom-left-radius:35px;\n"
-"    background-color: rgb(0, 0, 255);\n"
+"    background-color: rgb(0, 105, 180);\n"
 "}")
         self.frame_17.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_17.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -2039,7 +2039,7 @@ class Ui_Form(object):
         font.setPointSize(25)
         self.container_and_water_price_lbl.setFont(font)
         self.container_and_water_price_lbl.setStyleSheet("QLabel {\n"
-"    background-color: rgb(0, 0, 255);\n"
+"    background-color: rgb(0, 105, 180);\n"
 "    color: white;\n"
 "border-top-right-radius: 25px;\n"
 "border-top-left-radius: 10px;\n"
@@ -2164,7 +2164,7 @@ class Ui_Form(object):
         font.setPointSize(25)
         self.loyal_card_price_lbl.setFont(font)
         self.loyal_card_price_lbl.setStyleSheet("QLabel {\n"
-"    background-color: rgb(0, 0, 255);\n"
+"    background-color: rgb(0, 105, 180);\n"
 "    border-radius: 17px;\n"
 "    color: white;\n"
 "border-top-right-radius: 10px;\n"
@@ -2266,7 +2266,7 @@ class Ui_Form(object):
         font.setPointSize(25)
         self.plug_and_water_price_lbl.setFont(font)
         self.plug_and_water_price_lbl.setStyleSheet("QLabel {\n"
-"    background-color: rgb(0, 0, 255);\n"
+"    background-color: rgb(0, 105, 180);\n"
 "    color: white;\n"
 "border-top-right-radius: 25px;\n"
 "border-top-left-radius: 10px;\n"
@@ -2318,7 +2318,7 @@ class Ui_Form(object):
         self.product_price_stack_widget.setCurrentIndex(0)
         self.bottom_right_btn_stack_widget.setCurrentIndex(0)
         self.top_left_stack_widget.setCurrentIndex(1)
-        self.second_top_left_stack_widget.setCurrentIndex(3)
+        self.second_top_left_stack_widget.setCurrentIndex(0)
         self.second_bottom_left_stack.setCurrentIndex(1)
         self.top_payment_hint_stack_widget.setCurrentIndex(0)
         self.top_payment_price_stack_widget.setCurrentIndex(0)
