@@ -65,7 +65,6 @@ def flow(vol,pls):
             for name, line in merge_pipes(out=p.stdout, err=p.stderr):
                 print("FLOW SAYS: %s:%s"%(name,line))
 
-            status = p.wait()
         finally:
             try:
                 #p.send_signal(signal.SIGINT)
@@ -73,9 +72,12 @@ def flow(vol,pls):
             except:
                 os.kill(p.pid,signal.SIGKILL)
                 #p.send_signal(signal.SIGKILL)            
+            status = p.wait()
+            print("DONE: STATUS: %s"%status)
     ppp=threading.Thread(target=xyu,args=[cmd],daemon=True)
     ppp.start()
     time.sleep(5)
+    print("DEMO KILL")
     procc.send_signal(signal.SIGINT)
     #os.kill(p.pid,signal.SIGINT)
     #os.system("kill -SIGINT %s &"%p.pid)
