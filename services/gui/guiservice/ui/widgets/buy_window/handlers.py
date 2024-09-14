@@ -7,7 +7,7 @@ def run_flow(volume_ml, pls):
     global process
     # Запускаем процесс
     process = subprocess.Popen(
-        f'/opt/kiosk/vodobox-pro/vendor/flowmeter/flow {volume_ml} {pls}',
+        ['/opt/kiosk/vodobox-pro/vendor/flowmeter/flow', str(volume_ml), str(pls)],
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         text=True,
