@@ -238,7 +238,7 @@ class BuyWindow(QWidget):
 
         self.ui.give_container_btn.clicked.connect(self.give_product_with_priority)
         self.ui.give_plug_btn.clicked.connect(self.give_product_with_priority)
-        self.ui.give_loyal_card_btn.connect(self.give_product_with_priority)
+        self.ui.give_loyal_card_btn.clicked.connect(self.give_product_with_priority)
 
     def start_session(self):
         if not app.sgn_gui['session']['started']:
