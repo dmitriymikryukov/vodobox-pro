@@ -33,7 +33,7 @@ class FlowHandler(QObject):
                     if output == '' and process.poll() is not None:
                         break
 
-                if output:
+                if output and ('NFLOW' not in output):
                     print(output)
                     nums = re.findall("\d+", output.strip())
                     if nums:
