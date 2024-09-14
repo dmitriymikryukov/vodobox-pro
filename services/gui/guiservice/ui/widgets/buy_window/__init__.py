@@ -526,7 +526,10 @@ class BuyWindow(QWidget):
 
     def update_water_progres(self, current_progress: float):
         self.flowed_liter_count += current_progress
-        self.bottle_progress_bar_widget.progress = (self.flowed_liter_count / self.last_popped_water.liters_count) * 100
+        temp = int((self.flowed_liter_count / self.last_popped_water.liters_count) * 100)
+        self.bottle_progress_bar_widget.progress = temp
+        print(f'temp: {temp}')
+
         # self.bottle_progress_bar_widget.progress = int((current_progress / (self.last_popped_water.liters_count * 1000)) * 100)
         # self.bottle_progress_bar_widget.progress += int(current_progress - (self.last_popped_water.liters_count * self.bottle_progress_bar_widget.progress / 100) / self.last_popped_water.liters_count)
 
