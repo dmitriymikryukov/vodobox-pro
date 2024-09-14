@@ -515,7 +515,7 @@ class BuyWindow(QWidget):
         self.ui.bottom_right_second_stack_widget.setCurrentWidget(self.ui.bottom_right_second_empty_page)
 
     def update_water_progres(self, current_progress: float):
-        self.bottle_progress_bar_widget.progress = (current_progress / (self.last_popped_water.liters_count * 1000)) * 100
+        self.bottle_progress_bar_widget.progress = int((current_progress / (self.last_popped_water.liters_count * 1000)) * 100)
 
     def start_bottle_filling(self) -> None:
         """
@@ -828,7 +828,7 @@ class BuyWindow(QWidget):
         self.ui.second_bottom_left_stack.setCurrentWidget(self.ui.minus_page)
         self.ui.main_stack_widget.setCurrentWidget(self.ui.choose_ltr_display_page)
 
-    def switch_on_water_bottle_window(self, water: Water):
+    def switch_on_water_bottle_window(self):
         """
         Переключение на меню налива воды
         """
@@ -840,7 +840,7 @@ class BuyWindow(QWidget):
         def render_bottom_consumer_info():
             self.ui.choosed_product_stack_widget.setCurrentWidget(self.ui.choosed_water_page)
             text = self.ui.choosed_water_lbl.text().split()
-            text[1] = str(water.liters_count)
+            text[1] = str(self.last_popped_water.liters_count)
             self.ui.choosed_water_lbl.setText(' '.join(text))
 
         self.ui.top_left_stack_widget.setCurrentWidget(self.ui.empty_top_left_page)
