@@ -1,43 +1,45 @@
+from PyQt5.QtCore import pyqtSignal
 import subprocess
+import re
 
 process = None
 
 
-def run_flow(volume_ml, pls):
-    global process
-    # Запускаем процесс
-    process = subprocess.Popen(
-        ['/opt/kiosk/vodobox-pro/vendor/flowmeter/flow', str(volume_ml), str(pls)],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        text=True,
-        bufsize=1,
-        close_fds=True
-    )
+class FlowHandler:
+    liters_changed = pyqtSignal(float)
 
-    # Читаем вывод процесса построчно
-    try:
-        while True:
-            output = process.stdout.readline()
-            if output == '' and process.poll() is not None:
-                break
-            if output:
-                print(f"Вывод: {output.strip()}")
+    def run_flow(self, volume_ml, pls):
+        global process
+        # Запускаем процесс
+        process = subprocess.Popen(
+            ['/opt/kiosk/vodobox-pro/vendor/flowmeter/flow', str(volume_ml), str(pls)],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            bufsize=1,
+            close_fds=True
+        )
 
-        # Получаем ошибки, если есть
-        stderr_output = process.stderr.read()
-        if stderr_output:
-            print(f"Ошибка: {stderr_output.strip()}")
+        # Читаем вывод процесса построчно
+        try:
+            while True:
+                output = process.stdout.readline()
+                if output == '' and process.poll() is not None:
+                    break
+                if output:
+                    self.liters_changed.emit(float(re.findall("\d+", output.strip().split()[0])[0]))
 
-    except KeyboardInterrupt:
-        print("Остановка процесса с использованием ctrl+c...")
-        stop_flow()  # Вызов функции остановки
+            stderr_output = process.stderr.read()
+            if stderr_output:
+                print(f"Ошибка: {stderr_output.strip()}")
 
+        except KeyboardInterrupt:
+            print("Остановка процесса с использованием ctrl+c...")
+            self.stop_flow()
 
-# Функция для остановки процесса
-def stop_flow():
-    global process
-    if process:
-        process.terminate()
-        process.wait()
-        process = None
+    def stop_flow(self):
+        global process
+        if process:
+            process.terminate()
+            process.wait()
+            process = None

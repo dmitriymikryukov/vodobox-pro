@@ -4,7 +4,7 @@ from ui.widgets.buy_window.graphics import WaterBottleWidget
 from PyQt5.Qt import QPropertyAnimation, QColor, pyqtProperty
 from PyQt5.QtWidgets import QWidget, QButtonGroup, QLabel
 from configuration.config import BuyConfig, UiConfig
-from ui.widgets.buy_window.handlers import run_flow, stop_flow
+from ui.widgets.buy_window.handlers import FlowHandler
 from ui.converted.gen_buy_window import Ui_Form
 from PyQt5.QtGui import QPixmap, QFont
 from ui import app
@@ -51,6 +51,7 @@ class BuyWindow(QWidget):
             app.sgn_gui.current_window = self
 
         # object instances
+        self.flow_handler = FlowHandler()
         self.TOTAL_PRICE = 0
         self.config = BuyConfig()
         self.bottle_progress_bar_widget = WaterBottleWidget()
@@ -220,6 +221,7 @@ class BuyWindow(QWidget):
         """
         # self.ui.stop_btn.clicked.connect()
         # self.ui.continue_btn.clicked.connect()
+        self.flow_handler.liters_changed.connect(self.update_water_progres)
 
         self.ui.terminate_session_btn.clicked.connect(lambda: app.sgn_gui.EndSession() if app.sgn_gui['session']['started'] else None)
         self.ui.terminate_session_btn.clicked.connect(self.buy_window_closed.emit)
@@ -507,6 +509,9 @@ class BuyWindow(QWidget):
         """
         self.ui.bottom_right_second_stack_widget.setCurrentWidget(self.ui.bottom_right_second_empty_page)
 
+    def update_water_progres(self, current_progress: float):
+        self.bottle_progress_bar_widget.progress = current_progress // (self.last_popped_water.liters_count * 1000)
+
     def start_bottle_filling(self) -> None:
         """
         Начать отрисовку налива воды
@@ -518,7 +523,7 @@ class BuyWindow(QWidget):
         #         time.sleep(0.3)
 
 
-        self.bottle_filling_thread.run = lambda: run_flow(self.last_popped_water.liters_count * 1000, 12.075)
+        self.bottle_filling_thread.run = lambda: self.flow_handler.run_flow(self.last_popped_water.liters_count * 1000, 12.075)
         self.bottle_filling_thread.start()
 
     def render_product_cart(self) -> None:
