@@ -237,10 +237,15 @@ class BuyWindow(QWidget):
         self.bottle_progress_bar_widget.progress_changed.connect(self.update_remaining_price_for_water)
         self.filling_finished.connect(self.hide_continue_and_stop_filling_btn)
         self.filling_finished.connect(self.switch_on_water_bottle_window)
+        self.filling_finished.connect(self.check_on_empty_water)
 
         self.ui.give_container_btn.clicked.connect(self.give_product_with_priority)
         self.ui.give_plug_btn.clicked.connect(self.give_product_with_priority)
         self.ui.give_loyal_card_btn.clicked.connect(self.give_product_with_priority)
+
+    def check_on_empty_water(self):
+        if not self._chosen_products:
+            self.buy_window_closed.emit()
 
     def start_session(self):
         if not app.sgn_gui['session']['started']:
@@ -516,13 +521,6 @@ class BuyWindow(QWidget):
         """
         Начать отрисовку налива воды
         """
-
-        # def increment_progress_value():
-        #     while self.bottle_progress_bar_widget.progress <= 100 and self.is_pouring_running:
-        #         self.bottle_progress_bar_widget.progress += 1
-        #         time.sleep(0.3)
-
-
         self.bottle_filling_thread.run = lambda: self.flow_handler.run_flow(self.last_popped_water.liters_count * 1000, 12.075)
         self.bottle_filling_thread.start()
 
@@ -862,8 +860,6 @@ class BuyWindow(QWidget):
 
         if self._chosen_products:
             self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.start_pouring_page)
-        else:
-            self.buy_window_closed.emit()
 
         self.bottle_progress_bar_widget.progress = 0
         self.ui.bottle_layout.addWidget(self.bottle_progress_bar_widget)
