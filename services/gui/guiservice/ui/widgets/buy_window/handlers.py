@@ -1,11 +1,11 @@
-from PyQt5.QtCore import pyqtSignal
+from PyQt5.QtCore import pyqtSignal, QObject
 import subprocess
 import re
 
 process = None
 
 
-class FlowHandler:
+class FlowHandler(QObject):
     liters_changed = pyqtSignal(float)
 
     def run_flow(self, volume_ml, pls):
