@@ -9,6 +9,7 @@ class FlowHandler(QObject):
     liters_changed = pyqtSignal(float)
 
     def run_flow(self, volume_ml, pls):
+        print(f'volume: {volume_ml}, pls: {pls}')
         global process
         # Запускаем процесс
         process = subprocess.Popen(
