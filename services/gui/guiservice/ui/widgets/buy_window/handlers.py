@@ -28,8 +28,10 @@ class FlowHandler(QObject):
 
                 output = process.stdout.readline()
 
-                if output == '' and process.poll() is not None:
-                    break
+                if process:
+                    if output == '' and process.poll() is not None:
+                        break
+
                 if output:
                     print(output)
                     nums = re.findall("\d+", output.strip())
