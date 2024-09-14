@@ -518,7 +518,7 @@ class BuyWindow(QWidget):
         #         time.sleep(0.3)
 
 
-        self.bottle_filling_thread.run = run_flow
+        self.bottle_filling_thread.run = lambda: run_flow(self.last_popped_water.liters_count * 1000, 12.075)
         self.bottle_filling_thread.start()
 
     def render_product_cart(self) -> None:
