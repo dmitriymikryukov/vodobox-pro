@@ -28,7 +28,7 @@ class FlowHandler(QObject):
                     break
                 if output:
                     print(output)
-                    self.liters_changed.emit(float(re.findall("\d+", output.strip().split()[0])[0]))
+                    self.liters_changed.emit(float(re.findall("\d+", output.strip())[0]))
 
             stderr_output = process.stderr.read()
             if stderr_output:
