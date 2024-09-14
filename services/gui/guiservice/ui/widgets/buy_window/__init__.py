@@ -237,6 +237,7 @@ class BuyWindow(QWidget):
         # custom signals
         self.filling_started.connect(self.switch_on_water_bottle_window)
         self.filling_started.connect(self.start_bottle_filling)
+        self.filling_started.connect(self.set_liter_progress_to_zero)
 
         self.bottle_progress_bar_widget.progress_changed.connect(self.update_remaining_price_for_water)
         self.filling_finished.connect(self.hide_continue_and_stop_filling_btn)
@@ -246,6 +247,9 @@ class BuyWindow(QWidget):
         self.ui.give_container_btn.clicked.connect(self.give_product_with_priority)
         self.ui.give_plug_btn.clicked.connect(self.give_product_with_priority)
         self.ui.give_loyal_card_btn.clicked.connect(self.give_product_with_priority)
+
+    def set_liter_progress_to_zero(self):
+        self.bottle_progress_bar_widget.progress = 0
 
     def check_on_empty_water(self):
         if not self._chosen_products:
@@ -865,7 +869,6 @@ class BuyWindow(QWidget):
         if self._chosen_products:
             self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.start_pouring_page)
 
-        self.bottle_progress_bar_widget.progress = 0
         self.ui.bottle_layout.addWidget(self.bottle_progress_bar_widget)
 
     def increase_liters_count(self) -> None:
