@@ -34,7 +34,6 @@ class FlowHandler(QObject):
                         break
 
                 if output and ('NFLOW' not in output):
-                    print(output)
                     nums = re.findall("\d+", output.strip())
                     if nums:
                         self.liters_changed.emit(float(nums[0]))
