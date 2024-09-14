@@ -12,7 +12,7 @@ class FlowHandler(QObject):
         global process
         # Запускаем процесс
         process = subprocess.Popen(
-            f'/opt/kiosk/vodobox-pro/vendor/flowmeter/flow {volume_ml} {pls}',
+            [f'/opt/kiosk/vodobox-pro/vendor/flowmeter/flow', str(volume_ml), str(pls)],
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
