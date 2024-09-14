@@ -23,7 +23,11 @@ class FlowHandler(QObject):
         # Читаем вывод процесса построчно
         try:
             while True:
+                if not process:
+                    break
+
                 output = process.stdout.readline()
+
                 if output == '' and process.poll() is not None:
                     break
                 if output:
