@@ -27,6 +27,7 @@ class FlowHandler(QObject):
                 if output == '' and process.poll() is not None:
                     break
                 if output:
+                    print(output)
                     self.liters_changed.emit(float(re.findall("\d+", output.strip().split()[0])[0]))
 
             stderr_output = process.stderr.read()
