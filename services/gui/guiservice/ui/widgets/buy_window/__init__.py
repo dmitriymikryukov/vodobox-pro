@@ -222,7 +222,7 @@ class BuyWindow(QWidget):
         self.ui.stop_btn.clicked.connect(self.switch_continue_stop_btn)
         self.ui.stop_btn.clicked.connect(self.flow_handler.stop_flow)
         self.ui.continue_btn.clicked.connect(self.switch_continue_stop_btn)
-        self.ui.continue_btn.clicked.connect(lambda: self.flow_handler.run_flow((100 - self.bottle_progress_bar_widget.progress) * self.last_popped_water.liters_count * 10, 12.075))
+        self.ui.continue_btn.clicked.connect(self.start_bottle_filling)
 
         self.flow_handler.liters_changed.connect(self.update_water_progres)
 
@@ -525,7 +525,7 @@ class BuyWindow(QWidget):
         """
         Начать отрисовку налива воды
         """
-        self.bottle_filling_thread.run = lambda: self.flow_handler.run_flow(self.last_popped_water.liters_count * 1000, 12.075)
+        self.bottle_filling_thread.run = lambda: self.flow_handler.run_flow((100 - self.bottle_progress_bar_widget.progress) * self.last_popped_water.liters_count * 10, 12.075)
         self.bottle_filling_thread.start()
 
     def render_product_cart(self) -> None:
