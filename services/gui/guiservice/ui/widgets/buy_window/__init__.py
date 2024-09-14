@@ -224,6 +224,7 @@ class BuyWindow(QWidget):
         """
         self.ui.stop_btn.clicked.connect(self.switch_continue_stop_btn)
         self.ui.stop_btn.clicked.connect(self.stop_bottle_filling)
+        self.ui.stop_btn.clicked.connect(self.update_flowed_liters_count)
         self.ui.continue_btn.clicked.connect(self.switch_continue_stop_btn)
         self.ui.continue_btn.clicked.connect(self.start_bottle_filling)
 
