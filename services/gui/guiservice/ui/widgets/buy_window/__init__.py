@@ -515,7 +515,7 @@ class BuyWindow(QWidget):
         self.ui.bottom_right_second_stack_widget.setCurrentWidget(self.ui.bottom_right_second_empty_page)
 
     def update_water_progres(self, current_progress: float):
-        self.bottle_progress_bar_widget.progress = current_progress // (self.last_popped_water.liters_count * 1000)
+        self.bottle_progress_bar_widget.progress = (current_progress / (self.last_popped_water.liters_count * 1000)) * 100
 
     def start_bottle_filling(self) -> None:
         """
