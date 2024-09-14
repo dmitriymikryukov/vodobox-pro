@@ -12,7 +12,7 @@ class FlowHandler(QObject):
         global process
         # Запускаем процесс
         process = subprocess.Popen(
-            ['/opt/kiosk/vodobox-pro/vendor/flowmeter/flow', str(volume_ml), str(pls)],
+            f'/opt/kiosk/vodobox-pro/vendor/flowmeter/flow {volume_ml} {pls}',
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
@@ -28,7 +28,9 @@ class FlowHandler(QObject):
                     break
                 if output:
                     print(output)
-                    self.liters_changed.emit(float(re.findall("\d+", output.strip())[0]))
+                    nums = re.findall("\d+", output.strip())
+                    if nums:
+                        self.liters_changed.emit(float(nums[0]))
 
             stderr_output = process.stderr.read()
             if stderr_output:
