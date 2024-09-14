@@ -219,8 +219,11 @@ class BuyWindow(QWidget):
         Инициализация сигналов по наливу:
         (начать налив, остановить или продолжить налив, завершить налив)
         """
-        # self.ui.stop_btn.clicked.connect()
-        # self.ui.continue_btn.clicked.connect()
+        self.ui.stop_btn.clicked.connect(self.switch_continue_stop_btn)
+        self.ui.stop_btn.clicked.connect(self.flow_handler.stop_flow)
+        self.ui.continue_btn.clicked.connect(self.switch_continue_stop_btn)
+        self.ui.continue_btn.clicked.connect(lambda: self.flow_handler.run_flow((100 - self.bottle_progress_bar_widget.progress) * self.last_popped_water.liters_count * 10, 12.075))
+
         self.flow_handler.liters_changed.connect(self.update_water_progres)
 
         self.ui.terminate_session_btn.clicked.connect(lambda: app.sgn_gui.EndSession() if app.sgn_gui['session']['started'] else None)
@@ -229,6 +232,7 @@ class BuyWindow(QWidget):
         # self.ui.terminate_pouring_btn.clicked.connect(self.give_product_with_priority)
         # self.ui.terminate_pouring_btn.clicked.connect()
         self.ui.start_pouring_btn.clicked.connect(self.start_pouring)
+        self.ui.start_pouring_btn.clicked.connect(lambda: self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.stop_page))
 
         # custom signals
         self.filling_started.connect(self.switch_on_water_bottle_window)
@@ -539,12 +543,12 @@ class BuyWindow(QWidget):
             lbl.setStyleSheet(f'color: {"black" if UiConfig.is_light_theme() else "white"};')
             self.ui.product_layout.addWidget(lbl)
 
-    def render_continue_and_stop_filling_btn(self) -> None:
+    def switch_continue_stop_btn(self) -> None:
         """
         Отрисовка кнопок "Остановить"/"Продолжить" для налива воды
         """
         self.ui.bottom_left_btn_stack_widget.setCurrentWidget(
-            self.ui.stop_page if self.is_pouring_running else self.ui.continue_page
+            self.ui.stop_page if self.ui.bottom_left_btn_stack_widget.currentWidget() == self.ui.continue_page else self.ui.continue_page
         )
 
     # def render_after_filling_finished(self) -> None:
