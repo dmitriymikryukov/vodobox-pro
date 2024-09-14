@@ -61,6 +61,7 @@ class BuyWindow(QWidget):
         self.session_timer = QTimer()
         self.payment_cancellation_timer = QTimer()
         self.bottle_filling_thread = QThread()
+        self.stop_bottle_filling_thread = QThread()
         # self.start_session_thread = QThread()
         # self.start_session_thread.run = self.start_session
         self.last_popped_water: Water = None
@@ -220,7 +221,7 @@ class BuyWindow(QWidget):
         (начать налив, остановить или продолжить налив, завершить налив)
         """
         self.ui.stop_btn.clicked.connect(self.switch_continue_stop_btn)
-        self.ui.stop_btn.clicked.connect(self.flow_handler.stop_flow)
+        self.ui.stop_btn.clicked.connect(self.stop_bottle_filling)
         self.ui.continue_btn.clicked.connect(self.switch_continue_stop_btn)
         self.ui.continue_btn.clicked.connect(self.start_bottle_filling)
 
@@ -523,7 +524,12 @@ class BuyWindow(QWidget):
         self.ui.bottom_right_second_stack_widget.setCurrentWidget(self.ui.bottom_right_second_empty_page)
 
     def update_water_progres(self, current_progress: float):
-        self.bottle_progress_bar_widget.progress = int((current_progress / (self.last_popped_water.liters_count * 1000)) * 100)
+        # self.bottle_progress_bar_widget.progress = int((current_progress / (self.last_popped_water.liters_count * 1000)) * 100)
+        self.bottle_progress_bar_widget.progress += int(current_progress - (self.last_popped_water.liters_count * self.bottle_progress_bar_widget.progress / 100) / self.last_popped_water.liters_count)
+
+    def stop_bottle_filling(self) -> None:
+        self.stop_bottle_filling_thread.run = self.flow_handler.stop_flow
+        self.stop_bottle_filling_thread.start()
 
     def start_bottle_filling(self) -> None:
         """
