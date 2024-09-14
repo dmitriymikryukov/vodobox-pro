@@ -4,11 +4,10 @@ from ui.widgets.buy_window.graphics import WaterBottleWidget
 from PyQt5.Qt import QPropertyAnimation, QColor, pyqtProperty
 from PyQt5.QtWidgets import QWidget, QButtonGroup, QLabel
 from configuration.config import BuyConfig, UiConfig
-from ui.widgets.buy_window.handlers import FlowHandler
+from ui.widgets.buy_window.handlers import run_flow, stop_flow
 from ui.converted.gen_buy_window import Ui_Form
 from PyQt5.QtGui import QPixmap, QFont
 from ui import app
-import time
 import os
 
 
@@ -38,9 +37,9 @@ class BuyWindow(QWidget):
     filling_finished = pyqtSignal()
 
     product_chosen = pyqtSignal(Product)
-    plug_taken = pyqtSignal()
-    container_taken = pyqtSignal()
-    loyal_card_taken = pyqtSignal()
+    # plug_taken = pyqtSignal()
+    # container_taken = pyqtSignal()
+    # loyal_card_taken = pyqtSignal()
     product_list_changed = pyqtSignal()
 
     def __init__(self):
@@ -225,9 +224,9 @@ class BuyWindow(QWidget):
         self.ui.terminate_session_btn.clicked.connect(lambda: app.sgn_gui.EndSession() if app.sgn_gui['session']['started'] else None)
         self.ui.terminate_session_btn.clicked.connect(self.buy_window_closed.emit)
         self.ui.terminate_pouring_btn.clicked.connect(lambda: app.sgn_gui.AcknowlegeAmount(self.TOTAL_PRICE * 100))
-        self.ui.terminate_pouring_btn.clicked.connect(self.collect_the_order)
+        # self.ui.terminate_pouring_btn.clicked.connect(self.give_product_with_priority)
         # self.ui.terminate_pouring_btn.clicked.connect()
-        self.ui.start_pouring_btn.clicked.connect(self.collect_the_order)
+        self.ui.start_pouring_btn.clicked.connect(self.start_pouring)
 
         # custom signals
         self.filling_started.connect(self.switch_on_water_bottle_window)
@@ -235,11 +234,11 @@ class BuyWindow(QWidget):
 
         self.bottle_progress_bar_widget.progress_changed.connect(self.update_remaining_price_for_water)
         self.filling_finished.connect(self.hide_continue_and_stop_filling_btn)
-        self.filling_finished.connect(self.render_after_filling_finished)
+        self.filling_finished.connect(self.switch_on_water_bottle_window)
 
-        self.container_taken.connect(self.collect_the_order)
-        self.plug_taken.connect(self.collect_the_order)
-        self.loyal_card_taken.connect(self.collect_the_order)
+        self.ui.give_container_btn.clicked.connect(self.give_product_with_priority)
+        self.ui.give_plug_btn.clicked.connect(self.give_product_with_priority)
+        self.ui.give_loyal_card_btn.connect(self.give_product_with_priority)
 
     def start_session(self):
         if not app.sgn_gui['session']['started']:
@@ -396,7 +395,7 @@ class BuyWindow(QWidget):
         self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.empty_bottom_left_page)
         self.set_total_price(self.TOTAL_PRICE - self.config.plug_price)
         app.sgn_gui.info('Выдана пробка')
-        self.plug_taken.emit()
+        # self.plug_taken.emit()
 
     def give_container(self) -> None:
         """
@@ -406,7 +405,7 @@ class BuyWindow(QWidget):
         self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.empty_bottom_left_page)
         self.set_total_price(self.TOTAL_PRICE - self.config.container_price)
         app.sgn_gui.info('Выдана тара')
-        self.container_taken.emit()
+        # self.container_taken.emit()
 
     def give_loyal_card(self) -> None:
         """
@@ -416,39 +415,57 @@ class BuyWindow(QWidget):
         self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.empty_bottom_left_page)
         self.set_total_price(self.TOTAL_PRICE - self.config.loyal_card_price)
         app.sgn_gui.info('Выдана карта лояльности')
-        self.loyal_card_taken.emit()
+        # self.loyal_card_taken.emit()
 
-    def collect_the_order(self) -> None:
+    def give_product_with_priority(self) -> None:
         """
-        Сбор заказа и отрисовка в зависимости от того, что выбрано
+        Выдача продукта в зависимости от его категории, со следующим приоритетом
+        1. Карта(-ы) лояльности
+        2. Тара(-ы)
+        3. Пробка(-и)
+        4. Вода
         """
 
-        self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.start_pouring_page)
+        # self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.start_pouring_page)
         self.sort_chosen_products()
+        p = self._chosen_products.pop(0) if self._chosen_products else None
 
-        for i, p in enumerate(self._chosen_products):
-            if isinstance(p, LoyalCard):
-                self._chosen_products = [p for p in self._chosen_products if not isinstance(p, LoyalCard)]
-                self.give_loyal_card()
-                return
-            if isinstance(p, ContainerWithWater):
-                # меняем тару с водой на просто воду
-                self._chosen_products = [p if not isinstance(p, ContainerWithWater) else Water(self.config.container_liters_count, self.config.water_price_per_liter)
-                                         for p in self._chosen_products]
-                self.give_container()
-                return
-            if isinstance(p, PlugWithWater):
-                # меняем пробку с водой на просто воду без пробки
-                self._chosen_products = [p if not isinstance(p, PlugWithWater) else Water(self.config.plug_liters_count, self.config.water_price_per_liter)
-                                         for p in self._chosen_products]
-                self.give_plug()
-                return
-            if isinstance(p, Water):
-                self.set_total_price(sum([p.price for p in self._chosen_products]))
-                self.last_popped_water = self._chosen_products.pop(i)
-                app.sgn_gui.DepositAmount(self.last_popped_water.price * 100)
-                return
-        self.buy_window_closed.emit()
+        if isinstance(p, LoyalCard):
+            self._chosen_products = [p for p in self._chosen_products if not isinstance(p, LoyalCard)]
+            self.give_loyal_card()
+            return
+        if isinstance(p, ContainerWithWater):
+            # меняем все тары с водой на просто воду
+            self._chosen_products = [
+                p
+                if not isinstance(p, ContainerWithWater)
+                else Water(self.config.container_liters_count, self.config.water_price_per_liter)
+                for p in self._chosen_products
+            ]
+            self.give_container()
+            return
+        if isinstance(p, PlugWithWater):
+            # меняем все пробки с водой на просто воду без пробки
+            self._chosen_products = [
+                p
+                if not isinstance(p, PlugWithWater) else Water(self.config.plug_liters_count, self.config.water_price_per_liter)
+                for p in self._chosen_products
+            ]
+            self.give_plug()
+            return
+        # if isinstance(p, Water):
+        #     self.set_total_price(sum([p.price for p in self._chosen_products]))
+        #     self.last_popped_water = p
+        #     app.sgn_gui.DepositAmount(self.last_popped_water.price * 100)
+        #     return
+
+        # self.buy_window_closed.emit()
+
+    def start_pouring(self):
+        self.set_total_price(sum([p.price for p in self._chosen_products]))
+        self.last_popped_water = self._chosen_products.pop(0)
+        app.sgn_gui.DepositAmount(self.last_popped_water.price * 100)
+        self.filling_started.emit(self.last_popped_water)
 
     def add_product(self, product: Product) -> None:
         """
@@ -495,13 +512,13 @@ class BuyWindow(QWidget):
         Начать отрисовку налива воды
         """
 
-        def increment_progress_value():
-            while self.bottle_progress_bar_widget.progress <= 100 and self.is_pouring_running:
-                self.bottle_progress_bar_widget.progress += 1
-                time.sleep(0.3)
+        # def increment_progress_value():
+        #     while self.bottle_progress_bar_widget.progress <= 100 and self.is_pouring_running:
+        #         self.bottle_progress_bar_widget.progress += 1
+        #         time.sleep(0.3)
 
 
-        self.bottle_filling_thread.run = increment_progress_value
+        self.bottle_filling_thread.run = run_flow
         self.bottle_filling_thread.start()
 
     def render_product_cart(self) -> None:
@@ -527,12 +544,11 @@ class BuyWindow(QWidget):
             self.ui.stop_page if self.is_pouring_running else self.ui.continue_page
         )
 
-    def render_after_filling_finished(self) -> None:
-        if self._chosen_products:
-            self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.start_pouring_page)
-        else:
-
-            self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.empty_bottom_left_page)
+    # def render_after_filling_finished(self) -> None:
+    #     if self._chosen_products:
+    #         self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.start_pouring_page)
+    #     else:
+    #         self.buy_window_closed.emit()
 
     def hide_continue_and_stop_filling_btn(self) -> None:
         """
@@ -838,6 +854,11 @@ class BuyWindow(QWidget):
 
         render_top_consumer_info()
         render_bottom_consumer_info()
+
+        if self._chosen_products:
+            self.ui.bottom_left_btn_stack_widget.setCurrentWidget(self.ui.start_pouring_page)
+        else:
+            self.buy_window_closed.emit()
 
         self.bottle_progress_bar_widget.progress = 0
         self.ui.bottle_layout.addWidget(self.bottle_progress_bar_widget)
