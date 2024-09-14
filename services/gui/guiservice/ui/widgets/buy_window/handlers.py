@@ -35,10 +35,10 @@ class FlowHandler(QObject):
                     nums = re.findall("\d+", output.strip())
                     if nums:
                         self.liters_changed.emit(float(nums[0]))
-
-            stderr_output = process.stderr.read()
-            if stderr_output:
-                print(f"Ошибка: {stderr_output.strip()}")
+            if process:
+                stderr_output = process.stderr.read()
+                if stderr_output:
+                    print(f"Ошибка: {stderr_output.strip()}")
 
         except KeyboardInterrupt:
             print("Остановка процесса с использованием ctrl+c...")
