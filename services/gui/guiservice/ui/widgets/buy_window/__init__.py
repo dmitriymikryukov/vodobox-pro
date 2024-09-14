@@ -52,6 +52,7 @@ class BuyWindow(QWidget):
 
         # object instances
         self.flow_handler = FlowHandler()
+        self.last_current_liters_changed = 0
         self.flowed_liter_count = 0
         self.TOTAL_PRICE = 0
         self.config = BuyConfig()
@@ -249,6 +250,9 @@ class BuyWindow(QWidget):
         self.ui.give_container_btn.clicked.connect(self.give_product_with_priority)
         self.ui.give_plug_btn.clicked.connect(self.give_product_with_priority)
         self.ui.give_loyal_card_btn.clicked.connect(self.give_product_with_priority)
+
+    def update_flowed_liters_count(self):
+        self.flowed_liter_count += self.last_current_liters_changed
 
     def set_liter_progress_to_zero(self):
         self.bottle_progress_bar_widget.progress = 0
@@ -525,17 +529,13 @@ class BuyWindow(QWidget):
         self.ui.bottom_right_second_stack_widget.setCurrentWidget(self.ui.bottom_right_second_empty_page)
 
     def update_water_progres(self, current_progress: float):
-        self.flowed_liter_count += current_progress
-        temp = int((self.flowed_liter_count / self.last_popped_water.liters_count) * 100)
+        self.last_current_liters_changed = current_progress
+        temp = int(((current_progress + self.flowed_liter_count) / (self.last_popped_water.liters_count * 1000)) * 100)
         self.bottle_progress_bar_widget.progress = temp
         print(f'temp: {temp}')
         print(f'flowed_liter_count: {self.flowed_liter_count}')
         print(f'current_progress: {current_progress}')
         print(f'liters_count: {self.last_popped_water.liters_count}')
-
-
-        # self.bottle_progress_bar_widget.progress = int((current_progress / (self.last_popped_water.liters_count * 1000)) * 100)
-        # self.bottle_progress_bar_widget.progress += int(current_progress - (self.last_popped_water.liters_count * self.bottle_progress_bar_widget.progress / 100) / self.last_popped_water.liters_count)
 
     def stop_bottle_filling(self) -> None:
         self.stop_bottle_filling_thread.run = self.flow_handler.stop_flow
